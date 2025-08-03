@@ -1,0 +1,1105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    overflow-x: hidden;
+}
+
+.main-header{
+    display: flex;
+    align-items: center;
+    /* width: 425.33px; */
+    height: 80px;
+    /* gap: 10px; */
+    padding: 8px;
+    margin-top:16px;
+    width: 100%;
+}
+.logo{
+    
+    border-radius: 12px ;
+    border: none;
+    border: 1px solid rgb(241,241,241);
+    width: 64px;
+    height: 64px;
+    /* display: flex; */
+     align-items: center;
+    justify-content: flex-start; 
+    outline: none;
+    
+}
+/* .logo-sv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+} */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    margin-left: 8px;
+    width: 100%;
+  
+}
+.logo-text .logo-heading-1{
+    width: 262.7px;
+    height: 22px;
+    font-family: 'bold';
+    color: #191919;
+    letter-spacing: -0.1px;
+    display: block;
+    text-align: left;
+    
+
+}
+.logo-heading-2{
+    width:262.7px ;
+    height:20px ;
+    color: #606060;
+    font-family: "font-2";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+    line-height:20px ;
+}
+.logo-text .rating-text{
+    width: 83.88px;
+    height: 20px;
+    color: rgb(96,96, 96);
+    font-size: 14px;
+    font-weight: 500px;
+    letter-spacing: -0.1px;
+    line-height: 20px;
+    display: block;
+    font-family: "font-2";
+    margin:0 0 0 4px;
+}
+.star{
+    display: flex;
+    width:262.7px ;
+    height: 20px;
+    align-items: center;
+   
+}
+ .openBtn{
+    display: flex;
+   
+} 
+.openBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66.64px;
+    height: 32px;
+    background: #eb1700;
+    color:rgb(241,241,241);
+    font-size: 16px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+     padding: 0px 10px; 
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    line-height: 22px;
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.background-image{
+    background-image: url("https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/hero_v3/hero_mobile.png");
+    background-size: cover;
+    background-position: center center;
+    /* width: 100%; */
+    min-width: 425.333px;
+    height: 550px;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.open-app{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 24px;
+    padding-left: 16px;
+    padding-top: 15px;
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+.open-app button{
+    border-radius: 9999px;
+    background-color: rgb(235, 23, 0);
+    color:rgb(255, 255, 255);
+    width: 101.93px;
+    border: none;
+    height: 40px;
+    font-size: 16px;
+    line-height:22px ;
+    letter-spacing: -0.1px;
+    cursor: pointer;
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+}
+.logo-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 152px;
+    max-width: 100%;
+    height: 18px;
+   
+   margin-top: 20px;
+   margin-bottom: 20px;
+
+}
+.logo-section .doordash-text{
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doordash{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 180px;
+    /* margin-top: 10px; */
+    
+}
+
+.doordash-heading h1{
+    color: rgb(241,241,241);
+    font-size: 32px;
+    font-weight: 900;
+    font-family: "TTNormsProCond-Blk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 28px;
+    width: 350px;
+    height: 56px;
+    margin-bottom: 24px;
+    /* display: flex;
+    justify-content: center; */
+    
+}
+.address-search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 32px;
+    background: rgb(255, 255, 255);
+    line-height: 22px;
+    letter-spacing: -0.01px;
+    width: 298px;
+    height: 52px;
+    padding: 6px 16px;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.01px;
+    font-weight: 500;
+    color: #191919ff;
+    /* box-shadow: ; */
+}
+.address-search-bar .search-logo{
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+}
+.searchbar-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 100px;
+    max-width: 100%;
+}
+.input-adderss{
+    height: 22px;
+    width:178px ;
+    margin: 0 12px 0 auto;
+}
+.input-adderss input {
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.01px;
+    font-weight: 500;
+    border: none;
+    color: rgba(25,25,25,1);
+    outline: none;
+    width: 100%;
+    
+}  
+.address-search-bar .arrow{
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    max-width: 100%;
+    margin-right: 0;
+}
+.loginbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245, 245, 245);
+    border-radius: 9999px;
+    width: 80.63px;
+    height: 32px;
+    font-size: 13.3333px;
+    padding: 0 12px;
+    gap: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.loginimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logintext {
+    display: flex;
+    align-items: center;
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    color: #191919;
+}
+.continue-app{
+    margin-left:12.6667px ;
+    margin-right:12.6667px ;
+    max-width: 400px;
+    /* height: 181.333px; */
+    flex: 1 0 auto;
+    width: 400px;
+}
+.continue-inside{
+    margin: 20px 20px 0 20px;
+    /* height:161.333px ; */
+    width:360px ;
+}
+.border-box{
+    border-radius: 12px;
+    background-color: #f7f7f7ff;
+    padding: 20px;
+    border: 1px solid #f1f1f1ff;
+    max-width: 100%;
+    width: 360px;
+    height: 161.333px;
+}
+.app-download{
+    display: flex;
+    text-align: center;
+    height: 64px;
+    width:318.667px ;
+}
+.logo-download{
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    border: 1px solid  #f1f1f1ff;
+    background-color: #ffffffff;
+    margin-right: 8px;
+    padding: 8px;
+}
+.logo-download-content{
+    display: block;
+    width: 200.427px;
+    height: 64px;
+    text-align: left;
+    max-width: 100%;
+}
+.logo-download-heading{
+    color: #191919ff;
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    max-width: 100%;
+    width:200.427px;
+    height: 20px;
+    display: block;
+    white-space: nowrap;
+}
+.logo-download-text{
+    display: block;
+    color:rgb(96, 96, 96);
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    white-space: nowrap;
+    max-width: 100%;
+    height: 20px;
+    width: 196.427px;
+    margin-top: 2px;
+    margin-left: 4px;
+}
+.star-icon-wrapper
+{
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2px;
+    max-width: 100%;
+    text-align: left;
+    width: 200.427px;
+
+}
+.logo-download-text2{
+    display: block;
+    color:rgb(96, 96, 96);
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    white-space: nowrap;
+    max-width: 100%;
+    height: 20px;
+    width: 83.875px;
+    text-align: left;
+    margin-left: 4px;
+    text-wrap: nowrap;
+}
+.continue-app-longbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(235, 23, 0);
+    color:rgb(255, 255, 255);
+    border-radius: 9999px;
+    min-height: 40px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    margin-top:16px ;
+    max-width: 100%;
+}
+.continue-app-longbtn-text{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 700;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: center;
+    width: 318.667px;
+    height: 22px;
+    line-height: 22px;
+    letter-spacing: -0.01;
+    white-space: nowrap;
+}
+.main-section-container{
+    display: block;
+    height: 784px;
+    margin-left: 3.66667px;
+     margin-right: 3.66667px;
+     max-width: 768px;
+     width:418px;
+    }
+    .main-section-container-inside{
+        display: flex;
+        flex-direction: column;
+        height:704px;
+        justify-content: center;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        max-width: 100%;
+        padding: 8px;
+        width:418px;
+    }
+.secondary-section-container{
+    display: flex;
+    flex-direction: column;
+    height:688px;
+    width:402px;
+    justify-content:center;
+}
+.value1-main-section-container{
+    display: flex;
+    flex-wrap: nowrap;
+    height:216px;
+    max-width:100%;
+    min-width:360px;
+    padding: 16px;
+    width:100%;
+}
+.value1-main-section-container-bike{
+    display: block;
+    margin-right: 32px;
+    height:184px;
+    width: 88px;
+}
+.bike-image{
+    height: 88px;
+    width: 88px;
+}
+.become-a-dasher{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height:184px;
+    max-width:250px;
+    width:250px
+}
+.become-a-dasher-text{
+    display: block;
+    /* height: 152px; */
+    max-width: 100%;
+    width: 250px;
+
+}
+.become-a-dasher-heading{
+    color:rgb(25, 25, 25);
+   display:block;
+   font-size: 32px;
+   font-weight: 700;
+   font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   /* height:80px; */
+   width:250px;
+   line-height: 40px;
+   letter-spacing: -0.01px;
+   text-align: left;
+}
+.become-a-dasher-content{
+    color:rgb(25, 25, 25);
+   display:block;
+   font-size: 18px;
+   font-weight: 500;
+   /* height: 72px; */
+   line-height: 24px;
+   letter-spacing: -0.01px;
+   text-align: left;
+   width:250px;
+   font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+}  
+.start-earning-btn{
+    display: flex;
+    margin-top: 12px;
+    align-items: center;
+    cursor: pointer;
+    height: 20px;
+   
+    width: 250px;
+    border: 0;
+    background-color: white;
+
+} 
+.start-earning-text{
+    display: block;
+    color: rgb(235, 23, 0);
+    cursor: pointer;
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 700;
+    height: 20px;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    text-align: center;
+    width:85.283px;
+}
+.arrow-gap
+{
+    width: 4px;
+}
+.start-earning-btn2{
+      display: flex;
+    margin-top: 12px;
+    align-items: center;
+    
+    cursor: pointer;
+    /* height: 20px;
+   
+    width: 250px; */
+    border: 0;
+    background-color: white;
+}
+.sign-up-text{
+    display: flex;
+    white-space: nowrap;
+    color: rgb(235, 23, 0);
+    cursor: pointer;
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    /* text-align: center; */
+    width:138.469px;
+}
+  .become-a-dasher-heading3{
+     color:rgb(25, 25, 25);
+   display:block;
+   font-size: 32px;
+   font-weight: 700;
+   font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   height:120px;
+   width:250px;
+   line-height: 40px;
+   letter-spacing: -0.01px;
+   text-align: left;
+  }  
+  .become-a-dasher3{
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: nowrap; */
+    height:224px;
+    max-width:250px;
+    width:100%;
+    /* justify-content: center;
+    align-items: center; */
+    
+}
+    .become-a-dasher-text{
+    display: block;
+    height: 192px;
+    max-width: 100%;
+    width: 250px;
+
+
+}
+.start-earning-text3{
+display: block;
+    color: rgb(235, 23, 0);
+    cursor: pointer;
+    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 700;
+    height: 20px;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    text-align: center;
+    width:77.9px;
+}
+.everything{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 90%;
+    align-items: center;
+    margin-bottom: -300px;
+}
+.everything2{
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+    min-width: 90%;
+    align-items: center;
+}
+
+.lazy-load{
+    width: 100%;
+}
+.lazy-load-img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.lazy-load-heading{
+    display: flex;
+    flex-direction: column;
+}
+
+.lazy-load-heading h2{
+    color: #191919ff;
+    font-family:"font-2";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.01px;
+    display: block;
+    margin-top: 20px;
+    width: 346.79px;
+}
+.lazy-load-heading-text{
+    color:rgba(25,25,25);
+    display: block;
+    font-family: "font-2";
+    font-weight: 700;
+    letter-spacing:-0.01px;
+    line-height: 22px;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 18px;
+
+
+}
+.lazy-load-heading-content{
+    margin-top: 10px;
+    color:rgba(25,25,25);
+    display: block;
+    font-family: "font-2";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    text-align: left;
+
+}
+.find-restaurant{
+    display: block;
+    margin-top: 20px;
+    text-align: left;
+    width: 385.33px;
+
+}
+.find-restaurant a{
+    background-color: rgb(235, 23, 0);
+    border-radius: 9999px;
+    max-width: 100%;
+    min-height: 32px;
+    /* width: auto; */
+    height: 32px;
+    display: inline-flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    width: 131.84px;
+    padding: 12px 0;
+    border: none;
+    align-items: center;
+
+}
+.find-restaurant3 a{
+    background-color: rgb(235, 23, 0);
+    border-radius: 9999px;
+    max-width: 100%;
+    min-height: 32px;
+    /* width: auto; */
+    height: 32px;
+    display: inline-flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    width: 115.22px;
+    padding: 12px 0;
+    border: none;
+    align-items: center;
+
+}
+.find-restaurant-btn{
+    
+display: block;
+flex-grow: 1;
+max-width: 100%;
+padding: 0 12px;
+
+}
+
+.find-restaurant-btn12{
+    display: flex;
+    justify-content: center;
+    flex-grow: 2;
+    max-width: 0;
+    width: 107.844px;
+}
+.find-restaurant-btn-text{
+    color: rgba(255, 255, 255,1);
+    font-size: 14px;
+    /* font-weight: 700; */
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    font-family: "font-2";
+    /* max-width: 100%; */
+    width: 107.84px;
+    display: block;
+}
+.dashpass-container{
+   
+    padding: 320px 20px 20px 20px;
+    background-color: rgb(254, 241, 238);
+}
+.find-restaurant1{
+    display: block;
+    margin-top: 20px;
+    text-align: left;
+    width: 385.33px;
+
+}
+.find-restaurant1 a{
+   background-color: rgb(235, 23, 0);
+    border-radius: 9999px;
+    max-width: 100%;
+    min-height: 32px;
+    /* width: auto; */
+    height: 32px;
+    display: inline-flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    width: 115.22px;
+    padding: 12px 0;
+    border: none;
+    align-items: center;
+}
+.find-restaurant1-btn-text{
+    color: rgba(255, 255, 255,1);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    font-family: "font-2";
+    /* max-width: 100%; */
+    width: 91.22px;
+    display: block;
+}
+.find-restaurant1-btn{
+    display: block;
+    margin-top: 20px;
+    width: 115.22px;
+}
+.dashpass-btn{
+   margin-top: 20px;
+   display: flex;
+   justify-content: flex-start;
+}
+.dashpass-btn button{
+    position: relative;
+    background-color: #EB1700ff;
+    max-width: fit-content;
+    margin: 0;
+    padding: 0 12px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+.dashpass-btn span{
+    display: block;
+    color: white;
+    font-family: 'bold';
+    font-size: 14px;
+    /* font-weight: 700; */
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    padding: 0;
+    margin: 0;
+}
+/*grocery-banner*/
+.grocery-banner {
+  background-image: url('img/grocery_desktop.avif');
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* top: 301px; */
+}
+
+.grocery-overlay {
+  background-color: rgba(30, 30, 30, 0.6);
+  position:relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+ 
+}
+.groceries-sub{
+       display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 550px;
+ 
+}
+.groceries-sub h2{
+    text-align: center;
+    width: 359px;
+    display: block;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-family: 'bold';
+    filter: drop-shadow(rgba(0,0,0,0.2) 0px 2px 8px);
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 300;
+
+}
+.delivery-content-1{
+    color: white;
+    font-family: "font-2";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -0.01px;
+    display: block;
+    text-align: center;
+     filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 2px 8px);
+    text-align: center;
+    margin-top: 10px;
+    padding: 0;
+    width:343.583px ;
+}
+.delivery-content-2{
+     color: white;
+    font-family: 'font-3';
+    filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 2px 8px);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    padding: 0;
+    letter-spacing: -0.01px
+}
+.grocery-btn{
+    margin-top: 20px;
+
+}
+.grocery-btn button{
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-self: start;
+    position: relative;
+    max-width: 100%;
+    min-height: 32px;
+    padding: 0;
+    margin: 0;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background-color: #EB1700ff;
+    color: white;
+
+}
+.grocery-btn span{
+    font-family: 'font-2';
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01px;
+    display: block;
+    padding: 0 12px;
+}
+.everything2{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 90%;
+    align-items: center;
+    /* margin-bottom: -300px; */
+}
+.everything1{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 90%;
+    align-items: center;
+    /* margin-bottom: -300px; */
+}
+
+.shop-btn {
+  display: inline-block;
+  background-color: #eb1700;
+  color: white;
+  font-family: "font-2";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 32px;
+  letter-spacing: -0.01px;
+  border-radius: 9999px;
+  text-decoration: none;
+  margin-top: 20px;
+  min-height: 2px;
+  max-width: 100%;
+  width: 124.531px;
+
+}
+.helping-wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 20px 20px;
+    background-color: rgb(254, 241, 238);
+   
+}
+.helping-wrapper-heading{
+    text-align: center;
+    max-width: 300px;
+    color: #191919ff;
+    font-family: "font-2";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.01px;
+    
+}
+.helping-scroller{
+    background-color: rgb(254, 241, 238);
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+    /* width:425.333px; */
+}
+.helping-silder1{
+    margin-left: 5%;
+    margin-right: -10%;
+    display: flex;
+    flex-direction: column;
+    min-width: 90%;
+    padding: 20px;
+    /* width:382.792px; */
+    height:422.667px;
+    
+}
+.helping-silder1-image{
+    width: 100%;
+    
+}
+.siderimage2{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.helping-silder1-content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.helping-silder1-content h2{
+    color: rgb(25, 25, 25);
+    display: block;
+    font-size: 24px;
+    font-family: 'font-2';
+    font-weight: 700;
+    line-height: 28px;
+    max-width: 90%;
+    text-align: center;
+    margin-top: 20px;
+    letter-spacing: -0.01px;
+}
+.helping-silder1-text1{
+    color: rgb(25, 25, 25);
+    font-weight: 500;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    font-family: 'font-2';
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 
+.helping-silder1-btn1{
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+.helping-silder1-btn1 a{
+    background-color: rgb(235, 23, 0);
+    border-radius: 9999px;
+    color: rgb(255, 255, 255);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    min-height: 32px;
+    width:106.562px;
+    text-decoration: none;
+}
+.helping-silder1-btn-span1{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    max-width: 100%;
+    padding: 0 12px;
+    text-align: center;
+
+}
+.helping-silder1-btn-span2{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+}
+.helping-silder1-btn-text{
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'font-2';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    max-width: 100%;
+    text-align: center;
+} */ 
+ .helping-silder1-btn1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.helping-silder1-btn1 a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    min-height: 32px;
+    background-color: #eb1700;
+    color: #fff;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-family: 'font-2';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+     width: 106.56px;
+  height: 32px;
+}
+
+ 
