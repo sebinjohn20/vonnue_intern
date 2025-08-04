@@ -1506,3 +1506,46 @@ display: block;
         letter-spacing: -0.01px;
 
 }
+.app-store-container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.get-we-know-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1 1 0%;
+    justify-content: space-between;
+    gap: 12px;
+}
+.get-we-know{
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+}
+.get-we-know-head{
+    margin-bottom: 8px;
+    color: rgb(255, 255, 255);
+    font-family:'font-2';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.01px;
+}
+.get-we-know-text{
+    color: rgb(196, 196, 196);
+    font-family: 'font-2';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 8px;
+}
+.let-us-help-you-container{
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+}
+.let-us-help-you-container-heading
