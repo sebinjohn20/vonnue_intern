@@ -20,14 +20,13 @@ html, body {
 .logo{
     
     border-radius: 12px ;
-    border: none;
     border: 1px solid rgb(241,241,241);
     width: 64px;
     height: 64px;
-    /* display: flex; */
+    display: flex;
      align-items: center;
-    justify-content: flex-start; 
-    outline: none;
+    justify-content:center; 
+    margin: 0;
     
 }
 /* .logo-sv{
@@ -42,7 +41,8 @@ html, body {
     flex: 1;
     align-items: flex-start;
     margin-left: 8px;
-    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
   
 }
 .logo-text .logo-heading-1{
@@ -90,22 +90,21 @@ html, body {
    
 } 
 .openBtn button{
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     width: 66.64px;
     height: 32px;
     background: #eb1700;
-    color:rgb(241,241,241);
+    color:#ffffffff;
     font-size: 16px;
-    border-radius: 15px;
+    border-radius: 9999px;
     border: none;
     cursor: pointer;
      padding: 0px 10px; 
-    font-weight: 700;
     letter-spacing: -0.1px;
     line-height: 22px;
-    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'bold';
 }
 .background-image{
     background-image: url("https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/hero_v3/hero_mobile.png");
@@ -144,10 +143,9 @@ html, body {
     height: 40px;
     font-size: 16px;
     line-height:22px ;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.01px;
     cursor: pointer;
-    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 700;
+    font-family: 'bold';
 }
 .logo-section{
     display: flex;
@@ -232,7 +230,7 @@ html, body {
     margin: 0 12px 0 auto;
 }
 .input-adderss input {
-    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "font-2";
     font-size: 16px;
     line-height: 22px;
     letter-spacing: -0.01px;
@@ -258,34 +256,36 @@ html, body {
 .loginbtn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: rgb(245, 245, 245);
+    /* justify-content: center; */
+    background-color: #ffffffff;
     border-radius: 9999px;
     width: 80.63px;
-    height: 32px;
+    min-height: 32px;
     font-size: 13.3333px;
     padding: 0 12px;
-    gap: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     margin-top: 16px;
+    text-align: center;
 }
 
 .loginimg {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 4px;
 }
 
 .logintext {
     display: flex;
     align-items: center;
-    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "font-2";
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
-    letter-spacing: -0.01px;
+    letter-spacing: 0.01px;
     color: #191919;
+    white-space: nowrap;
 }
 .continue-app{
     margin-left:12.6667px ;
@@ -422,34 +422,34 @@ html, body {
 }
 .main-section-container{
     display: block;
-    height: 784px;
+    /* height: 784px; */
     margin-left: 3.66667px;
      margin-right: 3.66667px;
      max-width: 768px;
-     width:418px;
+     /* width:418px; */
     }
     .main-section-container-inside{
         display: flex;
         flex-direction: column;
-        height:704px;
+        /* height:704px; */
         justify-content: center;
         margin-bottom: 40px;
         margin-top: 40px;
         max-width: 100%;
         padding: 8px;
-        width:418px;
+        /* width:418px; */
     }
 .secondary-section-container{
     display: flex;
     flex-direction: column;
-    height:688px;
-    width:402px;
+    /* height:688px;
+    width:402px; */
     justify-content:center;
 }
 .value1-main-section-container{
     display: flex;
     flex-wrap: nowrap;
-    height:216px;
+    /* height:216px; */
     max-width:100%;
     min-width:360px;
     padding: 16px;
@@ -458,8 +458,8 @@ html, body {
 .value1-main-section-container-bike{
     display: block;
     margin-right: 32px;
-    height:184px;
-    width: 88px;
+    /* height:184px;
+    width: 88px; */
 }
 .bike-image{
     height: 88px;
@@ -485,7 +485,7 @@ html, body {
    display:block;
    font-size: 32px;
    font-weight: 700;
-   font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-family:'font-2';
    /* height:80px; */
    width:250px;
    line-height: 40px;
@@ -502,7 +502,7 @@ html, body {
    letter-spacing: -0.01px;
    text-align: left;
    width:250px;
-   font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-family: 'font-2'
 
 }  
 .start-earning-btn{
@@ -634,20 +634,20 @@ display: block;
 
 .lazy-load-heading h2{
     color: #191919ff;
-    font-family:"font-2";
+    font-family:"bold";
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 28px;
     letter-spacing: -0.01px;
     display: block;
     margin-top: 20px;
-    width: 346.79px;
+    /* width: 346.79px; */
 }
 .lazy-load-heading-text{
     color:rgba(25,25,25);
     display: block;
-    font-family: "font-2";
-    font-weight: 700;
+    font-family: "bold";
+    font-weight: 500;
     letter-spacing:-0.01px;
     line-height: 22px;
     margin-top: 10px;
@@ -730,10 +730,10 @@ padding: 0 12px;
 .find-restaurant-btn-text{
     color: rgba(255, 255, 255,1);
     font-size: 14px;
-    /* font-weight: 700; */
+    font-weight: 500;
     line-height: 20px;
     letter-spacing: -0.01px;
-    font-family: "font-2";
+    font-family: "bold";
     /* max-width: 100%; */
     width: 107.84px;
     display: block;
@@ -925,7 +925,7 @@ padding: 0 12px;
 .everything2{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    /* padding: 20px; */
     min-width: 90%;
     align-items: center;
     /* margin-bottom: -300px; */
@@ -1548,4 +1548,163 @@ display: block;
     display: flex;
     flex-direction: column;
 }
-.let-us-help-you-container-heading
+
+.let-us-help-you-container-heading{
+    margin-bottom: 8px;
+    color: rgb(255, 255, 255);
+    font-family: 'font-2';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.01px;
+    
+}
+.let-us-help-you-container a{
+    text-decoration: none;
+    margin-top: 8px;
+
+}
+.let-us-help-you-container-text{
+    color: rgb(196,196,196);
+    font-family: 'font-2';
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01px;
+}
+.doing-business-container{
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.doing-business-container-heading{
+    margin-bottom: 8px;
+    color: rgb(255, 255, 255);
+    font-family: 'font-2';
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.01px;
+    line-height: 22px;
+}
+.doing-business-container a{
+    text-decoration: none;
+    margin-top: 8px;
+}
+.doing-business-container-text{
+    
+    color: rgb(196,196,196);
+    font-family: 'font-2';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+}
+.os-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    justify-content:flex-end;
+    overflow: hidden;
+
+}
+.app-store-wrapper{
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0%;
+}
+
+.app-store-img{
+    padding: 2px 8px;
+    border-radius: 8px;
+    background-color: rgb(73,73,73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+}
+.footer-last{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 32px 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.footer-last-container{
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+
+
+}
+.footer-last-container a{
+    text-decoration: none;
+}
+.footer-last-container-logo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.terms-condition{
+    text-decoration: none;
+    margin-left: 16px;
+}
+.footer-last-text{
+    color: rgb(196, 196, 196);
+    font-family: 'font-2';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.01px;
+}
+.btn-div{
+    font-size: 14px;
+    font-family: 'font-2';
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    font-weight: 300;
+    color: #191919ff;
+    align-items: center;
+    display: flex;
+    padding: 4px 12px;
+    /* padding-left: 3px;
+    padding-right: 3px;
+    margin: 3px; */
+}
+
+.language button{
+    border-radius: 32px;
+    border: none;
+}
+.globe{
+    margin-right: 8px;
+    max-width: 100%;
+}
+
+.social-media-three{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.tw{
+    margin-left: 12px;
+}
+.ins{
+    margin-left: 12px;
+}
+.language{
+    display: flex;
+    min-height: 32px;
+    padding:12px;
+    width: 100%;
+}
+.btn-div span{
+    margin-right: -6px;
+}
