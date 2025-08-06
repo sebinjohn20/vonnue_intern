@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing:antialiased;
 }
 html, body {
     overflow-x: hidden;
@@ -50,9 +51,11 @@ html, body {
     height: 22px;
     font-family: 'bold';
     color: #191919;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.01px;
     display: block;
     text-align: left;
+    font-weight: 500;
+    /* margin-top: 1px; */
     
 
 }
@@ -63,8 +66,9 @@ html, body {
     font-family: "font-2";
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.01px;
     line-height:20px ;
+    /* margin-top: -2px; */
 }
 .logo-text .rating-text{
     width: 83.88px;
@@ -72,7 +76,7 @@ html, body {
     color: rgb(96,96, 96);
     font-size: 14px;
     font-weight: 500px;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.01px;
     line-height: 20px;
     display: block;
     font-family: "font-2";
@@ -522,9 +526,8 @@ html, body {
     display: block;
     color: rgb(235, 23, 0);
     cursor: pointer;
-    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    font-weight: 700;
+    font-family:'bold';
+    font-weight: 500;
     height: 20px;
     line-height: 20px;
     letter-spacing: -0.01px;
@@ -564,8 +567,8 @@ html, body {
      color:rgb(25, 25, 25);
    display:block;
    font-size: 32px;
-   font-weight: 700;
-   font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-weight: 500;
+   font-family: 'bold';
    height:120px;
    width:250px;
    line-height: 40px;
@@ -864,13 +867,14 @@ padding: 0 12px;
     font-size: 24px;
     line-height: 28px;
     font-weight: 300;
+    letter-spacing: -0.01px;
 
 }
 .delivery-content-1{
     color: white;
-    font-family: "font-2";
+    font-family: "bold";
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 22px;
     letter-spacing: -0.01px;
     display: block;
@@ -883,7 +887,7 @@ padding: 0 12px;
 }
 .delivery-content-2{
      color: white;
-    font-family: 'font-3';
+    font-family: 'font-2';
     filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 2px 8px);
     font-size: 14px;
     line-height: 20px;
@@ -917,7 +921,7 @@ padding: 0 12px;
 
 }
 .grocery-btn span{
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 14px;
     line-height: 20px;
     font-weight: 500;
@@ -970,7 +974,7 @@ padding: 0 12px;
     text-align: center;
     max-width: 300px;
     color: #191919ff;
-    font-family: "font-2";
+    font-family: "bold";
     font-size: 24px;
     font-weight: 700;
     line-height: 28px;
@@ -1015,7 +1019,7 @@ padding: 0 12px;
     color: rgb(25, 25, 25);
     display: block;
     font-size: 24px;
-    font-family: 'font-2';
+    font-family: 'bold';
     font-weight: 700;
     line-height: 28px;
     max-width: 90%;
@@ -1096,7 +1100,7 @@ padding: 0 12px;
     color: #fff;
     border-radius: 9999px;
     text-decoration: none;
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
@@ -1115,7 +1119,7 @@ padding: 0 12px;
     color: #fff;
     border-radius: 9999px;
     text-decoration: none;
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
@@ -1176,7 +1180,7 @@ padding: 0 12px;
     text-align: center;
     max-width: 300px;
     color: #191919ff;
-    font-family: "font-2";
+    font-family: "bold";
     font-size: 24px;
     font-weight: 700;
     line-height: 28px;
@@ -1209,7 +1213,7 @@ padding: 0 12px;
 .unlocking-wrapper-content h2{
     display: block;
     color: rgb(25, 25, 25);
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 24px;
     font-weight: 700;
     line-height: 28px;
@@ -1241,7 +1245,7 @@ padding: 0 12px;
     color: #fff;
     border-radius: 9999px;
     text-decoration: none;
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
@@ -1274,7 +1278,7 @@ display: block;
 .become-partner-wrapper-content h2{
      display: block;
     color: rgb(25, 25, 25);
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 24px;
     font-weight: 700;
     line-height: 28px;
@@ -1307,12 +1311,12 @@ display: block;
     color: #fff;
     border-radius: 9999px;
     text-decoration: none;
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.01px;
-     width: 136.52px;
+    
      height: 32px;
 }
 .neighborhood-container{
@@ -1327,7 +1331,7 @@ display: block;
     text-align: center;
     margin-bottom: 20px;
     color: rgb(25, 25, 25);
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size:32px;
     font-weight: 700;
     line-height: 40px;
@@ -1357,6 +1361,7 @@ display: block;
     transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     padding-bottom: 12px;
     box-shadow: 0 3px 0 #191919ff;
+    border-bottom: 3px solid transparent;
 }
 .neighborhood-wrapper-top-cities:hover{
     background-color: #f1f1f1ff;
@@ -1367,7 +1372,7 @@ display: block;
   
     display: block;
      color:rgb(25, 25, 25);
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 16px;
     font-weight: 700;
     letter-spacing: -0.01px;
@@ -1394,6 +1399,8 @@ display: block;
     background: #ffffff;
     transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     padding-bottom: 12px;
+     box-shadow: 0 2px 0 #f1f1f1ff;
+     border-bottom: 2px solid transparent;
 }
 .cities-list{
     display: flex;
@@ -1431,7 +1438,7 @@ display: block;
 .see-more-text{
     margin-right: 8px;
     color: #191919ff;
-    font-family: 'font-2';
+    font-family: 'bold';
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
@@ -1612,7 +1619,7 @@ display: block;
 
 }
 .app-store-wrapper{
-    padding-top: 32px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
