@@ -225,7 +225,7 @@ html, body {
     justify-content: center;
     align-items: center;
     width: 350px;
-    height: 100px;
+    /* height: 100px; */
     max-width: 100%;
 }
 .input-adderss{
@@ -282,6 +282,17 @@ html, body {
 
 .logintext {
     display: flex;
+    align-items: center;
+    font-family: "bold";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    color: #191919;
+    white-space: nowrap;
+}
+.sigintext{
+     display: flex;
     align-items: center;
     font-family: "bold";
     font-size: 14px;
@@ -428,7 +439,10 @@ html, body {
 }
 .main-section-container{
    max-width: 418px;
-   margin: 0 auto
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
     }
     .main-section-container-inside{
         display: flex;
@@ -530,6 +544,7 @@ html, body {
     letter-spacing: -0.01px;
     text-align: center;
     width:85.283px;
+    font-size: 14px;
 }
 .arrow-gap
 {
@@ -552,9 +567,9 @@ html, body {
     white-space: nowrap;
     color: rgb(235, 23, 0);
     cursor: pointer;
-    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'bold';
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 20px;
     letter-spacing: -0.01px;
     /* text-align: center; */
@@ -595,9 +610,9 @@ html, body {
 display: block;
     color: rgb(235, 23, 0);
     cursor: pointer;
-    font-family: "TT Norms", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'bold';
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     height: 20px;
     line-height: 20px;
     letter-spacing: -0.01px;
@@ -839,6 +854,8 @@ padding: 0 12px;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
  
 }
@@ -880,7 +897,6 @@ padding: 0 12px;
     text-align: center;
     margin-top: 10px;
     padding: 0;
-    width:343.583px ;
 }
 .delivery-content-2{
      color: white;
@@ -993,8 +1009,6 @@ padding: 0 12px;
     flex-direction: column;
     min-width: 90%;
     padding: 20px;
-    /* width:382.792px; */
-    height:422.667px;
     
 }
 .helping-silder1-image{
@@ -1102,7 +1116,6 @@ padding: 0 12px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.01px;
-     width: 106.56px;
   height: 32px;
 }
 /* silder2 */
@@ -1121,7 +1134,6 @@ padding: 0 12px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.01px;
-     width: 110.52px;
   height: 32px;
   margin-top: 20px;
 }
@@ -1130,7 +1142,7 @@ padding: 0 12px;
     color: rgb(25, 25, 25);
     font-family: 'font-2';
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.01px;
     line-height: 18px;
     margin-top: 10px;
@@ -1152,7 +1164,6 @@ padding: 0 12px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.01px;
-     width: 135.18px;
   height: 32px;
   margin-top: 20px;
 }
@@ -1247,7 +1258,7 @@ padding: 0 12px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.01px;
-     width: 136.52px;
+    
      height: 32px;
 }
 .become-partner-wrapper{
@@ -1733,6 +1744,13 @@ display: block;
 .map-logo{
     display: none;
 }
+.sigintext{
+    display: none;
+}
+.tabletimage{
+    display: none;
+}
+
 /* media query */
 @media screen and (min-width:480px) {
     .neighborhood-container {
@@ -1870,7 +1888,275 @@ color: #ffffffff;
   .address-search-bar{
     width: 408px;
     padding: 8px 8px 8px 20px;
+    min-height: 56px;
 
   }
+  .input-adderss input{
+    margin-left: -114px;
+  }
+  .logintext{
+    display: none;
+  }
+  .loginbtn{
+    width: 88.6px;
+  }
+  .sigintext {
+    display: block; 
+  }
+  
+  .address-search-bar:hover{
+    border: 2px solid #4969f5ff;
+  }
+  .value1-main-section-container-bike{
+    margin: 0 64px 0 0;
+  }
+  .bike-image{
+    height: 124px;
+    width: 124px;
+}
+.value1-main-section-container{
+max-width: 100%;
+}
+.main-section-container{
+    max-width: 768px;
+  
+}
+.main-section-container-inside{
+    margin: 32px 0;
+}
+.everything {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 60px;
+    max-width: 1184px;
+    margin-bottom: -60px;
+}
+.lazy-load-img{
+    height: 500px;
+    /* width: 294.6px; */
+}
+.lazy-load-heading h2{
+    font-size: 40px;
+    line-height: 40px;
+}
+.lazy-load-heading-text{
+margin-top: 20px;
+font-size: 20px;
+line-height: 24px;
+}
+.lazy-load-heading-content{
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 10px;
+
+}
+.find-restaurant{
+    margin-top: 30px;
+}
+.find-restaurant-btn-text{
+font-size: 16px;
+line-height: 22px;
+width: 100%;
+}
+.find-restaurant a{
+    min-height: 40px;
+    width: auto;
+    max-width: 100%;
+}
+.dashpass-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 80px;
+}
+.everything2{
+    flex-direction: row;
+    gap: 60px;
+    max-width: 1184px;
+}
+.dashpass-btn {
+    margin-top: 30px;
+}
+.dashpass-btn button{
+    min-height: 40px;
+    width: auto;
+    max-width: 100%;
+}
+.dashpass-btn span{
+    font-size: 16px;
+    line-height: 22px;
+}
+.lazy-load-heading-content.mt{
+    margin-top: 20px;
+
+}
+.grocery-banner{
+    height: 600px;
+}
+.groceries-sub h2{
+    font-size: 40px;
+    line-height: 40px;
+}
+.delivery-content-1{
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 24px;
+
+}
+.delivery-content-2{
+ font-size: 16px;
+ line-height: 22px;
+}
+.grocery-btn{
+    margin-top: 30px;
+}
+.grocery-btn button{
+    min-height: 40px;
+}
+.grocery-btn span{
+font-size: 16px;
+line-height: 22px;
+}
+.everything1{
+    flex-direction: row-reverse;
+    gap: 60px;
+    max-width: 1184px;
+    padding-top: 60px;
+    margin-bottom: -40px;
+}
+.lazy-load-heading-content.sp{
+    margin-top: 20px;
+}
+.helping-wrapper{
+    padding: 60px 20px 40px;
+    width: 100%;
+}
+.helping-wrapper-heading{
+    font-size: 32px;
+    line-height: 40px;
+    max-width: 500px;
+}
+
+.helping-scroller{
+    flex-flow: wrap;
+    overflow-y: hidden;
+}
+.helping-silder1{
+    max-width: 50%;
+    min-width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+}
+.helping-silder4{
+     max-width: 50%;
+    min-width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+}
+.mobileimage{
+    display: none;
+}
+.tabletimage{
+    display: block
+}
+
+.siderimage2{
+height: 100%;
+object-position: center center;
+min-height: 344px;
+}
+.helping-silder1-content h2{
+    max-width: 90%;
+    margin-top: 20px;
+    font-size: 40px;
+    line-height: 40px;
+}
+.helping-silder1-text1{
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 20px;
+}
+.helping-silder1-btn1{
+    margin-top: 30px;
+}
+.helping-silder1-btn1 a {
+    min-height: 40px;
+    font-size: 16px;
+    line-height: 22px ;
+    font-family: 'bold';
+
+    
+
+}
+
+.helping-silder2-btn1 a{
+    min-height: 40px;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 30px;
+    font-family: 'bold';
+
+}
+.unlocking-wrapper{
+    padding: 60px 20px 40px;
+    width: 100%;
+}
+.helping-silder3-btn1 a{
+    min-height: 40px;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 30px;
+    font-family: 'bold';
+
+
+}
+.helping-silder3-alcohol{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.unlocking-wrapper-heading{
+    font-size: 32px;
+    line-height: 40px;
+    max-width: 500px;
+}
+.unlocking-wrapper-container{
+    flex-direction: row-reverse;
+    gap: 60px;
+    max-width: 1184px;
+    margin-top: -60px;
+
+}
+.unlocking-img{
+    height: 500px;
+
+}
+.unlocking-wrapper-content{
+    /* max-width: 400px; */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.unlocking-wrapper-content h2{
+    max-width: 90%;
+    font-size: 40px;
+    line-height: 40px;
+
+}
+.unlocking-wrapper-content-text{
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 22px;
+}
+.unlocking-wrapper-btn1{
+    margin-top: 30px;
+}
+.unlocking-wrapper-btn1 a{
+    font-size: 16px;
+    line-height: 22px;
+    min-height: 40px;
+}
+.become-partner-wrapper{
+    /* padding-top: 80px; */
+}
 }
     
