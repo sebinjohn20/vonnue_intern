@@ -189,8 +189,6 @@ html, body {
     letter-spacing: 0;
     text-align: center;
     line-height: 28px;
-    width: 350px;
-    height: 56px;
     margin-bottom: 24px;
     /* display: flex;
     justify-content: center; */
@@ -1750,6 +1748,9 @@ display: block;
 .tabletimage{
     display: none;
 }
+.signforaddress{
+    display: none;
+}
 
 /* media query */
 @media screen and (min-width:480px) {
@@ -1986,6 +1987,7 @@ width: 100%;
     font-size: 16px;
     line-height: 22px;
 }
+
 .lazy-load-heading-content.mt{
     margin-top: 20px;
 
@@ -2023,6 +2025,11 @@ line-height: 22px;
     max-width: 1184px;
     padding-top: 60px;
     margin-bottom: -40px;
+}
+.lazy-load-heading{
+    margin-top: auto
+;
+    margin-bottom: auto;
 }
 .lazy-load-heading-content.sp{
     margin-top: 20px;
@@ -2124,7 +2131,7 @@ min-height: 344px;
     flex-direction: row-reverse;
     gap: 60px;
     max-width: 1184px;
-    margin-top: -60px;
+    margin-bottom: -60px;
 
 }
 .unlocking-img{
@@ -2156,7 +2163,191 @@ min-height: 344px;
     min-height: 40px;
 }
 .become-partner-wrapper{
-    /* padding-top: 80px; */
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    max-width: 1184px;
 }
+.become-partner-img{
+    height: 500px;
 }
-    
+.become-partner-wrapper-content h2{
+    font-size: 40px;
+    line-height: 40px;
+}
+.become-partner-wrapper-content{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.become-partner-wrapper-content-text{
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 22px;
+}
+.become-partner-wrapper-btn1{
+    margin-top: 30px;
+}
+.become-partner-wrapper-btn1 a{
+    min-height: 40px;
+    font-size: 16px;
+    line-height: 22px;
+}
+.neighborhood-container{
+    margin: 0 auto;
+    padding: 48px 0;
+    max-width: 1130px;
+    width: 100%;
+}
+.neighborhood-container h2{
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.footer-section1--content{
+flex-direction: row;
+}
+.footer-container footer{
+    margin: auto;
+}
+.footer-section1{
+    text-align: left;
+}
+.get-we-know-container{
+    flex-direction: row;
+}
+.get-we-know-text{
+    text-align: left;
+}
+.doing-business-container{
+    text-align: left;
+}
+.let-us-help-you-container{
+    text-align: left;
+}
+.footer-last{
+    flex-direction: row;
+}
+.footer-last-container{
+    margin-top: 0;
+}
+
+ .language{
+    padding: 0 12px;
+ } 
+ .language button{
+    width: 150px;
+    display: flex;
+    min-height: 32px;
+ }
+ .btn-div{
+    position: relative;
+ }
+ .down-arrow{
+    position: absolute;
+    top: 4px;
+    right: -12px;
+ }
+ .footer-last-container-logo{
+    margin-bottom: 2px;
+ }
+ .social-media-three{
+    margin-bottom: 3px;
+ }
+
+}
+
+/* media query for desktop */
+@media(min-width:1024px)
+{
+
+    .background-image{
+        background-image: url('https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/hero_v3/hero_desktop.png');
+        height: 650px;
+    }
+.doordash-logo svg {
+    width: 42px;
+    height: 24px;
+} 
+.logo-section{
+  height: 24px;
+} 
+.logo-section .doordash-text{
+    margin-left: 12px;
+} 
+.doordash-text{
+    line-height: 0;
+}
+.doordash-text svg{
+    width: 155px;
+    height: 18px;
+
+}
+.doordash-heading h1{
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 900;
+    max-width: 750px;
+}
+.doordash{
+        width: auto;
+
+}
+.sigintext{
+    display: none;
+
+}
+.signforaddress{
+  display: flex;
+    align-items: center;
+    font-family: "bold";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    color: #191919;
+    white-space: nowrap;
+    }
+    .loginbtn{
+        width: 203.76px;
+     
+    }
+    .lazy-load-heading h2{
+         width: 346.79px;
+    }
+    .lazy-load-heading-content{
+        width: 400px;
+    }
+    .everything2{
+        height: 504.667px;
+    }
+    .lazy-load-img.tabletimage.desktop{
+        width: 547.833px;
+    }
+    .everything1 .lazy-load-heading{
+        width: 376.167px;
+    }
+    .everything1 .lazy-load-heading-content.sp{
+        width: 376.176px;
+    }
+     .everything1 .lazy-load-heading h2{
+        width: 338.542px;
+     }
+   .siderimage2.tabletimage{
+    height: 472px;
+   }
+   .unlocking-wrapper-content-text{
+    width: 400px;
+   }
+   .unlocking-wrapper-content{
+    margin-top: 124.333px;
+    margin-bottom: 124.333px;
+   }
+   .become-partner-img.tabletimage{
+    width: 524px;
+   }
+   .become-partner-wrapper-content{
+   margin-top: 124.333px;
+        margin-bottom: 124.333px;
+   }
+} 
