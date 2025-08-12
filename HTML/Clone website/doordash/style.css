@@ -243,6 +243,8 @@ html, body {
     width: 100%;
     
 }  
+
+
 .address-search-bar .arrow{
     width: 40px;
     height: 40px;
@@ -655,7 +657,7 @@ display: block;
     letter-spacing: -0.01px;
     display: block;
     margin-top: 20px;
-    /* width: 346.79px; */
+    width: 346.79px;
 }
 .lazy-load-heading-text{
     color:rgba(25,25,25);
@@ -703,7 +705,7 @@ display: block;
     cursor: pointer;
     color: white;
     text-decoration: none;
-    width: 131.84px;
+    width: 130.740px;
     padding: 12px 0;
     border: none;
     align-items: center;
@@ -998,6 +1000,7 @@ padding: 0 12px;
     flex-direction: row;
     overflow-x: scroll;
     width: 100%;
+    scrollbar-width: none;
     /* width:425.333px; */
 }
 .helping-silder1{
@@ -1702,6 +1705,15 @@ display: block;
     /* padding-left: 3px;
     padding-right: 3px;
     margin: 3px; */
+    width: 150px;
+    height: 32px;
+    position: relative;
+}
+.down-arrow{
+    position: absolute;
+    top: 4px;
+    right: 11.99px;
+
 }
 
 .language button{
@@ -1929,13 +1941,17 @@ max-width: 100%;
 .everything {
     display: flex;
     flex-direction: row-reverse;
-    gap: 60px;
+    gap: 49px;
     max-width: 1184px;
-    margin-bottom: -60px;
+    margin-bottom: -56px;
 }
 .lazy-load-img{
     height: 500px;
     /* width: 294.6px; */
+}
+.everything1 .lazy-load-img.tabletimage
+{
+    min-width: 345.271px;
 }
 .lazy-load-heading h2{
     font-size: 40px;
@@ -1951,9 +1967,11 @@ line-height: 24px;
     font-size: 16px;
     line-height: 22px;
     margin-top: 10px;
-    min-width: 322.72px;
 
 }
+    .everything .lazy-load-heading-content{
+        max-width: 90%;
+    }
 .find-restaurant{
     margin-top: 30px;
 }
@@ -1978,6 +1996,9 @@ width: 100%;
     gap: 60px;
     max-width: 1184px;
 }
+.everything2 .lazy-load-heading{
+    margin-top: 4px;
+}
 .dashpass-btn {
     margin-top: 30px;
 }
@@ -1997,6 +2018,7 @@ width: 100%;
 }
 .grocery-banner{
     height: 600px;
+    margin-top: 4px ;
 }
 .groceries-sub h2{
     font-size: 40px;
@@ -2022,17 +2044,29 @@ width: 100%;
 font-size: 16px;
 line-height: 22px;
 }
+.everything .lazy-load-img{
+width: 100%;
+}
+.everything .lazy-load-img.tabletimage{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    min-width: 293.833px;
+    
+}
 .everything1{
     flex-direction: row-reverse;
-    gap: 60px;
+    gap: 36px;
     max-width: 1184px;
     padding-top: 60px;
     margin-bottom: -40px;
 }
-.lazy-load-heading{
-    margin-top: auto
-;
-    margin-bottom: auto;
+.everything1 .lazy-load-heading{
+    margin-top: 4px;
+}
+ .everything .lazy-load-heading{
+    margin-top: 4px;
+   
 }
 .lazy-load-heading-content.sp{
     margin-top: 20px;
@@ -2040,6 +2074,7 @@ line-height: 22px;
 .helping-wrapper{
     padding: 60px 20px 40px;
     width: 100%;
+    margin-top: 4px;
 }
 .helping-wrapper-heading{
     font-size: 32px;
@@ -2203,8 +2238,8 @@ min-height: 344px;
     width: 100%;
 }
 .neighborhood-container h2{
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .footer-section1--content{
@@ -2228,9 +2263,11 @@ flex-direction: row;
 .let-us-help-you-container{
     text-align: left;
 }
+.social-media{
+    margin-top: -3px;
+}
 .footer-last{
     flex-direction: row;
-    height: 36px;
 }
 .footer-last-container{
     margin-top: 0;
@@ -2251,7 +2288,7 @@ flex-direction: row;
  .down-arrow{
     position: absolute;
     top: 4px;
-    right: -12px;
+    right: -10px;
  }
  .footer-last-container-logo{
     margin-bottom: 2px;
@@ -2326,14 +2363,18 @@ flex-direction: row;
     .lazy-load-heading-content{
         width: 400px;
     }
+    .everything .lazy-load-heading-content{
+        max-width: 100%;
+    }
     .everything1{
         /* height: 504px; */
     }
-    .everything2{
-        height: 504.667px;
-    }
-    .lazy-load-img.tabletimage.desktop{
-        width: 547.833px;
+        .everything{
+            gap: 60px;
+        }
+   
+    .everything .lazy-load-img.tabletimage{
+        min-width: 524px;
     }
     .everything1 .lazy-load-heading{
         width: 376.167px;
@@ -2344,6 +2385,12 @@ flex-direction: row;
      .everything1 .lazy-load-heading h2{
         width: 338.542px;
      }
+     .everything .lazy-load-heading{
+            margin-top: 4px;
+        }
+   .everything1{
+    gap: 61px;
+   }
    .siderimage2.tabletimage{
     height: 472px;
    }
@@ -2371,13 +2418,35 @@ flex-direction: row;
   
     align-items: flex-end;
  }
- 
- .footer-container{
+     .footer-container footer{
+        flex: 1;
+        height: 868px;
+     }
+ .footer{
     /* width: 1184px; */
+    height: 868px;
+ }
+ .get-we-know-container{
+    /* margin-bottom: -2px; */
  }
     .footer-last {
         justify-content: space-between;
+        height: 96px;
 
+    }
+    .footer-last-container{
+        align-items: center;
+    }
+    .social-media{
+        margin-top: 0;
+    }
+    .social-media-three{
+        height: 32px;
+        margin-bottom: 1px;
+    }
+    .down-arrow{
+        top: 4px;
+        right: 11.99px;
     }
 } 
 
@@ -2404,9 +2473,7 @@ flex-direction: row;
     .become-a-dasher-heading{
         text-align: center;
     }
-    .become-a-dasher-heading{
-        text-align: center;
-    }
+    
     .become-a-dasher-content{
         text-align: center;
         margin-top: 8px;
@@ -2469,4 +2536,58 @@ flex-direction: row;
                     max-width: 1160px;
                     flex: 1 1 0%;
                 }     
+}
+@media(min-width:1440px){
+        .everything{
+            max-width: 1440px;
+            
+        }
+        .everything2 {
+            max-width: 1440px;
+            width: 1184px;
+            height: 504px;
+            margin-left: 76px;
+            margin-top: -2px;
+
+        }
+        .everything2 .lazy-load-img.tabletimage{
+            width: 724px;
+        }
+        .everything2 .lazy-load-heading{
+            margin-top: 2px;
+        }
+        .everything2 .lazy-load-heading{
+            width: 360px;
+        }
+        .everything1{
+            margin-left: 22px;
+            margin-top: -3px;
+        }
+    .everything1 .lazy-load-heading{
+        margin-top: 6px;
+    }
+    .siderimage2.tabletimage{
+       
+    }
+        
+        .helping-silder1-image{
+            width: 552px;
+            height: 552px;
+        }
+        .helping-silder1{
+            display: flex;
+            align-items: center;
+            width: 592px;
+            height: 804px;
+        }
+            .helping-silder4{
+                display: flex;
+                align-items: center;
+                width: 592px;
+                height: 804px;
+            }
+        .footer-container{
+            width: 1440px;
+        }
+      
 }
