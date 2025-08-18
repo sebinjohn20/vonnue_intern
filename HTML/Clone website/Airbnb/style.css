@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fff;
+}
+.searchbar-container{
+    margin: 12px 24px 0px 24px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+.searchtext-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    border-radius: 40px;
+    background-color: #ffffff;
+    width: 100%;
+}
+.searchtext-div button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4px;
+    border: 0.5px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+        width: 100%;
+        min-height: 55px;
+        border-radius: 1000px;
+        background-color: #ffffff;
+        gap: 10px;
+}
+
+.searchtext-div button span h1{
+    font-family: 'bold';
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    white-space: nowrap;
+}
+.navigation-container{
+
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 64px 0px;
+}
+.navigation-container a{
+    margin-bottom: 8px;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 68px;
+    text-decoration: none;
+     color: #6A6A6A;
+     align-items: center;
+
+}
+.navigation-container img{
+height: 36px;
+width: 36px;
+display: block;
+}
+.navigation-container .image{
+    margin-bottom: 6px;
+    margin-top: 4px ;
+    position: relative;
+}
+.navigation-container a .homes{
+    line-height: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #6A6A6A;
+    font-family: 'bold';
+
+}
+.navigation-container a .experiences
+{
+    line-height: 0.625rem;
+    font-size: 0.75rem;
+    letter-spacing: -0.01em;
+    color: #6A6A6A; 
+    font-family: 'bold';
+}
+.new-text-container{
+    padding: 3px 6px;
+    box-shadow: 0 0.953955px 1.90791px rgba(60, 77, 107, 0.25), 0 3.81582px 5.72373px 
+    rgba(60, 77, 107, 0.25), inset 0 0 2px 0.5px #001c40, inset 0 -1px 3px #d7ebff;
+    background: linear-gradient(357.5deg, #3e567c 1.59%, #3a5475 21.23%, #2d3c5b 58.6%, #809dc0 97.4%);
+    border-radius: 10px 10px 10px 2px;
+    left: 100%;
+    top: -1px;
+    position: absolute;
+    width: 31.7188px;
+    height: 17.4375px;
+    display: block;
+    
+}
+.new-text-wrapper{
+    line-height:0.625rem;
+    font-weight: 700;
+    font-size: 0.5rem;
+    display: block;
+
+    font-family: 'bold';
+    letter-spacing: 0.04em;
+    color: #ffffff;
+}
+.main{
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.bengaluru-container{
+    margin: 32px 0 14px 24px;
+    display: flex;
+    align-items: center;
+    
+}
+.bengaluru-container-text{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-family: 'bold';
+    line-height: 1.5rem;
+    font-size: 1.125rem;
+    letter-spacing: -0.01125rem;
+}
+.bengaluru-container-text-arrow
+{
+
+margin-left: 2px;
+}
+main{
+box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+
+}
+.bengaluru-scroller-container{
+    padding: 4px 24px 8px 24px;
+
+}
+.bengaluru-scroller-container-image{
+    display: flex;
+    flex-direction: column;
+    gap: 8px 12px;
+
+}
+.bengaluru-scroller-image-one{
+    border-radius: 12px;
+    position: relative;
+    height: 100%;
+}
+.hotelone-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+        border-radius: 20px;
+
+}
