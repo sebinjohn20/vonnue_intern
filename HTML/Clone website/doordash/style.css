@@ -97,7 +97,7 @@ html, body {
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    width: 66.64px;
+    width: 66.208px;
     height: 32px;
     background: #eb1700;
     color:#ffffffff;
@@ -142,7 +142,7 @@ html, body {
     border-radius: 9999px;
     background-color: rgb(235, 23, 0);
     color:rgb(255, 255, 255);
-    width: 101.93px;
+    width: 100.802px;
     border: none;
     height: 40px;
     font-size: 16px;
@@ -994,10 +994,10 @@ padding: 0 12px;
     letter-spacing: -0.01px;
     
 }
-.scroller-desktop{
+/* .scroller-desktop{
     display: none;
 
-}
+} */
 .helping-scroller{
     background-color: rgb(254, 241, 238);
     display: flex;
@@ -2022,7 +2022,7 @@ width: 100%;
 }
 .grocery-banner{
     height: 600px;
-    margin-top: 4px ;
+    /* margin-top: 4px ; */
 }
 .groceries-sub h2{
     font-size: 40px;
@@ -2209,7 +2209,7 @@ min-height: 344px;
     display: flex;
     flex-direction: row;
     gap: 60px;
-    max-width: 1184px;
+    /* max-width: 1184px; */
 }
 .become-partner-img{
     height: 500px;
@@ -2292,7 +2292,7 @@ flex-direction: row;
  .down-arrow{
     position: absolute;
     top: 4px;
-    right: -10px;
+    right: 12px;
  }
  .footer-last-container-logo{
     margin-bottom: 2px;
@@ -2592,7 +2592,8 @@ flex-direction: row;
                 height: 804px;
             }
         .footer-container{
-            max-width:100%
+            max-width:100%;
+            width: 100%;
         }
         .scroller-desktop{
     background-color: rgb(254, 241, 238);
@@ -2617,9 +2618,7 @@ flex-direction: row;
     width: 1440px;
     margin-left: 123px;
 }
-.become-partner-wrapper{
-    max-width: 100%;
-}
+
 .become-partner-img.tabletimage{
     width: 724px;
    
@@ -2639,6 +2638,37 @@ flex-direction: row;
 }
 .become-partner-wrapper{
     gap: 0;
+    width: 100%;
+}
+.start-earning-btn svg{
+    margin-top: 2px;
+
+}
+.everything{
+  
+    margin-top: 10px ;
+}
+.main-section-container{
+    margin-top: 12px;
+}
+.grocery-banner{
+    margin-top: 2px;
+}
+.everything2 .lazy-load-heading{
+    margin-top: 4px;
+}
+.everything1{
+    margin-top: 0;
+}
+.footer-container{
+    width: 100vw;
+}
+.become-partner-wrapper{
+    width: 100%;
+    
+}
+.footer-container{
+    width: 100%;
 }
       
 }

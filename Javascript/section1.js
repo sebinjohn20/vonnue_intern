@@ -139,9 +139,138 @@
 // }
 // console.log(newarray)
 //  Count vowels in a string
-let str5 = "hello world program";
-let noSpace = "";
-for (let i = 0; i < str5.length; i++) {
-    if (str5[i] === " ") {
-        noSpace += str5[i];
- 
+// let str="javascript";
+// let vowels="aeiouAEIOU";
+// let vowelscount=0;
+// for(let i=0; i<str.length;i++)
+//     if(vowels.includes(str[i])){
+//         vowelscount++;
+//     }
+// console.log(vowelscount)
+// let str="hello world program";
+// let reversewords=str.split(" ").reverse().join(" ");
+// console.log(reversewords)
+// Find Prime Numbers in a Range
+// let start=10,end=30;
+// array=[];
+// for(let num =start;num<=end;num++){
+//     let isprime=true;
+//     if(num<2)isprime=false;
+//     for(let i=2; i<Math.sqrt(num); i++){
+//         if(num%i==0){
+//             isprime=false;
+//             break;
+            
+//         }
+        
+//     }
+// if(isprime){
+//     array.push(num)
+// }
+    
+// }
+// console.log(array);
+// 22. Sum of Prime Numbers in a Range
+// let sumprime=0;
+// for(let num=2;num<=20;num++)
+// {
+//     let isprime=true;
+//     for(let i=2 ; i<Math.sqrt(num); i++){
+//         if(num % i===0){
+//             isprime=false;
+//             break;
+//         }
+//     }
+//     if(isprime) sumprime+=num;
+// }
+// console.log(sumprime);
+// 49. Find Prime Numbers in Array
+// let array=[2,3,4,5,6,7,8,9,10]
+// let arrayprime=[];
+// for(let i=0;i<array.length;i++){
+//     let num= array[i]
+//     let isprime =true
+//     if(num<2)isprime=false;
+//     for(let j=2;j<=Math.sqrt(num);j++){
+//         if(num%j===0){
+//             isprime=false;
+//             break;
+//         }
+//     }
+//     if(isprime) arrayprime.push(num);
+
+// }
+// console.log(arrayprime);
+// let colors=["red", "green","blue", "yellow"];
+// colors.pop()
+// console.log(colors);
+// // Remove first element
+// colors.shift();
+// console.log(colors)
+// colors.splice(1,1);
+// // console.log(colors);
+// let person={
+//     name: "Sebin",
+//     age:25,
+//     city:"New York"
+// };
+// console.log(person);
+// console.log(person.name);
+// person.country="USA";
+// person.place="pulpally";
+// console.log(person);
+// delete person.place;
+// console.log(person);
+// for(let key in person){
+//     console.log(key+":" +person[key]);
+// }
+// let employee={
+//     name:"john",
+//     position:"Develooper",
+//     address:{
+//         city:"Bangalore",
+//         zip: 560001
+//     }
+// };
+// console.log(employee.address.city)
+// let obj={ a:1 ,b:2,c:3}
+// console.log(Object.keys(obj));
+// console.log(Object.values(obj));
+// console.log(Object.entries(obj))
+// 
+// 
+// let obj1={ a:1 , b:2}
+// let obj2={ c:3,d:5}
+// let merge={...obj1,...obj2};
+// console.log(merge);
+// 12. Object with Dynamic Keys
+// let keyname="email";
+// let user={
+//     name: "bob",
+//     [keyname]:"bob@Example.com"
+    
+// };
+// console.log(user.email)
+// 13. Object Freeze / Seal
+// let obj={name:"Alice"};
+// Object.freeze(obj);
+// obj.name="bob";
+// console.log(obj.name);
+// let obj={name:"Alice"};
+// Object.seal(obj);
+// obj.name="Bob";
+// obj.age=25;
+// console.log(obj);
+// let obj={a:1, b:2,c:3};
+// console.log(Object.keys(obj).length);
+// 1. Convert Array of Objects to Single Object by ID
+// let user=[
+//     { id: 1, name:"Alice"},
+//     {id:2, name:"Bob"}
+// ];
+// let byId=Object.fromEntries(user.map(u=>[u.id,u]))
+// console.log(byId);
+// 6. Write a code to create an arrow function?
+
+let add =(a,b)=>a+b;
+console.log(add(6,2))

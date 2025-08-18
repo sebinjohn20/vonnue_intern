@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Work Time Monitor</title>
+  <style>
+    /* =========================
+       Design Tokens
+       ========================= */
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #111831;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --text: #e8ecf1;
+      --muted: #9ba3b4;
+      --primary: #7c5cff;
+      --primary-600: #6b4cf2;
+      --accent: #19c37d;
+      --danger: #ff6b6b;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.05) inset;
+      --radius-xl: 18px;
+      --radius-lg: 14px;
+      --radius-md: 12px;
+      --blur: 10px;
+      --ring: 0 0 0 3px rgba(124,92,255,.35);
+      --grid-gap: clamp(10px, 2.5vw, 16px);
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --bg-soft: #ffffff;
+        --card: rgba(255,255,255,0.9);
+        --border: rgba(15,23,42,0.08);
+        --text: #0f172a;
+        --muted: #475569;
+        --shadow: 0 10px 24px rgba(2,6,23,0.08);
+      }
+    }
+
+    /* =========================
+       Base / Reset
+       ========================= */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 80% -20%, rgba(124,92,255,.18), transparent 60%),
+                  radial-gradient(1000px 800px at -10% 120%, rgba(25,195,125,.15), transparent 50%),
+                  var(--bg);
+      letter-spacing: 0.2px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: 0 16px 24px;
+    }
+
+    /* =========================
+       Header
+       ========================= */
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: space-between;
+      backdrop-filter: saturate(1.2) blur(var(--blur));
+      -webkit-backdrop-filter: saturate(1.2) blur(var(--blur));
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .logo {
+      width: 36px; height: 36px; border-radius: 10px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 10px 20px rgba(124,92,255,.35);
+      font-weight: 800;
+      color: white;
+    }
+    .title { font-size: clamp(18px, 2.8vw, 22px); font-weight: 800; }
+    .subtitle { color: var(--muted); font-size: 13px; }
+
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .btn {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.02));
+      color: var(--text);
+      padding: 10px 14px; border-radius: 12px; cursor: pointer; font-weight: 600;
+      transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: rgba(124,92,255,.5); box-shadow: 0 8px 18px rgba(124,92,255,.25); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-600)); color: #fff; border: none; box-shadow: 0 10px 24px rgba(124,92,255,.45); }
+    .btn-primary:hover { box-shadow: 0 12px 26px rgba(124,92,255,.55); }
+
+    /* Theme toggle */
+    .toggle {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px; border-radius: 12px; border: 1px solid var(--border);
+      background: var(--card);
+    }
+    .switch { appearance: none; width: 46px; height: 26px; border-radius: 999px; background: #334155; position: relative; outline: none; cursor: pointer; transition: background .2s ease; border: 1px solid var(--border); }
+    .switch::after { content: ""; position: absolute; top: 50%; left: 2px; transform: translateY(-50%); width: 22px; height: 22px; border-radius: 50%; background: white; transition: left .2s ease; }
+    .switch:checked { background: var(--primary); }
+    .switch:checked::after { left: 22px; }
+
+    /* =========================
+       Card + Form
+       ========================= */
+    .card {
+      margin-top: 16px; padding: 18px; border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur));
+      box-shadow: var(--shadow);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: var(--grid-gap);
+    }
+    @media (max-width: 860px) {
+      .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    .field { display: grid; gap: 8px; }
+    .label { font-size: 12px; color: var(--muted); letter-spacing: .3px; }
+    .input {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      outline: none;
+      transition: box-shadow .15s ease, border-color .15s ease, background .2s ease;
+    }
+    .input:focus { box-shadow: var(--ring); border-color: var(--primary); }
+
+    .actions { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* =========================
+       Table
+       ========================= */
+    .table-wrap { margin-top: 18px; overflow: auto; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card); }
+    thead th {
+      position: sticky; top: 0; z-index: 1;
+      background: linear-gradient(180deg, rgba(124,92,255,.15), rgba(124,92,255,.05));
+      text-align: left; font-size: 12px; letter-spacing: .4px; color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 14px;
+    }
+    tbody td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text); }
+    tbody tr:hover { background: rgba(124,92,255,.08); }
+    tbody tr:nth-child(odd) { background: rgba(255,255,255,.02); }
+    tfoot td { padding: 12px 14px; font-weight: 700; color: var(--text); background: linear-gradient(180deg, rgba(25,195,125,.15), rgba(25,195,125,.05)); }
+
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; border: 1px solid var(--border); background: rgba(25,195,125,.1); }
+
+    .danger { color: #fff; background: var(--danger); border: none; }
+
+    /* =========================
+       Toast
+       ========================= */
+    .toast { position: fixed; right: 16px; bottom: 16px; padding: 12px 14px; border-radius: 12px; background: var(--bg-soft); border: 1px solid var(--border); box-shadow: var(--shadow); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .25s ease, transform .25s ease; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo">⏱️</div>
+        <div>
+          <div class="title">Daily Work Time Monitor</div>
+          <div class="subtitle">Log start, lunch and end times — duration auto-calculated</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <label class="toggle" title="Toggle theme">
+          <input id="themeSwitch" type="checkbox" class="switch" />
+        </label>
+        <button id="clearAll" class="btn danger">Clear All</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <form id="entryForm" onsubmit="event.preventDefault(); addEntry();">
+        <div class="form-grid">
+          <div class="field">
+            <label class="label" for="date">Date</label>
+            <input class="input" type="date" id="date" required />
+          </div>
+          <div class="field">
+            <label class="label" for="start">Start</label>
+            <input class="input" type="time" id="start" required />
+          </div>
+          <div class="field">
+            <label class="label" for="lunchStart">Lunch Start</label>
+            <input class="input" type="time" id="lunchStart" required />
+          </div>
+          <div class="field">
+            <label class="label" for="lunchEnd">Lunch End</label>
+            <input class="input" type="time" id="lunchEnd" required />
+          </div>
+          <div class="field">
+            <label class="label" for="end">End</label>
+            <input class="input" type="time" id="end" required />
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Add Entry</button>
+          <button type="button" class="btn" onclick="downloadCSV()">Export CSV</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="table-wrap">
+      <table id="logTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Start</th>
+            <th>Lunch Start</th>
+            <th>Lunch End</th>
+            <th>End</th>
+            <th>Duration</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">Total for Selected Date</td>
+            <td id="totalCell" colspan="2"><span class="badge">0h 0m</span></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">Saved</div>
+  </div>
+
+  <script>
+    // ======== Config: Google Apps Script URL (optional) ========
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJ7vBocE0R1EcrQvgVm6D2AJSfhY1v6hQTeSTxvfd-eN4ODD9Jw1GYWSy1bF9AdbEU/exec"
+
+    // ======== Theme ========
+    const themeSwitch = document.getElementById('themeSwitch');
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      document.documentElement.setAttribute('data-theme', storedTheme);
+      themeSwitch.checked = storedTheme === 'dark';
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeSwitch.checked = true;
+    }
+    themeSwitch.addEventListener('change', () => {
+      const mode = themeSwitch.checked ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', mode);
+      localStorage.setItem('theme', mode);
+    });
+
+    // ======== Utilities ========
+    function toDate(time) { return new Date(`1970-01-01T${time}:00`); }
+
+    function formatDuration(ms) {
+      const sign = ms < 0 ? -1 : 1; // protect against negatives
+      ms = Math.abs(ms);
+      const h = Math.floor(ms / 3_600_000);
+      const m = Math.floor((ms % 3_600_000) / 60_000);
+      return `${sign < 0 ? '-' : ''}${h}h ${m}m`;
+    }
+
+    function calcDuration(start, lunchStart, lunchEnd, end) {
+      let startT = toDate(start);
+      let lunchStartT = toDate(lunchStart);
+      let lunchEndT = toDate(lunchEnd);
+      let endT = toDate(end);
+
+      if (endT < startT) endT.setDate(endT.getDate() + 1);
+      if (lunchEndT < lunchStartT) lunchEndT.setDate(lunchEndT.getDate() + 1);
+
+      const gross = endT - startT;
+      const lunch = lunchEndT - lunchStartT;
+      const net = gross - lunch;
+      return { gross, lunch, net, label: formatDuration(net) };
+    }
+
+    function showToast(msg = 'Saved') {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => t.classList.remove('show'), 1600);
+    }
+
+    // ======== State (localStorage) ========
+    const KEY = 'worklog:entries';
+    let entries = JSON.parse(localStorage.getItem(KEY) || '[]');
+
+    function persist() { localStorage.setItem(KEY, JSON.stringify(entries)); }
+
+    // ======== Rendering ========
+    const tbody = document.querySelector('#logTable tbody');
+    const totalCell = document.getElementById('totalCell');
+
+    function render() {
+      tbody.innerHTML = '';
+      const selectedDate = document.getElementById('date').value || null;
+      let totalMs = 0;
+
+      entries.forEach((e, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${e.date}</td>
+          <td>${e.start}</td>
+          <td>${e.lunchStart}</td>
+          <td>${e.lunchEnd}</td>
+          <td>${e.end}</td>
+          <td><span class="badge">${e.duration}</span></td>
+          <td style="text-align:right"><button class="btn" onclick="removeEntry(${idx})">Delete</button></td>
+        `;
+        tbody.appendChild(tr);
+        if (!selectedDate || selectedDate === e.date) {
+          // parse back duration by recomputing to avoid parsing text
+          const d = calcDuration(e.start, e.lunchStart, e.lunchEnd, e.end).net;
+          totalMs += d;
+        }
+      });
+
+      totalCell.innerHTML = `<span class="badge">${formatDuration(totalMs)}</span>`;
+    }
+
+    function removeEntry(idx) {
+      entries.splice(idx, 1);
+      persist();
+      render();
+      showToast('Deleted');
+    }
+
+    // ======== CSV Export ========
+    function downloadCSV() {
+      const header = ['Date','Start','Lunch Start','Lunch End','End','Duration'];
+      const rows = entries.map(e => [e.date, e.start, e.lunchStart, e.lunchEnd, e.end, e.duration]);
+      const csv = [header, ...rows].map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'worklog.csv'; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // ======== Google Sheets send (optional) ========
+    async function sendToSheet(payload) {
+      if (!SCRIPT_URL) return; // ignored if not configured
+      try {
+        const res = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const json = await res.json().catch(() => ({}));
+        if (res.ok) {
+          showToast('Saved to Google Sheet');
+        } else {
+          console.warn('Sheet error:', json);
+          showToast('Local save ok. Sheet failed');
+        }
+      } catch (e) {
+        console.warn('Sheet fetch failed:', e);
+        showToast('Local save ok. Sheet offline');
+      }
+    }
+
+    // ======== Add Entry ========
+    function addEntry() {
+      const date = document.getElementById('date').value;
+      const start = document.getElementById('start').value;
+      const lunchStart = document.getElementById('lunchStart').value;
+      const lunchEnd = document.getElementById('lunchEnd').value;
+      const end = document.getElementById('end').value;
+
+      if (!date || !start || !lunchStart || !lunchEnd || !end) {
+        showToast('Fill all fields');
+        return;
+      }
+
+      const { label } = calcDuration(start, lunchStart, lunchEnd, end);
+
+      const entry = { date, start, lunchStart, lunchEnd, end, duration: label };
+      entries.push(entry);
+      persist();
+      render();
+      showToast('Saved');
+
+      // also send to Google Sheet if configured
+      sendToSheet(entry);
+
+      // reset time fields (keep date for easier same-day logging)
+      document.getElementById('start').value = '';
+      document.getElementById('lunchStart').value = '';
+      document.getElementById('lunchEnd').value = '';
+      document.getElementById('end').value = '';
+    }
+
+    // ======== Clear All ========
+    document.getElementById('clearAll').addEventListener('click', () => {
+      if (confirm('Delete all entries?')) {
+        entries = [];
+        persist();
+        render();
+        showToast('Cleared');
+      }
+    });
+
+    // Pre-fill date with today
+    const today = new Date();
+    const pad = (n) => String(n).padStart(2,'0');
+    const iso = `${today.getFullYear()}-${pad(today.getMonth()+1)}-${pad(today.getDate())}`;
+    document.getElementById('date').value = iso;
+
+    // Initial render
+    render();
+
+    // Recompute footer total when date field changes
+    document.getElementById('date').addEventListener('change', render);
+  </script>
+</body>
+</html>
