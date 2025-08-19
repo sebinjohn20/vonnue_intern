@@ -1,0 +1,41 @@
+@media(min-width:744px){
+
+    .header-main{
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+    .navigation-container{
+        display:grid;
+        margin-top: 8px;
+        grid-template-columns: repeat(3,min-content);
+        justify-content: center;
+        gap: 35px;
+        padding: 0;
+        
+    }
+    .navigation-container a{
+        flex-direction: row;
+        padding-left: 5px;
+        margin-left: -5px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    .new-text-container{
+        top:-10px;
+        left:100%;
+    }
+    .navigation-container a .homes{
+        margin-left: 16px;
+        line-height: 1.125rem;
+        font-size: 0.875rem;
+        color: #222222;
+    }
+    .navigation-container a .experiences{
+          line-height: 1.125rem;
+        font-size: 0.875rem;
+        margin-left: 16px;
+    }
+}

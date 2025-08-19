@@ -6,8 +6,10 @@
     <title>Airbnb.com</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="media.css">
 </head>
 <body>
+    <div class="header-main">
     <header>
         <div class="searchbar-container">
             <div class="searchtext-div">
@@ -21,6 +23,10 @@
 
         </div>
     </header>
+    <div class="header-main-mediaquery">
+        <div class="airbnblog">
+            <svg width="30" height="32" viewBox="0 0 1007 1080" style="display: block;"><path d="M949.278 666.715C875.957 506.859 795.615 344.664 713.713 184.809C698.893 155.177 670.813 98.2527 645.852 67.8412C609.971 24.1733 556.93 0.779785 503.109 0.779785C449.288 0.779785 396.247 24.1733 360.366 67.8412C335.406 98.2527 307.325 155.177 292.505 184.809C210.603 344.664 130.262 506.859 56.9404 666.715C47.5802 687.769 24.9598 737.675 16.3796 760.289C6.23941 787.581 0.779297 817.213 0.779297 846.845C0.779297 975.509 101.401 1079.22 235.564 1079.22C346.326 1079.22 434.468 1008.26 503.109 934.18C571.751 1008.26 659.892 1079.22 770.655 1079.22C904.817 1079.22 1006.22 975.509 1006.22 846.845C1006.22 817.213 999.979 787.581 989.839 760.289C981.259 737.675 958.638 687.769 949.278 666.715ZM503.109 810.195C447.728 738.455 396.247 649.56 396.247 577.819C396.247 506.079 446.948 470.209 503.109 470.209C559.27 470.209 610.751 508.419 610.751 577.819C610.751 647.22 558.49 738.455 503.109 810.195ZM770.655 998.902C688.628 998.902 618.271 941.557 555.955 872.656C620.205 792.541 691.093 679.121 691.093 577.819C691.093 458.513 598.271 389.892 503.109 389.892C407.947 389.892 315.906 458.513 315.906 577.819C315.906 679.098 386.294 792.478 450.318 872.593C387.995 941.526 317.614 998.902 235.564 998.902C146.642 998.902 81.1209 931.061 81.1209 846.845C81.1209 826.57 84.241 807.856 91.2611 788.361C98.2812 770.426 120.902 720.52 130.262 701.025C203.583 541.17 282.365 380.534 364.267 220.679C379.087 191.047 404.047 141.921 422.768 119.307C443.048 94.3538 471.129 81.0975 503.109 81.0975C535.09 81.0975 563.17 94.3538 583.451 119.307C602.171 141.921 627.132 191.047 641.952 220.679C723.854 380.534 802.635 541.17 875.957 701.025C885.317 720.52 907.937 770.426 914.957 788.361C921.978 807.856 925.878 826.57 925.878 846.845C925.878 931.061 859.576 998.902 770.655 998.902Z" fill="#FF385C"></path></svg>
+        </div>
     <div class="navigation-container">
         <a href="#" >
 
@@ -60,8 +66,13 @@
             </span>
         </a>
     </div>
+    </div>
+
+</div>
+    
+
     <main>
-        <div class="bengaluru-wrapper">
+        <!-- <div class="bengaluru-wrapper"> -->
     <div class="bengaluru-container">
  <h2 class="bengaluru-container-text" >
     Popular homes in Bengaluru
@@ -71,10 +82,299 @@
  </span>
 </div>
  <div class="bengaluru-scroller-container">
-    <div class="bengaluru-scroller-container-image"></div>
+    <div class="bengaluru-scroller-container-image">
         <div class="bengaluru-scroller-image-one">
             <img class="hotelone-image" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1118422882348724135/original/a40a9fc3-9bee-46fc-bc33-61dd649cd6a8.jpeg?im_w=320">
+            <div class="guest-favourite-container">
+                <span class="guest-favourite-text">
+                    Guest favourite
+                </span>
+            </div>
+            <div class="love-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: white; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" ></path></svg>
+            </div>
         </div>
+        <div class="hotel-heading-container">
+            <span class="hotel-main-heading">
+                <div class="hotel-name">
+                    Apartment in Koramangala
+                </div>
+            </span>
+            <div class="hotel-pricing-container">
+                <div class="hotel-pricing">
+                    ₹6,504
+                </div>
+                &nbsp;
+                <div class="for2-nights">
+                    for 2 nights
+                </div>
+                <div class="night-dot">
+                    &nbsp;.&nbsp;
+                </div>
+                <div class="rating-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 8px; width: 8px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+                    <span>4.91</span>
+                </div>
+            </div>
+        </div>
+        </div>
+
+           <div class="bengaluru-scroller-container-image">
+        <div class="bengaluru-scroller-image-one">
+           
+            <img class="hotelone-image" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1413858431883771385/original/1b106e35-1218-4e67-9f83-7d55e739c9ab.jpeg?im_w=320">
+         <div class="guest-favourite-container">
+                <span class="guest-favourite-text">
+                    Guest favourite
+                </span>
+            </div>
+            <div class="love-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: white; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" ></path></svg>
+            </div>
+        </div>
+        <div class="hotel-heading-container">
+            <span class="hotel-main-heading">
+                <div class="hotel-name">
+                    Flat in Bangalore Urban
+                </div>
+            </span>
+            <div class="hotel-pricing-container">
+                <div class="hotel-pricing">
+                    ₹5,478
+                </div>
+                &nbsp;
+                <div class="for2-nights">
+                    for 2 nights
+                </div>
+                <div class="night-dot">
+                    &nbsp;.&nbsp;
+                </div>
+                <div class="rating-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 8px; width: 8px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+                    <span>5.0</span>
+                </div>
+            </div>
+        </div>
+        </div>
+           <div class="bengaluru-scroller-container-image">
+        <div class="bengaluru-scroller-image-one">
+            <img class="hotelone-image" src="https://a0.muscache.com/im/pictures/miso/Hosting-1146950113191217557/original/0f674d67-0cbb-4ed1-9ccf-ae6e5b5188de.jpeg?im_w=320">
+        <div class="guest-favourite-container">
+                <span class="guest-favourite-text">
+                    Guest favourite
+                </span>
+            </div>
+            <div class="love-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: white; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" ></path></svg>
+            </div>
+        </div>
+        <div class="hotel-heading-container">
+            <span class="hotel-main-heading">
+                <div class="hotel-name">
+                    Loft in Richmond Town
+                </div>
+            </span>
+            <div class="hotel-pricing-container">
+                <div class="hotel-pricing">
+                    ₹9,176
+                </div>
+                &nbsp;
+                <div class="for2-nights">
+                    for 2 nights
+                </div>
+                <div class="night-dot">
+                    &nbsp;.&nbsp;
+                </div>
+                <div class="rating-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 8px; width: 8px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+                    <span>5.0</span>
+                </div>
+            </div>
+        </div>
+        </div>
+           <div class="bengaluru-scroller-container-image">
+        <div class="bengaluru-scroller-image-one">
+            <img class="hotelone-image" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1096365467309628265/original/aa2f1eed-2157-4932-8be8-ebe60a697732.jpeg?im_w=320">
+            <div class="guest-favourite-container">
+                <span class="guest-favourite-text">
+                    Guest favourite
+                </span>
+            </div>
+            <div class="love-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: white; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" ></path></svg>
+            </div>
+        </div>
+        <div class="hotel-heading-container">
+            <span class="hotel-main-heading">
+                <div class="hotel-name">
+                    Flat in Koramangala
+                </div>
+            </span>
+            <div class="hotel-pricing-container">
+                <div class="hotel-pricing">
+                    ₹6,391
+                </div>
+                &nbsp;
+                <div class="for2-nights">
+                    for 2 nights
+                </div>
+                <div class="night-dot">
+                    &nbsp;.&nbsp;
+                </div>
+                <div class="rating-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 8px; width: 8px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+                    <span>4.88</span>
+                </div>
+            </div>
+        </div>
+        </div>
+           <div class="bengaluru-scroller-container-image">
+        <div class="bengaluru-scroller-image-one">
+            <img class="hotelone-image" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ2MjM0ODgzMjAyMTAyMjc1Mw==/original/0d427bcb-7f12-495a-806d-f0c2f622bd7b.png?im_w=320">
+        <div class="guest-favourite-container">
+                <span class="guest-favourite-text">
+                    Guest favourite
+                </span>
+            </div>
+            <div class="love-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: white; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" ></path></svg>
+            </div>
+        </div>
+        <div class="hotel-heading-container">
+            <span class="hotel-main-heading">
+                <div class="hotel-name">
+                    Tiny in Bangalore Urban
+                </div>
+            </span>
+            <div class="hotel-pricing-container">
+                <div class="hotel-pricing">
+                    ₹5,250
+                </div>
+                &nbsp;
+                <div class="for2-nights">
+                    for 2 nights
+                </div>
+                <div class="night-dot">
+                    &nbsp;.&nbsp;
+                </div>
+                <div class="rating-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 8px; width: 8px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+                    <span>4.94</span>
+                </div>
+            </div>
+        </div>
+        </div>
+           <div class="bengaluru-scroller-container-image">
+        <div class="bengaluru-scroller-image-one">
+            <img class="hotelone-image" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1131789927021539466/original/52a6957f-d4e1-4255-9b5f-f9ef5fc35785.jpeg?im_w=320">
+          <div class="guest-favourite-container">
+                <span class="guest-favourite-text">
+                    Guest favourite
+                </span>
+            </div>
+            <div class="love-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: white; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" ></path></svg>
+            </div>
+        
+        </div>
+        <div class="hotel-heading-container">
+            <span class="hotel-main-heading">
+                <div class="hotel-name">
+                    Flat in Bangalore Urban
+                </div>
+            </span>
+            <div class="hotel-pricing-container">
+                <div class="hotel-pricing">
+                    ₹3,618
+                </div>
+                &nbsp;
+                <div class="for2-nights">
+                    for 2 nights
+                </div>
+                <div class="night-dot">
+                    &nbsp;.&nbsp;
+                </div>
+                <div class="rating-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 8px; width: 8px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+                    <span>4.81</span>
+                </div>
+            </div>
+        </div>
+        </div>
+           <div class="bengaluru-scroller-container-image">
+        <div class="bengaluru-scroller-image-one">
+            <img class="hotelone-image" src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEwNTYzMjI3NDk4NTMyOTQ5Mg%3D%3D/original/a8939b82-e83d-42ee-9ae5-ece0610dbdff.jpeg?im_w=320">
+            <div class="guest-favourite-container">
+                <span class="guest-favourite-text">
+                    Guest favourite
+                </span>
+            </div>
+             <div class="love-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: white; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" ></path></svg>
+            </div>
+        </div>
+        <div class="hotel-heading-container">
+            <span class="hotel-main-heading">
+                <div class="hotel-name">
+                    Guest suite in Banaswadi
+                </div>
+            </span>
+            <div class="hotel-pricing-container">
+                <div class="hotel-pricing">
+                    ₹10,328
+                </div>
+                &nbsp;
+                <div class="for2-nights">
+                    for 2 nights
+                </div>
+                <div class="night-dot">
+                    &nbsp;.&nbsp;
+                </div>
+                <div class="rating-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 8px; width: 8px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+                    <span>5</span>
+                </div>
+            </div>
+        </div>
+        </div>
+         <div class="bengaluru-scroller-container-image">
+        <div class="bengaluru-scroller-image-one">
+            <img class="hotelone-image" src="https://a0.muscache.com/im/pictures/miso/Hosting-1051285449508066283/original/a8e611a4-8f83-4e76-acbf-cfeed7713e07.jpeg?im_w=320">
+          <div class="guest-favourite-container">
+                <span class="guest-favourite-text">
+                    Guest favourite
+                </span>
+            </div>
+            <div class="love-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: white; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" ></path></svg>
+            </div>
+        
+        </div>
+        <div class="hotel-heading-container">
+            <span class="hotel-main-heading">
+                <div class="hotel-name">
+                    Room in Bangalore Urban
+                </div>
+            </span>
+            <div class="hotel-pricing-container">
+                <div class="hotel-pricing">
+                    ₹3,001
+                </div>
+                &nbsp;
+                <div class="for2-nights">
+                    for 2 nights
+                </div>
+                <div class="night-dot">
+                    &nbsp;.&nbsp;
+                </div>
+                <div class="rating-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 8px; width: 8px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+                    <span>4.93</span>
+                </div>
+            </div>
+        </div>
+        </div>
+
     </div>
     </div>
     </main>
