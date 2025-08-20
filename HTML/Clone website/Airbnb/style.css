@@ -61,11 +61,13 @@ body{
      align-items: center;
 
 }
-.navigation-container img{
-height: 36px;
-width: 36px;
-display: block;
-}
+    video .home{
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+    
+   
+    }
 .navigation-container .image{
     margin-bottom: 6px;
     margin-top: 4px ;
@@ -123,7 +125,7 @@ display: block;
     
 }
 .bengaluru-container-text{
-    margin-top: 3px;
+    margin-top: -1px;
     margin-bottom: 0;
     font-weight: 600;
     font-family: 'bold';
@@ -135,7 +137,7 @@ display: block;
 {
 
 margin-left: 2px;
-margin-top: 3px;
+margin-top: -1px;
 }
 main{
 /* box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1); */
@@ -250,4 +252,25 @@ border-top: 0.5px solid rgba(0, 0, 0, 0.08);
     position: absolute;
     top: 12px;
     right: 12px;
+}
+.airbnblog{
+    display: none;
+}
+.globle{
+    display: none;
+}
+.menuicon{
+    display: none;
+}
+.search-destination_container{
+    display: none;
+}
+.center-line{
+    display: none;
+}
+.check-in-container{
+    display: none;
+}
+.pink-color-search{
+    display: none;
 }
