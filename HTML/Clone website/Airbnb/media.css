@@ -7,12 +7,15 @@
     }
     .navigation-container{
         display:grid;
-        margin-top: 8px;
+        margin-top: 22px;
         grid-template-columns: repeat(3,min-content);
         justify-content: center;
         gap: 35px;
         padding: 0;
         
+    }
+    .searchbar-container {
+        margin-top: -2px;
     }
     .navigation-container a{
         flex-direction: row;
@@ -152,6 +155,7 @@
    .add-guest-container{
     padding: 15px 130.904px 15px 24px;
     position: relative;
+    display: block;
 }
 
     .add-guest{
@@ -175,6 +179,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-top: -1px;
 
 
     }
@@ -189,17 +194,70 @@
         width: 48px;
         color: white;
         position: absolute;
-        top: 8.70px;
+        top: 8px;
         right: 9.3px;
     }
     main{
     margin-top: 41px;
 
     }
+    .bengaluru-container{
+        position: relative;
+    }
     .bengaluru-container-text{
         font-size: 20px;
     }
+    .left-and-right-container{
+        display: block;
+    }
+    .left-and-right-wrapper{
+    display: flex;
+    column-gap: 4px;
+    position: absolute;
+    top: -2px;
+    right: 24px;
+
+    }
+    .left-and-right-wrapper .left-arrow{
+        background-color: #ffffff;
+        color: #c1c1c1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #dddddd ;
+        
+    }
+    .left-and-right-wrapper .right-arrow{
+        background-color: #f2f2f2;
+        color:rgb(34,34, 34);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #dddddd ;
 }
+.bengaluru-scroller-container{
+    grid-auto-columns: calc((100% - 11px * 3) / 4);
+    padding-left: 0;
+    padding-right: 0;
+
+}
+.love-logo{
+    top: 11px;
+}
+.guest-favourite-container{
+    top: 11px;
+}
+.bengaluru-scroller-wrapper{
+ padding: 0 24px;
+}
+
+
 @media(min-width:751px){
    .add-dates{
     display: flex;
@@ -210,3 +268,87 @@
     display: flex;
    } 
 }
+}
+@media(min-width:950px){
+.bengaluru-scroller-wrapper{
+ padding: 0 32px;
+}
+.bengaluru-scroller-container{
+grid-auto-columns: calc((100% - 11px * (5 - 1)) / 5);
+gap: 11px;
+}
+    .bengaluru-container{
+        margin: 32px 32px 14px;
+    }
+    .airbnblog{
+        display: none;
+    }
+    .airbn-textlog{
+        display: block;
+        position: absolute;
+        top: 24px;
+        left: 32px;
+
+    }
+    .menuicon{
+        right: 32px;
+    }
+    .globle{
+        right: 84px;
+    }
+    .left-and-right-wrapper{
+        right: 0;
+    }
+}
+    @media(min-width:1127px){
+        .become-host{
+            display: block;
+            padding: 11px 12px;
+            position: absolute;
+            border: none;
+            background-color: white;
+            top: 20px;
+            right: 136px;
+
+        }
+        .become-host-text{
+            display: inline-block;
+            line-height: 18px;
+            font-size: 14px;
+            font-family: 'bold';
+            font-weight: 500;
+            color: #222222;
+            letter-spacing: normal;
+        }
+        .bengaluru-scroller-container{
+            grid-auto-columns: calc((100% - 11px * (5)) / 6);
+}
+    }
+@media(min-width:1127px){
+        .bengaluru-scroller-container{
+            grid-auto-columns: calc((100% - 11px * (6)) / 7);
+    }
+    .airbn-textlog{
+        top: 32px;
+        left: 48px;
+    }
+    .become-host{
+        top: 29px;
+        right: 152px;
+    }
+        .globle {
+            top: 28px;
+            right: 100px;
+        }
+        .menuicon{
+            top: 28px;
+            right: 49px;
+
+        }
+        .bengaluru-scroller-wrapper{
+            padding: 0 48px;
+        }
+        .bengaluru-container{
+            margin: 32px 48px 14px;
+        }
+     }

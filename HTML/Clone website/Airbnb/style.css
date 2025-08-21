@@ -21,6 +21,7 @@ body{
     border-radius: 40px;
     background-color: #ffffff;
     width: 100%;
+    max-width: 850px;
 }
 .searchtext-div button{
     display: flex;
@@ -118,6 +119,7 @@ body{
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     width: 100%;
 }
+
 .bengaluru-container{
     margin: 32px 0 14px 24px;
     display: flex;
@@ -127,7 +129,7 @@ body{
 .bengaluru-container-text{
     margin-top: -1px;
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: 500;
     font-family: 'bold';
     line-height: 1.5rem;
     font-size: 1.125rem;
@@ -142,10 +144,13 @@ margin-top: -1px;
 main{
 /* box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1); */
 border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+margin-bottom: 49px;
+
 
 }
 .bengaluru-scroller-container{
     margin-top: -4px;
+    margin-bottom: -7px;
     padding: 4px 24px 8px 24px;
     display: grid;
     scrollbar-width: none;
@@ -253,6 +258,39 @@ border-top: 0.5px solid rgba(0, 0, 0, 0.08);
     top: 12px;
     right: 12px;
 }
+.footer-heading-container{
+    background: #f7f7f7;
+ padding: 48px 24px;
+ max-width: 1980px;
+ position: relative;
+
+}
+.footer-heading{
+ margin-bottom: 8px;
+ line-height: 26px;
+ font-size: 22px;
+ letter-spacing: 0.22px;
+ font-family: 'bold';
+ font-weight: 500;
+}
+.long-line{
+ max-width: 1920px;
+ height: 1px;
+ background-color: #dddddd;
+
+}
+.footer-right-arrow{
+    position: absolute;
+    top: 100px;
+    right: 0;
+
+}
+.footer-left-arrow{
+    position: absolute;
+    top: 100px;
+    left: 0;
+
+}
 .airbnblog{
     display: none;
 }
@@ -273,4 +311,19 @@ border-top: 0.5px solid rgba(0, 0, 0, 0.08);
 }
 .pink-color-search{
     display: none;
+}
+.add-guest-container{
+    display: none;
+
+}
+.left-and-right-container{
+    display: none;
+
+}
+.airbn-textlog{
+    display: none;
+}
+.become-host{
+    display: none;
+
 }
