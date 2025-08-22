@@ -256,6 +256,45 @@
 .bengaluru-scroller-wrapper{
  padding: 0 24px;
 }
+.footer-content-section {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    padding: 24px 0 32px 0;
+    column-gap: 16px;
+    border-bottom: 0.667px solid #EBEBEB
+
+}
+.section-one{
+    grid-column: span 2;
+    padding: 0;
+    border-bottom: 0;
+}
+.english-wrapper-flex-container
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    height: 32px;
+}
+footer{
+    padding-bottom: 0;
+}
+.footer-end-container{
+    display: flex;
+}
+.english-container{
+    margin-bottom: 0;
+}
+.dot-img-media{
+    display: inline-block;
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 18px;
+    font-size: 14px;
+    font-family: 'bold';
+     vertical-align: middle; 
+}
+
 
 
 @media(min-width:751px){
