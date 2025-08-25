@@ -7,11 +7,12 @@
     }
     .navigation-container{
         display:grid;
-        margin-top: 22px;
+        margin-top: 18px;
         grid-template-columns: repeat(3,min-content);
         justify-content: center;
         gap: 35px;
         padding: 0;
+        width: 500px;
         
     }
     .searchbar-container {
@@ -26,21 +27,36 @@
         display: flex;
         align-items: center;
     }
+    .navigation-container a:nth-child(1)
+     {
+     }
     .new-text-container{
         top:-10px;
         left:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .navigation-container a .homes{
         margin-left: 16px;
         line-height: 1.125rem;
         font-size: 0.875rem;
         color: #222222;
+        margin-top: -4px;
     }
     .navigation-container a .experiences{
           line-height: 1.125rem;
         font-size: 0.875rem;
-        margin-left: 16px;
+        margin-left: 8px;
+        margin-top: -5px;
     }
+     .navigation-container a .services{
+          line-height: 1.125rem;
+        font-size: 0.875rem;
+        margin-left: 12px;
+        margin-top: -5px;
+    }
+   
     .airbnblog{
         display: flex;
         align-items: center;
@@ -83,10 +99,13 @@
     }
     .header-main-mediaquery{
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
     }
     .searchtext-div button{
-        margin-top: 12px;
+        margin-top: 16px;
         display: grid;
         grid-template-columns: minmax(0, 2fr) 1px minmax(0, 1fr) 1px minmax(0, 1fr) 1px minmax(0, 2fr);
         border-radius: 32px;
@@ -103,7 +122,7 @@
         display: none;
     }
     .search-destination_container{
-        padding: 15px 32px;
+        padding: 15px 31px;
         display: block;
     }
     .where-container{
@@ -198,8 +217,11 @@
         right: 9.3px;
     }
     main{
-    margin-top: 41px;
+    margin-top: 40px;
 
+    }
+    .bengaluru-container-text-arrow{
+        margin-top: 1px;
     }
     .bengaluru-container{
         position: relative;
@@ -214,13 +236,13 @@
     display: flex;
     column-gap: 4px;
     position: absolute;
-    top: -2px;
+    top: -1px;
     right: 24px;
 
     }
     .left-and-right-wrapper .left-arrow{
         background-color: #ffffff;
-        color: #c1c1c1;
+        color: #dddd;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -248,10 +270,10 @@
 
 }
 .love-logo{
-    top: 11px;
+    top: 12px;
 }
 .guest-favourite-container{
-    top: 11px;
+    top: 12px;
 }
 .bengaluru-scroller-wrapper{
  padding: 0 24px;
@@ -260,7 +282,7 @@
     grid-template-columns: repeat(6, minmax(0, 1fr));
     padding: 24px 0 32px 0;
     column-gap: 16px;
-    border-bottom: 0.667px solid #EBEBEB
+    border-bottom: 0.667px solid #EBEBEB;
 
 }
 .section-one{
@@ -274,12 +296,21 @@
     justify-content: space-between;
     margin-bottom: 8px;
     height: 32px;
+    margin-top: 1px;
+    align-items: center;
+}
+.english-wrapper{
+    margin-bottom: 3px;
+}
+.social-media-container {
+    margin-bottom: 0;
 }
 footer{
     padding-bottom: 0;
 }
 .footer-end-container{
     display: flex;
+    align-items: center;
 }
 .english-container{
     margin-bottom: 0;
@@ -290,9 +321,19 @@ footer{
     padding-left: 8px;
     padding-right: 8px;
     line-height: 18px;
-    font-size: 14px;
+    font-size: 14px; 
     font-family: 'bold';
      vertical-align: middle; 
+}
+.footer-bottom-container {
+    height: 111.333px;
+}
+.footer-end-section-two {
+    margin-top: -4px;
+}
+ 
+.footer-end-section-one  {
+    margin-top: 1px;
 }
 
 
@@ -338,7 +379,91 @@ gap: 11px;
     .left-and-right-wrapper{
         right: 0;
     }
+    .english-container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
+.english-wrapper-flex-containerr{
+    display: flex;
+    justify-content: baseline;
+}
+.footer-bottom-container{
+    height: 78.67px;
+}
+.footer-container{
+    padding-left: 32px;
+    padding-right: 32px;
+}
+.english-wrapper-flex-container{
+height: 30px;
+}
+main{
+    padding-bottom: 49px;
+    margin-bottom: 0;
+}
+.footer-heading{
+   
+     margin-top: -1px;
+     height: 26px;
+     padding-bottom: 43px;
+
+}
+.long-line{
+    margin-top: -10px;
+}
+.footer-left-arrow{
+    left: 20px;
+    top: 100px;
+}
+.footer-right-arrow{
+top: 100px;
+right: 20px;
+
+}
+.social-media-container{
+    margin-bottom: 0;
+    margin-left: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: -2px;
+    padding-bottom: 7px;
+}
+.footer-end-container{
+ margin-top: -6px;
+ display: flex;
+ align-items: center;
+
+}
+.footer-end-section-one{
+     margin-top: 0;
+}
+.english-text-log{
+    padding-top: 9px;
+    margin-top: 1px;
+}
+.inr-container{
+    padding-top: 9px;
+}
+.footer-content-section{
+    margin-top: 0;
+}
+    .footer-end-section-two {
+        margin-top: -4px;
+    }
+    .english-wrapper{
+        margin-top: -1px;
+    }
+    .footer-heading-container{
+        /* height: 131px; */
+        padding: 49px 32px;
+    }
+}
+
+
+
+
+
     @media(min-width:1127px){
         .become-host{
             display: block;
@@ -359,35 +484,130 @@ gap: 11px;
             color: #222222;
             letter-spacing: normal;
         }
+        .footer-end-container{
+            margin-top: -8px;
+        }
+     .inr-container{
+        padding-top: 10px;
+     }
+     .social-media-container{
+        margin-top: -1px;
+     }
+
+    }
+@media(min-width:1128px){
         .bengaluru-scroller-container{
             grid-auto-columns: calc((100% - 11px * (5)) / 6);
-}
-    }
-@media(min-width:1127px){
-        .bengaluru-scroller-container{
-            grid-auto-columns: calc((100% - 11px * (6)) / 7);
     }
     .airbn-textlog{
-        top: 32px;
-        left: 48px;
+        top: 24px;
+        left: 32px;
     }
     .become-host{
-        top: 29px;
-        right: 152px;
+        top: 20px;
+        right: 136px;
     }
         .globle {
+            top: 20px;
+            right: 84px;
+        }
+        .menuicon{
+            top: 20px;
+            right: 33px;
+
+        }
+        .bengaluru-scroller-wrapper{
+            padding: 0 32px;
+        }
+        .bengaluru-container{
+            margin: 32px 32px 14px;
+        }
+        .footer-end-container{
+            margin-top: -4px;
+        }
+        .english-text-log{
+            padding-top: 10px;
+            padding-bottom: 8px;
+
+        }
+        .inr-container{
+            padding-top: 11px;
+            padding-bottom: 8px;
+        }
+        .social-media-container{
+            padding-top: 8px;
+        }
+        .footer-end-section-one{
+            margin-top: 0;
+        }
+     }
+@media(min-width:1440px){
+        .bengaluru-scroller-container{
+            grid-auto-columns: calc((100% - 11px * (6)) / 7);
+            padding-top: 3px;
+            padding-bottom: 6px;
+    }
+    .bengaluru-scroller-wrapper{
+        padding: 0 48px;
+    }
+        .airbn-textlog{
+            top:32px;
+            left:48px
+        }
+        .become-host{
+            top: 28px;
+            right: 152px;
+        }
+        .globle{
             top: 28px;
             right: 100px;
         }
         .menuicon{
-            top: 28px;
+            top:28px;
             right: 49px;
-
         }
-        .bengaluru-scroller-wrapper{
-            padding: 0 48px;
+        .navigation-container{
+            margin-top: 25px;
+        }
+        main{
+            margin-top: 32px;
         }
         .bengaluru-container{
-            margin: 32px 48px 14px;
+            margin-left: 48px;
+            margin-top: 34px;
         }
-     }
+        .left-and-right-wrapper{
+            right: 16px;
+        }
+        .searchtext-div button{
+            margin-top: 17px;
+        }
+        .check-in-container{
+            padding-top: 14px;
+        }
+        .add-dates{
+            margin-top: 0;
+        }
+        .add-guest-container{
+            padding-top: 14px;
+        }
+        .search-destination_container{
+            padding-top: 14px;
+        }
+        .footer-container{
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        .footer-content-section{
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+        .footer-heading-container {
+            padding-left: 48px;
+            padding-right: 48px;
+           
+        }
+        .footer-heading{
+            margin-bottom: 0;
+        }
+}

@@ -49,7 +49,7 @@ body{
 
     display: flex;
     justify-content: space-between;
-    padding: 16px 64px 0px;
+    padding: 19px 64px 0px;
 }
 .navigation-container a{
     margin-bottom: 8px;
@@ -62,12 +62,13 @@ body{
      align-items: center;
 
 }
+video{
+    scale: 2;
+}
     video .home{
     height: 36px;
     width: 36px;
     object-fit: cover;
-    
-   
     }
 .navigation-container .image{
     margin-bottom: 6px;
@@ -81,6 +82,7 @@ body{
     letter-spacing: -0.01em;
     color: #6A6A6A;
     font-family: 'bold';
+    margin-top: -3px;
 
 }
 .navigation-container a .experiences
@@ -90,6 +92,16 @@ body{
     letter-spacing: -0.01em;
     color: #6A6A6A; 
     font-family: 'bold';
+    margin-top: -3px;
+}
+.navigation-container a .services
+{
+    line-height: 0.625rem;
+    font-size: 0.75rem;
+    letter-spacing: -0.01em;
+    color: #6A6A6A; 
+    font-family: 'bold';
+    margin-top: -3px;
 }
 .new-text-container{
     padding: 3px 6px;
@@ -98,7 +110,7 @@ body{
     background: linear-gradient(357.5deg, #3e567c 1.59%, #3a5475 21.23%, #2d3c5b 58.6%, #809dc0 97.4%);
     border-radius: 10px 10px 10px 2px;
     left: 100%;
-    top: -1px;
+    top: -4px;
     position: absolute;
     width: 31.7188px;
     height: 17.4375px;
@@ -281,13 +293,13 @@ margin-bottom: 49px;
 }
 .footer-right-arrow{
     position: absolute;
-    top: 100px;
+    top: 101px;
     right: 12px
 
 }
 .footer-left-arrow{
     position: absolute;
-    top: 100px;
+    top: 101px;
     left:12px
 
 }
@@ -381,6 +393,7 @@ footer{
 .footer-bottom-container{
     padding-top: 24px;
     padding-bottom: 24px;
+    height: 173px;
 
 }
 .english-container
@@ -428,6 +441,7 @@ footer{
     margin-bottom: 12px;
     /* margin-left: -8px; */
     padding: 8px 0;
+    padding-bottom: 9px;
 
 }
 .social-media-three
@@ -460,6 +474,7 @@ margin-right: 4px;
 {
     margin: 0;
     padding: 0;
+    margin-top: -1px;
 }
 .footer-end-section-two li
 {
@@ -481,5 +496,26 @@ margin-right: 4px;
     line-height: 18px;
     font-size: 14px;
     font-family: 'bold';
-     vertical-align: middle; 
+     align-items: center;
 }
+.footer-end-section-two li:nth-child(2)
+{
+margin-left: -7px;
+}
+
+.footer-end-section-two li:nth-child(3)
+{
+    margin-left: -7px;
+}
+.footer-end-section-two li:nth-child(4)
+{
+    margin-left: -7px;
+}
+
+
+
+
+
+
+
+
