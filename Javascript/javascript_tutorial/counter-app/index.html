@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    #counter {
+      font-size: 3rem;
+      color: #333;
+      margin: 20px 0;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+
+  </style>
+</head>
+<body>
+<h1>People Entered:</h1>
+<h2 id="counter">0</h2> 
+<button onclick="increment()"> increment</button>
+<!-- <button onclick="decrement()"> Decrement</button> -->
+<button onclick="save()">Save</button>
+<P id="pervious"> pervious entries:</P>
+<!-- <p id="welcome-el"></p> -->
+  <script src="main.js"></script>
+</body>
+</html>

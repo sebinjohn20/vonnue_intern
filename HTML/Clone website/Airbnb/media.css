@@ -611,3 +611,8 @@ right: 20px;
             margin-bottom: 0;
         }
 }
+@media(min-width:375px){
+    .navigation-container{
+        padding: 18px 56px 0;
+    }
+}

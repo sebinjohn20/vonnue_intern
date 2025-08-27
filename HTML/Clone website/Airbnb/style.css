@@ -6,11 +6,17 @@
 body{
     background-color: #fff;
 }
+
 .searchbar-container{
     margin: 12px 24px 0px 24px;
    display: flex;
    align-items: center;
    justify-content: center;
+   /* position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   z-index: 1000; */
 
 }
 .searchtext-div{
