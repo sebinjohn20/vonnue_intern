@@ -312,11 +312,52 @@ function newgame(){
 
 
 
- let largeCountries=["china","India","USA","Indonesia"]
+//  let largeCountries=["china","India","USA","Indonesia"]
 
-console.log(largeCountries.push("Ireland"))
-largeCountries.pop()
-largeCountries.shift("England")
-largeCountries.unshift()
+// console.log(largeCountries.push("Ireland"))
+// largeCountries.pop()
+// largeCountries.shift("England")
+// largeCountries.unshift()
 
-console.log(largeCountries)
+// console.log(largeCountries)
+// let dayofMonth=13
+// let weekday="Friday"
+// if(dayofMonth===13 && weekday==="Friday")
+// {
+//     console.log("hiii")
+// }
+
+
+
+
+
+
+
+// let hands=[ "rock","paper","scissor"]
+// function getHand(){
+//     let randomIndex=Math.floor(Math.random()*3)
+//     return hands[randomIndex]
+
+// }
+// console.log(getHand())
+
+// let fruit=["apple"," orange", "apple"," orange"]
+// let appleShelf =[]
+// let orangeShelf=[]
+
+// function sortFurit(){
+// for(let i=0;i<fruit.length;i++)
+// {
+//     if(fruit[i]==="apple"){
+//         appleShelf.push(fruit[i])
+//     }
+//     else{
+//         orangeShelf.push(fruit[i])
+//     }
+// }
+// }
+// sortFurit()
+// console.log(orangeShelf)
+// console.log(appleShelf)
+
+Sebi
