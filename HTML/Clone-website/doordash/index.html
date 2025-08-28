@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font.css">
+</head>
+<body>
+    
+        <div class="main-header">
+            <div class="logo">
+                <svg width="64"  height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-97811b6f-1 ijOhfZ fetched-icon"><path d="M20.9506 9.06644C20.0784 7.42113 18.3736 6.41016 16.5301 6.41016H2.47575C2.21805 6.41016 2 6.62821 2 6.90573C2 7.02467 2.05947 7.14361 2.13876 7.24272L5.19147 10.3153C5.46899 10.5928 5.8258 10.7514 6.20243 10.7316H16.094C16.8076 10.7316 17.3825 11.2866 17.3825 12.0002C17.3825 12.7139 16.8274 13.2887 16.1138 13.2887H9.31461C9.05691 13.2887 8.83886 13.5068 8.83886 13.7843C8.83886 13.9033 8.89833 14.0222 8.97762 14.1213L12.0303 17.1939C12.3078 17.4714 12.6647 17.6102 13.0611 17.6102H16.1535C20.1577 17.6102 23.1905 13.3284 20.9506 9.06644Z" fill="#EB1700"></path></svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-heading-1">Browse faster in the app</span>
+                <span class="logo-heading-2">$0 delivery fee on first order</span>
+                <div class="star">
+                <svg style="margin: 0 2px;" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-97811b6f-3 cEJCwd fetched-icon"><path d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193Z" fill="#ebb11eff"></path></svg>
+                <svg style="margin-right: 2px;"width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-97811b6f-3 cEJCwd fetched-icon"><path d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193Z" fill="#ebb11eff"></path></svg>
+                <svg style="margin-right: 2px;" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-97811b6f-3 cEJCwd fetched-icon"><path d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193Z" fill="#ebb11eff"></path></svg>
+                <svg style="margin-right: 2px;" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-97811b6f-3 cEJCwd fetched-icon"><path d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193Z" fill="#ebb11eff"></path></svg>
+                <svg style="margin-right: 2px;" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-97811b6f-4 gBDNxG fetched-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193ZM7.99997 10.318C8.17082 10.318 8.34167 10.3617 8.49514 10.4492L10.6871 11.6986L10.1763 9.22779C10.1047 8.88181 10.2211 8.52376 10.4823 8.2859L12.3479 6.58727L9.84018 6.30961C9.48903 6.27073 9.18445 6.04944 9.03896 5.72749L7.99997 3.42834V10.318Z" fill="#ebb11eff"></path></svg>
+                    <span class="rating-text">18.2M ratings</span>
+                    </div>
+                    </div>
+
+                    <div class="openBtn">
+                        <button>Open</button>
+                    </div>
+                  
+                    
+            </div>
+            <!-- header for 768px start -->
+
+            
+
+
+
+
+            <div class="background-image">
+                <div class="open-app">
+                    <button>Open App</button>
+                </div>
+
+            <!-- media 768px  start-->
+                  <div class="signinBtn">
+                        <button>Sign In</button>
+                    </div>
+                     <div class="signupBtn">
+                        <button>Sign Up</button>
+                    </div>
+                    <!-- end -->
+                <div class="logo-section">
+                    <div class="doordash-logo">
+                        <svg aria-hidden="true" width="32" height="18" viewBox="0 0 99.5 56.5" fill="white"><path d="M95.64,13.38A25.24,25.24,0,0,0,73.27,0H2.43A2.44,2.44,0,0,0,.72,4.16L16.15,19.68a7.26,7.26,0,0,0,5.15,2.14H71.24a6.44,6.44,0,1,1,.13,12.88H36.94a2.44,2.44,0,0,0-1.72,4.16L50.66,54.39a7.25,7.25,0,0,0,5.15,2.14H71.38c20.26,0,35.58-21.66,24.26-43.16"></path></svg>
+                    </div>
+                    <div class="doordash-text">
+                        <svg aria-hidden="true" width="112" height="13" viewBox="0 0 361.1 42" fill="white"><path d="M8.62,8.66V33.38h6.32A12.21,12.21,0,0,0,27,21,12,12,0,0,0,14.94,8.66ZM14.94.91C26.72.91,35.63,9.81,35.63,21S26.72,41.14,14.94,41.14H1a1,1,0,0,1-1-1V1.95a1,1,0,0,1,1-1Z"></path><path d="M66,34.24A13.22,13.22,0,1,0,52.82,21,13.24,13.24,0,0,0,66,34.24M66,0C78.4,0,87.88,9.53,87.88,21S78.4,42,66,42,44.2,32.52,44.2,21,53.68,0,66,0"></path><path d="M118,34.24A13.22,13.22,0,1,0,104.75,21,13.24,13.24,0,0,0,118,34.24M118,0c12.36,0,21.84,9.48,21.84,21S130.32,42,118,42,96.12,32.52,96.12,21,105.6,0,118,0"></path><path d="M168.75,8.66h-8.91V19.3h8.91a5.22,5.22,0,0,0,5.46-5.17,5.28,5.28,0,0,0-5.46-5.46M151.22,1.95a1,1,0,0,1,1-1H169c8,0,13.79,5.86,13.79,13.22a13,13,0,0,1-7.18,11.78l7.74,13.68a1,1,0,0,1-.91,1.56h-6.79a1,1,0,0,1-.91-.54l-7.46-13.54h-7.47v13a1,1,0,0,1-1,1h-6.54a1,1,0,0,1-1-1Z"></path><path d="M205.26,8.85V33.57h6.32a12.21,12.21,0,0,0,12.07-12.36A12,12,0,0,0,211.58,8.85Zm6.32-7.76c11.78,0,20.69,8.91,20.69,20.12s-8.91,20.12-20.69,20.12h-13.9a1,1,0,0,1-1-1V2.14a1,1,0,0,1,1-1Z"></path><path d="M258.56,10.92l-4.89,13.22h9.77Zm-7.76,20.69-3.2,8.8a1,1,0,0,1-1,.69h-6.94a1,1,0,0,1-1-1.42l15-38.15a1,1,0,0,1,1-.66h7.77a1,1,0,0,1,1,.66l15,38.15a1,1,0,0,1-1,1.42h-6.94a1,1,0,0,1-1-.69l-3.2-8.8Z"></path><path d="M286.48,11.78C286.48,5.46,291.94,0,300.56,0a17.84,17.84,0,0,1,12.51,4.71,1,1,0,0,1,0,1.47L309.22,10a1,1,0,0,1-1.42,0,10.12,10.12,0,0,0-6.67-2.63c-3.45,0-6,2-6,4.31,0,7.47,20.38,3.16,20.38,17.53C315.5,36.49,310,42,300.27,42a20.41,20.41,0,0,1-14.54-5.84,1,1,0,0,1,0-1.47l3.72-3.72a1,1,0,0,1,1.45,0,12.85,12.85,0,0,0,8.79,3.58c4.31,0,7.15-2.3,7.15-5.18,0-7.47-20.37-3.16-20.37-17.53"></path><path d="M352.47,1.9V17H335.22V1.9a1,1,0,0,0-1-1h-6.54a1,1,0,0,0-1,1V40.05a1,1,0,0,0,1,1h6.54a1,1,0,0,0,1-1V24.71h17.24V40.05a1,1,0,0,0,1,1H360a1,1,0,0,0,1-1V1.9a1,1,0,0,0-1-1h-6.54A1,1,0,0,0,352.47,1.9Z"></path></svg>
+                    </div>
+                </div>
+                <div class="doordash">
+                    <div class="doordash-heading">
+                        <h1>$0 DELIVERY FEE ON FIRST ORDER</h1>
+                    </div>
+                    <div class="searchbar-main">
+                    <div class="address-search-bar">
+                        <div class="search-logo">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.1922 15.6064C13.0236 16.4816 11.5723 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 11.5723 16.4816 13.0236 15.6064 14.1922L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3166 21.0976 19.6834 21.0976 19.2929 20.7071L14.1922 15.6064ZM15 10C15 12.7614 12.7614 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10Z" fill="#191919ff"></path></svg>
+                        </div>
+                        <div class="map-logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5257 21.3514L12 20L13.4743 21.3514C13.0955 21.7647 12.5606 22 12 22C11.4394 22 10.9045 21.7647 10.5257 21.3514ZM13.2949 18.4463C12.5464 19.4039 12 20 12 20C12 20 11.4535 19.4039 10.7051 18.4463C9.07919 16.3658 6.5 12.5792 6.5 9.49242C6.5 6.45904 8.96243 4 12 4C15.0376 4 17.5 6.45904 17.5 9.49242C17.5 12.5792 14.9208 16.3658 13.2949 18.4463ZM13.4743 21.3514C13.4743 21.3514 13.4743 21.3514 12 20C10.5257 21.3514 10.5257 21.3514 10.5257 21.3514L10.5227 21.3482L10.5177 21.3427L10.5018 21.3252L10.4474 21.2647C10.4014 21.2133 10.3363 21.1398 10.2548 21.0461C10.0919 20.8589 9.86301 20.5903 9.59004 20.2553C9.04587 19.5873 8.31764 18.6441 7.58566 17.5456C6.85705 16.4522 6.10151 15.1704 5.5227 13.8275C4.95169 12.5026 4.5 10.9984 4.5 9.49242C4.5 5.35187 7.86046 2 12 2C16.1395 2 19.5 5.35187 19.5 9.49242C19.5 10.9984 19.0483 12.5026 18.4773 13.8275C17.8985 15.1704 17.1429 16.4522 16.4143 17.5456C15.6824 18.6441 14.9541 19.5873 14.41 20.2553C14.137 20.5903 13.9081 20.8589 13.7452 21.0461C13.6637 21.1398 13.5986 21.2133 13.5526 21.2647L13.4982 21.3252L13.4823 21.3427L13.4773 21.3482L13.4743 21.3514Z" fill="#606060ff"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 11C12.8284 11 13.5 10.3284 13.5 9.5C13.5 8.67157 12.8284 8 12 8C11.1716 8 10.5 8.67157 10.5 9.5C10.5 10.3284 11.1716 11 12 11ZM12 13C13.933 13 15.5 11.433 15.5 9.5C15.5 7.567 13.933 6 12 6C10.067 6 8.5 7.567 8.5 9.5C8.5 11.433 10.067 13 12 13Z" fill="#606060ff"></path></svg>
+                        </div>
+
+
+                        <!-- maplogo media query 768px start -->
+                      
+                        <div class="input-adderss">
+                            <input type="text" placeholder="Enter delivery address">
+                        </div>
+                        <div class="arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path d="M12.2929 17.2929C11.9024 17.6834 11.9024 18.3166 12.2929 18.7071C12.6834 19.0976 13.3166 19.0976 13.7071 18.7071L19.1578 13.2564C19.242 13.1722 19.3427 13.0717 19.424 12.9758C19.5183 12.8648 19.6439 12.6962 19.7195 12.4635C19.8174 12.1623 19.8174 11.8377 19.7195 11.5365C19.6439 11.3038 19.5183 11.1352 19.424 11.0242C19.3427 10.9283 19.242 10.8278 19.1578 10.7436L13.7071 5.29289C13.3166 4.90237 12.6834 4.90237 12.2929 5.29289C11.9024 5.68342 11.9024 6.31658 12.2929 6.70711L16.5858 11L5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44771 13 5 13L16.5858 13L12.2929 17.2929Z" fill="#191919ff"></path></svg>
+                        </div>
+                        </div>
+                        <div class="loginbtn">
+                            <div class="loginimg">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 16C13.6046 16 14.5 15.1046 14.5 14C14.5 13.5 14.37 13.0462 14.37 13.0462C14.2499 12.5658 14.0117 11.9323 13.5375 11.3C12.5198 9.94301 10.738 9 8 9C5.26202 9 3.48025 9.94301 2.4625 11.3C1.98825 11.9323 1.75013 12.5658 1.63003 13.0462C1.63003 13.0462 1.5 13.5 1.5 14C1.5 15.1046 2.39543 16 3.5 16H12.5ZM12.5 14C12.5 14 12.5 12.8726 11.4633 12C10.8088 11.4492 9.74133 11 8 11C6.25867 11 5.19116 11.4492 4.53675 12C3.5 12.8726 3.5 14 3.5 14H12.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4C12 6.20914 10.2091 8 8 8C5.79086 8 4 6.20914 4 4C4 1.79086 5.79086 0 8 0C10.2091 0 12 1.79086 12 4ZM8 6C9.10457 6 10 5.10457 10 4C10 2.89543 9.10457 2 8 2C6.89543 2 6 2.89543 6 4C6 5.10457 6.89543 6 8 6Z" fill="#191919ff"></path></svg>
+                            </div>
+                            <div class="logintext">
+                                <span>Login</span>
+                            </div>
+
+
+                            <!-- media queryfor 768px -->
+                             <div class="sigintext">
+                                <span>Sign In</span>
+                            </div>
+                            <!-- end -->
+                            <!-- media queryfor 1024px -->
+                             <div class="signforaddress">
+                                <span>Sign in for saved address</span>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="continue-app">
+            <div class="continue-inside">
+                <div class="border-box">
+                    <div class="app-download">
+                        <div class="logo-download">
+                          
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-ac7e6b30-3 cXRoZl fetched-icon" data-testid="appDownloadLogo"><path d="M20.9506 9.06644C20.0784 7.42113 18.3736 6.41016 16.5301 6.41016H2.47575C2.21805 6.41016 2 6.62821 2 6.90573C2 7.02467 2.05947 7.14361 2.13876 7.24272L5.19147 10.3153C5.46899 10.5928 5.8258 10.7514 6.20243 10.7316H16.094C16.8076 10.7316 17.3825 11.2866 17.3825 12.0002C17.3825 12.7139 16.8274 13.2887 16.1138 13.2887H9.31461C9.05691 13.2887 8.83886 13.5068 8.83886 13.7843C8.83886 13.9033 8.89833 14.0222 8.97762 14.1213L12.0303 17.1939C12.3078 17.4714 12.6647 17.6102 13.0611 17.6102H16.1535C20.1577 17.6102 23.1905 13.3284 20.9506 9.06644Z" fill="#EB1700"></path></svg>
+                        </div>
+                        <div class="logo-download-content">
+                            <span class="logo-download-heading">Browse faster in the app</span>
+                            <span class="logo-download-text">
+                                $0 delivery fee on first order
+                            </span>
+                            <div class="star-icon-wrapper">
+                                <svg style="margin: 0 2px;" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-ac7e6b30-8 crLkoB fetched-icon"><path d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193Z" fill="#ebb11eff"></path></svg>
+                                <svg style="margin-right: 2px;" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-ac7e6b30-8 crLkoB fetched-icon"><path d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193Z" fill="#ebb11eff"></path></svg>
+                                <svg style="margin-right: 2px;" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-ac7e6b30-8 crLkoB fetched-icon"><path d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193Z" fill="#ebb11eff"></path></svg>
+                                <svg style="margin-right: 2px;" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-ac7e6b30-8 crLkoB fetched-icon"><path d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193Z" fill="#ebb11eff"></path></svg>
+                                <svg style="margin-right: 2px;"width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-ac7e6b30-9 hOaBtg fetched-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.91123 0.588193C8.74942 0.230121 8.3929 0 7.99996 0C7.60702 0 7.2505 0.230121 7.08869 0.588193L5.37313 4.38448L1.23251 4.84295C0.841962 4.8862 0.512933 5.15416 0.391509 5.52786C0.270085 5.90157 0.378772 6.31175 0.669316 6.5763L3.74967 9.381L2.90618 13.4606C2.82662 13.8454 2.97979 14.2412 3.29768 14.4721C3.61557 14.7031 4.03926 14.7265 4.38064 14.5319L7.99996 12.469L11.6193 14.5319C11.9607 14.7265 12.3843 14.7031 12.7022 14.4721C13.0201 14.2412 13.1733 13.8454 13.0937 13.4606L12.2503 9.381L15.3306 6.5763C15.6212 6.31175 15.7298 5.90157 15.6084 5.52786C15.487 5.15416 15.158 4.8862 14.7674 4.84295L10.6268 4.38448L8.91123 0.588193ZM7.99997 10.318C8.17082 10.318 8.34167 10.3617 8.49514 10.4492L10.6871 11.6986L10.1763 9.22779C10.1047 8.88181 10.2211 8.52376 10.4823 8.2859L12.3479 6.58727L9.84018 6.30961C9.48903 6.27073 9.18445 6.04944 9.03896 5.72749L7.99997 3.42834V10.318Z" fill="#ebb11eff"></path></svg>
+                            <span class="logo-download-text2">18.2M ratings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="continue-app-longbtn">
+                        <span class="continue-app-longbtn-text">Continue in app</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <div class="main-section-container">
+        <div class="main-section-container-inside">
+            <div class="secondary-section-container">
+                <div class="value1-main-section-container">
+                    <div class="value1-main-section-container-bike">
+                        <img class="bike-image" src="https://cdn.doordash.com/media/consumer/home/landing/new/ScootScoot.svg" alt="">
+                    </div>
+                    <div class="become-a-dasher">
+                        <div class="become-a-dasher-text">
+                            <h1 class="become-a-dasher-heading">
+                                Become a Dasher
+                            </h1>
+                            <h3 class="become-a-dasher-content">
+                                As a delivery driver, make money and work on your schedule. Sign up in minutes.
+                            </h3>
+                        </div>
+                        <button class="start-earning-btn">
+                            <span class="start-earning-text"> Start earning</span>
+                            <div class="arrow-gap">
+
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-1f772c23-4 quRma fetched-icon"><path d="M8.29289 11.2929C7.90237 11.6834 7.90237 12.3166 8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L9.70711 3.29289C9.31658 2.90237 8.68342 2.90237 8.29289 3.29289C7.90237 3.68342 7.90237 4.31658 8.29289 4.70711L10.5858 7L3 7C2.44772 7 2 7.44771 2 8C2 8.55228 2.44772 9 3 9L10.5858 9L8.29289 11.2929Z" fill="rgb(235, 23, 0)"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="value1-main-section-container">
+                    <div class="value1-main-section-container-bike">
+                        <img class="bike-image" src="https://cdn.doordash.com/media/consumer/home/landing/new/Storefront.svg" alt="">
+                    </div>
+                    <div class="become-a-dasher">
+                        <div class="become-a-dasher-text">
+                            <h1 class="become-a-dasher-heading">
+                                Become a Merchant
+                            </h1>
+                            <h3 class="become-a-dasher-content">
+                                Attract new customers and grow sales, starting with 0% commissions for up to 30 days.
+                            </h3>
+                        </div>
+                        <button class="start-earning-btn2">
+                            <span class="sign-up-text"> Sign up for DoorDash</span>
+                            <div class="arrow-gap">
+                                
+                            </div>
+                            <svg margin-left="4px" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-1f772c23-4 quRma fetched-icon"><path d="M8.29289 11.2929C7.90237 11.6834 7.90237 12.3166 8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L9.70711 3.29289C9.31658 2.90237 8.68342 2.90237 8.29289 3.29289C7.90237 3.68342 7.90237 4.31658 8.29289 4.70711L10.5858 7L3 7C2.44772 7 2 7.44771 2 8C2 8.55228 2.44772 9 3 9L10.5858 9L8.29289 11.2929Z" fill="rgb(235, 23, 0)"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="value1-main-section-container">
+                    <div class="value1-main-section-container-bike">
+                        <img class="bike-image" src="https://cdn.doordash.com/media/consumer/home/landing/new/iphone.svg" alt="">
+                    </div>
+                    <div class="become-a-dasher3">
+                        <div class="become-a-dasher-text3">
+                            <h1 class="become-a-dasher-heading3">
+                                Get the best DoorDash experience
+                            </h1>
+                            <h3 class="become-a-dasher-content">
+                                Experience the best your neighborhood has to offer, all in one app.
+                            </h3>
+                        </div>
+                        <button class="start-earning-btn">
+                            <span class="start-earning-text3"> Get the app</span>
+                            <div class="arrow-gap">
+                                
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE sc-1f772c23-4 quRma fetched-icon"><path d="M8.29289 11.2929C7.90237 11.6834 7.90237 12.3166 8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L9.70711 3.29289C9.31658 2.90237 8.68342 2.90237 8.29289 3.29289C7.90237 3.68342 7.90237 4.31658 8.29289 4.70711L10.5858 7L3 7C2.44772 7 2 7.44771 2 8C2 8.55228 2.44772 9 3 9L10.5858 9L8.29289 11.2929Z" fill="rgb(235, 23, 0)"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="everything">
+        <div class="lazy-load">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/download_the_app_desktop.png" alt="" class="lazy-load-img tabletimage">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/download_the_app_mobile.png" alt="" class="lazy-load-img mobileimage">
+        </div>
+        <div class="lazy-load-heading">        
+            <h2>Everything you crave, delivered.</h2>
+            <span class="lazy-load-heading-text">Your favorite local restaurants</span>
+            <span class="lazy-load-heading-content">Get a slice of pizza or the whole pie delivered, or pick up house lo mein from the Chinese takeout spot you've been meaning to try.</span>
+            <div class="find-restaurant">
+                <a href="#">
+                    <span class="find-restaurant-btn">
+                <span class="find-restaurant-btn1">
+                     <span class="find-restaurant-btn2">
+                    
+                         <span class="find-restaurant-btn-text">
+                            Find restaurants
+                        
+                    </span>
+                    </span>
+                        
+                    </span>
+                        
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="dashpass-container">
+         <div class="everything2">
+        <div class="lazy-load">
+            <img src="img/dashpass_mobile.avif" alt="" class="lazy-load-img mobileimage">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/dashpass_desktop.png" class="lazy-load-img tabletimage" alt="">
+        </div>
+        <div class="lazy-load-heading">
+            <h2>DashPass is delivery for less</h2>
+            <!-- <span class="lazy-load-heading-text">Your favorite local restaurants</span> -->
+            <span class="lazy-load-heading-content mt">Members get a $0 delivery fee on DashPass orders, 5% back on pickup orders, and so much more. Plus, it's free for 30 days.</span>
+          <div class="dashpass-btn">
+            <button>
+                <span> Get DashPass</span>
+            </button>
+          </div>
+        </div>
+    </div>
+    </div>
+ <div class="grocery-banner">
+  <div class="grocery-overlay">
+   <div class="groceries-sub">
+    <h2>Get grocery and convenience store essentials</h2>
+    <span class="delivery-content-1">Grocery delivery, exactly how you want it.</span>
+    <div class="delivery-content-2">Shop from home and fill your cart with fresh produce, frozen entrees, deli delights and more.</div>
+    <div class="grocery-btn">
+        <button>
+            <span>Shop Groceries</span>
+        </button>
+    </div>
+   </div>
+  </div>
+</div>
+  <div class="everything1">
+        <div class="lazy-load">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/convenience_mobile.png" alt="" class="lazy-load-img mobileimage">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/convenience_desktop.png" alt="" class="lazy-load-img tabletimage desktop">
+        </div>
+        <div class="lazy-load-heading">
+            <h2>Convenience stores at your doorstep</h2>
+            <!-- <span class="lazy-load-heading-text">Your favorite local restaurants</span> -->
+            <span class="lazy-load-heading-content sp">Stock up on snacks, household essentials, candy, or vitamins — all delivered in under an hour.</span>
+           <div class="dashpass-btn">
+            <button>
+                <span> Shop Now</span>
+            </button>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="helping-wrapper">
+        <span class="helping-wrapper-heading">
+            Helping you with to-dos and gifting
+        </span>
+    </div>
+    <div class="scroller-desktop">
+    <div class="helping-scroller">
+        <div class="helping-silder1">
+            <div class="helping-silder1-image">
+                <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/beauty_mobile.png"  class="siderimage2 mobileimage">
+                <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/beauty_desktop.png" alt=" " class="siderimage2 tabletimage">
+            </div>
+            <div class="helping-silder1-content">
+                <h2>Beauty essentials from top brands</h2>
+                <span class="helping-silder1-text1">Get all your beauty and self-care needs delivered at home or on-the-go</span>
+                  <div class="helping-silder1-btn1">
+                <a href="#">Shop beauty</a>
+                </div>
+            </div>
+            <!-- <div class="helping-silder1-btn1">
+                <a href="#" >
+                    <span class="helping-silder1-btn-span1">
+                      <span class="helping-silder1-btn-span2">
+                       <span class="helping-silder1-btn-text">
+                        Shop beauty
+                       </span>
+                      </span>  
+                    </span>
+                </a>
+            </div> -->
+          
+
+        </div>
+        <!-- silder2 -->
+        <div class="helping-silder1">
+            <div class="helping-silder1-image">
+                <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/flowers_mobile.png"  class="siderimage2 mobileimage">
+                <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/flowers_desktop.png" alt="" class="siderimage2 tabletimage">
+            </div>
+            <div class="helping-silder1-content">
+                <h2>Flowers for any occasion</h2>
+                <span class="helping-silder1-text1">Shop hand-picked and thoughtfully-arranged blooms from florists near you.</span>
+                  <div class="helping-silder1-btn1">
+                <a href="#">Send Flowers</a>
+                </div>
+            </div>
+          
+          </div>
+        <!-- silder3 -->
+         <div class="helping-silder1">
+            <div class="helping-silder1-image">
+                <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/alcohol_mobile.png" alt="" class="siderimage2 mobileimage">
+                <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/alcohol_desktop.png" alt=""  class="siderimage2 tabletimage">
+            </div>
+            <div class="helping-silder1-content">
+                <h2>Restock the minibar</h2>
+                <span class="helping-silder1-text1">Hosting a get-together or need or need a special cocktail ingredient? Get liquor, beer, mixers, champagne and wine delivered fast.*</span>
+                <div class="helping-silder2-btn1">
+                    <a href="#">Shop Alcohol</a>
+                </div>
+                <span class="helping-silder3-alcohol">
+                    *Must be 21+. Enjoy responsibly.
+                </span>
+            </div>
+         </div>
+         <!-- silder4 -->
+          <div class="helping-silder4">
+            <div class="helping-silder1-image">
+                <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/pet_supplies_mobile.png"  class="siderimage2 mobileimage"alt="">
+                <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/pet_supplies_desktop.png" alt=""  class="siderimage2 tabletimage">
+            </div>
+            <div class="helping-silder1-content">
+                <h2>What your pets need, and want</h2>
+                <span class="helping-silder1-text1">Finally, something cat people and dog people agree on — pet supplies delivery. Shop pet food, chew toys, and even costumes.</span>
+                <div class="helping-silder3-btn1">
+                    <a href="#"> Get Pet Supplies</a>
+                </div>
+            </div>
+          </div>
+    </div>
+    </div>
+    <div class="unlocking-wrapper">
+<div class="unlocking-wrapper-heading">
+    Unlocking opportunity for Dashers and businesses
+</div>
+    </div>
+    <div class="unlocking-wrapper-container">
+        <div class="unlocking-wrapper-img">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/become_a_dasher_mobile.png" alt="" class="unlocking-img mobileimage">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/become_a_dasher_desktop.png" alt="" class="unlocking-img tabletimage">
+
+        </div>
+        <div class="unlocking-wrapper-content">
+            <h2>Sign up to dash and get paid</h2>
+            <span class="unlocking-wrapper-content-text">
+                Deliver with the #1 Food and Drink App in the U.S. As a delivery driver, you'll make money and work on your schedule. Sign up in minutes.
+            </span>
+             <div class="unlocking-wrapper-btn1">
+                <a href="#">Become a Dasher
+                </a>
+                </div>
+
+        </div>
+    </div>
+    <div class="become-partner-wrapper">
+        <div class="become-partner-wrapper-img">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/work_with_doordash_mobile.png" class="become-partner-img mobileimage">
+            <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=cover,format=auto,quality=60/https://cdn.doordash.com/managed/consumer/seo/home/landing_cta/work_with_doordash_desktop.png" class="become-partner-img tabletimage" alt="">
+        </div>
+        <div class="become-partner-wrapper-content">
+            <h2>Grow your business with DoorDash</h2>
+            <span class="become-partner-wrapper-content-text">
+                Businesses large and small partner with DoorDash to reach new customers, increase order volume, and drive more sales.
+            </span>
+            <div class="become-partner-wrapper-btn1">
+                <a href="#">Become a Partner
+                </a>
+                </div>
+        </div>
+    </div>
+<!-- neighborhood -->
+ <div class="neighborhood-container">
+    <h2>Get more from your neighborhood</h2>
+    <div class="neighborhood-wrapper">
+        <div class="neighborhood-wrapper2">
+            <div class="neighborhood-wrapper-top-cities">
+               <span class="top-cities-text"> Top Cities</span> 
+            </div>
+            <div class="neighborhood-wrapper-top-cusiniess">
+                <span class="top-cuisines-text"> Top Cuisines</span> 
+
+            </div>
+            <div class="neighborhood-wrapper-top-cusiniess">
+                <span class="top-cuisines-text"> Top Chains</span> 
+
+            </div>
+        </div>
+        <div class="cities-list">
+            <div class="cities">
+               <a href="#">
+                <span class="city-name">New York</span>
+               </a> 
+               <a href="#">
+                <span class="city-name">
+                    Los Angeles
+                </span>
+               </a>
+               <a href="#">
+                <span class="city-name">Toronto</span>
+               </a>
+               <a href="#">
+                <span class="city-name">Chicago</span>
+               </a>
+               <a href="#">
+                <span class="city-name">Houston</span>
+               </a>
+               <a href="#">
+                <span class="city-name">
+                    Brooklyn
+                </span>
+               </a>
+               <a href="#">
+                <span class="city-name">San Diego</span>
+               </a>
+               <a href="#">
+                <span class="city-name">
+                    Las Vegas
+                </span>
+               </a>
+               <a href="#">
+                <span class="city-name">
+                    San Francisco
+                </span>
+               </a>
+               <a href="#"><span class="city-name">
+                Seattle
+               </span></a>
+                <a href="#"><span class="city-name">
+                Atlanta
+               </span></a>
+                <a href="#"><span class="city-name">
+             Queens
+               </span></a>
+                <a href="#"><span class="city-name">
+                Vancouver, BC
+               </span></a>
+               <a href="#"><span class="city-name">
+                Miami
+               </span></a>
+               <a href="#"><span class="city-name">San Antonio</span></a>
+            </div>
+            <div class="see-more-container">
+                <span class="see-more-text">
+                    See more
+                </span>
+                <button class="see-more-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 8.79289C5.68342 8.40237 6.31658 8.40237 6.70711 8.79289L12 14.0858L17.2929 8.79289C17.6834 8.40237 18.3166 8.40237 18.7071 8.79289C19.0976 9.18342 19.0976 9.81658 18.7071 10.2071L12.7071 16.2071C12.5196 16.3946 12.2652 16.5 12 16.5C11.7348 16.5 11.4804 16.3946 11.2929 16.2071L5.29289 10.2071C4.90237 9.81658 4.90237 9.18342 5.29289 8.79289Z" fill="#191919ff"></path></svg>
+                </button>
+
+            </div>
+        </div>
+    </div>
+ </div>
+<!-- footer -->
+ <div class="footer-container">
+    <footer >
+        <div class="footer-section1">
+            <h2>Popular Categories</h2>
+            <div class="footer-section1--content">
+                <div class="footer-section1--content1">
+                    <a href="#">
+                        <span class="footer-section1-text">
+                            Alcohol Australia
+                        </span>
+                    </a>
+                    <a href="#
+                    "><span class="footer-section1-text">
+                        Alcohol Delivery Australia
+                    </span></a>
+                    <a href="#">
+                      <span class="footer-section1-text">Back To School Delivery</span>  
+                    </a>
+                    <a href="#">
+                        <span class="footer-section1-text">
+                            Battle Of The Brands
+                        </span>
+                    </a>
+                      <a href="#">
+                        <span class="footer-section1-text">
+                          Beauty Stores
+                        </span>
+                    </a>
+                      <a href="#">
+                        <span class="footer-section1-text">
+                            Beauty Supply
+                        </span>
+                    </a>
+                      <a href="#">
+                        <span class="footer-section1-text">
+                        Catering Near Me
+                        </span>
+                    </a>
+                      <a href="#">
+                        <span class="footer-section1-text">
+                        Chips Ahoy Big Cookie
+                        </span>
+                    </a>
+                     <a href="#">
+                        <span class="footer-section1-text">
+                        Convenience Stores Canada
+                        </span>
+                    </a>
+
+                </div>
+
+            <div class="footer-section1--content1">
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Dashmart Near Me
+                    </span>
+                </a>
+                <a href="#">
+                     <span class="footer-section1-text">
+                        Deck The Doorstep
+                     </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Diageo Holiday
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Drugstores Canada
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Flower Delivery</span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Grocery Delivery Canada
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Grocery Retail Convenience
+                    </span>
+
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Haleon Well Within Reach
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">Halloween</span>
+                </a>
+            </div>
+        <div class="footer-section1--content1">
+            <a href="#">
+                <span class="footer-section1-text">
+                    Holiday Hosting
+                </span>
+            </a>
+            <a href="#">
+                <span class="footer-section1-text">
+                    Hsa Bank
+                </span>
+            </a>
+            <a href="#">
+                <span class="footer-section1-text">
+                Hsa Fsa Store
+            </span>
+            </a>
+            <a href="#">
+                <span class="footer-section1-text">
+                    Large Group Orders
+                </span>
+            </a>
+            <a href="#">
+                <span class="footer-section1-text">
+                    Local Eats Deserve Pepsi
+                </span>
+            </a>
+            <a href="#">
+                <span class="footer-section1-text">
+                    Make It Date Night
+                </span>
+            </a>
+            <a href="#">
+                <span class="footer-section1-text">
+                    Medicine Delivery
+                </span>
+            </a>
+            <a href="#">
+                <span class="footer-section1-text">
+                    Mothers Day
+                </span>
+            </a>
+            <a href="#">
+                <span class="footer-section1-text">Pepsi</span>
+            </a>
+        </div>
+            <div class="footer-section1--content1">
+                <a href="#"></a>
+                <span class="footer-section1-text">
+                    Pet Store Near Me
+                </span>
+                <a href="#">
+                    <span class="footer-section1-text">
+
+                        Pickleball
+                     </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Play For An Ultra
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Procter Gamble
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Retail Stores Near Me
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Seasonal Holidays
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Snap Ebt
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Valentines Day
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="footer-section1-text">
+                        Winter Holidays
+                    </span>
+                </a>
+            </div>
+            </div>
+        </div>
+        <div class="app-store-container">
+            <div class="get-we-know-container">
+                <div class="get-we-know">
+                <h2 class="get-we-know-head">Get to Know Us</h2>
+                
+                    <span class="get-we-know-text">
+                        About Us
+                    </span>
+                    <span class="get-we-know-text">
+                        Careers
+                    </span>
+                    <span class="get-we-know-text">
+                        Investors
+                    </span>
+                    <span class="get-we-know-text">
+                        Company Blog
+                    </span>
+                    <span class="get-we-know-text">
+                         Engineering Blog
+                        </span>
+                    <span class="get-we-know-text">
+                        Merchant Blog
+                    </span>
+                    <span class="get-we-know-text">
+                        Gift Cards
+                    </span>
+                    <span class="get-we-know-text">
+                        Promotions
+                    </span>
+                    <span class="get-we-know-text">
+                        Dasher Central
+                    </span>
+                    <span class="get-we-know-text">
+                        LinkedIn
+                    </span>
+                    <span class="get-we-know-text">
+                        Glassdoor
+                    </span>
+                    <span class="get-we-know-text">
+                        Accessibility
+                    </span>
+                    <span class="get-we-know-text">
+                        Newsroom
+                    </span>
+                    </div>
+                    <div class="let-us-help-you-container">
+                        <h2 class="let-us-help-you-container-heading"> Let Us Help You</h2>
+                        <a href="#">
+                            <span class="let-us-help-you-container-text">
+                                Account Details
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="let-us-help-you-container-text">
+                                Order History
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="let-us-help-you-container-text">
+                                Help
+                            </span>
+                        </a>
+                    </div>
+    <div class="doing-business-container">
+        <h2 class="doing-business-container-heading" >Doing Business</h2>
+        <a href="#">
+            <span class="doing-business-container-text">Become a Dasher</span>
+        </a>
+        <a href="#">
+            <span class="doing-business-container-text"> DoorDash Merchant</span>
+        </a>
+        <a href="#">
+            <span class="doing-business-container-text">
+                Get Dashers for Deliveries
+            </span>
+        </a>
+        <a href="#">
+            <span class="doing-business-container-text">Get DoorDash for Business</span>
+        </a>
+
+    </div>                    
+            
+            </div>
+            
+        <div class="os-container">
+                <div class="app-store-wrapper">
+                   <a href="#">
+                    <div class="app-store-img">
+                        <svg height="48px" width="144px" fill="rgb(196,196,196)" x="0px" y="0px" viewBox="0 0 131 44" aria-hidden="true"><path d="M95.752,9.966l0.07,0.861h0.036c0.259-0.448,0.883-0.99,1.838-0.99c1.002,0,2.039,0.648,2.039,2.463v3.406 h-1.45v-3.242c0-0.825-0.307-1.45-1.096-1.45c-0.578,0-0.978,0.413-1.132,0.849c-0.047,0.118-0.07,0.295-0.07,0.46v3.383h-1.45 v-4.031c0-0.661-0.024-1.214-0.047-1.709H95.752z"></path><rect x="74.588" y="7.338" width="1.449" height="8.368"></rect><path d="M54.52,7.573c0.495,0,0.802,0.342,0.813,0.79c0,0.424-0.318,0.778-0.825,0.778 c-0.484,0-0.801-0.354-0.801-0.778C53.707,7.916,54.036,7.573,54.52,7.573z"></path><rect x="53.789" y="9.966" width="1.449" height="5.74"></rect><path d="M43.707,15.706H42.28l-2.133-5.74h1.568l0.93,2.911c0.165,0.507,0.283,0.967,0.389,1.438h0.036 c0.105-0.472,0.236-0.92,0.389-1.438l0.92-2.911h1.521L43.707,15.706z"></path><rect x="57.515" y="7.338" width="1.449" height="8.368"></rect><path d="M82.795,33.559c-1.012,0.903-2.413,1.351-4.211,1.351c-1.666,0-2.999-0.322-4.005-0.961l0.575-2.063 c1.085,0.639,2.276,0.963,3.572,0.963c0.937,0,1.661-0.213,2.181-0.63c0.517-0.419,0.777-0.98,0.777-1.692 c0-0.618-0.214-1.146-0.64-1.576c-0.432-0.428-1.137-0.822-2.132-1.192c-2.703-1.006-4.057-2.482-4.057-4.422 c0-1.269,0.472-2.311,1.429-3.121c0.955-0.808,2.22-1.214,3.797-1.214c1.405,0,2.575,0.246,3.509,0.732l-0.625,2.018 c-0.871-0.472-1.861-0.712-2.965-0.712c-0.873,0-1.558,0.222-2.05,0.639c-0.411,0.388-0.618,0.854-0.618,1.403 c0,0.607,0.237,1.113,0.71,1.517c0.414,0.365,1.163,0.761,2.245,1.188c1.334,0.531,2.309,1.162,2.938,1.882 c0.625,0.718,0.94,1.611,0.94,2.679C84.165,31.665,83.705,32.738,82.795,33.559z"></path><path d="M91.524,25.395h-2.733v5.417c0,1.374,0.485,2.056,1.449,2.056c0.443,0,0.807-0.033,1.099-0.108l0.07,1.876 c-0.49,0.183-1.131,0.276-1.926,0.276c-0.973,0-1.743-0.294-2.291-0.894c-0.555-0.593-0.829-1.596-0.829-3.002v-5.621h-1.626V23.54 h1.626V21.5l2.428-0.733v2.773h2.733V25.395z"></path><path d="M104.242,9.966h0.813V8.893l1.427-0.401v1.474h1.378v1.084h-1.378v2.534c0,0.708,0.188,1.061,0.742,1.061 c0.259,0,0.401-0.012,0.566-0.059l0.024,1.096c-0.213,0.082-0.601,0.154-1.049,0.154c-0.542,0-0.979-0.177-1.25-0.472 c-0.318-0.33-0.46-0.861-0.46-1.615V11.05h-0.813V9.966z"></path><path d="M110.598,25.718c-0.244-0.044-0.506-0.063-0.78-0.063c-0.871,0-1.542,0.329-2.017,0.984 c-0.414,0.582-0.619,1.306-0.619,2.199v5.847h-2.476v-7.639c0-1.277-0.022-2.447-0.066-3.505h2.155l0.092,2.133h0.068 c0.258-0.731,0.669-1.322,1.238-1.762c0.551-0.402,1.149-0.595,1.791-0.595c0.227,0,0.435,0.012,0.615,0.042V25.718z"></path><path d="M110.974,12.264v3.442h-1.449V7.338h1.449v3.406h0.024c0.177-0.271,0.425-0.495,0.719-0.648 c0.295-0.166,0.636-0.26,1.002-0.26c0.978,0,2.004,0.648,2.004,2.487v3.383h-1.45v-3.229c0-0.825-0.307-1.462-1.108-1.462 c-0.566,0-0.967,0.378-1.131,0.814C110.986,11.958,110.974,12.111,110.974,12.264z"></path><path d="M37.151,7.762H35.3l-2.547,7.944h1.497l0.684-2.251h2.511l0.718,2.251h1.567L37.151,7.762z M35.171,12.359 l0.612-1.957c0.13-0.472,0.26-1.025,0.377-1.485h0.025c0.118,0.459,0.247,1.001,0.401,1.485l0.624,1.957H35.171z"></path><path d="M56.617,24.873c-0.884-1.042-1.978-1.558-3.293-1.558c-1.684,0-2.935,0.664-3.765,1.99h-0.043L49.38,23.54 h-2.178c0.063,1.252,0.095,2.47,0.095,3.662v12.001h2.475v-5.852c0.644,1.059,1.702,1.585,3.181,1.585 c1.366,0,2.514-0.489,3.434-1.464c1.033-1.103,1.548-2.595,1.548-4.496C57.934,27.282,57.493,25.911,56.617,24.873z M54.631,31.91 c-0.519,0.721-1.25,1.077-2.18,1.077c-0.794,0-1.44-0.281-1.936-0.834c-0.5-0.558-0.744-1.243-0.744-2.055v-1.855 c0-0.2,0.038-0.45,0.113-0.757c0.154-0.658,0.477-1.189,0.975-1.599c0.498-0.405,1.049-0.606,1.66-0.606 c0.903,0,1.62,0.374,2.158,1.104c0.49,0.701,0.731,1.597,0.731,2.679C55.408,30.245,55.151,31.192,54.631,31.91z"></path><path d="M101.728,24.944c-0.994-1.09-2.307-1.628-3.949-1.628c-1.697,0-3.042,0.543-4.044,1.648 c-1.001,1.099-1.5,2.515-1.5,4.241c0,1.648,0.483,3.022,1.453,4.105c0.969,1.086,2.277,1.627,3.915,1.627 c1.693,0,3.053-0.564,4.08-1.693c0.978-1.104,1.464-2.505,1.464-4.222C103.147,27.357,102.673,25.992,101.728,24.944z M99.888,31.725c-0.532,0.906-1.276,1.351-2.218,1.351c-0.968,0-1.717-0.44-2.247-1.324c-0.448-0.731-0.668-1.605-0.668-2.63 c0-1.053,0.219-1.942,0.668-2.671c0.517-0.885,1.275-1.325,2.265-1.325c0.964,0,1.703,0.44,2.23,1.325 c0.441,0.729,0.662,1.608,0.662,2.628S100.35,30.986,99.888,31.725z"></path><path d="M68.858,24.873c-0.879-1.042-1.976-1.558-3.291-1.558c-1.681,0-2.93,0.664-3.761,1.99h-0.043L61.62,23.54 h-2.173c0.06,1.252,0.092,2.47,0.092,3.662v12.001h2.477v-5.852c0.644,1.059,1.704,1.585,3.179,1.585 c1.369,0,2.512-0.489,3.435-1.464c1.033-1.103,1.548-2.595,1.548-4.496C70.177,27.282,69.739,25.911,68.858,24.873z M66.876,31.91 c-0.52,0.721-1.245,1.077-2.182,1.077c-0.791,0-1.438-0.281-1.934-0.834c-0.499-0.558-0.744-1.243-0.744-2.055v-1.855 c0-0.2,0.036-0.45,0.112-0.757c0.154-0.658,0.48-1.189,0.977-1.599c0.499-0.405,1.047-0.606,1.661-0.606 c0.901,0,1.62,0.374,2.159,1.104c0.488,0.701,0.734,1.597,0.734,2.679C67.658,30.245,67.397,31.192,66.876,31.91z"></path><path d="M40.783,19.231h-3.076l-4.971,15.453h2.565l1.378-4.536h5.023l1.443,4.536h2.639L40.783,19.231z M37.113,28.243 l1.284-4.036c0.339-1.286,0.581-2.255,0.736-2.912h0.043c0.38,1.526,0.643,2.497,0.784,2.912l1.302,4.036H37.113z"></path><path d="M121.284,28.587c0-1.391-0.331-2.562-0.986-3.513c-0.823-1.191-2.036-1.786-3.646-1.786 c-1.633,0-2.932,0.595-3.9,1.786c-0.915,1.121-1.376,2.516-1.376,4.201c0,1.711,0.497,3.075,1.482,4.091 c0.986,1.016,2.343,1.522,4.066,1.522c1.441,0,2.689-0.224,3.74-0.686l-0.39-1.722c-0.902,0.357-1.901,0.532-3.004,0.532 c-0.995,0-1.804-0.26-2.429-0.781c-0.69-0.58-1.05-1.418-1.079-2.517h7.43C121.252,29.402,121.284,29.027,121.284,28.587z M113.764,27.941c0.074-0.745,0.321-1.388,0.734-1.922c0.506-0.668,1.163-1.014,1.971-1.014c0.885,0,1.544,0.349,1.974,1.034 c0.335,0.538,0.492,1.17,0.479,1.901H113.764z"></path><path d="M70.542,9.837c-0.861,0-1.486,0.365-1.839,0.919h-0.024V7.338h-1.449v6.753c0,0.59-0.024,1.226-0.047,1.615 h1.238l0.07-0.86h0.024c0.412,0.708,1.072,0.99,1.815,0.99c1.297,0,2.605-1.025,2.605-3.089 C72.946,11.003,71.945,9.837,70.542,9.837z M70,14.692c-0.624,0-1.131-0.425-1.284-1.013c-0.024-0.106-0.036-0.224-0.036-0.342 v-0.931c0-0.142,0.024-0.271,0.048-0.378c0.153-0.636,0.695-1.061,1.284-1.061c0.966,0,1.449,0.825,1.449,1.839 C71.461,13.973,70.908,14.692,70,14.692z"></path><path d="M83.005,12.63c0-1.261-0.614-2.794-2.475-2.794c-1.839,0-2.805,1.497-2.805,3.089 c0,1.756,1.096,2.899,2.958,2.899c0.825,0,1.508-0.153,2.003-0.365l-0.212-0.991c-0.448,0.154-0.919,0.259-1.591,0.259 c-0.931,0-1.733-0.448-1.768-1.485h3.842C82.981,13.114,83.005,12.901,83.005,12.63z M79.115,12.229 c0.059-0.589,0.436-1.403,1.332-1.403c0.966,0,1.202,0.872,1.19,1.403H79.115z"></path><path d="M90.221,9.837c-1.733,0-2.97,1.155-2.97,3.041c0,1.85,1.261,2.958,2.876,2.958c1.461,0,2.947-0.943,2.947-3.053 C93.074,11.039,91.93,9.837,90.221,9.837z M90.175,14.787c-0.873,0-1.427-0.837-1.427-1.945c0-0.955,0.412-1.956,1.438-1.956 c0.99,0,1.391,1.037,1.391,1.933C91.577,13.985,91,14.787,90.175,14.787z"></path><path d="M65.708,14.327v-2.063c0-1.261-0.531-2.428-2.37-2.428c-0.907,0-1.65,0.247-2.074,0.507l0.283,0.943 c0.389-0.247,0.978-0.425,1.544-0.425c1.013,0,1.166,0.625,1.166,1.002v0.094c-2.122-0.012-3.406,0.731-3.406,2.169 c0,0.872,0.648,1.709,1.804,1.709c0.754,0,1.356-0.319,1.697-0.766h0.035l0.106,0.636h1.308 C65.731,15.353,65.708,14.846,65.708,14.327z M64.293,13.69c0,0.106,0,0.213-0.035,0.319c-0.141,0.413-0.554,0.79-1.144,0.79 c-0.459,0-0.825-0.26-0.825-0.825c0-0.872,0.978-1.084,2.003-1.072V13.69z"></path><path d="M121.231,12.63c0-1.261-0.614-2.794-2.475-2.794c-1.839,0-2.805,1.497-2.805,3.089 c0,1.756,1.096,2.899,2.958,2.899c0.825,0,1.508-0.153,2.003-0.365l-0.212-0.991c-0.447,0.154-0.919,0.259-1.591,0.259 c-0.931,0-1.733-0.448-1.768-1.485h3.842C121.207,13.114,121.231,12.901,121.231,12.63z M117.341,12.229 c0.059-0.589,0.436-1.403,1.332-1.403c0.966,0,1.203,0.872,1.19,1.403H117.341z"></path><path d="M51.547,14.327v-2.063c0-1.261-0.531-2.428-2.369-2.428c-0.908,0-1.651,0.247-2.075,0.507l0.283,0.943 c0.389-0.247,0.978-0.425,1.544-0.425c1.013,0,1.167,0.625,1.167,1.002v0.094c-2.122-0.012-3.406,0.731-3.406,2.169 c0,0.872,0.648,1.709,1.803,1.709c0.754,0,1.355-0.319,1.697-0.766h0.035l0.106,0.636h1.309 C51.57,15.353,51.547,14.846,51.547,14.327z M50.132,13.69c0,0.106,0,0.213-0.034,0.319c-0.142,0.413-0.555,0.79-1.144,0.79 c-0.46,0-0.825-0.26-0.825-0.825c0-0.872,0.978-1.084,2.003-1.072V13.69z"></path><path d="M23.106,7.376H12.221c-1.4,0-2.542,1.138-2.542,2.537v24.19c0,1.4,1.141,2.534,2.542,2.534h10.886 c1.399,0,2.54-1.135,2.54-2.534V9.913C25.646,8.514,24.505,7.376,23.106,7.376z M16.4,9.947h2.524c0.165,0,0.3,0.135,0.3,0.302 c0,0.158-0.135,0.294-0.3,0.294H16.4c-0.16,0-0.298-0.136-0.298-0.294C16.102,10.082,16.24,9.947,16.4,9.947z M17.662,35.289 c-0.722,0-1.311-0.589-1.311-1.312c0-0.725,0.589-1.315,1.311-1.315c0.726,0,1.313,0.591,1.313,1.315 C18.974,34.7,18.387,35.289,17.662,35.289z M24.103,31.536h-12.88V12.487h12.88V31.536z"></path></svg>
+                    </div>
+                   </a> 
+                
+
+                   <a href="#">
+                    <div class="play-store-img">
+            <svg height="48px" width="144px" fill="rgb(196,196,196)" x="0px" y="0px" viewBox="0 0 139 44" aria-hidden="true"><path d="M45.616,12.01h-0.952c0-0.131-0.09-0.502-0.271-1.112H43.02c-0.186,0.601-0.28,0.972-0.28,1.112h-0.895 c0-0.077,0.231-0.712,0.694-1.903c0.463-1.192,0.695-1.848,0.695-1.969h1.124c0,0.113,0.21,0.76,0.629,1.941 C45.406,11.259,45.616,11.903,45.616,12.01z M44.242,10.33c-0.339-1.023-0.509-1.576-0.509-1.66h-0.048 c0,0.077-0.175,0.63-0.526,1.66H44.242z"></path><path d="M49.451,12.01h-0.735c0-0.081-0.273-0.51-0.818-1.288c-0.571-0.819-0.896-1.379-0.976-1.68h-0.048 c0.049,0.434,0.074,0.827,0.074,1.178c0,0.49,0.014,1.087,0.042,1.79H46.26c0.03-0.615,0.045-1.29,0.045-2.025 c0-0.724-0.015-1.339-0.045-1.847h0.883c0,0.105,0.245,0.524,0.735,1.258c0.521,0.779,0.821,1.308,0.898,1.585h0.045 c-0.048-0.442-0.071-0.839-0.071-1.19c0-0.537-0.014-1.088-0.042-1.654h0.744c-0.028,0.492-0.042,1.107-0.042,1.847 C49.409,10.731,49.423,11.406,49.451,12.01z"></path><path d="M53.762,9.94c0,0.563-0.181,1.055-0.541,1.475c-0.361,0.42-0.867,0.631-1.517,0.631 c-0.293,0-0.698-0.012-1.213-0.036c0.026-0.599,0.039-1.274,0.039-2.025c0-0.722-0.013-1.337-0.039-1.847h0.52 c0.085,0,0.212-0.003,0.381-0.009c0.168-0.006,0.278-0.009,0.33-0.009c0.716,0,1.235,0.178,1.557,0.535 C53.601,9.012,53.762,9.441,53.762,9.94z M52.95,10.068c0-0.381-0.111-0.701-0.333-0.962c-0.222-0.261-0.561-0.391-1.017-0.391 c-0.085,0-0.202,0.009-0.351,0.027c0.02,0.397,0.03,0.811,0.03,1.243c0,0.474,0.01,0.944,0.03,1.41 c0.129,0.026,0.258,0.039,0.387,0.039c0.426,0,0.742-0.132,0.947-0.397C52.847,10.772,52.95,10.449,52.95,10.068z"></path><path d="M57.737,12.01h-0.88c-0.23-0.702-0.407-1.135-0.529-1.3c-0.123-0.164-0.321-0.247-0.595-0.247 c-0.115,0-0.225,0.001-0.33,0.003c0,0.51,0.009,1.024,0.027,1.544h-0.827c0.026-0.599,0.039-1.274,0.039-2.025 c0-0.722-0.013-1.337-0.039-1.847h0.515c0.06,0,0.184-0.003,0.373-0.009c0.189-0.006,0.364-0.009,0.525-0.009 c0.91,0,1.365,0.311,1.365,0.934c0,0.494-0.26,0.838-0.779,1.032v0.045c0.2,0.056,0.376,0.212,0.526,0.468 C57.278,10.856,57.481,11.326,57.737,12.01z M56.621,9.274c0-0.394-0.254-0.592-0.761-0.592c-0.186,0-0.351,0.014-0.494,0.042 c0.022,0.307,0.033,0.708,0.033,1.202c0.109,0.004,0.201,0.006,0.277,0.006C56.306,9.932,56.621,9.713,56.621,9.274z"></path><path d="M62,10.003c0,0.609-0.186,1.113-0.559,1.514c-0.373,0.401-0.834,0.601-1.383,0.601 c-0.523,0-0.962-0.184-1.315-0.552c-0.353-0.368-0.529-0.835-0.529-1.402c0-0.609,0.186-1.113,0.559-1.514 c0.373-0.4,0.834-0.601,1.383-0.601c0.523,0,0.962,0.184,1.315,0.55C61.823,8.966,62,9.434,62,10.003z M61.179,10.089 c0-0.414-0.106-0.75-0.318-1.008c-0.212-0.258-0.474-0.387-0.785-0.387c-0.29,0-0.535,0.13-0.738,0.39 c-0.202,0.26-0.303,0.588-0.303,0.984c0,0.412,0.107,0.748,0.32,1.007c0.213,0.259,0.474,0.388,0.784,0.388 c0.289,0,0.535-0.13,0.738-0.391C61.078,10.811,61.179,10.484,61.179,10.089z"></path><path d="M63.682,12.01H62.84c0.026-0.615,0.039-1.29,0.039-2.025c0-0.724-0.013-1.339-0.039-1.847h0.842 c-0.026,0.5-0.039,1.115-0.039,1.847C63.643,10.733,63.656,11.408,63.682,12.01z"></path><path d="M67.993,9.94c0,0.563-0.181,1.055-0.541,1.475c-0.361,0.42-0.867,0.631-1.517,0.631 c-0.294,0-0.698-0.012-1.213-0.036c0.026-0.599,0.039-1.274,0.039-2.025c0-0.722-0.013-1.337-0.039-1.847h0.52 c0.085,0,0.212-0.003,0.381-0.009s0.278-0.009,0.33-0.009c0.716,0,1.235,0.178,1.557,0.535C67.831,9.012,67.993,9.441,67.993,9.94z M67.181,10.068c0-0.381-0.111-0.701-0.333-0.962c-0.222-0.261-0.561-0.391-1.017-0.391c-0.085,0-0.202,0.009-0.351,0.027 c0.02,0.397,0.03,0.811,0.03,1.243c0,0.474,0.01,0.944,0.03,1.41c0.129,0.026,0.258,0.039,0.387,0.039 c0.426,0,0.742-0.132,0.947-0.397C67.078,10.772,67.181,10.449,67.181,10.068z"></path><path d="M73.712,12.01H72.76c0-0.131-0.09-0.502-0.271-1.112h-1.374c-0.186,0.601-0.28,0.972-0.28,1.112H69.94 c0-0.077,0.231-0.712,0.694-1.903c0.463-1.192,0.694-1.848,0.694-1.969h1.124c0,0.113,0.21,0.76,0.629,1.941 C73.502,11.259,73.712,11.903,73.712,12.01z M72.337,10.33c-0.339-1.023-0.509-1.576-0.509-1.66h-0.048 c0,0.077-0.175,0.63-0.526,1.66H72.337z"></path><path d="M77.181,9.152c0,0.474-0.176,0.824-0.528,1.05c-0.352,0.226-0.784,0.339-1.295,0.339 c-0.093,0-0.159-0.002-0.199-0.006c0,0.373,0.011,0.865,0.033,1.475h-0.836c0.026-0.573,0.039-1.248,0.039-2.025 c0-0.714-0.013-1.329-0.039-1.847h0.518c0.073,0,0.214-0.003,0.422-0.009s0.389-0.009,0.541-0.009c0.377,0,0.695,0.085,0.955,0.256 C77.051,8.547,77.181,8.805,77.181,9.152z M76.413,9.316c0-0.424-0.281-0.637-0.845-0.637c-0.141,0-0.29,0.015-0.446,0.045 c0.022,0.375,0.033,0.799,0.033,1.273c0.049,0.004,0.107,0.006,0.172,0.006C76.052,10.003,76.413,9.774,76.413,9.316z"></path><path d="M80.748,9.152c0,0.474-0.176,0.824-0.528,1.05c-0.352,0.226-0.784,0.339-1.295,0.339 c-0.093,0-0.159-0.002-0.199-0.006c0,0.373,0.011,0.865,0.033,1.475h-0.836c0.026-0.573,0.039-1.248,0.039-2.025 c0-0.714-0.013-1.329-0.039-1.847h0.518c0.073,0,0.214-0.003,0.422-0.009s0.389-0.009,0.541-0.009c0.377,0,0.695,0.085,0.955,0.256 C80.618,8.547,80.748,8.805,80.748,9.152z M79.981,9.316c0-0.424-0.282-0.637-0.845-0.637c-0.141,0-0.29,0.015-0.446,0.045 c0.022,0.375,0.033,0.799,0.033,1.273c0.049,0.004,0.107,0.006,0.172,0.006C79.619,10.003,79.981,9.774,79.981,9.316z"></path><path d="M86.58,10.003c0,0.609-0.186,1.113-0.559,1.514c-0.373,0.401-0.834,0.601-1.383,0.601 c-0.523,0-0.962-0.184-1.315-0.552c-0.353-0.368-0.529-0.835-0.529-1.402c0-0.609,0.186-1.113,0.559-1.514 c0.373-0.4,0.834-0.601,1.383-0.601c0.523,0,0.962,0.184,1.315,0.55C86.403,8.966,86.58,9.434,86.58,10.003z M85.759,10.089 c0-0.414-0.106-0.75-0.318-1.008c-0.212-0.258-0.474-0.387-0.785-0.387c-0.29,0-0.535,0.13-0.738,0.39 c-0.202,0.26-0.303,0.588-0.303,0.984c0,0.412,0.106,0.748,0.32,1.007c0.213,0.259,0.474,0.388,0.783,0.388 c0.29,0,0.535-0.13,0.738-0.391C85.658,10.811,85.759,10.484,85.759,10.089z"></path><path d="M90.611,12.01h-0.735c0-0.081-0.273-0.51-0.818-1.288c-0.571-0.819-0.896-1.379-0.976-1.68h-0.048 c0.049,0.434,0.074,0.827,0.074,1.178c0,0.49,0.014,1.087,0.042,1.79H87.42c0.03-0.615,0.045-1.29,0.045-2.025 c0-0.724-0.015-1.339-0.045-1.847h0.883c0,0.105,0.245,0.524,0.735,1.258c0.522,0.779,0.821,1.308,0.898,1.585h0.045 c-0.048-0.442-0.071-0.839-0.071-1.19c0-0.537-0.014-1.088-0.042-1.654h0.744C90.583,8.63,90.57,9.246,90.57,9.985 C90.57,10.731,90.583,11.406,90.611,12.01z"></path><path d="M55.525,24.417c0,1.922-0.57,3.454-1.71,4.593c-1.294,1.358-2.979,2.038-5.055,2.038 c-1.986,0-3.675-0.689-5.064-2.066c-1.391-1.377-2.085-3.085-2.085-5.122s0.694-3.744,2.085-5.122 c1.389-1.377,3.078-2.066,5.064-2.066c0.987,0,1.928,0.192,2.825,0.576c0.896,0.384,1.615,0.897,2.152,1.538l-1.211,1.211 c-0.91-1.089-2.166-1.634-3.767-1.634c-1.448,0-2.7,0.509-3.757,1.529c-1.057,1.018-1.586,2.342-1.586,3.968 c0,1.628,0.529,2.95,1.586,3.969c1.057,1.018,2.309,1.528,3.757,1.528c1.538,0,2.819-0.513,3.844-1.538 c0.666-0.667,1.05-1.596,1.153-2.787H48.76v-1.653h6.669C55.493,23.738,55.525,24.084,55.525,24.417z"></path><path d="M57.62,22.447c0.91-0.955,2.069-1.432,3.479-1.432c1.409,0,2.568,0.477,3.479,1.432 c0.91,0.955,1.364,2.149,1.364,3.584c0,1.435-0.454,2.63-1.364,3.584c-0.91,0.955-2.07,1.432-3.479,1.432 c-1.41,0-2.569-0.477-3.479-1.432c-0.91-0.955-1.365-2.149-1.365-3.584C56.255,24.596,56.71,23.402,57.62,22.447z M58.937,28.501 c0.608,0.621,1.329,0.933,2.162,0.933c0.833,0,1.553-0.311,2.162-0.933c0.608-0.621,0.913-1.444,0.913-2.469 c0-1.025-0.305-1.848-0.913-2.47c-0.609-0.621-1.33-0.932-2.162-0.932c-0.834,0-1.554,0.31-2.162,0.932 c-0.609,0.622-0.913,1.445-0.913,2.47C58.024,27.057,58.327,27.88,58.937,28.501z"></path><path d="M67.903,22.447c0.91-0.955,2.069-1.432,3.479-1.432c1.409,0,2.568,0.477,3.479,1.432 c0.91,0.955,1.364,2.149,1.364,3.584c0,1.435-0.454,2.63-1.364,3.584c-0.91,0.955-2.07,1.432-3.479,1.432 c-1.41,0-2.569-0.477-3.479-1.432c-0.91-0.955-1.365-2.149-1.365-3.584C66.538,24.596,66.993,23.402,67.903,22.447z M69.219,28.501 c0.608,0.621,1.329,0.933,2.162,0.933c0.833,0,1.553-0.311,2.162-0.933c0.608-0.621,0.913-1.444,0.913-2.469 c0-1.025-0.305-1.848-0.913-2.47c-0.609-0.621-1.33-0.932-2.162-0.932c-0.833,0-1.554,0.31-2.162,0.932 c-0.609,0.622-0.913,1.445-0.913,2.47C68.306,27.057,68.61,27.88,69.219,28.501z"></path><path d="M81.453,35.199c-1.115,0-2.025-0.278-2.73-0.836c-0.705-0.558-1.211-1.195-1.518-1.913l1.615-0.672 c0.179,0.512,0.509,0.942,0.99,1.287c0.48,0.346,1.027,0.519,1.643,0.519c0.973,0,1.739-0.292,2.297-0.874 c0.558-0.583,0.836-1.374,0.836-2.373v-0.903h-0.077c-0.308,0.461-0.743,0.846-1.307,1.153c-0.564,0.308-1.199,0.462-1.903,0.462 c-1.217,0-2.268-0.481-3.152-1.442c-0.884-0.961-1.326-2.152-1.326-3.575c0-1.422,0.442-2.614,1.326-3.575 c0.884-0.96,1.935-1.441,3.152-1.441c0.704,0,1.339,0.154,1.903,0.461c0.563,0.308,0.999,0.692,1.307,1.154h0.077v-1.308h1.692 v8.937c0,1.615-0.468,2.841-1.403,3.681C83.939,34.779,82.798,35.199,81.453,35.199z M81.587,29.434 c0.833,0,1.541-0.308,2.124-0.923c0.583-0.615,0.874-1.442,0.874-2.479c0-1.038-0.291-1.864-0.874-2.479 c-0.583-0.616-1.291-0.923-2.124-0.923c-0.82,0-1.525,0.31-2.114,0.932c-0.589,0.622-0.884,1.445-0.884,2.47 c0,1.025,0.295,1.848,0.884,2.469C80.062,29.122,80.767,29.434,81.587,29.434z"></path><path d="M89.716,30.74h-1.768V16.979h1.768V30.74z"></path><path d="M95.559,31.048c-1.422,0-2.579-0.474-3.469-1.423c-0.891-0.947-1.336-2.146-1.336-3.593 c0-1.371,0.432-2.55,1.298-3.537c0.865-0.986,1.97-1.48,3.315-1.48c1.397,0,2.514,0.455,3.354,1.365 c0.839,0.91,1.259,2.127,1.259,3.652l-0.019,0.327h-7.438c0.051,0.948,0.368,1.698,0.951,2.248c0.583,0.551,1.265,0.827,2.047,0.827 c1.268,0,2.127-0.539,2.576-1.614l1.575,0.653c-0.307,0.73-0.814,1.343-1.518,1.836C97.449,30.801,96.584,31.048,95.559,31.048z M98.096,24.898c-0.038-0.539-0.286-1.051-0.74-1.538c-0.455-0.487-1.132-0.73-2.028-0.73c-0.653,0-1.22,0.205-1.701,0.615 c-0.481,0.41-0.811,0.961-0.99,1.653H98.096z"></path><path d="M106.937,30.74h-1.769V16.979h4.69c1.166,0,2.175,0.388,3.027,1.163c0.852,0.776,1.278,1.753,1.278,2.931 c0,1.179-0.426,2.157-1.278,2.931c-0.852,0.775-1.861,1.163-3.027,1.163h-2.921V30.74z M106.937,23.476h2.96 c0.743,0,1.339-0.251,1.787-0.75c0.449-0.499,0.673-1.051,0.673-1.653c0-0.602-0.224-1.153-0.673-1.652 c-0.449-0.5-1.045-0.75-1.787-0.75h-2.96V23.476z"></path><path d="M117.085,30.74h-1.768V16.979h1.768V30.74z"></path><path d="M121.639,31.048c-1,0-1.836-0.289-2.508-0.865c-0.673-0.576-1.01-1.339-1.01-2.287 c0-1.025,0.397-1.829,1.192-2.412c0.794-0.583,1.774-0.874,2.94-0.874c1.038,0,1.89,0.192,2.556,0.576v-0.269 c0-0.692-0.237-1.246-0.711-1.662c-0.474-0.417-1.057-0.625-1.749-0.625c-0.513,0-0.978,0.122-1.393,0.365 c-0.417,0.243-0.702,0.576-0.856,0.999l-1.614-0.692c0.218-0.563,0.647-1.086,1.288-1.566c0.64-0.481,1.486-0.721,2.537-0.721 c1.204,0,2.203,0.353,2.998,1.057c0.794,0.705,1.191,1.698,1.191,2.979v5.689h-1.691v-1.307h-0.076 C124.029,30.509,122.997,31.048,121.639,31.048z M121.927,29.434c0.73,0,1.393-0.273,1.99-0.817 c0.596-0.544,0.893-1.188,0.893-1.931c-0.499-0.41-1.249-0.615-2.248-0.615c-0.859,0-1.506,0.186-1.941,0.557 c-0.436,0.372-0.653,0.807-0.653,1.307c0,0.461,0.198,0.826,0.596,1.096C120.96,29.298,121.415,29.434,121.927,29.434z"></path><path d="M130.347,34.891h-1.826l2.191-4.747l-3.882-8.822h1.922l2.807,6.766h0.038l2.729-6.766h1.922L130.347,34.891z"></path><path d="M8.629,23.626c0-4.395,0.002-8.791-0.002-13.186C8.627,9.9,8.732,9.408,9.114,9 C9.262,8.842,9.369,8.8,9.552,8.985c2.958,3.018,5.922,6.029,8.886,9.04c1.92,1.95,3.838,3.901,5.765,5.844 c0.187,0.188,0.203,0.287,0.005,0.484c-4.714,4.687-9.424,9.379-14.121,14.082c-0.287,0.287-0.488,0.257-0.764,0.045 c-0.503-0.387-0.696-0.906-0.696-1.523c0.001-2.603-0.004-5.207-0.005-7.81c-0.001-1.841,0-3.681,0-5.522 C8.624,23.626,8.627,23.626,8.629,23.626z"></path><path d="M10.319,8.499c0.36-0.003,0.613,0.101,0.857,0.238c6.02,3.373,12.039,6.748,18.062,10.114 c0.277,0.155,0.271,0.241,0.057,0.451c-1.346,1.325-2.682,2.66-4.017,3.996c-0.144,0.144-0.232,0.228-0.425,0.031 c-4.789-4.884-9.586-9.762-14.381-14.641C10.434,8.648,10.401,8.599,10.319,8.499z"></path><path d="M11.666,38.324c4.37-4.417,8.742-8.83,13.101-13.257c0.271-0.275,0.396-0.238,0.639,0.014 c1.107,1.153,2.231,2.291,3.36,3.423c0.199,0.199,0.215,0.281-0.054,0.428c-5.609,3.07-11.214,6.15-16.819,9.227 C11.8,38.21,11.714,38.293,11.666,38.324z"></path><path d="M36.628,23.748c-0.019,0.495-0.253,0.843-0.606,1.104c-0.262,0.193-0.55,0.352-0.836,0.51 c-1.696,0.938-3.397,1.866-5.089,2.81c-0.228,0.127-0.364,0.122-0.553-0.074c-1.205-1.244-2.42-2.479-3.642-3.706 c-0.178-0.179-0.183-0.277,0-0.456c1.424-1.403,2.84-2.813,4.249-4.23c0.166-0.167,0.285-0.186,0.493-0.069 c1.675,0.949,3.358,1.885,5.038,2.827C36.201,22.756,36.605,23.133,36.628,23.748z"></path></svg>                   
+         </div>
+                   </a> 
+                
+                </div>
+            </div>
+        </div>
+         <div class="footer-last">
+        <div class="footer-last-container">
+            <a href="#">
+                <div class="footer-last-container-logo">
+                    <svg aria-hidden="true" width="32" height="18" viewBox="0 0 99.5 56.5" fill="white"><path d="M95.64,13.38A25.24,25.24,0,0,0,73.27,0H2.43A2.44,2.44,0,0,0,.72,4.16L16.15,19.68a7.26,7.26,0,0,0,5.15,2.14H71.24a6.44,6.44,0,1,1,.13,12.88H36.94a2.44,2.44,0,0,0-1.72,4.16L50.66,54.39a7.25,7.25,0,0,0,5.15,2.14H71.38c20.26,0,35.58-21.66,24.26-43.16"></path></svg>
+                </div>
+            </a>
+            <a href="#" class="terms-condition">
+                <span class="footer-last-text">
+                    Terms of Service
+                </span>
+            </a>
+             <a href="#" class="terms-condition">
+                <span class="footer-last-text">
+                    Privacy
+                </span>
+            </a>
+            <a href="#" class="terms-condition">
+                <span class="footer-last-text">
+                    Delivery Locations
+                </span>
+
+            </a>
+            <a href="#"class="terms-condition">
+                <span class="footer-last-text">
+                    Do Not Sell or Share My Personal Information
+                </span>
+
+            </a>
+            <a href="#" class="terms-condition">
+                <span class="footer-last-text">
+                    © 2025 DoorDash
+                </span>
+            </a>
+        </div>
+        <div class="social-media">
+                  <div class="language">
+                    <button>
+                        <div class="btn-div">
+                        <svg class="globe" width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12.0153 19.9969C12.0049 20.0001 11.9999 20 11.9999 20C11.9999 20 11.9948 20 11.9847 19.9969C11.9736 19.9935 11.9515 19.9852 11.9186 19.9649C11.8494 19.9225 11.7455 19.8359 11.6177 19.6738C11.3575 19.3436 11.0794 18.8038 10.8274 18.0477C10.3973 16.7574 10.0955 14.9972 10.019 13H13.981C13.9045 14.9972 13.6027 16.7574 13.1726 18.0477C12.9206 18.8038 12.6425 19.3436 12.3823 19.6738C12.2545 19.8359 12.1506 19.9225 12.0814 19.9649C12.0485 19.9852 12.0264 19.9935 12.0153 19.9969ZM13.981 11H10.019C10.0955 9.00275 10.3973 7.24257 10.8274 5.95227C11.0794 5.19616 11.3575 4.65642 11.6177 4.32624C11.7455 4.16408 11.8494 4.07752 11.9186 4.03507C11.9515 4.01483 11.9736 4.00645 11.9847 4.00305C11.9943 4.00013 11.9996 4.00001 12 4C12.0004 4 12.0056 4.0001 12.0153 4.00305C12.0264 4.00645 12.0485 4.01483 12.0814 4.03507C12.1506 4.07752 12.2545 4.16408 12.3823 4.32624C12.6425 4.65642 12.9206 5.19616 13.1726 5.95227C13.6027 7.24257 13.9045 9.00275 13.981 11ZM15.9823 13C15.9051 15.1737 15.5782 17.1555 15.07 18.6802C14.9736 18.9694 14.8687 19.2483 14.7548 19.5131C17.5154 18.5005 19.5628 16.0099 19.9381 13H15.9823ZM19.9381 11H15.9823C15.9051 8.8263 15.5782 6.84448 15.07 5.31981C14.9736 5.03058 14.8687 4.7517 14.7548 4.48695C17.5154 5.49947 19.5628 7.9901 19.9381 11ZM8.01766 11C8.09487 8.8263 8.42177 6.84448 8.93 5.31981C9.02641 5.03057 9.13134 4.7517 9.24521 4.48695C6.48461 5.49947 4.43722 7.9901 4.06189 11H8.01766ZM4.06189 13C4.43722 16.0099 6.48461 18.5005 9.24521 19.5131C9.13134 19.2483 9.02641 18.9694 8.93 18.6802C8.42177 17.1555 8.09487 15.1737 8.01766 13H4.06189Z" fill="var(--usage-color-icon-default)"></path></svg>
+                        <span >English (US)</span><svg class="down-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 8.79289C5.68342 8.40237 6.31658 8.40237 6.70711 8.79289L12 14.0858L17.2929 8.79289C17.6834 8.40237 18.3166 8.40237 18.7071 8.79289C19.0976 9.18342 19.0976 9.81658 18.7071 10.2071L12.7071 16.2071C12.5196 16.3946 12.2652 16.5 12 16.5C11.7348 16.5 11.4804 16.3946 11.2929 16.2071L5.29289 10.2071C4.90237 9.81658 4.90237 9.18342 5.29289 8.79289Z" fill="black"></path></svg>
+                        </div>
+                    </button>
+                  </div>
+                    </div>
+                    <div class="social-media-three">
+                       <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path d="M21 12C21 7.02943 16.9706 3 12 3C7.02943 3 3 7.02943 3 12C3 16.4922 6.29117 20.2155 10.5938 20.8907V14.6016H8.30859V12H10.5938V10.0172C10.5938 7.76156 11.9374 6.51562 13.9932 6.51562C14.9779 6.51562 16.0078 6.69141 16.0078 6.69141V8.90625H14.8729C13.7549 8.90625 13.4062 9.60001 13.4062 10.3117V12H15.9023L15.5033 14.6016H13.4062V20.8907C17.7088 20.2155 21 16.4922 21 12Z" fill="rgb(196, 196, 196)"></path></svg></a> 
+                       <a class="tw" href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path d="M13.7124 10.6218L20.4133 3H18.8254L13.0071 9.61788L8.35992 3H3L10.0274 13.0074L3 21H4.58799L10.7324 14.0113L15.6401 21H21L13.7121 10.6218H13.7124ZM11.5375 13.0956L10.8255 12.0991L5.16017 4.16971H7.59922L12.1712 10.5689L12.8832 11.5655L18.8262 19.8835H16.3871L11.5375 13.096V13.0956Z" fill="rgb(196, 196, 196)"></path></svg></a>
+                       <a class="ins" href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="StyledInlineSvg-sc-45a1y2-0 gfYsDE fetched-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0008 3C9.55657 3 9.24981 3.01069 8.2898 3.05438C7.33167 3.09825 6.67766 3.24994 6.10541 3.4725C5.51346 3.70238 5.01133 4.00989 4.51108 4.51033C4.01045 5.01058 3.70294 5.51271 3.47232 6.10447C3.24919 6.67691 3.09731 7.33111 3.05419 8.28887C3.01125 9.24888 3 9.55582 3 12.0001C3 14.4444 3.01088 14.7502 3.05438 15.7102C3.09844 16.6683 3.25013 17.3223 3.4725 17.8946C3.70257 18.4865 4.01007 18.9887 4.51052 19.4889C5.01058 19.9895 5.51271 20.2978 6.10428 20.5277C6.67691 20.7502 7.33111 20.9019 8.28905 20.9458C9.24906 20.9895 9.55563 21.0002 11.9997 21.0002C14.4442 21.0002 14.75 20.9895 15.71 20.9458C16.6681 20.9019 17.3229 20.7502 17.8955 20.5277C18.4873 20.2978 18.9887 19.9895 19.4887 19.4889C19.9894 18.9887 20.2969 18.4865 20.5275 17.8948C20.7487 17.3223 20.9006 16.6681 20.9456 15.7104C20.9887 14.7504 21 14.4444 21 12.0001C21 9.55582 20.9887 9.24906 20.9456 8.28905C20.9006 7.33092 20.7487 6.67691 20.5275 6.10466C20.2969 5.51271 19.9894 5.01058 19.4887 4.51033C18.9881 4.0097 18.4875 3.70219 17.895 3.4725C17.3212 3.24994 16.6668 3.09825 15.7087 3.05438C14.7487 3.01069 14.4431 3 11.998 3H12.0008ZM11.7009 4.6218L12.0008 4.62189C14.4039 4.62189 14.6887 4.63052 15.6376 4.67364C16.5151 4.71377 16.9914 4.86039 17.3086 4.98358C17.7286 5.14671 18.0281 5.34171 18.3429 5.65671C18.6579 5.97172 18.8529 6.27172 19.0164 6.69173C19.1396 7.0086 19.2864 7.48486 19.3263 8.36237C19.3695 9.31113 19.3788 9.59613 19.3788 11.998C19.3788 14.3999 19.3695 14.6849 19.3263 15.6337C19.2862 16.5112 19.1396 16.9875 19.0164 17.3043C18.8533 17.7243 18.6579 18.0234 18.3429 18.3382C18.0279 18.6532 17.7288 18.8482 17.3086 19.0114C16.9918 19.1351 16.5151 19.2814 15.6376 19.3215C14.6889 19.3646 14.4039 19.374 12.0008 19.374C9.59762 19.374 9.3128 19.3646 8.36404 19.3215C7.48653 19.281 7.01028 19.1344 6.69284 19.0112C6.27283 18.848 5.97283 18.653 5.65783 18.338C5.34282 18.023 5.14782 17.7238 4.98432 17.3036C4.86113 16.9867 4.71432 16.5105 4.67438 15.6329C4.63125 14.6842 4.62263 14.3992 4.62263 11.9958C4.62263 9.59238 4.63125 9.30888 4.67438 8.36012C4.71451 7.48261 4.86113 7.00635 4.98432 6.6891C5.14745 6.2691 5.34282 5.96909 5.65783 5.65409C5.97283 5.33909 6.27283 5.14408 6.69284 4.98058C7.01009 4.85683 7.48653 4.71058 8.36404 4.67027C9.1943 4.63277 9.51606 4.62152 11.1934 4.61964V4.62189C11.3502 4.62165 11.5189 4.62172 11.7009 4.6218ZM15.725 7.19592C15.725 6.59947 16.2088 6.11628 16.805 6.11628C17.4013 6.11628 17.885 6.59966 17.885 7.19592C17.885 7.79217 17.4013 8.27593 16.805 8.27593C16.2088 8.27593 15.725 7.79217 15.725 7.19592ZM12.0006 7.37817C9.44827 7.37827 7.37891 9.44769 7.37891 12.0001C7.37891 14.5526 9.44837 16.6211 12.0008 16.6211C14.5533 16.6211 16.622 14.5526 16.622 12.0001C16.622 9.44763 14.5531 7.37817 12.0006 7.37817ZM15.0009 12.0001C15.0009 10.3431 13.6577 9.00006 12.0009 9.00006C10.3439 9.00006 9.00085 10.3431 9.00085 12.0001C9.00085 13.6569 10.3439 15.0001 12.0009 15.0001C13.6577 15.0001 15.0009 13.6569 15.0009 12.0001Z" fill="rgb(196, 196, 196)"></path></svg></a>
+                    </div>
+              
+    </div>
+    </footer>
+   
+ </div>
+</body>
+</html>

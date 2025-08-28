@@ -1,0 +1,202 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  background: url('https://www.ubereats.com/_static/96444e8b6107fad5.webp') no-repeat center center/cover;
+  width:100%;
+  height:551.33px ;
+  position: relative;
+
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    margin: 0 -10px 0 0;
+  background: white;
+    width: 100%;
+    height: 66px;
+}
+.header-left{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+.menu-icon i{
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.menu-icon .fa-bars {
+  display: inline-block;       
+  width: 18.33px;
+  height: 14.17px;
+  font-size: 18px;             
+  cursor: pointer;
+  text-align: center;
+        
+}
+
+.logo img{
+  width: 89.33px;
+  height: 16px;
+}
+.header-right{
+  display: flex;
+  align-items: center;
+  
+  width: 308px;
+  height: 36px;
+}
+.get-ride-container{
+  display: flex;
+  width: 89.33px;
+  height: 1;
+
+  
+}
+.get-ride{
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  width: 89.33px;
+  height: 16px;
+  display: flex;
+  margin-right: 10px;
+}
+
+.login{
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500px;
+  cursor: pointer;
+  background: white;
+  color: #000000;
+  border: 1px solid black;
+  height: 34px;
+  width: 64px;
+  border-radius: 20px;
+  text-align:center;
+  margin-top: 10px;
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.sign{
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #000000;
+  color: white;
+  height: 34px;
+  width: 74.64px;
+  margin-top: 10px;
+  margin-right: 40px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+
+}
+.main {
+height: 196px;
+min-width: 1024px ;
+padding: 0 40px;
+position: absolute;
+top: 35%;
+}
+.main h1{
+  font-size:54px ;
+  font-weight: 700;
+  margin-bottom: 40px;
+  line-height: 60px;
+  color: #000000;
+  font-family: UberMove, sans-serif;
+}
+.search-box{
+  display: flex;
+}
+.input-icon {
+  position: relative;
+  width: 500px;
+}
+
+.input-icon i.fa-location-dot {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color:#000000
+  
+}
+
+.search-box input {
+  width: 100%;
+  height: 56px;
+  padding: 8px 16px 8px 45px; 
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.input-icon input::placeholder {
+  color: #888;
+  font-size: 16px;
+  font-style: normal;
+  opacity: 1;
+}
+.delivery-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  
+  width: 190px;
+  height: 56px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.delivery-option i {
+  font-size: 18px;
+}
+
+.delivery-option span{
+  font-size: 16px;
+  font-weight: 500;
+  font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;;
+}
+.Search-here{
+  width: 133.33px;
+  height: 56px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: black;
+}
+.Search-here span{
+  color:#fff;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
