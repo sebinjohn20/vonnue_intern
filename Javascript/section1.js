@@ -109,7 +109,7 @@
 //     } else if (arr[i] > secondLargest && arr[i] < largest) {
 //         secondLargest = arr[i];
 //     }
-// }
+// } 
 
 // console.log("Second largest number:", secondLargest);
 // 32. Count occurrences of an element

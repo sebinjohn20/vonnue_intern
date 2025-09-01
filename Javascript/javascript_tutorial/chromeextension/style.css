@@ -12,6 +12,13 @@ body{
     animation: gradientMove 18s ease infinite;
 
 }
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes ul to bottom */
+  height: 400px; /* set a fixed height for the container */
+  gap: 1rem;
+}
 .container{
     background: rgba(255, 255, 255, 0.15);
     padding: 2rem;
@@ -39,6 +46,24 @@ body{
     width: 260px;
     background: #fff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+#delete-all{
+      padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+#delete-all:hover{
+       transform: translateY(-3px) scale(1.05);
+     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+#delete-all:active {
+  transform: scale(0.95);
 }
 #save-btn{
     padding: 12px 20px;
@@ -69,6 +94,81 @@ body{
     font-size: 20px;
     font-weight: 600;
 }
+/* Reset default list styles */
+#ul-el {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual list items */
+#ul-el li {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* Animation */
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.4s ease forwards;
+}
+a{
+  text-decoration: none;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* Animation */
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.4s ease forwards;
+}
+#savetab{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+/* Animate each li with delay */
+#ul-el li:nth-child(1) { animation-delay: 0.1s; }
+#ul-el li:nth-child(2) { animation-delay: 0.2s; }
+#ul-el li:nth-child(3) { animation-delay: 0.3s; }
+#ul-el li:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover effect */
+#ul-el li:hover {
+  transform: scale(1.05) rotate(-1deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }

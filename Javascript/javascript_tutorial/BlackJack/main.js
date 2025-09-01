@@ -359,5 +359,3 @@ function newgame(){
 // sortFurit()
 // console.log(orangeShelf)
 // console.log(appleShelf)
-
-Sebi
