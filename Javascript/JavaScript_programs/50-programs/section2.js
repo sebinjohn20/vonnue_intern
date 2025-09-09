@@ -562,37 +562,415 @@
 
 
 
-function vowelOrcosonant(char){
-   char = char.toLowerCase();
-   if(char==='a'|| char==='e' ||char=='i' || char==='o' || char==='u'){
-        console.log(`The given alphabet ${char} is vowel`)
-    }
-    else{
-        console.log(`The given alphabet ${char} is consonant`)
-        }
-    }
+// function vowelOrconsonant(char){
+//    char = char.toLowerCase();
+//    if(char==='a'|| char==='e' ||char=='i' || char==='o' || char==='u'){
+//         console.log(`The given alphabet ${char} is vowel`)
+//     }
+//     else{
+//         console.log(`The given alphabet ${char} is consonant`)
+//         }
+//     }
 
-vowelOrcosonant('a')
-vowelOrcosonant('f')
-vowelOrcosonant('c')
-vowelOrcosonant('u')
+// let testCases = ['a', 'f', 'c', 'u', 'E', 'G', 'i'];
+// for(let i=0;i<testCases.length;i++){
+//     vowelOrconsonant(testCases[i])
+// }
+
+
+
 
 
 // 29 Check the given age is eligible for voting.
 
+// function votingEligility(age){
 
 
 
-// Check the given number is even or odd.
 
-// Given a number x, calculate the sum of n natural numbers of x.
+//     if (age>=18){
+//         console.log(`This person age ${age} is eligible for voting`)
+//     }
+//     else{
+//         console.log(`This person age ${age} is not eligible for voting`)
+//     }
+// }
+    // }
+//  let testcases=[18,23,45,67,12,18]
+//  for(let i=0;i<testcases.length;i++)
+//  {
+//     votingEligility(testcases[i])
+//  }
 
-// Calculate the multiplication table of a given number.
 
-// Calculate the factorial of a given number.
 
-// Find the max value in an array of numbers.
 
-// Calculate the average value in an array of numbers.
 
-// Check if the given number is prime or not.
+
+
+// 30 Check the given number is even or odd.
+
+
+
+
+
+
+
+// function checkEvenorOdd(num){
+//     if(num%2===0){
+//         console.log(` The number ${num} is Even number`)
+//     }
+//     else{
+//         console.log(`This number ${num} is odd number`)
+//     }
+// }
+// let testCases=[1,2,3,5,6,17,19,100]
+// for(let i=0; i<testCases.length;i++){
+//     checkEvenorOdd(testCases[i])
+// }
+
+
+
+
+
+
+
+// 31 Given a number x, calculate the sum of n natural numbers of x.
+
+
+
+// function sum_of_natural_numbers(num){
+//     if(num<1){
+//         console.log(`${num} please enter the postive number`)
+//     }
+//      let sum=(num*(num+1))/2
+//      console.log(`Sum of first ${num} natural number is ${sum}`)
+// }
+
+// let testCases=[9,3,510,17,34]
+// for(let i=0;i<testCases.length;i++){
+//     sum_of_natural_numbers(testCases[i])
+// }
+ 
+
+
+
+
+
+
+
+
+// 32 Calculate the multiplication table of a given number.
+
+
+
+
+// function multiplication_table(num){
+//     console.log(`The multiplication table of ${num} is`)
+//     for(let i=1;i<=10;i++){
+//         console.log(`${i} * ${num} = ${i*num}`)
+//     }
+// }
+// let testCases=[1,2,3,4,7,9]
+// for(let i=0;i<testCases.length;i++){
+//     multiplication_table(testCases[i])
+// }
+
+
+
+
+// 33 Calculate the factorial of a given number.
+
+
+
+
+
+// function factorial(num)
+// {
+//     let f=1;
+//     for(let i=1; i<=num; i++){
+//         f=f*i
+//     }
+//     console.log(`Factorial of number ${num} is ${f}`)
+// }
+// let testCases=[1,5,10,8]
+// for(let i=0;i<testCases.length;i++){
+//     factorial(testCases[i])
+// }
+
+
+
+// 34 Find the max value in an array of numbers.
+
+// function  findMax(arr){
+//     let max=arr[0]
+//     for(let i=0;i<arr.length;i++){
+//         if (arr[i]> max)
+//         {
+//             max=arr[i]
+//         }
+//     }
+//     console.log(`Max value in the array [${arr}] is =  ${max}`)
+// }
+// let testCases=[
+//     [1,2,3,4,10,23],
+//     [40,67,100,-1,-200],
+//     [1,30,199,100]
+// ]
+// for(let i=0;i<testCases.length;i++){
+//     findMax(testCases[i])
+// }
+
+
+
+
+
+
+//34  Calculate the average value in an array of numbers.
+
+
+
+// function averageNumbers(arr){
+//     let sum=0
+//     for(let i=0;i<arr.length; i++){
+//         sum+=arr[i]
+//     }
+//     let average=sum/arr.length
+//     console.log(`Average value in array ${arr} = ${average} `)
+// }
+
+// let testCases=[
+//     [1,2,3,4,5,6],
+//     [10,20,39,45,70],
+//     [3,4,5,690,70,90]
+// ]
+// for(let i=0; i < testCases.length; i++){
+//     averageNumbers(testCases[i])
+// }
+
+
+
+
+// 35 Check if the given number is prime or not.
+
+
+
+
+// function checkprime(num){
+//     if (num<=1){
+//         console.log(`This number ${num} is not prime number`);
+//         return;
+//     }
+//     for(let i=2; i<Math.sqrt(num) ;i++){
+//         if(num%i===0){
+//             console.log(`This number ${num} not prime number`);
+//             return
+//         }
+        
+//     }
+//     console.log(`This number ${num} is prime number`)
+
+// }
+// let testCases=[1,24,9,20,17,15,13,23]
+// for(let i=0; i < testCases.length; i++){
+//     checkprime(testCases[i])
+// }
+
+
+
+// 36  first non repeating character
+
+
+// function firstNonRepeating(str){
+
+
+// let count={};
+// for( let char of str){
+//     if( count[char]){
+//         count[char]+=1
+//     }
+//     else{
+//         count[char]=1  
+// }
+// }
+// for (let char of str){
+//     if(count[char]==1){
+//         return char
+//     }
+// }
+
+// return null
+// }
+
+// console.log(firstNonRepeating("google"))
+
+
+
+
+
+
+
+
+
+// 37  merge two Array 
+
+
+
+
+
+// function sortarry(array){
+//     for(let i=0; i<array.length;i++){
+//         for(let j=i+1; j<array.length;j++){
+//             if(array[i]>array[j]){
+//                 let temp=array[i]
+//                 array[i]=array[j]
+//                 array[j]=temp;
+//             }
+//         }
+//     }
+//     return array;
+
+// }
+// // function mergeArray(Arr1,Arr2){
+// //     let merge=[];
+// //     for(let i=0; i<Arr1.length;i++){
+// //         merge.push(Arr1[i]);
+// //     }
+// //      for(let i=0; i<Arr2.length;i++){
+// //         merge.push(Arr2[i]);
+// //     }
+// //     return sortarry(merge);
+// // }
+// function mergeArray(Arr1,Arr2){
+//     let merge=[...Arr1,...Arr2]
+//     return sortarry(merge);
+// }
+
+// let array1=[3,4,29,6,7]
+// let array2=[5,1,10,20]
+// console.log(`Merged array is:${mergeArray(array1,array2)}`)
+
+
+
+
+
+
+// 38 mex (minimum excluded value) in JavaScript
+
+
+
+// let array=[0,1,2,4,5,7]
+// let max=0
+// for(let i=0;i<array.length;i++){
+//     if(array[i]!==max){
+//         break
+        
+//     }
+//     max++
+// }
+// console.log(max)
+
+
+// The list is not sorted then mex 
+
+
+
+// function sortedArray(array){
+//     for(let i=0; i<array.length; i++){
+//         for(let j=i+1; j<array.length; j++){
+//             if(array[i]>array[j]){
+//                 let temp=array[i];
+//                 array[i]=array[j]
+//                 array[j]=temp
+//             }
+//         }
+//     }
+//     return  array
+// }
+// let a=[1,4,5,6,2,0]
+// let find=sortedArray(a)
+// let max=0
+// for (let i=0; i<find.length;i++){
+//     if(find[i]!==max){
+//         break
+//         }
+//         max++
+// }
+// console.log(max)
+
+
+// prime product
+// let limit=50
+// let prime=[];
+// for(let n=2 ; n<=limit; n++){
+//     let isPrime=true;
+//     for(let i=2;i<Math.sqrt(n); i++ ){
+//         if(n%i===0){
+//             isPrime=false
+//             break
+//     }
+// }
+//     if(isPrime){
+//         prime.push(n)
+//     }
+
+// }
+
+// let a=2
+// let b=5
+// console.log(prime)
+// let product=prime[a-1]*prime[b-1]
+// console.log(prime[a-1])
+// console.log(product)
+
+function getDaysInMonth(year, month) {
+  return new Date(year, month, 0).getDate();
+}
+
+function calculateAge(dobString) {
+  // dobString format: YYYY-MM-DD
+  let birthDate = new Date(dobString);
+
+  let d1 = birthDate.getDate();
+  let m1 = birthDate.getMonth() + 1;
+  let y1 = birthDate.getFullYear();
+
+  let today = new Date();
+  let d2 = today.getDate();
+  let m2 = today.getMonth() + 1;
+  let y2 = today.getFullYear();
+
+  let d3, m3, y3;
+
+  y3 = y2 - y1;
+
+  // --- Month calculation ---
+  if (m2 >= m1) {
+    m3 = m2 - m1;
+  } else {
+    y3--;
+    m3 = 12 + m2 - m1;
+  }
+
+  // --- Day calculation ---
+  if (d2 >= d1) {
+    d3 = d2 - d1;
+  } else {
+    m3--;
+    d3 = getDaysInMonth(y2, m2 - 1) + d2 - d1; // borrow days
+  }
+
+  // --- Fix negative month ---
+  if (m3 < 0) {
+    m3 = 11;
+    y3--;
+  }
+
+  return `You are ${y3} years, ${m3} months and ${d3} days old.`;
+}
+
+// Example usage:
+let dob ="2000-01-12"
+if (dob) {
+  console.log(calculateAge(dob));
+}

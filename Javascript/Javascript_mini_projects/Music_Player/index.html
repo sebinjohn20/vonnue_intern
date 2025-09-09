@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="cricle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                  <div class="cricle">
+                    <i class="fa-solid fa-bars"></i>                </div>
+            </nav>
+            <img src="468-thumbnail.png" class="song-img">
+            <h1>Despactio</h1>
+            <p>Luis Fonsi Ft. Puerto Rican</p>
+
+            <audio   id="song">
+                <source src="https://open.spotify.com/track/6habFhsOp2NvshLv26DqMb?creation_point=https%3A%2F%2Fopen.spotify.com%2F&flow_ctx=8a9ba8db-a285-4fbc-8bd7-1c914c2cae4a%3A1757333443">
+            </audio>
+            <input type="range" value="0" id="progress">
+
+            <div class="controls">
+                <div>
+                    <i class="fa-solid fa-backward"></i>
+                </div>
+                <div onclick="playPause()">
+                    <i class="fa-solid fa-play" id="ctrlIcon"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-forward"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/4269ecf45d.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

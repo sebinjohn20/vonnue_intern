@@ -490,7 +490,7 @@
 // console.log(`The longest word is "${longestWord}"`);
 
 
-// Capitalize first letter of each word in a sentence
+// 23 Capitalize first letter of each word in a sentence
 
 
 
@@ -514,7 +514,7 @@
 
 
 
-// Remove all white spaces from a string
+// 24 Remove all white spaces from a string
 
 
 
@@ -535,7 +535,7 @@
 
 
 
-// Replace all occurrences of a word in a string
+//25  Replace all occurrences of a word in a string
 
 
 // let str = "I love JavaScript. JavaScript is powerful.";
@@ -545,7 +545,7 @@
 
 
 
-// Find substring without using .includes()
+// 26 Find substring without using .includes()
 
 
 
@@ -583,7 +583,7 @@
 
 
 
-// Check if two strings are anagrams
+// 27 Check if two strings are anagrams
 
 
 
@@ -603,7 +603,7 @@
 //     }
 // }
 
-// Reverse each word in a sentence
+//28 Reverse each word in a sentence
 // let str="I love javascript"
 // let word =""
 // let result=""
@@ -630,7 +630,7 @@
 
 
 
-// Find frequency of words in a sentence
+// 29 Find frequency of words in a sentence
 
 
 // let str = "I love JavaScript and I love coding";
@@ -658,7 +658,7 @@
 
 
 
-// Find Armstrong number (e.g., 153)
+// 30 Find Armstrong number (e.g., 153)
 
 // let num=153
 // let temp=num
@@ -680,39 +680,247 @@
 
 
 
-// Check perfect number (e.g., 28)
 
-// Find GCD (HCF) of two numbers
 
-// Find LCM of two numbers
 
-// Convert decimal → binary
+// 31  Convert binary → decimal
 
-// Convert binary → decimal
 
-// Generate a random number between 1 and 100
 
-// Print multiplication table of a number
 
-// Find sum of digits of a number
 
-// Check if a number is palindrome
+// function binaryTodecimal(binary){
+//     let decimal=0
+//     let power=0
+//     for(let i=0; i<binary.length-1; i++){
+//         let bit=binary[i]
+//         if(bit==='1'){
+//             decimal+=Math.pow(2,power)
+//         }
+//         power++
+//     }
+//     console.log(`Binary ${binary} -> Decimal ${decimal}`)
+// }
+// let testCases=["1011", "1101", "1000", "111111", "0", "1"]
+// for(let i=0; i < testCases.length; i++){
+//     binaryTodecimal(testCases[i])
+// }
+
+
+
+
+
+
+// 32  Find sum of digits of a number
+
+
+
+
+
+//  function sumOfdigits(num){
+//     let sum=0;
+//     let original=num
+//     while(num>0){
+//         sum+=num%10;
+//         num=Math.floor(num/10)
+//     }
+//     console.log(`The sum of digits ${original} is ${sum}`)
+//  }
+//  let testCases=[123,456,789,1090]
+//  for(let i=0; i < testCases.length; i++){
+//     sumOfdigits(testCases[i])
+//  }
+
+
+
+
+
+
+// 33 Check if a number is palindrome
+
+
+
+
+
+// function isPalindrome(num){
+//     let reverse=0
+//     let digit=0
+//     let original=num
+//     while(num>0){
+//         digit=num%10;
+//         reverse=reverse*10+digit
+//         num=Math.floor(num/10)
+//     }
+//     if(reverse===original){
+//         console.log(`The number ${original} is palindrome`)
+//     }
+//     else{
+//         console.log(`The number ${original} is not palindrome`)
+//     }
+    
+// }
+// let testCases = [121, 12321, 123, 101, 4554, 10];
+
+// for(let i=0; i < testCases.length; i++){
+//     isPalindrome(testCases[i])
+// }
+
+
+
+
 
 // 🔹 Intermediate (Objects & Functions)
 
-// Count occurrences of elements in an array (using object/map)
+// 34  Count occurrences of elements in an array (using object/map)
 
-// Merge two objects
 
-// Clone an object (shallow & deep copy)
 
-// Find unique values from array of objects
+// Using Object
 
-// Group objects by a property (e.g., students by grade)
+
+// function countOccurrence(arr){
+//     let count={}
+//     for(let i=0; i < arr.length ; i++){
+//         let element=arr[i]
+//         if(count[element]){
+//             count[element]+=1
+//         }
+//         else{
+//             count[element]=1
+
+//         }
+//     }
+//     console.log(`Count the occurrence in the array ${arr} is:`,count)
+// }
+// let testCases=[
+//     [1, 2, 2, 3, 3, 3, 4],
+//     ["apple", "banana", "apple", "orange", "banana"],
+//     []
+// ];
+// for(let i=0; i<testCases.length;i++){
+//     countOccurrence(testCases[i])
+// }
+
+
+
+
+// using map
+
+
+// function countOccurencesMap(arr){
+//     let counts= new Map();
+//     for(let element of arr)
+//     {
+//         counts.set (element,(counts.get(element) || 0)+1);
+//     }
+//     console.log(`Occurences in [${arr}]`)
+//     for(let[key, value] of counts.entries()){
+//         console.log(`${key} -> ${value}`)
+//     }
+// }
+// let testCases=[
+//     [1,2,3,3,4,2,6,7,8,7,6,7],
+//     ["apple", "banana", "apple", "orange", "banana"],
+//     []
+// ]
+// for (let i=0; i <testCases.length; i++){
+//     countOccurencesMap(testCases[i])
+// }
+
+
+
+
+
+
+// 35 Merge two objects
+
+
+// Using Spread Operator
+
+
+// let obj1={ a:1,b:2,c:4}
+// let obj2={ e:3,d:4,f:2}
+// let merge={...obj1,...obj2}
+// console.log(merge)
+
+
+// 36 Clone an object (shallow & deep copy)
+
+
+// Methods to Create a Shallow Copy:
+
+// let obj1={a:1,b:{x:10}}
+// let shallow1=Object.assign({},obj1);
+// let shallow2={...obj1}
+// console.log(shallow1)
+// console.log(shallow2)
+//  shallow1.b.x=99;
+//  console.log(obj1.b.x)
+//  let deep=structuredClone(obj1)
+//  deep.b.x=77
+//  console.log(obj1.b.x)
+
+
+
+
+
+
+// 37  Find unique values from array of objects
+
+
+// function getUniqueBykey(arr,key){
+//     let seen=new Set();
+//     return arr.filter(obj=>{
+//         if(seen.has(obj[key])) return false
+//         seen.add(obj[key]);
+//         return true;
+//     });
+
+// }
+// let users=[
+//     { id:1, name: "Alice"},
+//     { id:2, name:"Bob"},
+//     { id:3, name:"Charlie"},
+//     { id:1, name: "Alice"},
+//     { id:2, name:"Bob"}
+// ]
+// console.log("Unique vy id:",getUniqueBykey(users,"id"))
+// console.log("Unique by name:", getUniqueBykey(users,"name"))
+
+
+
+
+// 38  Group objects by a property (e.g., students by grade)
+
+
+// function groupBy(arr,key){
+//     return arr.reduce((acc,obj) => {
+//         let groupKey=obj[key]
+//         if(!acc[groupKey]){
+//             acc[groupKey]=[];
+//         }
+//         acc[groupKey].push(obj)
+//         return acc;
+//     })
+// }
+
+// let students = [
+//     { name: "Alice", grade: "A" },
+//     { name: "Bob", grade: "B" },
+//     { name: "Charlie", grade: "A" },
+//     { name: "David", grade: "C" },
+//     { name: "Eva", grade: "B" }
+// ];
+
+// console.log(groupBy(students, "grade"));
 
 // Flatten a nested array
+let arr=[1,[2,[3,4],5],6]
 
-// Remove falsy values from an array (false, 0, "", null, undefined, NaN)
+let flatArr=arr.flat(Infinity)
+console.log(flatArr)
+
+
 
 
 
@@ -782,51 +990,51 @@
 
 
 
-class Queue{
-    constructor (size){
-        this.size=size;
-        this.items=[];
-        this.front=0
-        this.rear=0
-    }
-    enqueue(element){
-        if(this.rear===this.size){
-            console.log("queue is full")
-        }
-        this.items[this.rear]=element;
-        this.rear++
-    }
-    dequeue(){
-        if(this.rear===this.front){
-            console.log("Queue is empty")
-            return null;
-        }
-        let removed=this.items[this.front];
-        this.front++;
-        return removed
-    }
-    printQueue(){
-        let result="";
-        if(this.rear===this.front){
-            console.log("Queue is Empty")
-        }
-        else{
-        for(let i=this.front;i<this.rear;i++){
-            result+= " -> "+this.items[i]
-        }
-        console.log(result)
-    }
-    }
-}
+// class Queue{
+//     constructor (size){
+//         this.size=size;
+//         this.items=[];
+//         this.front=0
+//         this.rear=0
+//     }
+//     enqueue(element){
+//         if(this.rear===this.size){
+//             console.log("queue is full")
+//         }
+//         this.items[this.rear]=element;
+//         this.rear++
+//     }
+//     dequeue(){
+//         if(this.rear===this.front){
+//             console.log("Queue is empty")
+//             return null;
+//         }
+//         let removed=this.items[this.front];
+//         this.front++;
+//         return removed
+//     }
+//     printQueue(){
+//         let result="";
+//         if(this.rear===this.front){
+//             console.log("Queue is Empty")
+//         }
+//         else{
+//         for(let i=this.front;i<this.rear;i++){
+//             result+= " -> "+this.items[i]
+//         }
+//         console.log(result)
+//     }
+//     }
+// }
 
 
 
 
-let queue=new Queue(5)
-queue.enqueue(10)
-queue.enqueue(20)
-queue.printQueue()
-queue.dequeue()
-queue.dequeue()
-queue.printQueue()
+// let queue=new Queue(5)
+// queue.enqueue(10)
+// queue.enqueue(20)
+// queue.printQueue()
+// queue.dequeue()
+// queue.dequeue()
+// queue.printQueue()
 // Implement a debounce function
