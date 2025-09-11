@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "category": "Electronics",
+    "price": 25.99,
+    "inStock": true,
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Bluetooth Headphones",
+    "category": "Electronics",
+    "price": 59.99,
+    "inStock": true,
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "name": "Coffee Maker",
+    "category": "Home Appliances",
+    "price": 99.99,
+    "inStock": false,
+    "rating": 4.2
+  },
+  {
+    "id": 4,
+    "name": "Office Chair",
+    "category": "Furniture",
+    "price": 150.0,
+    "inStock": true,
+    "rating": 4.1
+  },
+  {
+    "id": 5,
+    "name": "Electric Kettle",
+    "category": "Home Appliances",
+    "price": 35.0,
+    "inStock": true,
+    "rating": 4.3
+  },
+  {
+    "id": 6,
+    "name": "Gaming Keyboard",
+    "category": "Electronics",
+    "price": 85.5,
+    "inStock": false,
+    "rating": 4.6
+  },
+  {
+    "id": 7,
+    "name": "Desk Lamp",
+    "category": "Furniture",
+    "price": 45.75,
+    "inStock": true,
+    "rating": 4.0
+  }
+]
