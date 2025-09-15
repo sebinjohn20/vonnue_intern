@@ -1,6 +1,20 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Cambria Math;}{\f2\fnil\fcharset0 Cambria Math;}{\f3\fnil\fcharset1 Segoe UI Symbol;}{\f4\fnil\fcharset1 Segoe UI Symbol;}{\f5\fnil Segoe UI Symbol;}}
 {\*\generator Riched20 10.0.19041}{\*\mmathPr\mmathFont1\mwrapIndent1440 }\viewkind4\uc1 
-\pard\sa200\sl276\slmult1\b\f0\fs22\lang9 innerText vs innerHTML in JavaScript.\par
+\pard\sa200\sl276\slmult1\b\f0\fs22\lang9\par
+Scope is the area of a program where a variable can be used or accessed.\par
+\b0\par
+Global scope \f1\u8594?\f0  variable can be used anywhere.\par
+\par
+Local scope \f1\u8594?\f0  variable can be used only inside a function or block.\par
+\b Lexical\f2  \f0 environment\f2  \f0 decides\f2  \f0 which\f2  \f0 variables\f2  \f0 are\f2  \f0 accessible\f2  \f0 to\f2  \f0 a\f2  \f0 function\f2  \f0 based\f2  \f0 on\f2  \f0 where\f2  \f0 it\f2  \f0 was\f2  \f0 written\f2  \f0 in\f2  \f0 the\f2  \f0 code\f2 .\f0\par
+\par
+\par
+The\f2  \f0 Temporal\f2  \f0 Dead\f2  \f0 Zone\f2  (\f0 TDZ\f2 ) \f0 in\f2  \f0 JavaScript\f2  \f0 is\f2  \f0 the\f2  \f0 time\f2  \f0 period\f2  \f0 between\f2  \f0 entering\f2  \f0 a\f2  \f0 scope\f2  \f0 and\f2  \f0 the\f2  \f0 moment\f2  \f0 a\f2  \f0 let\f2  \f0 or\f2  \f0 const\f2  \f0 variable\f2  \f0 is\f2  \f0 declared\f2 , \f0 during\f2  \f0 which\f2  \f0 the\f2  \f0 variable\f2  \f0 exists\f2  \f0 in\f2  \f0 memory\f2  \f0 but\f2  \f0 cannot\f2  \f0 be\f2  \f0 accessed\f2 .\par
+\par
+\b0\f0\lang9\par
+\b A closure is a function that remembers and can access variables from its outer (parent) scope even after that outer function has finished executing.\par
+\par
+innerText vs innerHTML in JavaScript.\par
 \b0\par
 innerText \f1\u8594?\f0  returns/sets only the visible text (ignores HTML tags).\par
 innerHTML \f1\u8594?\f0  returns/sets the HTML code + text inside the element.\par
@@ -145,14 +159,61 @@ console.log(sum); // 21\par
 \par
 The nullish coalescing operator (??) returns the right-hand value if the left-hand value is null or undefined, otherwise it returns the left-hand value.\par
 \par
-\f4\u-10179?\u-9143?\f2  \f4 It\rquote s\f2  \f4 used\f2  \f4 to\f2  \f4 provide\f2  \f4 default\f2  \f4 values\f2  \f4 safely\f2  \f4 without\f2  \f4 mistakenly\f2  \f4 treating\f2  \f4 0\f2 , \f4 ""\f2 , \f4 or\f2  \f4 false\f2  \f4 as\f2  \f4 missing\f2 .\f4\par
+\f4\u-10179?\u-9143?\f2  \f5 It\rquote s\f2  \f5 used\f2  \f5 to\f2  \f5 provide\f2  \f5 default\f2  \f5 values\f2  \f5 safely\f2  \f5 without\f2  \f5 mistakenly\f2  \f5 treating\f2  \f5 0\f2 , \f5 ""\f2 , \f5 or\f2  \f5 false\f2  \f5 as\f2  \f5 missing\f2 .\f5\par
 \par
-\f3\u9989?\f2  \f3 Syntax\par
-let\f2  \f3 result\f2  = \f3 value1\f2  ?? \f3 value2\f2 ;\f3\par
+\f3\u9989?\f2  \f5 Syntax\par
+let\f2  \f5 result\f2  = \f5 value1\f2  ?? \f5 value2\f2 ;\f5\par
 \par
 \par
-If\f2  \f3 value1\f2  \f3 is\f2  \f3 not\f2  \f3 nullish\f2  (\f3 null\f2  \f3 or\f2  \f3 undefined\f2 ), \f1\u8594? result = value1\par
+If\f2  \f5 value1\f2  \f5 is\f2  \f5 not\f2  \f5 nullish\f2  (\f5 null\f2  \f5 or\f2  \f5 undefined\f2 ), \f1\u8594? result = value1\par
 \par
-If value1 is nullish, \u8594? result = value2\b0\f0\lang9\par
+If value1 is nullish, \u8594? result = value2\par
+\par
+\par
+An anonymous function is a function that is declared without a name.\par
+\b0 // Assigning an anonymous function to a variable\par
+var greet = function() \{\par
+    console.log("Hello, world!");\par
+\};\par
+\par
+greet();  \par
+// Output: Hello, world!\par
+\par
+\par
+\b\par
+A first-class function means that in a programming language (like JavaScript), functions are treated like any other value. They can be:\par
+\b0\par
+Assigned to variables\par
+\par
+Passed as arguments to other functions\par
+\par
+Returned from other functions\par
+\par
+Stored in data structures (like arrays or objects)\par
+\par
+\par
+\par
+\b Key Differences\par
+Feature\tab Function Declaration\tab Function Expression\par
+\b0 Hoisting\tab Yes\tab No\par
+Name required\tab Yes\tab Can be anonymous\par
+Usage before declaration\tab Works\tab Error\par
+Example Syntax\tab function foo() \{\}\tab var foo = function() \{\}\par
+\par
+\par
+\par
+\b Term\tab Definition\tab Example\b0\par
+Parameter\tab Variable in function definition\tab function sum(a, b) \{ ... \}\par
+Argument\tab Actual value passed when calling the function\tab sum(5, 10) \u8594? 5 and 10 are arguments\par
+\b\par
+What is a Callback Function?\par
+\b0\par
+A callback function is a function that is passed as an argument to another function and is executed later inside that function.\par
+\par
+\b Why Use Callbacks?\par
+\b0\par
+To handle asynchronous operations (like waiting for a response).\par
+\par
+To make code more flexible and reusable.\f0\lang9\par
 }
  
