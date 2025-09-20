@@ -923,54 +923,206 @@
 // console.log(prime[a-1])
 // console.log(product)
 
-function getDaysInMonth(year, month) {
-  return new Date(year, month, 0).getDate();
-}
 
-function calculateAge(dobString) {
-  // dobString format: YYYY-MM-DD
-  let birthDate = new Date(dobString);
 
-  let d1 = birthDate.getDate();
-  let m1 = birthDate.getMonth() + 1;
-  let y1 = birthDate.getFullYear();
 
-  let today = new Date();
-  let d2 = today.getDate();
-  let m2 = today.getMonth() + 1;
-  let y2 = today.getFullYear();
 
-  let d3, m3, y3;
 
-  y3 = y2 - y1;
 
-  // --- Month calculation ---
-  if (m2 >= m1) {
-    m3 = m2 - m1;
-  } else {
-    y3--;
-    m3 = 12 + m2 - m1;
+
+
+// Right-aligned Pyramid
+
+
+//     *
+//    **
+//   ***
+//  ****
+// *****
+
+
+
+// const rows =5
+
+// for(let i=1; i<=rows;i++){
+//   let str="";
+//   for(let j=1; j<= rows-i;j++){
+//     str +=" ";
+//   }
+//   for(let k=1; k<=i ; k++){
+//     str +=" *"
+//   }
+//   console.log(str)
+// }
+
+
+
+
+
+// Left-Aligned Pyramid
+// *
+// **
+// ***
+// ****
+// *****
+
+
+
+
+// rows=5
+// for(let i=1;i<=rows;i++){
+//   let str="";
+//   for(let j=1 ;j<=i;j++){
+//     str+="*"
+//   }
+//   console.log(str)
+// }
+
+
+
+
+
+
+
+
+
+// Centered Pyramid
+
+
+
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+
+
+// rows=7;
+
+// for(let i=1;i<=rows ;i++){
+//   let str=""
+//   for(let j=1;j<=rows-i; j++){
+//     str+=" "
+
+//   }
+//   for(k=1 ;k<=2*i-1;k++){
+//     str+="*"
+//   }
+//   console.log(str)
+// }
+
+
+
+
+
+
+
+
+// Inverted Pyramid
+// *****
+// ****
+// ***
+// **
+// *
+
+
+
+// row=5
+// for(let i=row ;i>=1;i--){
+//   let str=""
+//   for(let j=1;j<=i;j++ ){
+//     str+="*"
+
+//   }
+//   console.log(str);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// Hollow Square
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+
+// const row=9
+
+// for(let i=1 ; i<=row ;i++){
+//   let str=""
+//   for(let j=1;j<=row;j++){
+//     if(i===1 || i===row || j===1 || j===row){
+//       str+="*"
+//     }
+//     else{
+//       str +=" "
+//     }
+//   }
+//   console.log(str)
+// }
+
+
+
+
+// function boardingSystem(commands){
+//   let queue=[]
+//   for(let command of commands){
+//     let parts=command.split(" ");
+//     let action=parts[0]
+//     let name=parts[1]
+//      if(action=== "ADD_NORMAL" && name){
+//       queue.push(name);
+//      }
+//      else if(action==='ADD_PRIORITY' && name){
+//       queue.unshift(name);
+//      }
+//      else if(action=== "BOARD"){
+//       if(queue.length >0){
+//         console.log(queue.shift());
+//       }
+//       else{ 
+//         console.log("No Passengers in line")
+//       }
+//      }
+//      else{
+//       console.log("invalid command")
+//      }
+//   }
+// }
+// const input = [
+//   "ADD_NORMAL Alice",
+//   "ADD_NORMAL Bob",
+//   "ADD_PRIORITY Carol",
+//   "BOARD",
+//     "BOARD",
+//       "BOARD"
+// ]
+// boardingSystem(input)
+
+
+
+
+function bulbToggle(commands){
+  let state="OFF";
+  for(let command of commands){
+    if(command === "TOGGLE"){
+      state=state=="OFF"? "ON": "OFF";
+      console.log(state=="ON"? "Light ON💡": "Light OFF");
+    }
+    else{
+      console.log("Invalid Commands")
+    }
   }
-
-  // --- Day calculation ---
-  if (d2 >= d1) {
-    d3 = d2 - d1;
-  } else {
-    m3--;
-    d3 = getDaysInMonth(y2, m2 - 1) + d2 - d1; // borrow days
-  }
-
-  // --- Fix negative month ---
-  if (m3 < 0) {
-    m3 = 11;
-    y3--;
-  }
-
-  return `You are ${y3} years, ${m3} months and ${d3} days old.`;
 }
-
-// Example usage:
-let dob ="2000-01-12"
-if (dob) {
-  console.log(calculateAge(dob));
-}
+let input=["TOGGLE", "TOGGLE", "TOGGLE"]
+bulbToggle(input)

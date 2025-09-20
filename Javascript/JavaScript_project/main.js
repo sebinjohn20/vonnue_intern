@@ -1,9 +1,27 @@
+ 
+ let allProducts=[]
+ 
+ 
  fetch("products.json")
     .then(res => res.json())
     .then(data => {
-      const productList = document.getElementById("product-list");
+      allProducts=data.searchResults;
+    renderProducts(allProducts);
 
-      data.searchResults.forEach(item => {
+ })
+    .catch(err => console.error("Error loading JSON:", err));
+
+
+
+
+
+
+
+
+      function renderProducts(products){
+      const productList = document.getElementById("product-list");
+        productList.innerHTML = ""; // Clear existing products
+      products.forEach(item => {
         // li
         const li = document.createElement("li");
         li.classList.add("item",  "itemBorderRight");
@@ -126,5 +144,413 @@ else{
 
         productList.appendChild(li);
       });
+   
+
+    }
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+  const sortBtn = document.querySelector(".btn-for-sort");
+  const popup = document.querySelector(".popup-container");
+  const sticky = document.querySelector(".sticky");
+  const searchProduct = document.querySelector(".searchResults");
+
+  const filterBtn = document.querySelector(".btn-for-filter");
+  const searchFilter = document.querySelector(".search-fliter");
+  const closeBtn = document.querySelector(".close-btn");
+
+    const selectFilters = document.querySelectorAll(".selected-filter");
+
+  const filterOptions=document.querySelector(".filter-options")
+  const filterList=document.querySelector(".filterlist");
+  const searchBySize=document .querySelector(".search-by-size")
+
+  const brandFilter=document.querySelector(".brand-filter");
+  const colorFilter=document.querySelector(".color-filter")
+  const ratingFilter=document.querySelector(".rating-filter");
+
+
+  popup.style.display = "none"; // hide initially
+
+  sortBtn.addEventListener("click", () => {
+    if (popup.style.display === "none") {
+      popup.style.display = "block";
+      sticky.style.display = "none";
+    } else {
+      popup.style.display = "none";
+    }
+  });
+
+  searchProduct.addEventListener("click", () => {
+    sticky.style.display = "flex";
+    popup.style.display = "none";
+  });
+
+  // ---- FILTER ----
+  filterBtn.addEventListener("click", () => {
+    searchFilter.classList.add("active");
+     filterOptions.style.display = "block";
+
+    sticky.classList.add("hidden");
+  });
+
+  // ---- CLOSE FILTER ----
+  closeBtn.addEventListener("click", () => {
+    searchFilter.classList.remove("active");
+    sticky.classList.remove("hidden");
+  });
+
+
+  selectFilters.forEach(filter => {
+  filter.addEventListener("click", () => {
+    // remove "active" from all filters
+    selectFilters.forEach(f => f.classList.remove("active"));
+
+    // remove activesize if present
+    if (filter.classList.contains("activesize")) {
+      filter.classList.remove("activesize");
+    }
+
+    // activate clicked filter
+    filter.classList.add("active");
+
+    // hide all filter panels first
+    filterOptions.style.display = "none";
+    filterList.style.display = "none";
+    brandFilter.style.display = "none";
+    colorFilter.style.display = "none";
+    ratingFilter.style.display = "none";
+    searchBySize.style.display = "none";
+
+    // now show only the correct one
+    if (filter.id === "size") {
+      filterOptions.style.display = "block";
+      searchBySize.style.display = "block";
+    }
+    else if (filter.id === "price") {
+      filterList.style.display = "block";
+    }
+    else if (filter.id === "brand") {
+      brandFilter.style.display = "block";
+    }
+    else if (filter.id === "color") {
+      colorFilter.style.display = "block";
+    }
+    else if (filter.id === "rating") {
+  
+      ratingFilter.style.display = "block";
+    }
+  });
+});
+
+ })
+
+
+
+
+
+
+ //**************price silder move************
+
+const slider = document.querySelector(".slider");
+const track = document.querySelector(".track");
+const train = document.querySelector(".train");
+const leftBtn = document.querySelector(".left-pink-button");
+const rightBtn = document.querySelector(".right-pink-button");
+const priceRange = document.getElementById("priceRange");
+
+const minPrice = 0;
+const maxPrice = 20000;
+
+// Function to round left handle to nearest 500, right handle to nearest 1000
+function roundPrice(value, isLeft) {
+  return isLeft ? Math.round(value / 500) * 500 : Math.round(value / 1000) * 1000;
+}
+
+// Update train and price display
+function updateTrain() {
+  try {
+    const trackWidth = track.offsetWidth;
+    const left = leftBtn.offsetLeft + leftBtn.offsetWidth / 2;
+    const right = rightBtn.offsetLeft + rightBtn.offsetWidth / 2;
+
+    if (right <= left) throw new Error("Handles crossed!");
+
+    train.style.left = left + "px";
+    train.style.width = (right - left) + "px";
+
+    // Calculate price based on position
+    const leftPercent = (left - track.offsetLeft) / trackWidth;
+    const rightPercent = (right - track.offsetLeft) / trackWidth;
+
+    const leftPrice = roundPrice(minPrice + leftPercent * (maxPrice - minPrice), true);
+    const rightPrice = roundPrice(minPrice + rightPercent * (maxPrice - minPrice), false);
+
+    priceRange.textContent = `₹${leftPrice} - ₹${rightPrice}+`;
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
+// Drag logic with snapping
+function makeDraggable(handle, isLeft) {
+  handle.addEventListener("mousedown", () => {
+    const sliderLeft = slider.getBoundingClientRect().left;
+
+    function onMouseMove(e) {
+      try {
+        let x = e.clientX - sliderLeft;
+        const trackLeft = track.offsetLeft;
+        const trackRight = track.offsetLeft + track.offsetWidth;
+
+        // Clamp within track
+        x = Math.max(trackLeft, Math.min(x, trackRight));
+
+        // Prevent handles from crossing
+        if (isLeft) x = Math.min(x, rightBtn.offsetLeft);
+        else x = Math.max(x, leftBtn.offsetLeft + leftBtn.offsetWidth);
+
+        // Snap position based on increments
+        const trackWidth = track.offsetWidth;
+        const percent = (x - trackLeft) / trackWidth;
+        let price = minPrice + percent * (maxPrice - minPrice);
+        price = roundPrice(price, isLeft);
+
+        // Convert price back to position
+        x = trackLeft + ((price - minPrice) / (maxPrice - minPrice)) * trackWidth;
+
+        handle.style.left = (x - handle.offsetWidth / 2) + "px";
+        updateTrain();
+      } catch (err) {
+        console.error("Drag error:", err.message);
+      }
+    }
+
+    function onMouseUp() {
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseup", onMouseUp);
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+  });
+}
+
+// Enable dragging
+makeDraggable(leftBtn, true);
+makeDraggable(rightBtn, false);
+
+// Initial update
+updateTrain();
+
+
+
+
+
+
+
+
+function applyFilter() {
+
+
+   
+  // Get price range text (ex: "₹0 - ₹10,000+")
+  const priceText = document.getElementById("priceRange").textContent || "";
+
+
+  // Clean and split min/max
+  let [minStr, maxStr] = priceText.replace(/[₹+,]/g, "").split("-");
+  const sliderMin = 0;
+  const sliderMax = 20000; // 👈 max price of your slider
+
+  const minSelected = parseInt(minStr.trim()) || sliderMin;
+  const maxSelected = parseInt(maxStr.trim()) || sliderMax;
+
+  // Get selected brands
+  const selectedBrands = Array.from(
+    document.querySelectorAll(".brand-filter input:checked")
+  ).map(cb =>
+    cb.closest("label")
+      .querySelector(".filter-value")
+      .textContent.trim()
+      .toLowerCase()
+  );
+
+  // Get selected colors
+  const selectedColors = Array.from(
+    document.querySelectorAll(".color-filter input:checked")
+  ).map(cb =>
+    cb.closest("label")
+      .querySelector(".filter-value")
+      .textContent.trim()
+      .toLowerCase()
+  );
+
+ // Get selected Rating
+  
+ const selectedRatingInput = document.querySelector(".rating-filter input:checked");
+   if(selectedRatingInput){
+    const ratingSpan=selectedRatingInput.closest("label").querySelector(".rating-span");
+    minRating=parseInt(ratingSpan.id)
+   }
+   else{
+    minRating=0
+   }
+
+  
+
+  let filtered;
+
+  // Case 1: No brand + No color + full price range → show all
+  if (
+    !selectedBrands.length &&
+    !selectedColors.length &&
+    minSelected === sliderMin &&
+    maxSelected === sliderMax&&
+     !minRating
+  ) {
+    filtered = allProducts;
+  } 
+  // Case 2: Apply filters
+  else {
+    filtered = allProducts.filter(p => {
+      const price = p.price.current || 0;
+      const priceOK = price >= minSelected && price <= maxSelected;
+
+      const brandOK =
+        !selectedBrands.length ||
+        selectedBrands.includes(p.title?.toLowerCase());
+
+      const colorOK =
+        !selectedColors.length ||
+        selectedColors.includes(p.color?.toLowerCase());
+
+
+      const ratingVal = parseFloat(p.rating.value) || 0;
+      const ratingOK = ratingVal >= minRating;
+              return priceOK && brandOK && colorOK && ratingOK;
+    });
+  }
+
+  // Render products
+  renderProducts(filtered);
+
+ restScroll()
+
+  // Close filter UI
+  document.querySelector(".sticky")?.classList.remove("hidden");
+  document.querySelector(".search-fliter").classList.remove("active");
+
+  // Update count
+  const countEl = document.querySelector(".price-info-count");
+  if (countEl) countEl.textContent = `${filtered.length} items found`;
+}
+
+// Attach handler
+document.querySelector(".close-btn.applybtn")
+  .addEventListener("click", applyFilter);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Get all sort buttons
+
+
+
+  const sortButtons=document.querySelectorAll(".popup-container .sortby-value-text");
+  sortButtons.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const sortType =btn.textContent.trim();
+      sortProducts(sortType);
+
+
+      const popup = document.querySelector(".popup-container");
+     const sticky = document.querySelector(".sticky");
+      if (popup){
+
+      popup.style.display = "none";
+       sticky.style.display = "flex";
+    }
+
+    });
+  });
+
+
+
+
+
+  function sortProducts(type){
+    let sortedProducts=[...allProducts];
+    switch(type){
+      case "Price: High to Low":
+        sortedProducts.sort((a,b)=>
+        (b.price.current )-(a.price.current)
+        );
+        break;
+      case "Price: Low to High":
+        sortedProducts.sort((a,b)=>
+          (a.price.current)- (b.price.current));
+        break;
+        case "Customer Rating":
+          sortedProducts.sort((a,b)=>
+            (b.rating.value || 0)-(a.rating.value ||0 ))
+         break;
+         case "Discount":
+           sortedProducts.sort((a, b) => 
+            { 
+              const discA = parseInt(a.price?.discount) || 0; 
+              const discB = parseInt(b.price?.discount) || 0;
+               return discB - discA; });
+          break;
+
+        default:
+          break;
+    }
+     renderProducts(sortedProducts);
+    
+        restScroll()
+  }
+
+
+
+
+
+ function restScroll(){
+
+     
+    const resultsContainer=document.querySelector(".searchResults, .product-list");
+    if(resultsContainer) resultsContainer.scrollTop=0
+     
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
     })
-    .catch(err => console.error("Error loading JSON:", err));
+  }
+
+
+
+
