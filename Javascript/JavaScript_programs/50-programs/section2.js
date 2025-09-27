@@ -77,25 +77,25 @@
 
 
 
-// let matrix=[
-//     [1,0,0],
-//     [0,2,0],
-//     [0,0,3]
-// ]
-// let isDiagonal=true;
-// for(let i=0;i<matrix.length;i++){
-//     for(let j=0;i<matrix.length;j++){
-//         if(i!==j && matrix[i][j]!==0){
-//             isDiagonal=false
-//         }
-//     }
-// }
-// if(isDiagonal){
-//     console.log("The matrix is diagonal matrix")
-// }
-// else{
-//     console.log("The matrix is not diagonal matrix")
-// }
+let matrix=[
+    [1,0,0],
+    [0,2,0],
+    [0,0,3]
+]
+let isDiagonal=true;
+for(let i=0;i<matrix.length;i++){
+    for(let j=0;i<matrix.length;j++){
+        if(i!==j && matrix[i][j]!==0){
+            isDiagonal=false
+        }
+    }
+}
+if(isDiagonal){
+    console.log("The matrix is diagonal matrix")
+}
+else{
+    console.log("The matrix is not diagonal matrix")
+}
 
 
 
