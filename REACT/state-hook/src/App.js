@@ -8,12 +8,12 @@ import HookCounterFour from './components/HookCounterFour';
 import HookCounterOne from './components/HookCounterOne';
 import HookMouse from './components/HookMouse';
 import MouseContainer from './components/MouseContainer';
-import InterveralHookCounter from './components/InterveralHookCounter';
+import DataFecthing from './components/DataFecthing';
 
 function App() {
   return (
     <div className="App">
-      <InterveralHookCounter></InterveralHookCounter>
+      <DataFecthing></DataFecthing>
       {/* <MouseContainer></MouseContainer> */}
       {/* <HookMouse></HookMouse> */}
       {/* <HookCounterOne></HookCounterOne> */}

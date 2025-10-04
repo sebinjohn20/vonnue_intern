@@ -1,4 +1,4 @@
-import { futimes } from "fs"
+
 
 
 let classObj = {
@@ -615,27 +615,58 @@ let classObj = {
 
 //32 Write a function to calculate and print the percentage of students who scored above a certain mark in a specific subject.
 
-function PercentageStudentsAboveMark(subject,mark)
-{
+// function PercentageStudentsAboveMark(subject,mark)
+// {
+//   const totalStudent=classObj.students.length
+//   const aboveCount=classObj.students.filter(student=>{
+//     const subjectMark=student.marks.find(m=>m.subject===subject)
+//     return subjectMark && subjectMark.mark>mark
+
+//   }).length
+//   console.log(aboveCount)
+//   const percentage=(aboveCount/ totalStudent)*100
+//   console.log(`Percentage of students who scored above ${mark} in ${subject}: ${percentage.toFixed(2)}%`);
+// }
+// PercentageStudentsAboveMark("Maths", 30);
+
+// 33 Write a function to calculate and print the percentage of students who scored below a certain mark in a specific subject.
+
+// function PercentageStudentsBelowMark(subject,mark){
+//   const totalStudent=classObj.students.length
+//   const belowMark=classObj.students.filter(student=>{
+//    const subjectMark= student.marks.find(m=>m.subject===subject)
+//     return subjectMark && subjectMark.mark<mark
+//   }).length
+//   const percentage=(belowMark/totalStudent)*100
+//    console.log(`Percentage of students who scored above ${mark} in ${subject}: ${percentage.toFixed(2)}%`);
+// }
+// PercentageStudentsBelowMark('Computer', 30)
+
+
+//  35 Write a function to calculate and print the percentage of students who scored above a certain mark in all subjects.
+
+// function PercentageStudentsAboveAllSubjects(mark) {
+//   const totalStudent=classObj.students.length
+//   const aboveCount=classObj.students.filter(student=>
+//     student.marks.every(m=>m.mark>mark)
+    
+//   ).length
+//   const percentage=(aboveCount/totalStudent)*100
+//     console.log(`Percentage of students who scored above ${mark} in all subjects: ${percentage.toFixed(2)}%`);
+// }
+
+// PercentageStudentsAboveAllSubjects(10)
+
+// 36 Write a function to calculate and print the percentage of students who scored below a certain mark in all subjects.
+
+function PercentageStudentBelowAllSubject(mark){
   const totalStudent=classObj.students.length
-  const aboveCount=classObj.students.filter(student=>{
-    const subjectMark=student.marks.find(m=>m.subject===subject)
-    return subjectMark && subjectMark.mark>mark
-
-  }).length
-  const percentage=(aboveCount/ totalStudent)*100
-  console.log(`Percentage of students who scored above ${mark} in ${subject}: ${percentage.toFixed(2)}%`);
+  const belowCount=classObj.students.filter(student=>
+    student.marks.every(m=>m.mark<mark)
+  ).length
+  const percentage=(belowCount/totalStudent)*100
+   console.log(`Percentage of students who scored bellow ${mark} in all subjects: ${percentage.toFixed(2)}%`);
 }
-PercentageStudentsAboveMark("Maths", 40);
-
-// Write a function to calculate and print the percentage of students who scored below a certain mark in a specific subject.
-
-// Write a function to calculate and print the percentage of students who scored above a certain mark in all subjects.
-
-// Write a function to calculate and print the percentage of students who scored below a certain mark in all subjects.
-
-//
-
-
+PercentageStudentBelowAllSubject(40)
 
 

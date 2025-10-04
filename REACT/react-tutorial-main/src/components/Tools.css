@@ -1,0 +1,19 @@
+.list-tools {
+    padding: 20px;
+    margin-bottom: 50px;
+    background: rgb(249, 248, 248);
+    border: 1px solid #ccc;
+}
+.list-footer {
+    font-size: 14px;
+
+}
+.refresh {
+    cursor: pointer;
+    color: white;
+    font-size: .8em;
+    background-color: #046cf0;
+    border-radius: 2px;
+    padding: 5px;
+    width: 40px;
+}
