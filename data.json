@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Albert",
+    "class": "6",
+    "address": "1270 Diamond Springs Rd #102",
+    "phone": "0987098098",
+    "isActive": false,
+    "marks": {
+      "physics": [46, 66, 78, 56, 87],
+      "chemistry": [76, 62, 71, 86, 36],
+      "maths": [76, 86, 98, 86, 67]
+    },
+    "sports": {
+      "highjump": 1,
+      "longjump": -1
+    },
+    "remarks": ["Notes not submitted"]
+  },
+  {
+    "id": 2,
+    "name": "Joseph",
+    "class": "7",
+    "address": "325 Kennedy Memorial Dr",
+    "phone": "07978689865",
+    "isActive": true,
+    "marks": {
+      "physics": [66, 72, 80, 54, 90],
+      "chemistry": [81, 74, 69, 88, 45],
+      "maths": [88, 92, 79, 95, 82]
+    },
+    "sports": {
+      "highjump": 0,
+      "longjump": 2
+    },
+    "remarks": ["Excellent progress"]
+  },
+  {
+    "id": 3,
+    "name": "Steffy",
+    "class": "8",
+    "address": "1601 E Alton Gloor Blvd",
+    "phone": "08757465487",
+    "isActive": false,
+    "marks": {
+      "physics": [55, 60, 65, 70, 75],
+      "chemistry": [50, 55, 60, 65, 70],
+      "maths": [80, 85, 90, 95, 100]
+    },
+    "sports": {
+      "highjump": 2,
+      "longjump": 1
+    },
+    "remarks": ["Needs improvement in chemistry"]
+  }
+]
