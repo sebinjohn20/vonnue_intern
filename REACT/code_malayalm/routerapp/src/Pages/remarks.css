@@ -1,0 +1,25 @@
+.remarks {
+  width: 90%;
+  margin: 20px auto;
+  border: 2px solid #0b2c5f;
+  border-collapse: collapse;
+  background: linear-gradient(to bottom, #d7e3f1, #c7d7e7);
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.remarks div {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #9bb4cf;
+}
+
+.remarks div:last-child {
+  border-bottom: none;
+}
+
+.remarks div:hover {
+  background-color: #e3ecf7;
+  transition: background-color 0.2s ease;
+}

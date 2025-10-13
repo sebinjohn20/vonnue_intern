@@ -77,25 +77,25 @@
 
 
 
-let matrix=[
-    [1,0,0],
-    [0,2,0],
-    [0,0,3]
-]
-let isDiagonal=true;
-for(let i=0;i<matrix.length;i++){
-    for(let j=0;i<matrix.length;j++){
-        if(i!==j && matrix[i][j]!==0){
-            isDiagonal=false
-        }
-    }
-}
-if(isDiagonal){
-    console.log("The matrix is diagonal matrix")
-}
-else{
-    console.log("The matrix is not diagonal matrix")
-}
+// let matrix=[
+//     [1,0,0],
+//     [0,2,0],
+//     [0,0,3]
+// ]
+// let isDiagonal=true;
+// for(let i=0;i<matrix.length;i++){
+//     for(let j=0;i<matrix.length;j++){
+//         if(i!==j && matrix[i][j]!==0){
+//             isDiagonal=false
+//         }
+//     }
+// }
+// if(isDiagonal){
+//     console.log("The matrix is diagonal matrix")
+// }
+// else{
+//     console.log("The matrix is not diagonal matrix")
+// }
 
 
 
@@ -997,19 +997,20 @@ else{
 // *********
 
 
-// rows=7;
+rows=7;
 
-// for(let i=1;i<=rows ;i++){
-//   let str=""
-//   for(let j=1;j<=rows-i; j++){
-//     str+=" "
+for(let i=1;i<=rows ;i++){
+  let str=""
+  for(let j=1;j<=rows-i; j++){
+    str+=" "
 
-//   }
-//   for(k=1 ;k<=2*i-1;k++){
-//     str+="*"
-//   }
-//   console.log(str)
-// }
+  }
+  for(k=1 ;k<=2*i-1;k++){
+    str+="*"
+  }
+  console.log(str)
+}
+
 
 
 
@@ -1038,6 +1039,41 @@ else{
 // }
 
 
+// let rows = 5;
+
+// // Top half
+// for (let i = 1; i <= rows; i++) {
+//   let str = "";
+
+//   // spaces
+//   for (let j = 1; j <= rows - i; j++) {
+//     str += " ";
+//   }
+
+//   // stars
+//   for (let k = 1; k <= 2 * i - 1; k++) {
+//     str += "*";
+//   }
+
+//   console.log(str);
+// }
+
+// // Bottom half
+// for (let i = rows - 1; i >= 1; i--) {
+//   let str = "";
+
+//   // spaces
+//   for (let j = 1; j <= rows - i; j++) {
+//     str += " ";
+//   }
+
+//   // stars
+//   for (let k = 1; k <= 2 * i - 1; k++) {
+//     str += "*";
+//   }
+
+//   console.log(str);
+// }
 
 
 
@@ -1112,17 +1148,18 @@ else{
 
 
 
-function bulbToggle(commands){
-  let state="OFF";
-  for(let command of commands){
-    if(command === "TOGGLE"){
-      state=state=="OFF"? "ON": "OFF";
-      console.log(state=="ON"? "Light ON💡": "Light OFF");
-    }
-    else{
-      console.log("Invalid Commands")
-    }
-  }
-}
-let input=["TOGGLE", "TOGGLE", "TOGGLE"]
-bulbToggle(input)
+// function bulbToggle(commands){
+//   let state="OFF";
+//   for(let command of commands){
+//     if(command === "TOGGLE"){
+//       state=state=="OFF"? "ON": "OFF";
+//       console.log(state=="ON"? "Light ON💡": "Light OFF");
+//     }
+//     else{
+//       console.log("Invalid Commands")
+//     }
+//   }
+// }
+// let input=["TOGGLE", "TOGGLE", "TOGGLE"]
+// bulbToggle(input)
+// actual  conversion code starts here

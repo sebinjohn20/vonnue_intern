@@ -1,0 +1,16 @@
+.usage{
+    display: flex;
+    justify-content: center;
+}
+.usage-item{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    border: 1px solid grey;
+
+}
+.usage-item label{
+    font-size: 60px;
+    font-weight: bold;
+}

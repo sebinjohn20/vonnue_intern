@@ -3,6 +3,7 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 import HomePage from './Pages/HomePage';
 import DummyPage from './Pages/DummyPage';
+import Usage from './Pages/Usage';
 class MyApp extends Component {
     constructor(props) {
       super(props)
@@ -26,7 +27,7 @@ class MyApp extends Component {
             case 'home':
                   return  <HomePage></HomePage>
             case 'usage':
-                return <DummyPage key="usage" name="Usage"></DummyPage>
+                return <Usage></Usage>
             case 'settings':
                 return <DummyPage key="settings" name="Settings"></DummyPage>
             case 'logout':

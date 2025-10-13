@@ -1,7 +1,40 @@
-.list-label-item{
-    background: green;
-    color: white;
-    padding: 2px 5px;
-    margin: 2px;
-    border-radius: 2px;
+.list-label-item-container {
+  position: relative;
+  display: inline-block;
+}
+
+.list-label-item {
+  background: green;
+  color: white;
+  padding: 4px 8px;
+  margin: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 125%; /* appear above label */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  border-radius: 4px;
+  padding: 6px 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.show-tooltip {
+  opacity: 1;
+}
+
+.hide-tooltip {
+  visibility: hidden;
 }

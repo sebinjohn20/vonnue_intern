@@ -1,0 +1,57 @@
+.marks-container {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.marks-table {
+  width: 90%;
+  border-collapse: collapse;
+  background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.marks-table th,
+.marks-table td {
+  text-align: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.marks-table th {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.subject-name {
+  text-align: left;
+  font-weight: 600;
+  text-transform: capitalize;
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.marks-table tr:hover {
+  background-color: #e0f2fe;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .marks-table {
+    font-size: 0.9rem;
+  }
+
+  .marks-table th,
+  .marks-table td {
+    padding: 8px;
+  }
+}

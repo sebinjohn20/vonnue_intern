@@ -1,8 +1,16 @@
-import React from 'react'
-import Label from './Label'
+import React, { useEffect } from 'react'
+import Label2 from './Label2'
 import './Listitem.css'
 
-function ListItem({ title, desc, isActive, onDelete, onLabelClick }) {
+function ListItem({ title, desc, isActive, onDelete, onLabelClick }) 
+
+{
+  useEffect(()=>{
+  
+})
+
+
+
   return (
     <div className='list-item'>
       <hr />
@@ -14,7 +22,7 @@ function ListItem({ title, desc, isActive, onDelete, onLabelClick }) {
         {desc}
       </div>
       <div className='list-label'>
-        <Label isActive={isActive} onAction={onLabelClick} />
+        <Label2 isActive={isActive} onAction={onLabelClick} />
       </div>
     </div>
   )
