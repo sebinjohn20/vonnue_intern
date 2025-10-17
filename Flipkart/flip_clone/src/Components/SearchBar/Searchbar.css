@@ -1,0 +1,103 @@
+.location-container{
+    background-color: rgb(255,255,255);
+    margin: 0px 0px 4px;
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+   
+}
+.location-wrapper{
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+}
+.location-wrapper{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+
+}
+.location-text{
+    color: #1f1f1f;
+    display: inline;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    margin-left: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+    font-family: 'semibold';
+}
+.delivery-location-container{
+    margin-left: 6px;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    
+    
+}
+.location-text-blue{
+    color: #1254e7;
+    display: inline;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+     font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+    font-family: 'semibold';
+}
+.search-bar-container{
+     
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 12px 16px;
+}
+.search-bar-container .search-bar{
+  
+    align-items: center;
+    border: 1.6px solid #58ABFA;
+    flex: 1;
+    border-radius: 12px;
+    padding-left: 12px;
+    padding-right: 4px;
+
+}
+.search-bar .search-bar-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex: 1;
+    height: 48px;
+
+}
+.search-bar-search-logo{
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+.searchfor-text{
+    display: flex;
+    align-items: center;
+    white-space: pre-wrap;
+    overflow: break-word;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.01px;
+    font-family: 'regular';
+    padding-left: 8px;
+}

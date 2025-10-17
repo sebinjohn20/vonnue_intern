@@ -1,0 +1,74 @@
+.navbar-header-container{
+    padding: 8px 16px;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 99999;
+    height: 48px;
+}
+.navbar-left-side{
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+}
+.menu-tag{
+    margin-right: 12px;
+}
+.menu-icon{
+    width: 24px;
+    height: 24px;
+    margin-top: -1px;
+}
+.cart-logo{
+    width: 36px;
+    height: 24px;
+}
+.flipkart-logo-container{
+ 
+    margin-right: 0;
+    padding-top: 2px;
+    max-width: 120px;
+}
+.navbar-right-side{
+    display: flex;
+    align-items: center;
+}
+.down-arrow-img{
+
+    margin-right: 0;
+    margin-left: 12px;
+    width: 24px;
+    height: 24px;
+
+}
+.profile-container{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.profile-logo{
+    margin-right: 0;
+    margin-left: 12px;
+    width: 24px;
+    height: 24px;
+}
+.you-text{
+    margin-left: 4px;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    line-height: 24px;
+    font-family: 'regular';
+}
+.cart-logo-img{
+    margin-right: 0;
+    margin-left: 12px;
+    width: 24px;
+    height: 24px;
+}

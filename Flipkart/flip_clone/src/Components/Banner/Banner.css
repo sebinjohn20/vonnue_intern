@@ -1,0 +1,81 @@
+.banner-container {
+display: flex;
+flex-direction: column;
+}
+.banner-container-inner{
+   display: flex;
+   
+    transition: transform 0.8s ease-in-out;
+
+}
+.banner-inner-one{
+    flex:0 0 100%
+}
+.banner-inner-two{
+    aspect-ratio: 41/20;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 12px;
+}
+.banner-image{
+  
+
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 41/20;
+    
+    border-radius: 16px;
+    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.silder-widthbar-container{
+     padding: 8px 0 12px 0;
+     width: 375px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.width-bar{
+    width: 12px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.13);
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+
+.width-bar {
+  width: 12px; 
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.13); /* inactive color */
+  margin: 0 4px;
+  position: relative;
+  overflow: hidden;
+}
+.width-bar.active{
+    width: 48px;
+}
+
+.width-bar.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: rgba(0,0,0,1);
+  animation: fillBar 3s linear forwards; /* matches banner interval */
+}
+
+
+@keyframes fillBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

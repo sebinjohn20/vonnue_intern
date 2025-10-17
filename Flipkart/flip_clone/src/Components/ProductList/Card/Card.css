@@ -1,0 +1,248 @@
+.large-card {
+  padding-top: 200px;
+}
+
+.card-container {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;          /* allow wrapping to next row */
+  justify-content: flex-start;
+  gap: 16px;                /* spacing between cards */
+}
+
+.card-container .product-card-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 8px);   /* two cards per row */
+  box-sizing: border-box;    /* include padding in width */
+}
+
+.product-card-container .product-image-container {
+  position: relative;
+  border-radius: 12px;
+  width: 100%;
+  height: 220.115px;
+  overflow: hidden;
+}
+
+.product-image-container .product-image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;             
+  height: 100%;            
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 0.04;
+  z-index: 4;
+  border-radius: 12px;
+}
+
+.product-watch-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.watch-image-con {
+  position: relative;
+  z-index: 2; 
+}
+
+.ad-icon-container {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  border-radius: 4px;
+  padding: 2.5px 4px 1.5px 4px;
+  font-family: 'font-2';
+  background-color: rgba(240,242,245,1);
+  color: rgba(113,116,120,1);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.win-icon-container {
+  background-color: rgb(255,255,255);
+  opacity: 0.88;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.win-icon-container .heart-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.rating-container {
+  height: 38px;
+  padding: 6px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.rating-container-body {
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+  border-radius: 4px;
+  background-color: rgb(255,255,255);
+  opacity: 0.88;
+}
+
+.rating-container-left {
+  color: rgb(0,0,0);
+  padding: 2px;
+  font-size: 10px;
+  line-height: 16px;
+  font-family: 'semibold';
+}
+
+.star-container {
+  width: 12px;
+  height: 12px;
+  display: flex;
+  margin-top: 3px;
+}
+
+.star-container .star-img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.rating-container-right {
+  color: rgb(96,98,101);
+  padding: 2px;
+  line-height: 16px;
+  letter-spacing: 0.01px;
+  font-family: 'regular';
+  font-size: 10px;
+}
+
+.card-description-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+.product-model-name {
+  margin-right: 6px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: rgba(33,33,33,1);
+  max-width: 100%;
+  font-family: 'semibold';
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 16px;
+  font-size: 14px;
+}
+
+.product-model-desc {
+  margin-right: 6px;
+  display: flex;
+  flex-direction: row;
+  width: 149.5px;
+}
+
+.product-model-desc-inner {
+  padding-top: 4px;
+  max-width: 100%;
+  line-height: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'regular';
+  color: rgba(135,135,135,1);
+  font-size: 12px;
+  margin-right: 4px;
+  min-width: 0; /* important for flex ellipsis */
+}
+
+.price-offer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 4px;
+  align-items: center;
+}
+
+.price-offer-container .offer-percentage-text {
+  margin-right: 4px;
+  font-family: 'semibold';
+  color: rgba(75,181,80,1);
+  font-size: 14px;
+}
+
+.offer-price-cutoff {
+  margin-right: 4px;
+  font-family: 'semibold';
+  font-size: 14px;
+  color: rgba(135,135,135,1);
+  text-decoration-line: line-through;
+}
+
+.price-offer-container .original-price {
+  font-family: 'semibold';
+  font-size: 14px;
+  color: rgba(33,33,33,1);
+}
+
+.bank-offer-conatainer {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.bank-offer-conatainer .wow-container {
+  width: 38px;
+  height: 16px;
+  display: inline-flex;
+  align-self: center;
+}
+
+.wow-container .wow-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bank-offer-conatainer .bank-offer-price {
+  font-size: 12px;
+  color: rgb(6,31,128);
+  font-family: 'font-2';
+  font-weight: 400;
+}
+
+.with-bank-offer-text {
+  font-size: 12px;
+  color: rgb(6,31,128);
+  font-family: 'font-2';
+  font-weight: 400;
+}
+
+.product-center-bar {
+  width: 22px;
+  background-color: rgb(255,255,255);
+}
+

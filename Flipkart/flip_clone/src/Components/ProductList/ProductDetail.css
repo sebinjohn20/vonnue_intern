@@ -1,0 +1,209 @@
+.product-detail-navbar-container {
+  height: 64px;
+  background-color: rgb(207, 235, 254);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-detail-navbar-inner-body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0 12px 8px;
+
+
+}
+
+.product-arrow
+ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+
+.product-searchbar {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+ 
+  background-color: #fff;
+  border: 1.6px solid rgb(88,171,250);
+  height: 40px;
+  border-radius: 12px;
+  margin-left: 8px;
+  margin-right: 4px;
+  padding-right: 12px;
+
+
+
+}
+
+.product-searchbar .search-log{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+
+.search-product-text {
+    color: rgb(112,112,122);
+    font-family: 'regular';
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: start;
+    white-space: nowrap;
+    
+    text-align: center;
+    flex: 1 1 0%;
+}
+.product-cart-logo-conatiner{
+    width: 56px;
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+.product-cart-logo-conatiner .product-cart{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     margin-left: 8px;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************Animation Add container ****/
+.ad-animation-container {
+  height: 60px;
+  overflow: hidden;
+  margin: 8px;
+}
+
+.ad-scroll-wrapper {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  animation: scrollX 3s linear infinite;
+}
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.add-watch-container {
+  flex-shrink: 0;
+  min-width: 230px;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: rgb(250, 250, 250);
+}
+
+.add-watch-container-body {
+  display: flex;
+  align-items: center;
+}
+
+.add-watch-img-container {
+  width: 40px;
+  height: 40px;
+}
+
+.add-watch-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.add-watch-desc-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.add-watch-brandname {
+  color: rgb(51, 51, 51);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "regular";
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.ad-watch-offer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.ad-watch-offer-per {
+  color: rgb(0, 139, 55);
+  font-size: 10px;
+  line-height: 12px;
+  font-family: "bold";
+}
+
+.ad-watch-cutoff-price {
+  color: rgb(112, 112, 122);
+  text-decoration-line: line-through;
+  margin-left: 2px;
+  font-size: 10px;
+  line-height: 12px;
+  font-family: "regular";
+}
+
+.ad-watch-offer-price {
+  color: rgb(51, 51, 51);
+  margin-left: 2px;
+  font-family: "bold";
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.ad-watch-add-logo-container {
+  display: flex;
+  margin-left: 8px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-family: "bold";
+  font-size: 10px;
+  line-height: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*********** END  ********/

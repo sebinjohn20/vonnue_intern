@@ -1,0 +1,20 @@
+@font-face{
+    font-family: 'bold';
+    src: url(Inter-Bold.woff2);
+}
+@font-face {
+    font-family: 'regular';
+    src: url(Inter-Regular.woff2);
+}
+@font-face {
+    font-family: 'semibold';
+    src: url(Inter-SemiBold.woff2);
+}
+@font-face {
+    font-family: 'font-2';
+    src: url(roboto-medium.woff2);
+}
+@font-face {
+    font-family: 'font-3';
+    src: url(roboto-regular.woff2);
+}
