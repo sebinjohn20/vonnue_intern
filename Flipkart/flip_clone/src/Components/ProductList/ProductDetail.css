@@ -4,6 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .product-detail-navbar-inner-body {
@@ -97,113 +100,517 @@
 
 
 /* ************Animation Add container ****/
-.ad-animation-container {
-  height: 60px;
-  overflow: hidden;
-  margin: 8px;
+.ad-animation-container{
+    height:60px;
+}
+.ad-animation-container .add-watch-container{
+    margin: 6px 8px;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: rgb(250,250,250);
+
+}
+.ad-animation-container .add-watch-container-body{
+    display: flex;
+    flex: 1,1,0%;
+    align-items: center;
+}
+.ad-animation-container .add-watch-img-container{
+    width: 40px;
+    height: 40px;
+
+}
+.add-watch-img-container .add-watch-img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+.add-watch-desc-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+     flex: 1;
+     min-width: 0;
+
+
+}
+.add-watch-desc-container .add-watch-brandname{
+    color: rgb(51,51,51);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'regular';
+    font-size: 12px;
+    line-height: 16px;
+}
+.ad-watch-offer-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
 }
 
-.ad-scroll-wrapper {
-  display: flex;
-  gap: 8px;
-  width: max-content;
-  animation: scrollX 3s linear infinite;
+.add-watch-desc-container .ad-watch-offer-per{
+    color: rgb(0,139,55);
+    font-size: 10px;
+    line-height: 12px;
+    font-family: 'bold';
 }
-
-@keyframes scrollX {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+.ad-watch-cutoff-price{
+    color: rgb(112,112,122);
+    text-decoration-line: line-through;
+    margin-left: 2px;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: 'regular';
 }
-
-.add-watch-container {
-  flex-shrink: 0;
-  min-width: 230px;
-  padding: 4px;
-  border-radius: 8px;
-  background-color: rgb(250, 250, 250);
+.ad-watch-offer-price{
+    color: rgb(51,51,51);
+    margin-left: 2px;
+    font-family: 'bold';
+    font-size: 10px;
+    line-height: 12px;
 }
+.ad-watch-add-logo-container{
+    display: flex;
+    margin-left: 8px;
+    color: rgb(255,255,255);
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    padding: 4px 6px;
+    font-family: 'bold';
+    font-size: 10px;
+    line-height: 12px;
+    
+    margin-top: -20px;
+    align-items: center;
+    justify-content: center;
+    
 
-.add-watch-container-body {
-  display: flex;
-  align-items: center;
 }
-
-.add-watch-img-container {
-  width: 40px;
-  height: 40px;
-}
-
-.add-watch-img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.add-watch-desc-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 8px;
-  flex: 1;
-  min-width: 0;
-}
-
-.add-watch-brandname {
-  color: rgb(51, 51, 51);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-family: "regular";
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.ad-watch-offer-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 4px;
-}
-
-.ad-watch-offer-per {
-  color: rgb(0, 139, 55);
-  font-size: 10px;
-  line-height: 12px;
-  font-family: "bold";
-}
-
-.ad-watch-cutoff-price {
-  color: rgb(112, 112, 122);
-  text-decoration-line: line-through;
-  margin-left: 2px;
-  font-size: 10px;
-  line-height: 12px;
-  font-family: "regular";
-}
-
-.ad-watch-offer-price {
-  color: rgb(51, 51, 51);
-  margin-left: 2px;
-  font-family: "bold";
-  font-size: 10px;
-  line-height: 12px;
-}
-
-.ad-watch-add-logo-container {
-  display: flex;
-  margin-left: 8px;
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.12);
-  border-radius: 6px;
-  padding: 4px 6px;
-  font-family: "bold";
-  font-size: 10px;
-  line-height: 12px;
-  align-items: center;
-  justify-content: center;
-}
-
 /*********** END  ********/
+
+/* loading animation */
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.loading-screen::before {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e3f2fd;
+  border-top: 4px solid #2196f3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* end */
+
+
+/* Product-Image-container */
+
+.product-image-container{
+    position: relative;
+    margin-top: -6px;
+}
+
+.product-image-wrapper{
+    width: 100%;
+    display: flex;
+    flex: 1 1 0%;
+    aspect-ratio:3/4;
+}
+ .product-image-wrapper .product-image{
+    object-fit: contain;
+    aspect-ratio: 3/4;
+    width: 100%;
+    opacity: 2;
+}
+
+.product-image-wh-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+.product-image-love-container{
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.88);
+}
+.product-image-love-container .love-image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    border-radius: 8px;
+
+}
+.product-share-image{
+    background-color: rgba(255,255,255,0.88);
+    border-radius: 8px;
+    padding: 4px;
+    height: 32px;
+   
+}
+
+/*    END    */
+
+
+
+/* Product-Rating-container */
+.product-rating-contanier{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.88);
+
+}
+.product-rating-contanier .rating-point{
+    color: rgb(51,51,51);
+    font-size: 14px;
+    margin-right: 2px;
+    font-family: 'bold';
+    line-height: 16px;
+
+
+    
+}
+.product-rating-contanier .rating-count{
+    color: rgb(112,112,112);
+    margin-left: 2px;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'regular';
+
+}
+
+/* End */
+
+
+/* ************silder ****************/
+
+.product-image-slider-container{
+    height: 2px;
+    border-radius: 6px;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+    background-color: rgb(245,245,245);
+}
+.silder-one{
+    width: 35.9px;
+}
+/* End */
+
+
+
+
+.product-desc-warpper{
+    display: flex;
+    flex-direction: column;
+    margin: 16px 16px 8px 16px;
+}
+.product-desc-warpper .brand-name-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+.brand-name-wrapper .brand-name-text{
+    color: rgb(51,51,51);
+    margin-right: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'bold';
+
+}
+.vist-store-container{
+    color: rgb(25,103,242);
+    font-family: 'bold';
+    font-size: 12px;
+    line-height: 16px;
+
+}
+.product-desc-warpper .product-description{
+    padding-top:4px ;
+    color: rgb(51,51,51);
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'regular';
+    cursor: pointer;
+}
+.product-desc-warpper .product-description span{
+    color: rgb(25,103,242);
+    font-size: 14px;
+    font-family: 'bold';
+    line-height: 18px;
+}
+.product-price-text{
+    padding: 8px 16px;
+    color: rgb(51,51,51);
+    font-size: 22px;
+    line-height: 28px;
+    font-family: 'bold';
+}
+.bank-offer-details-conatiner{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  
+}
+.bank-offer-details-conatiner .bank-offer-wrapper{
+     background: linear-gradient(rgb(18, 84, 231), rgb(24, 60, 145));
+    min-height: 84px;
+    border-radius: 16px;
+}
+.bank-offer-wow-container{
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 52px;
+
+}
+.bank-offer-wow-container .bank-offer-price{
+    color: rgb(255,255,255);
+    margin-left: 6px;
+    font-size: 17px;
+    line-height: 20px;
+    font-family: 'bold';
+    max-width: 234px;
+
+}
+.wow-arrow-down{
+   margin-left: 125px;
+}
+.maximum-savings-container{
+    background-color: rgb(207,235,254);
+    border-radius: 16px;
+    margin-top: -12px;
+    height: 45px;
+    padding: 13px 16px;
+    color: rgb(51,51,51);
+    font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.delivery-detalis-container{
+    display: flex;
+    margin: 0 16px;
+    flex-direction: column;
+}
+.delivery-detalis-container .delivery-details-tittle{
+    color: rgb(51,51,51);
+    margin: 20px 0px 8px 0px;
+    font-size: 17px;
+    line-height: 22px;
+    font-family: 'bold';
+}
+.location-delivery-container{
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0px 12px 0px;
+    border-radius: 12px;
+
+}
+.location-delivery-container .location-not-set{
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(238, 247, 255);
+     border-radius: 12px 12px 0 0;
+
+}
+.location-not-set-container{
+    margin-right: 12px;
+     display: flex;
+    flex-direction: row;
+}
+.location-not-set-container .location-logo-container{
+    display: flex;
+    align-items: center;
+    padding: 12px 0px 12px 12px;
+}
+
+.location-logo-container .location-not-set-text{
+    color: rgb(51,51,51);
+    margin-right: 6px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'bold';
+}
+.select-delivery-location-container{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.select-delivery-location-container-text{
+    color: rgb(25,103,242);
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'bold';
+
+}
+.delivery-date-container{
+  
+    margin-bottom: 4px;
+}
+.delivery-date-inner-container{
+     display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+    background-color:rgb(250, 250, 250);
+}
+.delivery-date-inner-container .delivery-date{
+    display: flex;
+    flex-direction: row;
+}
+.delivery-date .delivery-text{
+    color: rgb(51,51,51);
+    margin-right: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'bold';
+}
+.by-the-date-text{
+     color: rgb(51,51,51);
+  
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'bold';
+}
+
+.delivery-time-container{
+    margin-left: 2px;
+    margin-top: 2px;
+
+}
+.delivery-time-container .delivery-timer-text{
+    margin-top: 2px;
+    margin-left: 16px;
+    padding-left: 4px;
+    padding-right: 2px;
+    color: rgb(214,69,7);
+    font-family: 'regular';
+    font-size: 11px;
+    line-height: 14px;
+
+}
+ .fulfilled-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 250, 250);
+     border-radius: 0 0 12px 12px
+
+
+}
+.fulfilled-container .fulfilled-container-top{
+    display: flex;
+    flex-direction: row;
+    padding-top: 8px;
+}
+.fulfilled-container-top .fulfilled-logo{
+    padding: 2px 8px 0px 12px;
+}
+.fulfilled-text{
+    padding-top: 2px;
+    padding-right: 12px ;
+    color: rgb(51,51,51);
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'regular';
+}
+.fulfilled-container-bottom{
+    padding-bottom: 8px;
+    padding-top: 2px;
+    padding-left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.fulfilled-container-bottom .rating-con{
+    color: rgb(112,112,112);
+    padding-left: 24px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 11px;
+    line-height: 14px;
+    font-family: 'regular';
+}
+.fulfilled-container-bottom .rating-star{
+    padding: 2px 0px 2px 2px;
+}
+.fulfilled-container-bottom .rating-dot{
+     padding: 2px 0px 2px 4px;
+     color: rgb(112, 112, 112);
+         font-size: 11px;
+    line-height: 14px;
+    font-family: 'bold';
+}
+.fulfilled-container-bottom .five-year-text{
+    padding: 2px 0px 2px 4px;
+     color: rgb(112, 112, 112);
+     font-size: 11px;
+    line-height: 14px;
+    font-family: 'regular';
+
+}
+
+.logos-container{
+    padding:0px 16px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(250, 250, 250);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logos-container .logo-one{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo-one .logo-one-image{
+    padding: 16px 12px 16px 8px ;
+    min-width: 114.323px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  
+}
+.days-return{
+    
+    color: rgb(51,51,51);
+    display: flex;
+    align-items: center;
+    font-family: 'regular';
+        font-size: 12px;
+    line-height: 16px;
+   
+}
+
+
+
+
+
+
+
+
+
+
