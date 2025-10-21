@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProductNabar.css'
 import "../../../Fonts/font.css";
+import { Link } from 'react-router-dom';
 
 
 function ProductNavbar() {
+    const [showSort, setShowSort] = useState(false);
+const activeSort = () => {
+    setShowSort(!showSort)
+    
+  };
+  const sortOptions=[
+    "Popularity",
+    "Price -- Low to High ",
+    "Price -- High to Low ",
+    "Newest First"
 
+  ]
   return (
     <>
     <div className='product-nav-bar-container'>
@@ -38,7 +50,7 @@ function ProductNavbar() {
     <div className="sort-filter-btn-container">
         <div className="sort-filter-wrapper">
             <div style={{flex:1}}>
-                <div className="sortBtn-container">
+                <div className="sortBtn-container" onClick={()=>activeSort()}>
                     <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="m144 168 40 40 40-40M184 112v96M48 128h72M48 64h136M48 192h56"></path></svg>
                         <div className="sort-text">
                             Sort
@@ -50,15 +62,45 @@ function ProductNavbar() {
                 </div>
 
                         <div style={{flexGrow: 1, flexShrink: 0, flexBasis: '0%'}}>
+                            <Link to="/filter">
                 <div className="sortBtn-container">
                         <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M148 172H40M216 172h-28"></path><circle cx="168" cy="172" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M84 84H40M216 84h-92"></path><circle cx="104" cy="84" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle></svg>
                         <div className="sort-text">
                             Filter
                         </div>
                 </div>
+                </Link>
             </div>
         </div>
     </div>
+
+            {/* Sort Container - appears when showSort is true */}
+
+
+{showSort &&(
+    <div className="sort-container-active">
+        <div className="sort-header-container">
+            <div className="sort-title">
+                    SORT BY
+            </div>
+           <div className="bar-sortby">
+
+           </div>
+           {sortOptions.map((option,index)=>(
+           <div className="popularity-container" key={index}>
+            <div className="popularity-container-left">
+               {option}
+            </div>
+            <div className="sort-radio-image">
+                <img src="https://rukminim2.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"className='sort-radio-img' alt="" />
+            </div>
+           </div>
+))}
+        </div>
+    </div>
+)}
+
+
     <div className="top-sale-container">
         <div className="top-sale-wrapper">
             <div style={{ padding: 0, paddingLeft: 11 ,display:'flex'}}>
@@ -109,6 +151,10 @@ function ProductNavbar() {
         
         </div>
     </div>
+  
+  <div className="sort-container">
+
+  </div>
 
 
     </>

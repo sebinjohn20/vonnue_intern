@@ -1,0 +1,250 @@
+.filter-container{
+    position: absolute;
+    width: 100%;
+    scrollbar-width: none;
+}
+.filter-navbar-container{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(255,255,255);
+    height: 52px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.filter-navbar-container .back-arrow{
+    color: #fff;
+    display: table-cell;
+    vertical-align: middle;
+    width: 42px;
+    line-height: 10px;
+    font-size: 16px;
+    text-align: center;
+
+}
+.filter-navbar-container .filter-text{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    padding-left: 12px;
+   
+}
+.filter-navbar-container .filter-text h1{
+    font-size: 16px;
+    font-weight: 400;
+    color: #212121;
+    font-family: 'font-3';
+}
+.clear-filter-text{
+    color: rgb(0,0,0);
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    width: 75px;
+    right: 16px;
+    font-size: 13px;
+    line-height: 12px;
+    font-family: 'font-3';
+}
+.filter-container-middle{
+    
+    padding-bottom: 56px;
+    display: flex;
+    
+    
+}.filter-container-left-side {
+  display: flex;
+  flex-direction: column;
+  width: 125px;
+  height: 100vh; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgb(241, 243, 246);
+  scrollbar-width: none;
+
+}
+
+.filter-left-side-text-container{
+    height: 56px;
+    width: 125px;
+    display: flex;
+  
+ 
+}
+.filter-left-side-text-container .text-wrapper{
+    padding: 12px 8px 12px 16px;
+  background-color: rgb(241, 243, 246)
+   
+}
+.text-wrapper .text-content{
+    line-height: 20px;
+    color: rgb(0,0,0);
+    margin-right: 8px;
+    font-size: 14px;
+    font-family: 'font-3';
+    cursor: pointer;
+}
+.filter-left-side-text-container.active .text-wrapper {
+  background-color: white;
+}
+.filter-left-side-text-container.active .text-wrapper {
+  background-color: white; 
+  width: 100%;
+  height: 44px;
+}
+.text-wrapper .text-content.blue-text {
+  color: rgb(40, 116, 240);
+
+}
+.filter-container-right{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+.filter-container-right .filter-container-right-content{
+   
+    width: 250px;
+    flex: 1 1 0%;
+       height: 48px;
+
+}
+ .filter-price-content{
+    padding: 12px 19px;
+    display: flex;
+    align-items: center;
+  
+
+}
+.filter-price-content .input-box{
+    width: 18px;
+    height: 18px;
+    margin-right: 19px;
+}
+.filter-price-content .input-box .input-checkbox-img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+   
+}
+.filter-price-content .price-text-content{
+    color: rgb(0,0,0);
+    font-size: 14px;
+    font-family: 'font-3';
+
+}
+
+
+
+
+/* brand filter */
+
+
+.brand-search-bar-container{
+    height: 40px;
+    padding: 13px 12px;
+    margin: 8px 16px;
+    display: flex;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(233,233,233);
+    align-items: center;
+   
+}
+.brand-search-bar-container .search-logo{
+    display: flex;
+    height: 18px;
+    width: 18px;
+    margin-right:10px
+
+}
+.brand-search-bar-container .search-logo .lens-logo{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.brand-search-bar-container input::placeholder {
+    color: #9b9b9b;
+    font-family: 'font-3';
+    outline: 0;
+    resize: none;
+    font-size: 12px;
+   
+
+    
+}
+.brand-search-bar-container input{
+   
+    border: 0;
+     display: flex;
+     align-items: center;
+     margin-top: -1px;
+      height: 38px;
+      outline: 0;
+}
+
+
+.popular-filters-container{
+    height: 42px;
+
+}
+ .popular-filters-container .popular-filter-body{
+    padding: 13px 16px 0px;
+    display: flex;
+    align-items: center;
+    height: 27px;
+ }
+ .popular-filter-body .popular-filter-text{
+    color: rgb(135,135,135);
+    font-family: 'font-2';
+    font-size: 10px;
+
+ }
+
+
+ .filter-footer-container{
+    height: 56px;
+   background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+ }
+ .filter-footer-container .filter-footer-body-container{
+    margin: 8px 8px 8px 16px;
+    display: flex;
+    align-items: center;
+ }
+ .filter-footer-body-container .filter-footer-left{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+
+ }
+ .filter-footer-left .footer-product-count{
+    line-height: 19px;
+    font-size: 16px;
+    color: rgb(0,0,0);
+    font-family: 'font-2';
+
+ }
+ .footer-product-found-text{
+    color: rgba(135,135,135,1.00);
+    font-size: 12px;
+    font-family: 'font-2';
+
+ }
+ .footer-filter-apply-button{
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255,88,0,1.00);
+    padding-left: 65px;
+    padding-right: 65px;
+    color: rgba(255,255,255,1.00);
+    font-family: 'font-3';
+    font-size: 14px;
+
+ }
