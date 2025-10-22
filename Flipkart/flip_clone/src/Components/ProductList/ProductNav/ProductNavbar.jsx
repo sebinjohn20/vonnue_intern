@@ -2,18 +2,27 @@ import React, { useState } from 'react'
 import './ProductNabar.css'
 import "../../../Fonts/font.css";
 import { Link } from 'react-router-dom';
+import { useFilter } from '../../Context/FilterContext';
+import { useNavigate } from 'react-router-dom';
+
 
 
 function ProductNavbar() {
     const [showSort, setShowSort] = useState(false);
-const activeSort = () => {
-    setShowSort(!showSort)
-    
-  };
+    const {selectedSort, updateSort}=useFilter()
+    const navigate=useNavigate()
+const handleSortClick=(option)=>{
+    updateSort(option);
+    setShowSort(false);
+}
+
+  const handleBack=()=>{
+    navigate(-1)
+  }
   const sortOptions=[
     "Popularity",
-    "Price -- Low to High ",
-    "Price -- High to Low ",
+    "Price -- Low to High",
+    "Price -- High to Low",
     "Newest First"
 
   ]
@@ -23,7 +32,7 @@ const activeSort = () => {
       <div className="prodcut-nav-section">
        
       <div style={{display:'flex'}}>
-       <div className="back-arrow">
+       <div className="back-arrow" onClick={()=>handleBack()}>
         <svg width="19" height="16" viewBox="0 0 19 16" xmlns="http://www.w3.org/2000/svg"><path d="M17.556 7.847H1M7.45 1L1 7.877l6.45 6.817" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
         </div> 
             <div className='flip-icon'>
@@ -50,8 +59,8 @@ const activeSort = () => {
     <div className="sort-filter-btn-container">
         <div className="sort-filter-wrapper">
             <div style={{flex:1}}>
-                <div className="sortBtn-container" onClick={()=>activeSort()}>
-                    <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="m144 168 40 40 40-40M184 112v96M48 128h72M48 64h136M48 192h56"></path></svg>
+                <div className="sortBtn-container" onClick={()=>setShowSort(!showSort)}>
+                    <svg width="20" height="20" style={{marginLeft:-1}} viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="m144 168 40 40 40-40M184 112v96M48 128h72M48 64h136M48 192h56"></path></svg>
                         <div className="sort-text">
                             Sort
                         </div>
@@ -64,7 +73,7 @@ const activeSort = () => {
                         <div style={{flexGrow: 1, flexShrink: 0, flexBasis: '0%'}}>
                             <Link to="/filter">
                 <div className="sortBtn-container">
-                        <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M148 172H40M216 172h-28"></path><circle cx="168" cy="172" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M84 84H40M216 84h-92"></path><circle cx="104" cy="84" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle></svg>
+                        <svg width="20" height="20" style={{marginLeft:1}}  viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M148 172H40M216 172h-28"></path><circle cx="168" cy="172" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M84 84H40M216 84h-92"></path><circle cx="104" cy="84" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle></svg>
                         <div className="sort-text">
                             Filter
                         </div>
@@ -86,16 +95,28 @@ const activeSort = () => {
            <div className="bar-sortby">
 
            </div>
-           {sortOptions.map((option,index)=>(
-           <div className="popularity-container" key={index}>
-            <div className="popularity-container-left">
-               {option}
-            </div>
-            <div className="sort-radio-image">
-                <img src="https://rukminim2.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"className='sort-radio-img' alt="" />
-            </div>
-           </div>
-))}
+ {sortOptions.map((option, index) => (
+                            <div 
+                                key={index} 
+                                className="popularity-container"
+                                onClick={() => handleSortClick(option)}
+                            >
+                                <div className="popularity-container-left">
+                                    {option}
+                                </div>
+                                <div className="sort-radio-image">
+                                    <img 
+                                        src={
+                                            selectedSort === option 
+                                                ? "https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png"
+                                                : "https://rukminim2.flixcart.com/www/32/32/promos/28/04/2022/7b036604-c843-4bb5-af27-7c675bf60f67.png?q=60"
+                                        } 
+                                        className='sort-radio-img' 
+                                        alt="" 
+                                    />
+                                </div>
+                            </div>
+                        ))}
         </div>
     </div>
 )}

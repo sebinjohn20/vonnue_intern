@@ -9,7 +9,7 @@ export const FilterProvider = ({ children }) => {
   const [selectedPrices, setSelectedPrices] = useState([]);
   const[selectedDiscounts,setSelectedDiscounts]=useState([])
   const[selectedRatings, setSelectedRatings]=useState([])
-
+ const[selectedSort, setSelectedSort]=useState("Popularity")
   const updateBrandFilter = (brand) =>
     setSelectedBrands((prev) =>
       prev.includes(brand)
@@ -39,6 +39,11 @@ export const FilterProvider = ({ children }) => {
     )
     }
 
+
+    const updateSort=(sortOption)=>{
+      setSelectedSort(sortOption);
+    };
+
   const clearFilters = () => {
     setSelectedBrands([]);
     setSelectedPrices([]);
@@ -51,10 +56,12 @@ export const FilterProvider = ({ children }) => {
     selectedPrices,
     selectedDiscounts,
     selectedRatings,
+    selectedSort,
     updateBrandFilter,
     updatePriceFilter,
     updateDiscountFilter,
     updateRatingFilter,
+    updateSort,
     clearFilters
   };
 

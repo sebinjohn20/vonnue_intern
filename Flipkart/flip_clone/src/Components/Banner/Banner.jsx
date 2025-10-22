@@ -27,6 +27,7 @@ function Banner() {
   }, [banners.length]);
 
   return (
+    <div className="media-margin-banner">
     <div className="banner-container">
       <div
         className="banner-container-inner"
@@ -51,6 +52,7 @@ function Banner() {
 
       </div>
       
+    </div>
     </div>
   );
 }

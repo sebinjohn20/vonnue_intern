@@ -65,6 +65,7 @@
     flex-shrink: 0;
     align-items: center;
     padding: 12px 16px;
+    padding-top: 16px;
 }
 .search-bar-container .search-bar{
   
@@ -100,4 +101,9 @@
     letter-spacing: -.01px;
     font-family: 'regular';
     padding-left: 8px;
+}
+@media screen and (min-width:768px) {
+    .location-container{
+        display: none;
+    }
 }

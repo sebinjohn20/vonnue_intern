@@ -1,6 +1,9 @@
 .banner-container {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   overflow: hidden;
+  
 }
 .banner-container-inner{
    display: flex;
@@ -9,14 +12,15 @@ flex-direction: column;
 
 }
 .banner-inner-one{
-    flex:0 0 100%
+    flex:0 0 100%;
+  
 }
 .banner-inner-two{
     aspect-ratio: 41/20;
     width: 100%;
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 12px;
+    padding-top: 8px;
 }
 .banner-image{
   
@@ -27,14 +31,16 @@ flex-direction: column;
     aspect-ratio: 41/20;
     
     border-radius: 16px;
+   
     transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 .silder-widthbar-container{
-     padding: 8px 0 12px 0;
+     padding: 0px 0 12px 0;
      width: 375px;
      display: flex;
      align-items: center;
      justify-content: center;
+     
 }
 .width-bar{
     width: 12px;
@@ -78,4 +84,15 @@ flex-direction: column;
   100% {
     width: 100%;
   }
+}
+
+@media screen and (min-width:768px) {
+
+.media-margin-banner{
+ 
+  margin-top: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
+   background-color: white
+}
 }

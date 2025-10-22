@@ -377,6 +377,8 @@
      background: linear-gradient(rgb(18, 84, 231), rgb(24, 60, 145));
     min-height: 84px;
     border-radius: 16px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
 }
 .bank-offer-wow-container{
     padding: 4px 16px;
@@ -401,7 +403,7 @@
 .maximum-savings-container{
     background-color: rgb(207,235,254);
     border-radius: 16px;
-    margin-top: -12px;
+    margin-top: -4px;
     height: 45px;
     padding: 13px 16px;
     color: rgb(51,51,51);
@@ -561,6 +563,10 @@
          font-size: 11px;
     line-height: 14px;
     font-family: 'bold';
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .fulfilled-container-bottom .five-year-text{
     padding: 2px 0px 2px 4px;

@@ -8,7 +8,7 @@ function Products() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const navigate = useNavigate();
-  const { selectedBrands, selectedPrices, selectedDiscounts, selectedRatings } = useFilter();
+  const { selectedBrands, selectedPrices, selectedDiscounts, selectedRatings,selectedSort} = useFilter();
 
   useEffect(() => {
     fetch("/products.json")
@@ -21,7 +21,26 @@ function Products() {
   }, []);
 
   useEffect(() => {
-    const filtered = products
+     const applySorting = (productsToSort, sortBy) => {
+    const sortedProducts = [...productsToSort];
+
+    switch(sortBy) {
+      case "Popularity":
+        return sortedProducts.sort((a, b) => b.rating - a.rating);
+      
+      case "Price -- Low to High":
+        return sortedProducts.sort((a, b) => parsePrice(a.offerPrice) - parsePrice(b.offerPrice));
+      case "Price -- High to Low":
+        return sortedProducts.sort((a,b)=>parsePrice(b.offerPrice)-parsePrice(a.offerPrice))
+      case "Newest First":
+       
+        return sortedProducts.sort((a, b) => b.id - a.id);
+      default:
+        return sortedProducts;
+  }
+ }
+
+    let filtered = products
       // Brand filter
       .filter(product =>
         selectedBrands.length === 0 || selectedBrands.includes(product.name)
@@ -41,9 +60,10 @@ function Products() {
         selectedRatings.length === 0 ||
         selectedRatings.some(rating => isRatingInRange(product.rating, rating))
       );
-      
+     filtered =  applySorting(filtered, selectedSort);
+
     setFilteredProducts(filtered);   
-  }, [selectedBrands, selectedPrices, selectedDiscounts, selectedRatings, products]);
+  }, [selectedBrands, selectedPrices, selectedDiscounts, selectedRatings,selectedSort, products]);
 
   const parsePrice = priceStr => parseInt(priceStr.replace(/[₹,]/g, '')) || 0;
   
@@ -86,6 +106,14 @@ function Products() {
       default: return true;
     }
   };
+
+ // sort function
+
+
+
+
+
+
 
   return (
     

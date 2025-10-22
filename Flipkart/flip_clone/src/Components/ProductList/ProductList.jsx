@@ -10,7 +10,7 @@ function ProductList() {
       <ProductNavbar/>
   
     </div>
-    <Card></Card>
+        <Card/>
     </>
   )
 }

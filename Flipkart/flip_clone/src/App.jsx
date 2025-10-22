@@ -7,6 +7,7 @@ import ProductList from './Components/ProductList/ProductList';
 import Searchbar from './Components/SearchBar/Searchbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FilterProvider } from './Components/Context/FilterContext';
+
 function App() {
   return (
     <FilterProvider>
@@ -19,10 +20,15 @@ function App() {
           path="/"
           element={
             <>
+            
+           
+           
+
               <Navbar />
               <Searchbar />
               <Banner />
               <ListItem />
+        
 
             </>
           }
