@@ -8,6 +8,7 @@ function ListItem() {
     const firstRow=listItem.slice(0,8)
     const secondRow=listItem.slice(8,18)
   return (<>
+  <div className="media-list-container">
     <div className='list-item-container'>
       <div className="top-order-item">
         <div className="items-in-first-row">
@@ -63,6 +64,7 @@ function ListItem() {
             <img src="https://rukminim2.flixcart.com/fk-p-flap/880/200/image/429d37cbf5c910b4.jpeg?q=60" className='min-ban-img' alt="" />
         </div>
 
+    </div>
     </div>
     </>
   );

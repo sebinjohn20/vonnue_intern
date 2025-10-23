@@ -32,7 +32,7 @@ function Navbar() {
     </div>
   </header>
   </div>
-
+ <div className="flex-container">
   <div className="media-query-header">
     <div className="media-logo-search-box-container">
         <div className="media-logo">
@@ -48,14 +48,22 @@ function Navbar() {
 />
 
         </div>
-        <div className="media-search-container">
-            <form action="">
-                <div className='media-search-btn'>  
-                    <svg width="24" height="24" class="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Search Icon</title><path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 16L21 21" stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                </div>
-                <input type="text"placeholder="Search for Products, Brands and More" className='media-search-bar'/>
-            </form>
+       <div className="media-search-container">
+    <form action="">
+        <div className='media-search-btn'>  
+            <svg width="24" height="24" className="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <title>Search Icon</title>
+                <path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="#717478" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="M16 16L21 21" stroke="#717478" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"></path>
+            </svg>
         </div>
+        <input 
+            type="text"
+            placeholder="Search for Products, Brands and More" 
+            className='media-search-bar'
+        />
+    </form>
+</div>
     </div>
  <div className="media-nav-right-container">
      <div className="media-login-container">
@@ -78,6 +86,7 @@ function Navbar() {
      </div>
  </div>
 
+  </div>
   </div>
   </>
   )

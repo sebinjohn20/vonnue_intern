@@ -7,6 +7,7 @@ import ProductList from './Components/ProductList/ProductList';
 import Searchbar from './Components/SearchBar/Searchbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FilterProvider } from './Components/Context/FilterContext';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
               <Searchbar />
               <Banner />
               <ListItem />
-        
+            <Footer></Footer>
 
             </>
           }

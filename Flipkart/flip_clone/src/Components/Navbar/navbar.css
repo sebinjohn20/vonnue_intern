@@ -110,6 +110,7 @@
         width: 100%;
         z-index: 9999;
         background-color: rgb(255,255,255);
+        height: 66.6667px;
         
 
     }
@@ -118,47 +119,56 @@
         align-items: center;
         
         flex-grow: 1;
+        margin-top: 1px;
     }
     .media-logo-search-box-container .media-logo{
         margin-right: 36px;
     }
+.media-search-container {
+    min-width: 200px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: -1px;
+}
 
-    .media-search-container{
-        min-width: 200px;
-        border-radius: 8px;
-       
+.media-search-container form {
+    display: flex;
+    background-color: #f0f5ff;
+    border-radius: 8px;
+    width: 100%;
+    min-width: 283.875px;
+    align-items: center;
+}
 
-        
-    }
-    .media-search-container form{
-        display: flex;
-        background-color: #f0f5ff;
-        border-radius: 8px;
-        width: 100%;
-        min-width: 283.875px;
-        margin-top: -1px;
-       
-    }
-    .media-search-container .media-search-btn{
-        height: 40px;
-        border-radius: 2px;
-        cursor: pointer;
-        padding: 8px 8px 8px 12px;
-    }
-    .media-search-bar{
-        text-overflow: ellipsis;
-        border: 0;
-        outline: 0 none;
-        font-size: 17px;
-        height: 40px;
-        width: 100%;
-        font-family: 'regular';
-        background-color: transparent;
-    }
+.media-search-container .media-search-btn {
+    height: 40px;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 8px 8px 8px 12px;
+    display: flex; 
+    align-items: center;
+    flex-shrink: 0; 
+}
+
+.media-search-bar {
+    border: 0;
+    outline: 0 none;
+    font-size: 17px;
+    height: 40px;
+    width: 100%;
+    font-family: 'regular';
+    background-color: transparent;
+    
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden; 
+     box-sizing: border-box; 
+}
+
     .media-nav-right-container{
         display: flex;
         align-items: center;
-        margin-top: -1px;
+       
     }
     .media-nav-right-container .media-login-container{
         padding: 0 6px;
@@ -208,4 +218,18 @@
         border: 1px solid transparent;
         padding: 8px;
     }
+}
+@media screen and (min-width:997px) {
+  .media-query-header{
+
+    max-width:966px ;
+  }
+}
+@media screen and (min-width:1024px) {
+   .flex-container{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
 }
