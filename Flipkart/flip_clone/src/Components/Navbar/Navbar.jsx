@@ -75,9 +75,11 @@ function Navbar() {
      </div>
      <div className="media-cart-container">
         <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg" alt="" className='media-cart-logo' />
+        <span className='meida-cart-text'> Cart</span>
      </div>
      <div className="media-cart-container">
         <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/Store-9eeae2.svg" alt="" className='media-cart-logo' />
+              <span className='meida-cart-text'> Become a Seller</span>
      </div>
      <div className="media-menu-container">
         <div className="media-menu-container-body">

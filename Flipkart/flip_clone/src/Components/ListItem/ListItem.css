@@ -134,22 +134,6 @@ a{
 
 @media screen and (min-width:768px) {
 .media-list-container{
-    margin: 0 16px;
-    background-color: rgb(255,255,255);
+    display: none;
 }
-    .mobile-image{
-         width: 62.542px;
-         height: 62.542px;
-}
-    .mobile-list-container{
-        width: 78.5455;
-    }
-    .item-one-container{
-        width: 141.7px;
-    }
-    .items-in-first-row .item-one{
-        width: 157.5px;
-        height: 80.46px;
-    }
-
 }

@@ -73,7 +73,7 @@
   height: 100%;
   width: 0%;
   background-color: rgba(0,0,0,1);
-  animation: fillBar 3s linear forwards; /* matches banner interval */
+  animation: fillBar 3s linear forwards; 
 }
 
 
@@ -87,15 +87,13 @@
 }
 
 @media screen and (min-width:768px) {
+.banner-container{
+ display: none;
+}
 
-.media-margin-banner{
- 
-  margin-top: 8px;
-  margin-left: 16px;
-  margin-right: 16px;
-   background-color: white
 }
-.banner-inner-two{
-  padding-top: 12px;
-}
-}
+
+
+
+
+

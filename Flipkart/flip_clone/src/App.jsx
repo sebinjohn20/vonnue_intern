@@ -8,6 +8,7 @@ import Searchbar from './Components/SearchBar/Searchbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FilterProvider } from './Components/Context/FilterContext';
 import Footer from './Components/Footer/Footer';
+import ListImage from './Components/ListImage/ListImage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
               <Navbar />
               <Searchbar />
+              <ListImage />
               <Banner />
               <ListItem />
             <Footer></Footer>

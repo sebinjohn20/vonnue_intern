@@ -171,6 +171,7 @@ function Footer() {
           <span>Grievance Redressal</span>
           <span>EPR Compliance</span>
             </div>
+            <div className="margin-top-consumer">
             <div className="consumer-container">
               <div className='about-container'>
                 Mail Us:         
@@ -202,6 +203,7 @@ function Footer() {
 
               </div>
           </div>
+            </div>
             </div>
         <div className="Registered-office-conatainer">
           <div className="registered-tittle">

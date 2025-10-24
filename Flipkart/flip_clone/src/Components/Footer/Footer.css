@@ -1,12 +1,11 @@
-@media screen and (min-width:375px) {
+
     footer{
         display: none;
     }
 
-}
 
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width:768px) {
 
 footer{
     display: block;
@@ -21,7 +20,7 @@ footer{
     padding: 25px;
     line-height: 1.5;
     font-family: 'regular';
-     border-top: 1px solid #666;
+
 
    
 
@@ -117,7 +116,7 @@ footer{
     font-family: 'regular';
 }
 .footer-bottom-container span{
-    font-family: 'bold';
+    font-family: 'semibold';
     font-size: 12px;
     color: #fff;
     cursor: pointer;
@@ -195,14 +194,45 @@ footer{
 }
 .become-seller-container span{
     color: #fff;
-    margin-left: 8px;
-    font-size: 12px;
+    margin-left: 4px;
+    font-size: 8px;
     line-height: 18px;
     font-family: 'regular';
 }
 .footer-email{
     color: #fff;
     font-family: 'regular';
+    font-size: 8px;
+    line-height: 18px;
+
+}
+}
+
+@media screen and (min-width:901px) {
+.become-seller-container span{
+    font-size: 12px;
+    margin-left: 8px;
+}
+.footer-email{
     font-size: 12px;
 }
+
+}
+@media screen and (min-width:1191px) {
+
+.footer-bottom-container{
+        grid-template-columns: repeat(6,1fr);
+        padding: 40px 60px 0px;
+        column-gap: 20px;
+    }
+    .consumer-container{
+        margin-top: 0px;
+    }
+    .margin-top-consumer{
+        border-left: 1px solid #454d5e;
+        padding-left: 32px;
+    }
+    .Registered-office-conatainer{
+        margin-top: 0px;
+    }
 }
