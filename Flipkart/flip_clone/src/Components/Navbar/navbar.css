@@ -112,7 +112,7 @@
         position: sticky;
         top: 0;
         width: 100%;
-        z-index: 9999;
+        z-index: 20000;
         background-color: rgb(255,255,255);
         height: 66.6667px;
         
@@ -132,7 +132,7 @@
     min-width: 200px;
     border-radius: 8px;
     width: 100%;
-    margin-top: -1px;
+  
 }
 
 .media-search-container form {
@@ -140,7 +140,7 @@
     background-color: #f0f5ff;
     border-radius: 8px;
     width: 100%;
-    min-width: 283.875px;
+    /* min-width: 283.875px; */
     align-items: center;
 }
 

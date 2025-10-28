@@ -2,6 +2,8 @@ import "../../Fonts/font.css";
 import React from 'react'
 import './ListImage.css'
 import DesktopBanner from "../Desktop-Banner/DesktopBanner";
+import { Link } from 'react-router-dom';
+
 
 // Categories data array
 const categories = [
@@ -55,7 +57,8 @@ function ListImage() {
           <div className="list-image-body-container">
             <div className="list-image-scroll-container">
               {categories.map((category, index) => (
-                <div key={index} className="list-image-one">
+                 <Link to='/productlist' key={index}>
+                <div  className="list-image-one">
                   <div className="list-image-one-container">
                     <div className="minutes-image-list-container">
                       <img 
@@ -69,6 +72,7 @@ function ListImage() {
                     </div>
                   </div>
                 </div>
+                </Link>
               ))}
             </div>
             <div className="list-image-bar-center">

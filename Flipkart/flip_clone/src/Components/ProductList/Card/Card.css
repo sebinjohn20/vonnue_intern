@@ -6,23 +6,24 @@
   padding: 8px 16px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;          /* allow wrapping to next row */
+  flex-wrap: wrap;         
   justify-content: flex-start;
-  gap: 16px;                /* spacing between cards */
+  gap: 16px;             
 }
 
 .card-container .product-card-container {
   display: flex;
   flex-direction: column;
-  width: calc(50% - 8px);   /* two cards per row */
-  box-sizing: border-box;    /* include padding in width */
+  width: calc(50% - 8px);   
+  box-sizing: border-box;   
 }
 
 .product-card-container .product-image-container {
   position: relative;
   border-radius: 12px;
   width: 100%;
-  height: 220.115px;
+  height: 100%;
+  max-width: 362px;
   overflow: hidden;
 }
 
@@ -246,3 +247,8 @@
   background-color: rgb(255,255,255);
 }
 
+@media screen and (min-width:768px) {
+    .large-card{
+        display: none;
+    }
+}

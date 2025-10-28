@@ -139,29 +139,30 @@ const handleSortClick=(option)=>{
 
             
          </div>
-          <div className="sale-dicount-wrapper" style={{width:70.8542}}>
+          <div className="sale-dicount-wrapper" >
             <div className="percentage-logo">
                 <div className="percentage-logo-one">
-                    <img src="https://rukminim2.flixcart.com/www/64/64/promos/13/10/2022/9f35831d-1207-45a3-8bff-808c06d045d3.png?q=60" className='logo-image' alt="" />
+                    <img src="https://rukminim2.flixcart.com/www/64/64/promos/26/06/2024/ab4e6d76-ca81-434b-91fc-30daa6e34110.png?q=60" className='logo-image' alt="" />
 
                 </div>
             </div>
-          <span className='top-sale-text' >
-                 5G
+         <span className='top-sale-text' style={{ display: 'inline-block' }}>
+                 Latest
+         < span style={{ display: 'block' }}>Trends</span>
         </span>
 
             
          </div>
-           <div className="sale-dicount-wrapper"style={{width:111.802}}>
+           <div className="sale-dicount-wrapper">
             <div className="percentage-logo">
                 <div className="percentage-logo-one">
-                    <img src="https://rukminim2.flixcart.com/www/64/64/promos/31/05/2023/a8b4d164-3eaf-4156-acf5-44c9db07daa5.png?q=60" className='logo-image' alt="" />
+                    <img src="https://rukminim2.flixcart.com/www/64/64/promos/08/08/2025/54535d93-bc01-41d6-8ae8-a1cbf16a337f.png?q=60" className='logo-image' alt="" />
 
                 </div>
             </div>
           <span className='top-sale-text' style={{ display: 'inline-block' }}>
-                 Rs. 15000 -
-         < span style={{ display: 'block' }}>Rs. 20000</span>
+                 Top
+         < span style={{ display: 'block' }}>Rated</span>
         </span>
 
             

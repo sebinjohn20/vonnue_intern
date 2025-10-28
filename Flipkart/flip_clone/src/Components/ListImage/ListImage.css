@@ -42,6 +42,8 @@
         z-index: 10000;
         scrollbar-width: none;
         -ms-overflow-style: none; 
+        justify-content: center;
+        align-items: center;
     }
     
     .list-image-scroll-container::-webkit-scrollbar {
@@ -124,8 +126,17 @@
         margin-bottom: 12px;
     }
 }
-@media screen and (min-width:1363px) {
+@media screen and (min-width: 1290px) and (max-width: 1440px) {
  .minutes-logo-text{
     white-space: nowrap;
  }
+ .list-image-one-container{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+ }
+.media-nav-right-container{
+    margin-top: 1px;
+}
 }
