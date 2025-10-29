@@ -349,6 +349,23 @@
     vertical-align: middle;
     cursor: pointer;
  }
+ .inner-check-box.checked {
+  background: #2874f0; 
+  border-color: #2874f0; 
+}
+.inner-check-box.checked:before {
+   position: absolute;
+   content: "";
+   left: 5px;
+   top: 3px;
+   width: 2px;
+   height: 6px;
+   border: solid var(--color-white-bg);
+   border-width: 0 2px 2px 0;
+   transform: rotate(45deg);
+   backface-visibility: hidden;
+}
+
  .dicount-text-container{
     vertical-align: middle;
     font-size: 14px;
@@ -509,14 +526,132 @@
     line-height: 1.4;
 
 }
+.sort-type-text.active {
+  color: #2874f0;
+  border-bottom: 2px solid #2874f0;
+  font-weight: 500;
+}
+
+
 .desktop-card-item-container{
     display: flex;
+    flex-wrap: wrap; 
     padding-top: 8px;
-    display: flex;
     align-items: stretch;
     background: #fff;
     background-color: #fff;
     width: 100%;
 }
- 
+.desktop-single-card-item-container{
+   width: 25%;
+   box-sizing: border-box; 
+}
+.desktop-single-card-item-inner-container{
+   margin: 0 8px;
+   position: relative;
+   filter: none;
+   height: auto; 
+   min-height: 300px; 
+}
+.desktop-single-card-item-img-container{
+   margin-bottom: 5px;
+   padding-top: 120%;
+   position: relative; 
+   top: auto;
+   left: auto; 
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.desktop-single-card-item-img-container img{
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   max-width: 100%;
+   max-height: 100%;
+   margin: auto;
+}
+.desktop-whilist-container{
+   position: absolute;
+   display: flex;
+   top: 12px;
+   right: 12px;
+   cursor: pointer;
+}
+.desktop-single-card-item-desc{
+   width: 100%;
+   padding: 5px 16px 8px;
+   position: relative;
+   background: #fff;
+   z-index: 2;
+   top: 0; 
+}
+
+.comapany-name-container{
+   color: #878787;
+   font-size: 14px;
+   font-weight: 500;
+   font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+}
+.watch-desc-container{
+   display: inline-block;
+   width: calc(100% - 80px);
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+   padding: 0;
+   font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+   color: #212121;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 1.4;
+}
+.price-off-container{
+   margin: 0;
+   display: block;
+   padding: 0 10px 0 0;
+}
+.offer-price-text{
+   display: inline-block;
+   font-size: 16px;
+   font-weight: 500;
+   color: #212121;
+   font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+   line-height: 1.4;
+}
+.original-price{
+   display: inline-block;
+   margin-left: 8px;
+   text-decoration: line-through;
+   font-size: 14px;
+   color: #878787;
+   font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+}
+.offer-percentage{
+   display: inline-block;
+   color: #388e3c;
+   font-size: 13px;
+   letter-spacing: -.2px;
+   font-weight: 500;
+   margin-left: 8px;
+   font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+   height: 15px;
+}
+.price-row{
+   white-space: nowrap;
+}
+.bank-offer-text{
+   margin-top: 5px;
+   display: inline-block;
+   font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+   color: rgb(38,165,65);
+   font-size: 14px;
+   font-weight: 700;
+   display: inline-flex;
+   vertical-align: middle;
+   white-space: pre;
+}
 }
