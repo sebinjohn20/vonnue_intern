@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FilterProvider } from './Components/Context/FilterContext';
 import Footer from './Components/Footer/Footer';
 import ListImage from './Components/ListImage/ListImage';
+import ProductDesktopDetails from './Components/ProductDesktopDetails/ProductDesktopDetails';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
        
         <Route path="/productlist" element={<ProductList />} />
         <Route path='/product/:id'element={<ProductDetail></ProductDetail>}></Route>
+        <Route path='/productDesktop/:id' element={<ProductDesktopDetails></ProductDesktopDetails>}></Route>
          <Route path="/filter" element={<Filter></Filter>} />
       </Routes>
     </BrowserRouter>

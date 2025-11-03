@@ -29,6 +29,7 @@ function ProductDetail() {
     );
   }
   return (<>
+  <div className="mobile-product-detalis">
     <div className="product-detail-navbar-container">
       <div className="product-detail-navbar-inner-body">
      
@@ -275,6 +276,7 @@ function ProductDetail() {
         </div>
         
         
+       </div>
        </div>
        
     </>

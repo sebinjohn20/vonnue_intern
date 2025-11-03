@@ -101,7 +101,12 @@
     .media-header{
         display: none;
     }
-   
+
+   .flex-container{
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+   }
     
     .media-query-header{
         padding: 12px;
@@ -109,10 +114,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        position: sticky;
-        top: 0;
-        width: 100%;
-        z-index: 20000;
+     
         background-color: rgb(255,255,255);
         height: 66.6667px;
         
@@ -172,6 +174,7 @@
     .media-nav-right-container{
         display: flex;
         align-items: center;
+        margin-top: 1px;
        
     }
     .media-nav-right-container .media-login-container{

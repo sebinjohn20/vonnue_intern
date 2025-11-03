@@ -18,6 +18,7 @@
     flex-direction: row;
     flex-shrink: 0;
     align-items: center;
+    margin-top: 8px;
 
 }
 .location-text{
@@ -65,7 +66,7 @@
     flex-shrink: 0;
     align-items: center;
     padding: 12px 16px;
-    padding-top: 16px;
+    padding-top: 18px;
 }
 .search-bar-container .search-bar{
   
