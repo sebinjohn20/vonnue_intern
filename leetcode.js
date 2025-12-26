@@ -1373,17 +1373,191 @@
 // console.log(findLHS([1, 3, 2, 2, 5, 2, 3, 7]));
 // //
 
-function findMaxAverage(nums, k) {
-  let windowSum = 0;
-  for (let i = 0; i < k; i++) {
-    windowSum += nums[i];
+/////---------------643. Maximum Average Subarray I-----------
+
+// function findMaxAverage(nums, k) {
+//   let windowSum = 0;
+//   for (let i = 0; i < k; i++) {
+//     windowSum += nums[i];
+//   }
+//   let max = windowSum;
+//   for (let i = k; i < nums.length; i++) {
+//     windowSum += nums[i];
+//     windowSum -= nums[i - k];
+//     max = Math.max(max, windowSum);
+//   }
+//   return max / k;
+// }
+// console.log(findMaxAverage([1, 12, -5, -6, 50, 3], 4));
+
+////--------------- Find K Closest Elements----------------
+
+// function findClosestElement(arr, k, x) {
+//   let left = 0;
+//   let right = arr.length - k;
+//   while (left < right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (x - arr[mid] > arr[mid + k] - x) {
+//       left = mid + 1;
+//     } else {
+//       right = mid;
+//     }
+//   }
+//   return arr.slice(left, left + k);
+// }
+
+//---------------718. Maximum Length of Repeated Subarray--------------
+
+// function findLength(num1, num2) {
+//   const n = num2.length;
+//   let max = 0;
+//   let dp = Array(n + 1).fill(0);
+//   for (let i = 1; i <= num1.length; i++) {
+//     for (let j = n; j >= 1; j--) {
+//       if (num1[i - 1] === num2[j - 1]) {
+//         dp[j] = dp[j - 1] + 1;
+//         max = Math.max(max, dp[j]);
+//       } else {
+//         dp[j] = 0;
+//       }
+//     }
+//   }
+//   return max;
+// }
+
+// console.log(findLength([1, 2, 3, 2, 1], [3, 2, 1, 4, 7]));
+
+// function findLength(num1, num2) {
+//   const n = num2.length;
+//   let max = n - 1;
+//   let dp = Array(n).fill(0);
+//   for (let i = 1; i <= num1.length; i++) {
+//     for (let j = n; j >= 1; j--) {
+//       if (num1[i - 1] === num2[j - 1]) {
+//         dp[j - 1] = num1[i - 1];
+//       }
+//     }
+//   }
+//   return dp.filter((value) => value !== 0);
+// }
+
+// console.log(findLength([1, 2, 3, 2, 1, 4], [3, 2, 1, 4, 7]));
+
+////-------------- N-Queens-----------------
+
+// function solveNQueens(n) {
+//   const res = [];
+//   const board = Array.from({ length: n }, () => ".".repeat(n).split(""));
+//   const cols = new Set();
+//   const diag1 = new Set();
+//   const diag2 = new Set();
+//   function backtrack(row) {
+//     if (row === n) {
+//       res.push(board.map((r) => r.join("")));
+//       return;
+//     }
+//     for (let col = 0; col < n; col++) {
+//       if (cols.has(col) || diag1.has(row - col) || diag2.has(row + col)) {
+//         continue;
+//       }
+//       board[row][col] = "Q";
+//       cols.add(col);
+//       diag1.add(row - col);
+//       diag2.add(row + col);
+//       backtrack(row + 1);
+//       board[row][col] = ".";
+//       cols.delete(col);
+//       diag1.delete(row - col);
+//       diag2.delete(row + col);
+//     }
+//   }
+//   backtrack(0);
+//   return res;
+// }
+
+// console.log(solveNQueens(4));
+
+// ///;
+
+// ///----------------////-------------- N-Queens II -----------------
+
+// function totalNQueens(n) {
+//   let count = 0;
+//   let cols = new Set();
+//   let diag1 = new Set();
+//   let diag2 = new Set();
+//   function backtrack(row) {
+//     if (row === n) {
+//       count++;
+//       return;
+//     }
+//     for (let col = 0; col < n; col++) {
+//       if (cols.has(col) || diag1.has(row - col) || diag2.has(row + col))
+//         continue;
+
+//       cols.add(col);
+//       diag1.add(row - col);
+//       diag2.add(row + col);
+//       backtrack(row + 1);
+//       cols.delete(col);
+//       diag1.delete(row - col);
+//       diag2.delete(row + col);
+//     }
+//   }
+//   backtrack(0);
+//   return count;
+// }
+// console.log(totalNQueens(4));
+//////////---------------------------------Permutations II------------
+// function permute(nums) {
+//   const result = [];
+//   function backtrack(start) {
+//     if (start === nums.length) {
+//       result.push([...nums]);
+//       return;
+//     }
+
+//     for (let i = start; i < nums.length; i++) {
+//       [nums[start], nums[i]] = [nums[i], nums[start]];
+//       backtrack(start + 1);
+//       [nums[start], nums[i]] = [nums[i], nums[start]];
+//     }
+//   }
+//   backtrack(0);
+//   return result;
+// }
+// console.log(permute([1, 1, 2]));
+function permuteUnique(nums) {
+  const result = [];
+  nums.sort((a, b) => a - b);
+
+  function backtrack(start) {
+    // ✅ correct base case
+    if (start === nums.length) {
+      result.push([...nums]);
+      return;
+    }
+
+    const seen = new Set();
+
+    for (let i = start; i < nums.length; i++) {
+      if (seen.has(nums[i])) continue;
+      seen.add(nums[i]);
+
+      // ✅ swap
+      [nums[start], nums[i]] = [nums[i], nums[start]];
+
+      backtrack(start + 1);
+
+      // ✅ backtrack
+      [nums[start], nums[i]] = [nums[i], nums[start]];
+    }
   }
-  let max = windowSum;
-  for (let i = k; i < nums.length; i++) {
-    windowSum += nums[i];
-    windowSum -= nums[i - k];
-    max = Math.max(max, windowSum);
-  }
-  return max / k;
+
+  backtrack(0);
+  return result;
 }
-console.log(findMaxAverage([1, 12, -5, -6, 50, 3], 4));
+
+console.log(permuteUnique([1, 1, 2]));
+
+//
