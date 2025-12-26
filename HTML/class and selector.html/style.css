@@ -1,0 +1,36 @@
+/* p.error{
+    color: red;
+}
+.sucess{
+    color: green;
+}
+p.success.feedback{
+    border: 2px dashed green;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+#content
+{
+    background-color: aquamarine;
+    
+}
+a[href*="dkjk"] {
+  color: red;
+  font-weight: bold;
+}
+a[href$=".com"] {
+  color: green;
+  text-decoration: underline;
+}
+ */
+div{
+    color: blueviolet;
+    border: 1px solid rgb(159, 16, 16);
+    margin: 40px;
+    font-weight: bold;
+}
+p{
+    margin: inherit;
+    border: inherit;
+}
