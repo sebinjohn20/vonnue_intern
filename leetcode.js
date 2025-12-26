@@ -1,0 +1,1389 @@
+///----Longest Palindrome substring----------------
+//
+
+//dsfds
+
+// function longestPalindrome(s) {
+//   if (s.length === 0) return "";
+//   let start = 0;
+//   let end = 0;
+//   function expand(left, right) {
+//     while (left >= 0 && right < s.length && s[left] === s[right]) {
+//       left--;
+//       right++;
+//     }
+//     return right - left - 1;
+//   }
+
+//   for (let i = 0; i < s.length; i++) {
+//     let len1 = expand(i, i);
+//     let len2 = expand(i, i + 1);
+//     let len = Math.max(len1, len2);
+//     if (len > end - start) {
+//       start = i - Math.floor(len - 1) / 2;
+//       end = i + Math.floor(len / 2);
+//     }
+//   }
+
+//   return s.substring(start, end + 1);
+// }
+
+// console.log(longestPalindrome("abacababacca"));
+
+// ////
+
+//  2  Container With Most Water
+
+// function maxArea(height) {
+//   let left = 0;
+//   let right = height.length - 1;
+//   let maxArea = 0;
+
+//   while (left < right) {
+//     let width = right - left;
+//     let area = Math.min(height[left], height[right]) * width;
+//     maxArea = Math.max(area, maxArea);
+
+//     if (height[left] < height[right]) {
+//       left++;
+//     } else {
+//       right--;
+//     }
+//   }
+//   return maxArea;
+// }
+// console.log(maxArea([8, 8, 6, 2, 5, 4, 8, 3, 7]));
+
+// 3 Sum
+// function threeSum(num) {
+//   num.sort((a, b) => a - b);
+//   const result = [];
+
+//   for (let i = 0; i < num.length - 2; i++) {
+//     if (i > 0 && num[i] === num[i - 1]) continue;
+
+//     let left = i + 1;
+//     let right = num.length - 1;
+//     while (left < right) {
+//       const sum = num[i] + num[left] + num[right];
+//       if (sum === 0) {
+//         result.push([num[i], num[left], num[right]]);
+//         while (num[left] === num[left + 1]) left++;
+//         while (num[right] === num[right - 1]) right--;
+//         right--;
+//         left++;
+//       } else if (sum > 0) {
+//         right--;
+//       } else {
+//         left++;
+//       }
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+
+// ////
+///-----------------------Remove Nth Node From End of List----------------------
+// function removeNthFromEnd(head, n) {
+//   position = head.length - n;
+//   let newArr = head.filter((_, index) => index !== position);
+
+//   return newArr;
+// }
+
+// console.log(removeNthFromEnd([1, 2, 3, 4, 5], 2));
+// ListNode definition
+
+// function ListNode(val, next = null) {
+//   this.val = val;
+//   this.next = next;
+// }
+// function removeNthFromEnd(head, n) {
+//   let dummy = new ListNode(0);
+//   dummy.next = head;
+//   let left = dummy;
+//   let right = dummy;
+//   for (let i = 0; i < n; i++) {
+//     right = right.next;
+//   }
+//   while (right.next !== null) {
+//     right = right.next;
+//     left = left.next;
+//   }
+//   left.next = left.next.next;
+//   return dummy.next;
+// }
+// function linkedListToArray(head) {
+//   let arr = [];
+//   while (head) {
+//     arr.push(head.val);
+//     head = head.next;
+//   }
+//   return arr;
+// }
+// function arrayToLinkedlist(arr) {
+//   let dummy = new ListNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new ListNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// let head = arrayToLinkedlist([1, 2, 3, 4, 5]);
+// let newHead = removeNthFromEnd(head, 2);
+// newLink = linkedListToArray(newHead);
+// console.log(newLink.map((val) => `--> ${val}`).join(" "));
+
+//
+// . Remove Duplicates from Sorted Array
+
+// function removeDuplicates(nums) {
+//   if (nums.length === 0) return;
+//   let i = 0;
+//   for (let j = 1; j < nums.length; j++) {
+//     if (nums[j] !== nums[i]) {
+//       i++;
+//       nums[i] = nums[j];
+//     }
+//   }
+//   return nums.slice(0, i + 1);
+// }
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+// /////
+//  Remove Element
+
+// function removeElement(nums, val) {
+//   let k = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) {
+//       nums[k] = nums[i];
+//       k++;
+//     }
+//   }
+//   return nums.slice(0, k);
+// }
+// console.log(removeElement([0, 0, 1, 1, 1, 2, 2, 3, 3, 4], 1));
+
+//  twosum
+
+// function twoSum(nums, target) {
+//   let obj = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     let d = target - nums[i];
+//     if (obj[d] !== undefined) {
+//       return [obj[d], i];
+//     }
+//     obj[nums[i]] = i;
+//   }
+// }
+
+//_________________ Find the Index of the First Occurrence in a String________________>>>>>>>>
+
+// var strStr = function (haystack, needle) {
+//   if (haystack === needle || needle === "") return 0;
+//   for (let i = 0; i <= haystack.length - needle.length; i++) {
+//     if (haystack[i] === needle[0]) {
+//       let substr = haystack.substring(i, i + needle.length);
+//       if (substr === needle) {
+//         return i;
+//       }
+//     }
+//   }
+//   return -1;
+// };
+// console.log(strStr("aadbutsad", "aad"));
+
+///------------------------ Next permutation------------------>
+
+// function nextPermutation(nums) {
+//   let i = nums.length - 2;
+//   while (i >= 0 && nums[i] >= nums[i + 1]) {
+//     i--;
+//   }
+//   if (i >= 0) {
+//     let j = nums.length - 1;
+//     while (nums[j] <= nums[i]) {
+//       j--;
+//     }
+//     [nums[i], nums[j]] = [nums[j], nums[i]];
+//   }
+//   let left = i + 1;
+//   let right = nums.length - 1;
+//   while (left < right) {
+//     [nums[left], nums[right]] = [nums[right], nums[left]];
+//     left++;
+//     right--;
+//   }
+//   return nums;
+// }
+// console.log(nextPermutation([1, 3, 5, 4, 2]));
+
+//
+
+////  _______Trap Water________>>>>>>>>>>>>
+
+// function trap(height) {
+//   let left = 0;
+//   let leftmax = 0;
+//   let right = height.length - 1;
+//   let rightmax = 0;
+//   let water = 0;
+
+//   while (left < right) {
+//     if (height[left] < height[right]) {
+//       height[left] >= leftmax
+//         ? (leftmax = height[left])
+//         : (water += leftmax - height[left]);
+//       left++;
+//     } else {
+//       height[right] >= rightmax
+//         ? (rightmax = height[right])
+//         : (water += rightmax - height[right]);
+//       right--;
+//     }
+//   }//dfdfdsf
+//   return water;
+// }
+// console.log(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
+
+///
+
+///_____________________Rotate List________________________>>>>>>>>>>>>>>>>>
+
+// Definition for singly-linked list
+// function ListNode(val, next = null) {
+//   this.val = val;
+//   this.next = next;
+// }
+
+// function rotateRight(head, k) {
+//   // Base cases
+//   if (!head || !head.next || k === 0) return head;
+
+//   // Step 1: Find length and tail
+//   let length = 1;
+//   let tail = head;
+
+//   while (tail.next !== null) {
+//     tail = tail.next;
+//     length++;
+//   }
+
+//   // Step 2: Reduce k
+//   k = k % length;
+//   if (k === 0) return head;
+
+//   // Step 3: Make the list circular
+//   tail.next = head;
+
+//   // Step 4: Find new tail
+//   let stepsToNewTail = length - k;
+//   let newTail = head;
+
+//   for (let i = 1; i < stepsToNewTail; i++) {
+//     newTail = newTail.next;
+//   }
+
+//   // Step 5: Break the circle
+//   let newHead = newTail.next;
+//   newTail.next = null;
+
+//   return newHead;
+// }
+
+// function createLinkedList(arr) {
+//   if (arr.length === 0) return null;
+//   let dummy = new ListNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new ListNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+
+// function printList(head) {
+//   let result = [];
+//   while (head) {
+//     result.push(head.val);
+//     head = head.next;
+//   }
+//   console.log(result.join("->"));
+// }
+
+// let head = createLinkedList([1, 2, 3, 4, 5]);
+// let rotated = rotateRight(head, 2);
+// printList(rotated);
+
+// function sortColors(num) {
+//   let s = num.sort((a, b) => a - b);
+//   return s;
+// }
+
+// console.log(sortColors([2, 0, 2, 1, 1, 0]));
+
+// ///-------------------------Sort colors----------------------------------->
+
+// function sortColors(nums) {
+//   let low = 0;
+//   let mid = 0;
+//   let high = nums.length - 1;
+//   while (mid <= high) {
+//     if (nums[mid] === 0) {
+//       [nums[low], nums[mid]] = [nums[mid], nums[low]];
+//       mid++;
+//       low++;
+//     } else if (nums[mid] === 1) {
+//       mid++;
+//     } else {
+//       [nums[mid], nums[high]] = [nums[high], nums[mid]];
+//       high--;
+//     }
+//   }
+//   return nums;
+// }
+// console.log(sortColors([1, 0, 2, 0, 1, 0, 1]));
+
+///
+
+////--------------------remove duplicate ------------------------------->
+
+// function ListNode(val, next = null) {
+//   this.val = val;
+//   this.next = next;
+// }
+// function deleteDuplicates(head) {
+//   let dummy = new ListNode(0);
+//   dummy.next = head;
+//   let prev = dummy;
+//   let current = head;
+//   while (current) {
+//     if (current.next && current.val === current.next.val) {
+//       let duplicate = current.val;
+//       while (current && current.val === duplicate) {
+//         current = current.next;
+//       }
+//       prev.next = current;
+//     } else {
+//       prev = current;
+//       current = current.next;
+//     }
+//   }
+//   return dummy.next;
+// }
+// function createLinkedList(arr) {
+//   if (arr.length === 0) return 0;
+//   let dummy = new ListNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new ListNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// function printList(head) {
+//   let result = [];
+//   while (head) {
+//     result.push(head.val);
+//     head = head.next;
+//   }
+//   console.log(result.join("->"));
+// }
+
+// let head = createLinkedList([1, 2, 3, 3, 4, 4, 5]);
+// printList(head);
+
+// let newHead = deleteDuplicates(head);
+// printList(newHead);
+
+//////---------------------------. Partition List------------------------------>>>>>>>>>>>
+
+// function ListNode(val, next = null) {
+//   this.val = val;
+//   this.next = next;
+// }
+// function partition(head, x) {
+//   let before_head = new ListNode(0);
+//   let before = before_head;
+//   let after_head = new ListNode(0);
+//   let after = after_head;
+//   let current = head;
+//   while (current) {
+//     if (current.val < x) {
+//       before.next = current;
+//       before = before.next;
+//     } else {
+//       after.next = current;
+//       after = after.next;
+//     }
+//     current = current.next;
+//   }
+//   after.next = null;
+//   before.next = after_head.next;
+//   return before_head.next;
+// }
+// function arrayToLinkedlist(arr) {
+//   if (arr.length === 0) return 0;
+//   let dummy = new ListNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new ListNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// function printList(head) {
+//   let result = [];
+//   while (head) {
+//     result.push(head.val);
+//     head = head.next;
+//   }
+//   console.log(result.join("->"));
+// }
+
+// let head = arrayToLinkedlist([1, 4, 3, 2, 5, 2]);
+// let part = partition(head, 3);
+// printList(part);
+
+//______________________Merge sorted array___________________
+
+// function merge(nums1, m, nums2, n) {
+//   let k = m + n - 1;
+//   let i = m - 1;
+//   let j = n - 1;
+
+//   while (i >= 0 && j >= 0) {
+//     if (nums1[i] > nums2[j]) {
+//       nums1[k] = nums1[i];
+//       i--;
+//     } else {
+//       nums1[k] = nums2[j];
+//       j--;
+//     }
+//     k--;
+//   }
+//   while (j >= 0) {
+//     nums1[k] = nums2[j];
+//     j--;
+//     k--;
+//   }
+//   return nums1;
+// }
+// console.log(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3));
+// ///
+
+//----------------------------  Valid Palindrome--------------------------------
+
+// function isPalindrome(s) {
+//   let left = 0;
+//   let right = s.length - 1;
+//   while (left < right) {
+//     while (left < right && !isAlphaNum(s[left])) {
+//       left++;
+//     }
+//     while (left < right && !isAlphaNum(s[right])) {
+//       right--;
+//     }
+//     if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+//       return false;
+//     }
+//     left++;
+//     right--;
+//   }
+//   return true;
+// }
+// function isAlphaNum(ch) {
+//   return (
+//     (ch >= "a" && ch <= "z") ||
+//     (ch >= "A" && ch <= "Z") ||
+//     (ch >= "0" && ch <= "9")
+//   );
+// }
+
+// console.log(isPalindrome("A man, a plan, a canal: Panama"));
+// console.log(isPalindrome("race a car"));
+
+// function isPalindrome(s) {
+//   let left = 0;
+//   let right = s.length - 1;
+//   while (left < right) {
+//     while (left < right && !isAlphaNum(s[left])) {
+//       left++;
+//     }
+//     while (left < right && !isAlphaNum(s[right])) {
+//       right--;
+//     }
+//     if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+//       return false;
+//     }
+//     left++;
+//     right--;
+//   }
+//   return true;
+// }
+
+// function isAlphaNum(ch) {
+//   return (
+//     (ch >= "a" && ch <= "z") ||
+//     (ch >= "A" && ch <= "Z") ||
+//     (ch >= "0" && ch <= "9")
+//   );
+// }
+// console.log(isPalindrome("A man, a plan, a canal: Panama"));
+// console.log(isPalindrome("malayalam"));
+
+///----------------- Linked List Cycle II---------------------
+
+// function ListNode(val, next = null) {
+//   this.val = val;
+//   this.next = next;
+// }
+
+// function arrayToLinkedlist(arr) {
+//   let dummy = new ListNode(0);
+//   let head = dummy;
+//   for (let val of arr) {
+//     head.next = new ListNode(val);
+//     head = head.next;
+//   }
+//   return dummy.next;
+// }
+
+// function hasCycle(head) {
+//   let slow = head;
+//   let fast = head;
+
+//   while (fast !== null && fast.next !== null) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+
+//     if (slow === fast) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// let a = arrayToLinkedlist([3, 2, 0, -4]);
+
+// let tail = a;
+// let cycleNode = a.next;
+// while (tail.next !== null) {
+//   tail = tail.next;
+// }
+// tail.next = cycleNode;
+// //
+// console.log(hasCycle(a));
+
+// function detectCycle(head) {
+//   let slow = head;
+//   let fast = head;
+//   while (fast != null && fast.next != null) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+
+//     if (slow === fast) {
+//       slow = head;
+
+//       while (slow !== fast) {
+//         slow = slow.next;
+//         fast = fast.next;
+//       }
+//       return slow;
+//     }
+//   }
+//   return null;
+// }
+
+////---------------------143. Reorder List-------------
+
+// function reorderList(head) {
+//   if (!head || !head.next) return;
+
+//   let slow = head,
+//     fast = head;
+//   while (fast && fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//   }
+//   let prev = null;
+//   let curr = slow.next;
+//   slow.next = null;
+//   while (curr) {
+//     let nexttemp = curr.next;
+//     curr.next = prev;
+
+//     prev = curr;
+//     curr = nexttemp;
+//   }
+
+//   let first = head;
+//   let second = prev;
+//   while (second) {
+//     let temp1 = first.next;
+//     let temp2 = second.next;
+//     first.next = second;
+//     second.next = temp1;
+//     first = temp1;
+//     second = temp2;
+//   }
+// }
+
+// function sortList(head) {
+//   let arr = [];
+//   let curr = head;
+//   while (curr) {
+//     arr.push(curr.val);
+//     curr = curr.next;
+//   }
+//   arr.sort((a, b) => a - b);
+//   curr = head;
+//   let i = 0;
+//   while (curr) {
+//     curr.val = arr[i++];
+//     curr = curr.next;
+//   }
+//   return head;
+// }
+
+// function arrayToLinkedlist(arr) {
+//   if (arr.length === 0) return 0;
+//   let dummy = new ListNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new ListNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// function printList(head) {
+//   let result = [];
+//   while (head) {
+//     result.push(head.val);
+//     head = head.next;
+//   }
+//   console.log(result.join("->"));
+// }
+
+// function ListNode(val, next = null) {
+//   this.val = val;
+//   this.next = next;
+// }
+
+// let list = arrayToLinkedlist([-1, 5, 3, 4, 0]);
+// let he = sortList(list);
+// printList(he);
+
+///-------------. Reverse Words in a String------------------
+
+// function reverseWords(str) {
+//   let words = [];
+//   let word = "";
+//   let index = 0;
+//   for (let i = 0; i <= str.length; i++) {
+//     if (i === str.length || str[i] === " ") {
+//       if (word.length > 0) {
+//         words[index] = word;
+//         index++;
+//         word = "";
+//       }
+//     } else {
+//       word += str[i];
+//     }
+//   }
+//   let result = "";
+//   for (let i = words.length - 1; i >= 0; i--) {
+//     result += words[i];
+//     if (i !== 0) result += " ";
+//   }
+//   return result;
+// }
+// console.log(reverseWords("the sky is blue"));
+
+///
+
+////------- Compare Version Number------
+
+// function compareVersion(v1, v2) {
+//   let ver1 = v1.split(".");
+//   let ver2 = v2.split(".");
+
+//   let n = Math.max(v1.length, v2.length);
+
+//   for (let i = 0; i < n; i++) {
+//     let num1 = i < ver1.length ? parseInt(ver1[i], 10) : 0;
+//     let num2 = i < ver2.length ? parseInt(ver2[i], 10) : 0;
+//     if (num1 > num2) return 1;
+//     if (num1 < num2) return -1;
+//   }
+// }
+// console.log(compareVersion("1.2", "1.10"));
+
+// function twoSum(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+
+//   while (left < right) {
+//     let sum = nums[right] + nums[left];
+//     if (sum === target) return [left + 1, right + 1];
+//     else if (sum < target) left++;
+//     else {
+//       right--;
+//     }
+//   }
+// }
+// console.log(twoSum([2, 7, 11, 15], 9));
+
+///--- rotate array----
+
+// function rotate(nums, k) {
+//   const n = nums.length;
+//   k = k % n; // handle k > n
+//   const rotated = new Array(n);
+
+//   // Copy last k elements to the front
+//   for (let i = 0; i < k; i++) {
+//     rotated[i] = nums[n - k + i];
+//   }
+
+//   // Copy first n-k elements to the back
+//   for (let i = 0; i < n - k; i++) {
+//     rotated[k + i] = nums[i];
+//   }
+
+//   return rotated;
+// // }
+
+// console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
+// Output: [5, 6, 7, 1, 2, 3, 4]
+
+// function rotate(nums, k) {
+//   const n = nums.length;
+//   k = k % n;
+//   const rotated = new Array(n);
+//   for (let i = 0; i < n; i++) {
+//     rotated[(i + k) % n] = nums[i];
+//   }
+//   return rotated;
+// }
+// console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
+
+// function isHappy(n) {
+//   const seen = new Set();
+//   while (n !== 1) {
+//     if (seen.has(n)) return false;
+//     let sum = 0;
+//     let temp = n;
+//     while (temp > 0) {
+//       let digit = temp % 10;
+//       sum += digit * digit;
+//       temp = Math.floor(temp / 10);
+//     }
+//     n = sum;
+//   }
+//   return true;
+// }
+
+///
+
+////-----------------4. Palindrome Linked List----------------
+
+// function ListNode(val, next = null) {
+//   this.val = val;
+//   this.next = next;
+// }
+// function isPalindrome(head) {
+//   if (!head || !head.next) return true;
+//   let slow = head;
+//   let fast = head;
+//   while (fast & fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//   }
+//   let prev = null;
+//   while (slow) {
+//     let next = slow.next;
+//     slow.next = prev;
+//     prev = slow;
+//     slow = next;
+//   }
+//   let left = head;
+//   let right = prev;
+//   while (right) {
+//     if (left.val !== right.val) return false;
+//     left = left.next;
+//     right = right.next;
+//   }
+//   return true;
+// }
+
+///------------ Move Zeros------------------------
+
+// function moveZeros(num) {
+//   let left = 0;
+//   for (let right = 0; right < num.length; right++) {
+//     if (num[right] !== 0) {
+//       let temp = num[left];
+//       num[left] = num[right];
+//       num[right] = temp;
+//       left++;
+//     }
+//   }
+//   return num;
+// }
+// console.log(moveZeros([0, 1, 32, 0, 4, 0]));
+
+// function findDuplicate(nums) {
+//   let left = 0;
+//   for (let right = 1; right < nums.length; right++) {
+//     if (nums[right] !== nums[left]) {
+//       left++;
+//     } else {
+//       return nums[right];
+//     }
+//   }
+// }
+// console.log(findDuplicate([1, 3, 4, 4, 2]));
+
+///
+
+///--------Median element-----
+
+///kjhkjdkjashdkjhakjhkajshdkjhkjdhkjasdkhkjkjkjjkkjhhjh
+
+// function merge(nums1, nums2) {
+//   let i = nums1.length + 1;
+//   let j = nums2.length + 1;
+//   let k = j + i - 1;
+
+//   while (i >= 0 && j >= 0) {
+//     if (nums1[i] > nums2[j]) {
+//       nums1[k] = nums1[i];
+//       i--;
+//     } else {
+//       nums1[k] = nums2[j];
+//       j--;
+//     }
+//     k--;
+//   }
+//   while (j >= 0) {
+//     nums1[k] = nums2[j];
+//     j--;
+//     k--;
+//   }
+//   return nums1;
+// function reversString(s) {
+//   let left = 0;
+//   let right = s.length - 1;
+//   while (left < right) {
+//     [s[left], s[right]] = [s[right], s[left]];
+//     left++;
+//     right--;
+//   }
+//   return s;
+// }
+// console.log(reversString(["h", "e", "l", "l", "o"]));
+
+//
+
+// function reverseVowel(s) {
+//   const vowel = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]);
+//   let arr = s.split("");
+//   let left = 0;
+//   let right = arr.length - 1;
+//   let a = [];
+
+//   while (left < right) {
+//     while (left < right && !vowel.has(arr[left])) {
+//       a.push(arr[left]);
+//       left++;
+//     }
+//     while (left < right && !vowel.has(arr[right])) {
+//       right--;
+//       a.push(arr[left]);
+//     }
+
+//     [arr[left], arr[right]] = [arr[right], arr[left]];
+//     left++;
+//     right--;
+//   }
+//   return arr.join("");
+// }
+// console.log(reverseVowel("IceCreAm"));
+
+///dfdsfsdfsdf
+
+// function mergeTwoArrays(a, b) {
+//   let i = 0;
+//   let j = 0;
+//   let result = [];
+//   k = 0;
+
+//   while (i < a.length && j < b.length) {
+//     if (a[i] <= b[j]) {
+//       result[k++] = a[i];
+//       i++;
+//     } else {
+//       result[k++] = b[j];
+//       j++;
+//     }
+//   }
+
+//   // // remaining elements of a
+//   // while (i < a.length) {
+//   //   result.push(a[i]);
+//   //   i++;
+//   // }
+
+//   // // remaining elements of b
+//   // while (j < b.length) {
+//   //   result.push(b[j]);
+//   //   j++;
+//   // }
+
+//   return result;
+// }
+
+// console.log(mergeTwoArrays([1, 3, 5, 7, 9], [2, 4, 6, 8]));
+
+// function intersectionArray(num1, num2) {
+//   result = [];
+//   for (let i = 0; i < num1.length; i++) {
+//     for (let j = 0; j < num2.length; j++) {
+//       if (num1[i] === num2[j] && !result.includes(num1[i])) {
+//         result.push(num1[i]);
+//       }
+//     }
+//   }
+//   return result;
+// }
+// console.log(intersectionArray([1, 2, 2, 1], [2, 2]));
+
+/// ______________  Intersection of Two Arrays_________________________________
+
+// function intersection(num1, num2) {
+//   num1.sort((a, b) => a - b);
+//   num2.sort((a, b) => a - b);
+//   let i = 0,
+//     j = 0;
+//   let result = [];
+
+//   while (i < num1.length && j < num2.length) {
+//     if (num1[i] === num2[j]) {
+//       if (result.length === 0 || result[result.length - 1] !== num1[i]) {
+//         result.push(num1[i]);
+//       }
+//       i++;
+//       j++;
+//     } else if (num1[i] < num2[j]) {
+//       i++;
+//     } else {
+//       j++;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(intersection([4, 9, 5], [9, 4, 9, 8, 4]));
+
+//---------------- Is Subsequence------------------------
+
+// function isSubsequence(s, t) {
+//   let i = 0;
+//   j = 0;
+//   while (i < s.length && j < t.length) {
+//     if (s[i] === t[j]) {
+//       i++;
+//     }
+//     j++;
+//   }
+//   return i === s.length;
+// }
+
+// console.log(isSubsequence("abc", "ahbgdc"));
+
+// function findContentChildren(a, b) {
+//   a.sort((a, b) => a - b);
+//   b.sort((a, b) => a - b);
+
+//   let j = 0;
+//   let i = 0;
+//   let count = 0;
+//   while (i < a.length && j < b.length) {
+//     if (a[j] >= b[i]) {
+//       count++;
+//       i++;
+//       j++;
+//     } else {
+//       j++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(findContentChildren([1, 2, 3], [1, 1]));
+
+///
+
+// function findRadius(houses,heaters){
+//   houses.sort((a,b)=a-b)
+//   heaters.sort((a,b)=a-b)
+//   let j=0
+//   let radius=0
+
+//   for(let i=0;i<houses.length;i++){
+//     while(j<heaters.length-1 && Math.abs(heaters[j+1]-houses[i]<=Math.abs(heaters[j]-houses[i]))){
+//       j++
+//     }
+//     radius=Math.max(radius,Math.abs(heaters[j]-houses[i]))
+//   }
+//   return radius
+// };
+
+// function binarySearch(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (nums[mid] === target) {
+//       return mid;
+//     } else if (nums[mid] < target) {
+//       left = mid + 1;
+//     } else {
+//       right = mid - 1;
+//     }
+//   }
+//   return -1;
+// }
+
+// console.log(binarySearch([1, 3, 5, 7, 9, 11], 7));
+
+//------------------Longest Substring Without Repeating Characters----------
+
+// function lengthOfLongestSubstring(s) {
+//   let set = new Set();
+//   let left = 0;
+//   let maxLen = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     while (set.has(s[right])) {
+//       set.delete(s[left]);
+//       left++;
+//     }
+//     set.add(s[right]);
+//     maxLen = Math.max(maxLen, right - left + 1);
+//   }
+//   return maxLen;
+// }
+// console.log(lengthOfLongestSubstring("abcabcbb"));
+
+// function findSubstring(s, words) {
+//   if (words.length === 0) return [];
+
+//   let wordLen = words[0].length;
+//   let wordCount = words.length;
+//   let totalLen = wordLen * wordCount;
+
+//   let wordMap = {};
+//   for (let w of words) {
+//     if (wordMap[w] === undefined) {
+//       wordMap[w] = 1;
+//     } else {
+//       wordMap[w]++;
+//     }
+//   }
+
+//   const result = [];
+//   for (let i = 0; i < wordLen; i++) {
+//     let left = i;
+//     let seen = {};
+//     let count = 0;
+//     for (let right = i; right + wordLen <= s.length; right += wordLen) {
+//       const word = s.substring;
+//     }
+//   }
+// }
+
+///---------------. Repeated DNA Sequences--------------
+
+// using an object
+
+// function dna(str) {
+//   const re = [];
+//   const seen = {};
+
+//   for (let i = 0; i + 9 < str.length; i++) {
+//     let seq = str.slice(i, i + 10);
+//     seen[seq] = seen[seq] + 1 || 1;
+//     if (seen[seq] === 2) {
+//       re.push(seq);
+//     }
+//   }
+//   return re;
+// }
+
+// using Set
+
+// function dna(str) {
+//   let postSeq = new Set();
+//   let res = new Set();
+//   for (let i = 0; i <= str.length - 10; i++) {
+//     let comparable = str.substring(i, i + 10);
+//     postSeq.has(comparable) ? res.add(comparable) : postSeq.add(comparable);
+//   }
+//   return [...res];
+// }
+
+// console.log(dna("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+
+///
+
+//  -----------------Minimum Size Subarray Sum---------------
+
+// function minSubArrayLen(target, num) {
+//   let high = 0;
+//   let low = 0;
+//   let currentSum = 0;
+//   let minSlidingWindowSize = Infinity;
+//   while (high < num.length) {
+//     currentSum += num[high];
+//     high++;
+//     while (currentSum >= target) {
+//       let slidingWindowSize = high - low;
+//       minSlidingWindowSize = Math.min(minSlidingWindowSize, slidingWindowSize);
+//       currentSum -= num[low];
+//       low++;
+//     }
+//   }
+//   return minSlidingWindowSize === Infinity ? 0 : minSlidingWindowSize;
+// }
+
+// console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]));
+
+///--------------------------------------------Contains Duplicate II--------------
+
+// function containsNearbyDuplicate(nums, k) {
+//   let set = new Set();
+//   for (let i = 0; i < nums.length; i++) {
+//     if (set.has(nums[i])) {
+//       return true;
+//     }
+//     set.add(nums[i]);
+//     if (set.size > k) {
+//       set.delete(nums[i - k]);
+//     }
+//   }
+//   return false;
+// }
+
+// console.log(containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2));
+
+/////
+
+///--------------------------------------------Contains Duplicate III--------------
+
+// function containsNearbyAlmostDuplicate(nums, indexDiff, valueDiff) {
+//   if (valueDiff < 0) return false;
+//   const size = valueDiff + 1;
+//   const buckets = new Map();
+
+//   for (let i = 0; i < nums.length; i++) {
+//     const num = nums[i];
+//     const bucket = Math.floor(num / size);
+//     if (buckets.has(bucket)) return true;
+//     if (
+//       buckets.has(bucket - 1) &&
+//       Math.abs(num - buckets.get(bucket - 1)) <= valueDiff
+//     ) {
+//       return true;
+//     }
+//     if (
+//       buckets.has(bucket + 1) &&
+//       Math.abs(nums - buckets.get(bucket + 1)) <= valueDiff
+//     ) {
+//       return true;
+//     }
+//     buckets.set(bucket, num);
+//     if (i >= indexDiff) {
+//       const oldNum = nums[i - indexDiff];
+//       const oldBucket = Math.floor(oldNum / size);
+//       bucket.delete(oldBucket);
+//     }
+//     return false;
+//   }
+// }
+// console.log(containsNearbyAlmostDuplicate([1, 2, 3, 1], 3, 0));
+
+///
+
+///-----Longest Substring with At Least K Repeating Characters
+
+// function longestSubstring(s, k) {
+//   if (s.length < k) return 0;
+//   let sum = 0;
+//   const freq = {};
+
+//   for (let char of s) {
+//     freq[char] = (freq[char] || 0) + 1;
+//   }
+
+//   for (let char in freq) {
+//     if (freq[char] < k) {
+//       let maxlen = 0;
+//       let substrings = s.split(char);
+//       for (let sub of substrings) {
+//         maxlen = Math.max(maxlen, longestSubstring(sub, k));
+//       }
+//       return maxlen;
+//     }
+//   }
+//   return s.length;
+// }
+// console.log(longestSubstring("ababbc", 2));
+
+////--------413. Arithmetic Slices------------------
+
+// function numberOfArithmeticSlices(nums) {
+//   let left = 0;
+//   let total = 0;
+//   let count = 0;
+//   for (let right = 2; right < nums.length; right++) {
+//     if (nums[right] - nums[right - 1] === nums[right - 1] - nums[right - 2]) {
+//       count++;
+//       total += count;
+//     } else {
+//       count = 0;
+//     }
+//   }
+//   return total;
+// }
+
+// console.log(numberOfArithmeticSlices([1, 2, 3, 4]));
+
+////---------------424. Longest Repeating Character Replacement-----------------------
+
+// function characterReplacement(s, k) {
+//   let freq = {};
+//   let left = 0;
+//   let maxfreq = 0;
+//   let mainWindow = 0;
+
+//   for (let right = 0; right < s.length; right++) {
+//     freq[s[right]] = (freq[s[right]] || 0) + 1;
+//     maxfreq = Math.max(maxfreq, freq[s[right]]);
+//     let windowSize = right - left + 1;
+//     if (windowSize - maxfreq > k) {
+//       freq[s[left]]--;
+//       left++;
+//     }
+//     windowSize = right - left + 1;
+//     mainWindow = Math.max(mainWindow, windowSize);
+//   }
+
+//   return mainWindow;
+// }
+
+// console.log(characterReplacement("ABAB", 2));
+
+//------------------438. Find All Anagrams in a String-----------------------
+
+// function findAnagrams(s, p) {
+//   let result = [];
+//   let pCount = Array(26).fill(0);
+//   let sCount = Array(26).fill(0);
+//   const aCode = "a".charCodeAt(0);
+//   for (let char of p) {
+//     pCount[char.charCodeAt(0) - aCode]++;
+//   }
+//   for (let i = 0; i < s.length; i++) {
+//     sCount[s.charCodeAt(i) - aCode]++;
+//     if (i >= p.length) {
+//       sCount[s.charCodeAt(i - p.length) - aCode]--;
+//     }
+
+//     if (arraysEqual(sCount, pCount)) {
+//       result.push(i - p.length + 1);
+//     }
+//   }
+//   return result;
+// }
+// function arraysEqual(arr1, arr2) {
+//   for (let i = 0; i < 26; i++) {
+//     if (arr1[i] !== arr2[i]) return false;
+//   }
+//   return true;
+// }
+
+// console.log(findAnagrams("cbaebabacd", "abc"));
+
+////--------------567. Permutation in String------------
+
+// function checkInclusion(s1, s2) {
+//   if (s1.length > s2.length) return false;
+//   let s1Count = Array(26).fill(0);
+//   let s2count = Array(26).fill(0);
+//   const aCode = "a".charCodeAt(0);
+
+//   for (let char of s1) {
+//     s1Count[char.charCodeAt(0) - aCode]++;
+//   }
+//   for (let i = 0; i < s2.length; i++) {
+//     s2count[s2.charCodeAt(i) - aCode]++;
+//     if (i >= s1.length) {
+//       s2count[s2.charCodeAt(i - s1.length) - aCode]--;
+//     }
+//     if (arraysEqual(s1Count, s2count)) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// function arraysEqual(arr1, arr2) {
+//   for (let i = 0; i < 26; i++) {
+//     if (arr1[i] !== arr2[i]) return false;
+//   }
+//   return true;
+// }
+
+// console.log(checkInclusion("ab", "eidbaooo"));
+
+///lkjkllkjlkkljjjjjjjjlkljklj
+
+///--------------594. Longest Harmonious Subsequence--------------
+
+// function findLHS(nums) {
+//   let n = nums.length;
+//   let left = 0;
+//   let right = 1;
+//   let res = 0;
+//   nums.sort((a, b) => a - b);
+//   while (right < n) {
+//     while (nums[right] - nums[left] > 1) {
+//       left++;
+//     }
+//     if (nums[right] - nums[left] === 1) {
+//       res = Math.max(res, right - left + 1);
+//     }
+//     right++;
+//   }
+//   return res;
+// }
+// console.log(findLHS([1, 3, 2, 2, 5, 2, 3, 7]));
+// //
+
+function findMaxAverage(nums, k) {
+  let windowSum = 0;
+  for (let i = 0; i < k; i++) {
+    windowSum += nums[i];
+  }
+  let max = windowSum;
+  for (let i = k; i < nums.length; i++) {
+    windowSum += nums[i];
+    windowSum -= nums[i - k];
+    max = Math.max(max, windowSum);
+  }
+  return max / k;
+}
+console.log(findMaxAverage([1, 12, -5, -6, 50, 3], 4));
