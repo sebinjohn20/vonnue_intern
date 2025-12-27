@@ -1508,7 +1508,9 @@
 //   return count;
 // }
 // console.log(totalNQueens(4));
-//////////---------------------------------Permutations II------------
+
+//////////---------------------------------Permutations I------------
+
 // function permute(nums) {
 //   const result = [];
 //   function backtrack(start) {
@@ -1519,45 +1521,141 @@
 
 //     for (let i = start; i < nums.length; i++) {
 //       [nums[start], nums[i]] = [nums[i], nums[start]];
+
 //       backtrack(start + 1);
+
 //       [nums[start], nums[i]] = [nums[i], nums[start]];
 //     }
 //   }
 //   backtrack(0);
 //   return result;
 // }
-// console.log(permute([1, 1, 2]));
-function permuteUnique(nums) {
-  const result = [];
-  nums.sort((a, b) => a - b);
 
-  function backtrack(start) {
-    // ✅ correct base case
-    if (start === nums.length) {
-      result.push([...nums]);
-      return;
-    }
+// console.log(permute([1, 2, 3]));
 
-    const seen = new Set();
+//////////---------------------------------Permutations II------------
 
-    for (let i = start; i < nums.length; i++) {
-      if (seen.has(nums[i])) continue;
-      seen.add(nums[i]);
+// console.log(permdfsdute([1, 1, 2]));
+// function permuteUnique(nums) {
+//   const result = [];
+//   nums.sort((a, b) => a - b);
 
-      // ✅ swap
-      [nums[start], nums[i]] = [nums[i], nums[start]];
+//   function backtrack(start) {
+//     if (start === nums.length) {
+//       result.push([...nums]);
+//       return;
+//     }
 
-      backtrack(start + 1);
+//     const seen = new Set();
 
-      // ✅ backtrack
-      [nums[start], nums[i]] = [nums[i], nums[start]];
+//     for (let i = start; i < nums.length; i++) {
+//       if (seen.has(nums[i])) continue;
+//       seen.add(nums[i]);
+
+//       // ✅ swap
+//       [nums[start], nums[i]] = [nums[i], nums[start]];
+
+//       backtrack(start + 1);
+
+//       // ✅ backtrack
+//       [nums[start], nums[i]] = [nums[i], nums[start]];
+//     }
+//   }
+
+//   backtrack(0);
+//   return result;
+// }
+
+// console.log(permuteUnique([1, 1, 2]));
+
+////-------Fruit Into Baskets-----
+
+// function totalFruit(fruits) {
+//   let fruit1 = -1,
+//     fruit2 = -1;
+//   let lastFruitCount = 0;
+//   let curr = 0;
+//   let max = 0;
+
+//   for (let fruit of fruits) {
+//     if (fruit === fruit1 || fruit === fruit2) {
+//       curr++;
+//     } else {
+//       curr = lastFruitCount + 1;
+//     }
+//     if (fruit === fruit2) {
+//       lastFruitCount++;
+//     } else {
+//       lastFruitCount = 1;
+//       fruit1 = fruit2;
+//       fruit2 = fruit;
+//     }
+//     max = Math.max(max, curr);
+//   }
+//   return max;
+// }
+// console.log(totalFruit([1, 2, 3, 2, 2]));
+
+/// ------------------Binary Subarrays With Sum
+
+// function atmost(nums, k) {
+//   let left = 0;
+//   let sum = 0;
+//   let count = 0;
+//   if (k < 0) {
+//     return 0;
+//   }
+//   for (let right = 0; right < nums.length; right++) {
+//     sum += nums[right];
+//     while (sum > k) {
+//       sum -= nums[left];
+//       left++;
+//     }
+//     count += right - left + 1;
+//   }
+//   return count;
+// }
+
+// function numSubarraysWithSum(nums, goal) {
+//   return atmost(nums, goal) - atmost(nums, goal - 1);
+// }
+// console.log(numSubarraysWithSum([1, 0, 1, 0, 1], 2));
+
+///--------------Longest Turbulent Subarray-----------
+// function maxTurbulenceSize(arr) {
+//   if (arr.length === 1) return 1;
+//   let maxLen = 1;
+//   let currLen = 1;
+//   let prevSign = 0;
+//   for (let i = 1; i < arr.length; i++) {
+//     let diff = arr[i] - arr[i - 1];
+//     let curSign = diff > 0 ? 1 : diff < 0 ? -1 : 0;
+//     if (curSign === 0) {
+//       currLen = 1;
+//     } else if (currLen === -prevSign) {
+//       currLen++;
+//     } else {
+//       currLen = 2;
+//     }
+//     prevSign = curSign;
+//     maxLen = Math.max(maxLen, curSign);
+//   }
+//   return maxLen;
+// }
+
+///
+
+function moveZeros(nums) {
+  let l = 0;
+  let temp;
+  for (let r = 0; r < nums.length; r++) {
+    if (nums[r] !== 0) {
+      temp = nums[l];
+      nums[l] = nums[r];
+      nums[r] = temp;
+      l++;
     }
   }
-
-  backtrack(0);
-  return result;
+  return nums;
 }
-
-console.log(permuteUnique([1, 1, 2]));
-
-//
+console.log(moveZeros([0, 1, 32, 0, 4, 0]));
