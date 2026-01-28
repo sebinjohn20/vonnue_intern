@@ -1645,17 +1645,633 @@
 
 ///
 
-function moveZeros(nums) {
-  let l = 0;
-  let temp;
-  for (let r = 0; r < nums.length; r++) {
-    if (nums[r] !== 0) {
-      temp = nums[l];
-      nums[l] = nums[r];
-      nums[r] = temp;
-      l++;
-    }
-  }
-  return nums;
-}
-console.log(moveZeros([0, 1, 32, 0, 4, 0]));
+// function moveZeros(nums) {
+//   let l = 0;
+//   let temp;
+//   for (let r = 0; r < nums.length; r++) {
+//     if (nums[r] !== 0) {
+//       temp = nums[l];
+//       nums[l] = nums[r];
+//       nums[r] = temp;
+//       l++;
+//     }
+//   }
+//   return nums;
+// }
+// console.log(moveZeros([0, 1, 32, 0, 4, 0]));
+
+///----------------------------209. Minimum Size Subarray Sum---------------------
+
+// function minSubArrayLen(target, nums) {
+//   let left = 0;
+//   let sum = 0;
+//   let minLen = Infinity;
+
+//   for (let right = 0; right < nums.length; right++) {
+//     sum += nums[right];
+//     while (sum >= target) {
+//       minLen = Math.min(minLen, right - left + 1);
+//       sum -= nums[left];
+//       left++;
+//     }
+//   }
+//   return minLen === Infinity ? 0 : minLen;
+// }
+
+// console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]));
+
+////--------------------- Product of Array Except Self-------------
+
+// function productExceptSelf(nums) {
+//   const n = nums.length;
+//   const answer = [];
+//   for (let i = 0; i < n; i++) {
+//     let product = 1;
+//     for (let j = 0; j < n; j++) {
+//       if (i !== j) {
+//         product *= nums[j];
+//       }
+//     }
+//     answer.push(product);
+//   }
+//   return answer;
+// }
+// console.log(productExceptSelf([1, 2, 3, 4]));
+
+// function productExceptSelf(nums) {
+//   const n = nums.length;
+//   const res = new Array(n).fill(1);
+//   let left = 1;
+//   for (let i = 0; i < n; i++) {
+//     res[i] = left;
+//     left *= nums[i];
+//   }
+
+//   let right = 1;
+//   for (let i = n - 1; i >= 0; i--) {
+//     res[i] *= right;
+//     right *= nums[i];
+//   }
+//   return res;
+// }
+// console.log(productExceptSelf([1, 2, 3, 4]));
+
+///
+
+///---------------303. Range Sum Query - Immutable------------
+
+// function numArray(nums) {
+//   this.prefix = new Array(nums.length + 1).fill(0);
+
+//   for (let i = 0; i < nums.length; i++) {
+//     this.prefix[i + 1] = this.prefix[i] + nums[i];
+//   }
+// }
+
+// numArray.prototype.sumRange = function (left, right) {
+//   return this.prefix[right + 1] - this.prefix[left];
+// };
+
+// ///
+
+// function stockMerchant(n, arr) {
+//   const count = {};
+//   let pairs = 0;
+//   for (let s of arr) {
+//     if (count[s]) {
+//       count[s]++;
+//     } else {
+//       count[s] = 1;
+//     }
+//   }
+//   for (let key in count) {
+//     pairs += Math.floor(count[key] / 2);
+//   }
+//   return pairs;
+// }
+// console.log(stockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]));
+// function simpleArraySum(ar) {
+//   let sum = 0;
+//   for (let i of ar) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+///
+
+// function breakingRecords(score) {
+//   maxCount = 0;
+//   minCount = 0;
+//   max = score[0];
+//   min = score[0];
+//   for (let i = 1; i < score.length; i++) {
+//     if (score[i] > max) {
+//       max = score[i];
+//       maxCount++;
+//     } else if (score[i] < min) {
+//       min = score[i];
+//       minCount++;
+//     }
+//   }
+//   return [maxCount, minCount];
+// }
+
+// function kangaroo(x1, v1, x2, v2) {
+//   for (let i = 0; i < 10000; i++) {
+//     if (x1 === x2) {
+//       return "YES";
+//     }
+//     x1 += v1;
+//     x2 += v2;
+//     return "NO";
+//   }
+// // }
+
+// function staircase(n) {
+//   for (let i = 0; i < n; i++) {
+//     let str = "";
+//     for (let j = 0; j < n - i - 1; j++) {
+//       str += " ";
+//     }
+//     for (let k = 0; k <= i; k++) {
+//       str += "#";
+//     }
+//     console.log(str);
+//   }
+// }
+// staircase(6);
+
+// function compareTriplets(a, b) {
+//   let alice = 0;
+//   let bob = 0;
+//   for (let i = 0; i < a.length; i++) {
+//     if (a[i] > b[i]) {
+//       alice += 1;
+//     } else if (a[i] < b[i]) {
+//       bob += 1;
+//     }
+//   }
+//   return [alice, bob];
+// }
+
+// console.log(compareTriplets([17, 28, 30], [99, 16, 8]));
+
+// function quickSort(arr) {
+//   const pivot = arr[0];
+//   const left = [];
+//   const right = [];
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < pivot) {
+//       left.push(arr[i]);
+//     } else {
+//       right.push(arr[i]);
+//     }
+//   }
+//   return [...left, pivot, ...right];
+// }
+// console.log(quickSort([4, 5, 3, 7, 2]));
+
+//
+
+// function superReducedString(s) {
+//   const stack = [];
+
+//   for (let ch of s) {
+//     if (stack.length > 0 && stack[stack.length - 1] === ch) {
+//       stack.pop();
+//     } else {
+//       stack.push(ch);
+//     }
+//   }
+//   return stack.length === 0 ? "Empty String" : stack.join("");
+// }
+
+// function bonAppetit(bill, k, b) {
+//   let annCost = 0;
+//   for (let i = 0; i < bill.length; i++) {
+//     if (i !== k) {
+//       annCost += bill[i];
+//     }
+//   }
+//   const fairShare = annCost / 2;
+//   if (fairShare === b) {
+//     console.log("Bon Appetit");
+//   } else {
+//     console.log(b - fairShare);
+//   }
+// }
+// bonAppetit([3, 10, 2, 9], 1, 7);
+
+// function plusMinus(arr) {
+//   let neg = 0;
+//   let zero = 0;
+//   let post = 0;
+//   const l = arr.length;
+//   for (let i of arr) {
+//     if (i < 0) {
+//       neg += 1;
+//     } else if (i > 0) {
+//       post += 1;
+//     } else {
+//       zero += 1;
+//     }
+//   }
+//   console.log((post / l).toFixed(6));
+//   console.log((neg / l).toFixed(6));
+//   console.log((zero / l).toFixed(6));
+// }
+// plusMinus([-4, 3, -9, 0, 4, 1]);
+
+// function birthday(s, d, m) {
+//   let count = 0;
+//   let sum = 0;
+
+//   for (let i = 0; i < m; i++) {
+//     sum += s[i];
+//   }
+//   if (sum === d) count++;
+//   for (let i = m; i < s.length; i++) {
+//     sum = sum - s[i - m] + s[i];
+//     if (sum === d) count++;
+//   }
+//   return count;
+// }
+
+//
+
+// function migratoryBrids(arr) {
+//   const freq = {};
+//   for (let brid of arr) {
+//     if (freq[brid]) {
+//       freq[brid]++;
+//     } else {
+//       freq[brid] = 1;
+//     }
+//   }
+//   let maxCount = Math.max(...Object.values(freq));
+//   let result = Infinity;
+//   for (let brid in freq) {
+//     if (freq[brid] === maxCount) {
+//       result = Math.min(result, brid);
+//     }
+//   }
+//   return result;
+// }
+// console.log(migratoryBrids([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]));
+
+// function diagonalDiffernce(arr) {
+//   let firstD = 0;
+//   let secondD = 0;
+//   const n = arr.length;
+//   for (let i = 0; i < n; i++) {
+//     firstD += arr[i][i];
+//     secondD += arr[i][n - 1 - i];
+//   }
+//   return Math.abs(firstD - secondD);
+// }
+
+//
+
+// function birthdayCakeCandles(candles) {
+//   let max = Math.max(...candles);
+//   let count = 0;
+//   for (let i of candles) {
+//     if (i === max) count++;
+//   }
+//   return count;
+// }
+
+// console.log(birthdayCakeCandles([3, 2, 1, 3]));
+
+// function gradingStudents(grades) {
+//   let result = [];
+//   for (let g of grades) {
+//     if (g < 36) {
+//       result.push(g);
+//     } else {
+//       let next = Math.ceil(g / 5) * 5;
+//       result.push(next - g < 3 ? next : g);
+//     }
+//   }
+//   return result;
+// }
+//kljjlkjlkjlkjlkjkl
+
+// function pageCount(n, p) {
+//   const front = Math.floor(p / 2);
+//   const back = Math.floor(n / 2) - Math.floor(p / 2);
+//   return Math.min(front, back);
+// }
+// function divisibleSumPairs(n, k, ar) {
+//   let count = 0;
+//   for (let i = 0; i < ar.length; i++) {
+//     for (let j = i + 1; j < ar.length; j++) {
+//       if (ar[i] + (ar[j] % k) === 0) {
+//         count++;
+//       }
+//     }
+//   }
+//   return count;
+// }
+// function miniMaxSum(arr) {
+//   arr.sort((a, b) => a - b);
+//   let min = 0;
+//   let max = 0;
+
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     min += arr[i];
+//   }
+
+//   for (let i = 1; i < arr.length; i++) {
+//     max += arr[i];
+//   }
+
+//   console.log(min, max);
+// }
+// miniMaxSum([1, 2, 3, 4, 5]);
+
+// ///
+
+// function countingValleys(steps, path) {
+//   let altitude = 0;
+//   let valleys = 0;
+//   for (let step of path) {
+//     if (step === "U") {
+//       altitude++;
+//       if (altitude == 0) {
+//         valleys++;
+//       }
+//     } else {
+//       altitude--;
+//     }
+//   }
+//   return valleys;
+// }
+
+// function libraryFine(d1, m1, y1, d2, m2, y2) {
+//   if (d1 !== d2 && m1 === m2 && y1 === y2) {
+//     return (d1 - d2) * 15;
+//   } else if (d1 !== d2 && m1 !== m2 && y1 === y2) {
+//     return (m1 - m2) * 500;
+//   } else {
+//     return (y1 - y2) * 10000;
+//   }
+// }
+
+// function timeConversion(s) {
+//   let hour = parseInt(s.slice(0, 2));
+//   let rest = s.slice(2, 8);
+//   let period = s.slice(8);
+//   console.log(rest);
+//   if (period === "AM") {
+//     if (hour === 12) hour = 0;
+//   } else {
+//     if (hour != 12) hour += 12;
+//   }
+//   return String(hour).padStart(2, "0") + rest;
+// }
+
+// console.log(timeConversion("07:05:45PM"));
+
+// import { useState } from "react";
+
+// export default function UserForm() {
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     age: "",
+//   });
+
+//   const [submittedData, setSubmittedData] = useState(null);
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setSubmittedData(formData);
+//   };
+
+//   return (
+//     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+//       <div className="bg-white rounded-2xl shadow-lg p-6 w-full max-w-md">
+//         <h1 className="text-xl font-semibold mb-4">User Form</h1>
+
+//         <form onSubmit={handleSubmit} className="space-y-4">
+//           <input
+//             type="text"
+//             name="name"
+//             placeholder="Name"
+//             value={formData.name}
+//             onChange={handleChange}
+//             className="w-full border rounded-lg p-2"
+//             required
+//           />
+
+//           <input
+//             type="email"
+//             name="email"
+//             placeholder="Email"
+//             value={formData.email}
+//             onChange={handleChange}
+//             className="w-full border rounded-lg p-2"
+//             required
+//           />
+
+//           <input
+//             type="number"
+//             name="age"
+//             placeholder="Age"
+//             value={formData.age}
+//             onChange={handleChange}
+//             className="w-full border rounded-lg p-2"
+//             required
+//           />
+
+//           <button
+//             type="submit"
+//             className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+//           >
+//             Submit
+//           </button>
+//         </form>
+
+//         {submittedData && (
+//           <div className="mt-6 border-t pt-4">
+//             <h2 className="text-lg font-medium mb-2">User Details</h2>
+//             <p><strong>Name:</strong> {submittedData.name}</p>
+//             <p><strong>Email:</strong> {submittedData.email}</p>
+//             <p><strong>Age:</strong> {submittedData.age}</p>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
+// function caesarCipher(s, k) {
+//   k = k % 26;
+//   let result = "";
+//   for (let ch of s) {
+//     let code = ch.charCodeAt(0);
+//     if (code >= 97 && code <= 122) {
+//       result += String.fromCharCode(((code - 97 + k) % 26) + 97);
+//     } else if (code >= 65 && code <= 90) {
+//       result += String.fromCharCode(((code - 65 + k) % 26) + 65);
+//     } else {
+//       result += ch;
+//     }
+//   }
+//   return result;
+// // }
+// function caesarCipher(s, k) {
+//   const lower = "abcdefghijklmnopqrstuvwxyz";
+//   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   k = k % 26;
+
+//   let result = "";
+//   for (let ch of s) {
+//     if (lower.includes(ch)) {
+//       let id = lower.indexOf(ch);
+//       result += lower[(id + k) % 26];
+//     } else if (upper.includes(ch)) {
+//       let id = higher.indexOf(ch);
+//       result += lower[(id + k) % 26];
+//     } else {
+//       result += ch;
+//     }
+//   }
+//   return result;
+// }
+
+//sdfsdfsdfdfsdfsdfsdfsdfsfsdfsdfdfsdfsdfsdf
+
+// function towerBreakers(n, m) {
+//   if (m === 1) return 2;
+//   if (n % 2 === 0) return 2;
+//   return 1;
+//}
+
+// function dayOfProgrammer(year) {
+//   if (year === 1918) {
+//     return "26.09.1918";
+//   }
+//   let leap;
+//   if (year < 1918) {
+//     leap = year % 4 === 0;
+//   } else {
+//     iseap = year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+//   }
+//   const day = leap ? "12" : "13";
+//   return `${day}.09.${year}`;
+// }
+
+//dfdsfdffdfdsfdffdfdfdfdfdfdfdfdfdsfdsfd
+
+// function hurdleRace(k, height) {
+//   const maxHeight = Math.max(...height);
+//   return Math.max(0, maxHeight - k);
+// }
+
+// function minimumNumber(n, password) {
+//   let isDigit = false;
+//   let isLower = false;
+//   let isUpper = false;
+//   let isSpecial = false;
+//   const numbers = "0123456789";
+//   const lower = "abcdefghijklmnopqrstuvwxyz";
+//   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   const special = "!@#$%^&*()-+";
+
+//   for (let ch of password) {
+//     if (numbers.includes(ch)) isDigit = true;
+//     else if (lower.includes(ch)) isLower = true;
+//     else if (upper.includes(ch)) isUpper = true;
+//     else if (special.includes(ch)) isSpecial = true;
+//   }
+//   let m = 0;
+//   if (!isDigit) m++;
+//   if (!isLower) m++;
+//   if (!isUpper) m++;
+//   if (!isSpecial) m++;
+//   return Math.max(m, 6 - n);
+// }
+
+// function minimumAbsoluteDifference(arr) {
+//   arr.sort((a, b) => a - b);
+//   let md = Infinity;
+//   for (let i = 0; i < arr.length; i++) {
+//     const differnce = Math.abs(arr[i + 1] - arr[i]);
+//     if (differnce < md) {
+//       md = differnce;
+//     }
+//   }
+
+//   return md;
+// }
+
+// function marsExploration(s) {
+//   let count = 0;
+//   const pattern = "SOS";
+//   for (let i = 0; i < s.length; i++) {
+//     if (s[i] !== pattern[i % 3]) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(marsExploration("SOSSOT"));
+
+//fdsddfdfdfdffdfdsfdsfdfdfdfdfdfdfdfdf
+
+// function getMoneySpent(keyboards, drives, budget) {
+//   let maxSpend = -1;
+//   let total = 0;
+//   for (let key of keyboards) {
+//     for (let dri of drives) {
+//       total = key + dri;
+//       if (total <= budget && total > maxSpend) maxSpend = total;
+//     }
+//   }
+//   return maxSpend;
+// }
+
+// function camelcase(s) {
+//   let count = 1;
+//   for (let ch of s) {
+//     if (ch >= "A" && ch <= "z") {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// function viralAdvertising(n) {
+//   let shared = 5;
+//   let count = 0;
+//   for (let day = 0; day < n; day++) {
+//     let liked = Math.floor(shared / 2);
+//     count += liked;
+//     shared = liked * 3;
+//   }
+//   return count;
+// }
+
+//
+
+// function jumpingOnClouds(c, k) {
+//   let energy = 100;
+//   let cloud = 0;
+//   for (let i = 0; i < c.length; i++) {
+//     cloud = (cloud + k) % c.length;
+//     energy -= 1 + 2 * c[cloud];
+//     if(cloud===0)break
+//   }
+//   return energy;
+// }
+// console.log(jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2));
+
+//hjgghjhjghgjhgjhjgjgsdfsdfsdfsdfsdfsdfsdfsdfdfsdfsdfsdfddfsdfsdfsdfsdfsdfsdfsdfsdfsdffsdfsdfdsfdfsdfsdffffffffffffffffffffffffffffsdfsdfdsffhghjghghjhgjhgjhgjghghjghjghjghjhgjgjhgjhghgjjghghjggghjhgjghjghjghjhjghgjhjghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhghjghjhjgghhjgjhgjhgjhgjhgghjghghghhjgghjhgjhjkjhkkhjhklhkjlhkjghhgjghjhgjhgjghjghjjjjjjjjjjjjjjjjjhggjhghjghjghjhjghjghjgghjghjhjghgjhgjhjgghjghjghjghjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghjghjghjjjjjjjjjjjjjjjjjjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhghjghghjghjghjgghghjghjghjghjgjghkgjgjggjhghjghhjgghjhgjhgjhgjghjhgghjghjjhggjghjghjhjghgjhjghjghjggghjjkhghjhgjghjhjgghjghjhgjghjhjggjhgjhgjhgjhgjhgjhgjhgkjgkyugkjhjhkgkyugjhgjhghjghgjgjuygjhjhguygjhgyugjhhjjhgjhgjhyugjhuygjhjhguyggjhjhggjkghgjhgjhghjgjhghjghjghjghjjghhjghgjghjghjghjghjghjghjghjhgjhjgghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjhgjghjghjhjgghjghjghjgghjghjghjghjghjhgjjhghjgghjgjhgjhghjgjhjhgghjghjhjgghjghjgjhhgjgjhgjhghjgjhghjghjhjggjhghjhgjghjhgjghjjhkgjggjhgjhghjhgjghjghjghjghjghjghjhjgghjghjghjghjghjghjgjhjghjhghjgghjghjghjghjghjghjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjhgjghjghjghjkgjgjgjghjgjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhgjhgjhghjghjhgjgjhhjgjhgghjghjjhgjhgjghgjhghjghjjjhgggghjjjjjjjjjghjghjghjghjjgjhghjghjgjhghjghjghjghjjhgjhjhghgjhgjhgjghjhgjghjghjghjghjghjhjgghjghjhgjghjghjghjghjhgjhgjhgjghjghjghjghjjhjgjghghjghjjhgjhgjhgjhghjgjhgjhgjhgjghjhgjhjhggggggggggggggggggggghjjhgjhgjhjhghjgghjghjhjghjghjghjghjgghjghjghjghjghjhgjhgjghjghjghjghjjjjjjjjjjjjjhgjghjhjghjgghjghjghjghjghjhjgghjghjhjgghjgjhgjhgjhgjhgjhjhgghjghjghjghjghjghjghjghjghjghjgjhghjghjghghjghjghjghjghjghjghjghjghjghjjhgjhgjhggjhgjhghjghjghjghjgjhghjghjghjgjhjhhgjgghhjhjghjghjhgjghjghjghjfghhgfhgfhgffghghhgfghfhgfhgfhgfhfhfhhfgfhgfhghgfhgfhgfhfghgfhgfhgfhgfgfhfghfghfghggjhjghgjhjhjghgjhjghghjghjhjghgjjghgjhghjghjfghfhghgfhgfhggfhfhgfghhfgghfhghgfhfgghfgfhfghgfhfghfhghfghgfhggfhfghhgffhggfhfgfghhfghfhfhgfgfhgfhgfhgfhgfghfghfghfghhhhhhhhhhhhhhhhhhhhfhfgfhhgfghfhgfhgfhjfrjtyuryutrfhghjgfhjgfytfhgfghfhgfhhgfgfhfhgfjhfhgfhgfhgftyffytfhghggfhhgfhgfhgfhgfghfjhgghjghjghjjghhjgghjgjggjhgghjghjghjghjghjghjghfsdfsdfsdfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghjghjhjghjgghjghjghjhgjgghjghjghjghjhjghjgghj
