@@ -2274,4 +2274,240 @@
 // }
 // console.log(jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2));
 
-//hjgghjhjghgjhgjhjgjgsdfsdfsdfsdfsdfsdfsdfsdfdfsdfsdfsdfddfsdfsdfsdfsdfsdfsdfsdfsdfsdffsdfsdfdsfdfsdfsdffffffffffffffffffffffffffffsdfsdfdsffhghjghghjhgjhgjhgjghghjghjghjghjhgjgjhgjhghgjjghghjggghjhgjghjghjghjhjghgjhjghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhghjghjhjgghhjgjhgjhgjhgjhgghjghghghhjgghjhgjhjkjhkkhjhklhkjlhkjghhgjghjhgjhgjghjghjjjjjjjjjjjjjjjjjhggjhghjghjghjhjghjghjgghjghjhjghgjhgjhjgghjghjghjghjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghjghjghjjjjjjjjjjjjjjjjjjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhghjghghjghjghjgghghjghjghjghjgjghkgjgjggjhghjghhjgghjhgjhgjhgjghjhgghjghjjhggjghjghjhjghgjhjghjghjggghjjkhghjhgjghjhjgghjghjhgjghjhjggjhgjhgjhgjhgjhgjhgjhgkjgkyugkjhjhkgkyugjhgjhghjghgjgjuygjhjhguygjhgyugjhhjjhgjhgjhyugjhuygjhjhguyggjhjhggjkghgjhgjhghjgjhghjghjghjghjjghhjghgjghjghjghjghjghjghjghjhgjhjgghjghjghjghjghjghjghjghjghjghjghjghjghjghjghjhgjghjghjhjgghjghjghjgghjghjghjghjghjhgjjhghjgghjgjhgjhghjgjhjhgghjghjhjgghjghjgjhhgjgjhgjhghjgjhghjghjhjggjhghjhgjghjhgjghjjhkgjggjhgjhghjhgjghjghjghjghjghjghjhjgghjghjghjghjghjghjgjhjghjhghjgghjghjghjghjghjghjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjhgjghjghjghjkgjgjgjghjgjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhgjhgjhghjghjhgjgjhhjgjhgghjghjjhgjhgjghgjhghjghjjjhgggghjjjjjjjjjghjghjghjghjjgjhghjghjgjhghjghjghjghjjhgjhjhghgjhgjhgjghjhgjghjghjghjghjghjhjgghjghjhgjghjghjghjghjhgjhgjhgjghjghjghjghjjhjgjghghjghjjhgjhgjhgjhghjgjhgjhgjhgjghjhgjhjhggggggggggggggggggggghjjhgjhgjhjhghjgghjghjhjghjghjghjghjgghjghjghjghjghjhgjhgjghjghjghjghjjjjjjjjjjjjjhgjghjhjghjgghjghjghjghjghjhjgghjghjhjgghjgjhgjhgjhgjhgjhjhgghjghjghjghjghjghjghjghjghjghjgjhghjghjghghjghjghjghjghjghjghjghjghjghjjhgjhgjhggjhgjhghjghjghjghjgjhghjghjghjgjhjhhgjgghhjhjghjghjhgjghjghjghjfghhgfhgfhgffghghhgfghfhgfhgfhgfhfhfhhfgfhgfhghgfhgfhgfhfghgfhgfhgfhgfgfhfghfghfghggjhjghgjhjhjghgjhjghghjghjhjghgjjghgjhghjghjfghfhghgfhgfhggfhfhgfghhfgghfhghgfhfgghfgfhfghgfhfghfhghfghgfhggfhfghhgffhggfhfgfghhfghfhfhgfgfhgfhgfhgfhgfghfghfghfghhhhhhhhhhhhhhhhhhhhfhfgfhhgfghfhgfhgfhjfrjtyuryutrfhghjgfhjgfytfhgfghfhgfhhgfgfhfhgfjhfhgfhgfhgftyffytfhghggfhhgfhgfhgfhgfghfjhgghjghjghjjghhjgghjgjggjhgghjghjghjghjghjghjghfsdfsdfsdfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghjghjhjghjgghjghjghjhgjgghjghjghjghjhjghjgghj
+//dfsfsdffdfdsfdsfsdfdsfsdfsdfsdfsdfffdsfsdfsddsfdfdsfdf
+// function marcsCakewalk(calorie) {
+//   calorie.sort((a, b) => b - a);
+
+//   let miles = 0;
+
+//   for (let i = 0; i < calorie.length; i++) {
+//     miles += calorie[i] * Math.pow(2, i);
+//   }
+//   return miles;
+// }
+
+// console.log(marcsCakewalk([7, 4, 9, 6]));
+
+// function catAndMouse(x, y, z) {
+//   const distA = Math.abs(x - z);
+//   const distB = Math.abs(y - z);
+
+//   if (distA < distB) {
+//     return "Cat A";
+//   } else if (distB < distA) {
+//     return "Cat B";
+//   } else {
+//     return "Mouse C";
+//   }
+// }
+
+// console.log(catAndMouse(1, 2, 3));
+// function petrolPumpTour(petrolPumps) {
+//   let totalFuel = 0;
+//   let currentFuel = 0;
+//   let startIndex = 0;
+//   for (let i = 0; i < petrolPumps.length; i++) {
+//     let petrol = petrolPumps[i][0];
+//     let distance = petrolPumps[i][1];
+//     let gain = petrol - distance;
+//     totalFuel += gain;
+//     currentFuel += gain;
+//     if (currentFuel < 0) {
+//       startIndex = i + 1;
+
+//       currentFuel = 0;
+//     }
+//   }
+//   return totalFuel >= 0 ? startIndex : -1;
+// }
+
+// function twoSum(arr, k) {
+//   let left = 0;
+//   let right = arr.length - 1;
+
+//   while (left < right) {
+//     let sum = arr[left] + arr[right];
+//     if (sum === k) {
+//       return [left, right];
+//     } else if (sum > k) {
+//       right--;
+//     } else {
+//       left++;
+//     }
+//   }
+//   return [];
+// }
+// console.log(twoSum([2, 7, 11, 15], 9));
+
+// function twoSum(arr, target) {
+//   let obj = {};
+//   for (let i = 0; arr.length; i++) {
+//     let d = target - arr[i];
+//     if (d in obj) {
+//       return [obj[d], i];
+//     }
+//     obj[arr[i]] = i;
+//   }
+//   return [];
+// }
+
+// console.log(twoSum([2, 7, 1, 15], 9));
+
+// function twoSum(nums, target) {
+//   const map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     let d = target - nums[i];
+//     if (map.has(d)) {
+//       return [map.get(d), i];
+//     }
+//     map.set(nums[i], i);
+//   }0
+//   return [];
+// }
+// console.log(twoSum([2, 7, 11, 15], 9));
+
+// function threeSum(num) {
+//   num.sort((a, b) => a - b);
+//   let result = [];
+
+//   for (let i = 0; i < num.length; i++) {
+//     if (i > 0 && num[i] === num[i - 1]) continue;
+//     let left = i + 1;
+//     let right = num.length - 1;
+//     while (left < right) {
+//       const sum = num[i] + num[left] + num[right];
+//       if (sum === 0) {
+//         result.push([num[i], num[left], num[right]]);
+
+//         while (num[left] === num[left + 1]) left++;
+//         while (num[right] === num[right - 1]) right--;
+//         left++;
+//         right--;
+//       } else if (sum > 0) {
+//         right--;
+//       } else {
+//         left++;
+//       }
+//     }
+//   }
+//   return result;
+// }
+// console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+
+// function mergeTwoArrays(arr1, arr2) {
+//   let i = 0,
+//     j = 0;
+//   const result = [];
+//   while (i < arr1.length && j < arr2.length) {
+//     if (arr1[i] <= arr2[j]) {
+//       result.push(arr1[i]);
+//       i++;
+//     } else {
+//       result.push(arr2[j]);
+//       j++;
+//     }
+//   }
+//   while (i < arr1.length) {
+//     result.push(arr1[i]);
+//     i++;
+//   }
+//   while (j < arr1.length) {
+//     result.push(arr2[j]);
+//     j++;
+//   }
+//   return result;
+// }
+// console.log(mergeTwoArrays([1, 3, 5], [2, 4, 6]));
+
+///
+
+// function Palindrome(str) {
+//   let right = str.length - 1;
+
+//   for (let left = 0; left < str.length / 2; left++) {
+//     if (str[left] !== str[right]) {
+//       return false;
+//     }
+//     right--;
+//   }
+//   return true;
+// }
+// console.log(Palindrome("malaiaalam"));
+
+// function moveZeros(arr) {
+//   let left = 0;
+//   let temp;
+//   for (let right = 0; right < arr.length; right++) {
+//     if (arr[right] !== 0) {
+//       temp = arr[left];
+//       arr[left] = arr[right];
+//       arr[right] = temp;
+//       left++;
+//     }
+//   }
+//   return arr;
+// }
+// console.log(moveZeros([0, 1, 0, 0, 1, 0, 2, 3]));
+// Longest subarray sum equals k
+
+// function longestSubarraySum(arr, k) {
+//   let left = 0;
+//   let sum = 0;
+//   let maxlen = 0;
+//   for (let right = 0; right < arr.length; right++) {
+//     sum += arr[right];
+//     while (sum > k) {
+//       sum -= arr[left];
+//       left++;
+//     }
+//     if (sum === k) {
+//       maxlen = Math.max(maxlen, right - left + 1);
+//     }
+//   }
+//   return maxlen;
+// }
+
+// console.log(longestSubarraySum([1, 2, 1, 1, 1], 3));
+
+// function longestSubarraySum(arr, k) {
+//   let max = 0;
+//   let sum = 0;
+//   let map = new Map();
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+
+//     if (sum === k) {
+//       max = i + 1;
+//     }
+//     if (map.has(sum - k)) {
+//       max = Math.max(max, i - map.get(sum - k));
+//     }
+//     if (!map.has(sum)) {
+//       map.set(sum, i);
+//     }
+//   }
+//   return max;
+// }
+// console.log(longestSubarraySum([1, -1, 5, -2, 3], 3));
+
+function smallestSubArraySum(arr, k) {
+  let n = arr.length;
+  let prefix = new Array(n + 1).fill(0);
+  for (let i = 0; i < n; i++) {
+    prefix[i + 1] = prefix[i] + arr[i];
+  }
+  let q = [];
+  let minLen = Infinity;
+
+  for (let i = 0; i < n; i++) {
+    while (q.length && prefix[i] - prefix[q[0]] >= k) {}
+    while (q.length && prefix[i] - prefix[q[q.length - 1]] >= k) {
+      q.pop();
+    }
+    q.push(i);
+  }
+}
+
+console.log(smallestSubArraySum([2, -1, 2], 3));
+
+///sdfsdfsdfdsfdsffdfdfsgfdgfdgfdgdfgdfjhjhjhjhjhjhgjhjhdfdfdfsdfdsf
