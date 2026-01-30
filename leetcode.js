@@ -2490,24 +2490,108 @@
 // }
 // console.log(longestSubarraySum([1, -1, 5, -2, 3], 3));
 
-function smallestSubArraySum(arr, k) {
-  let n = arr.length;
-  let prefix = new Array(n + 1).fill(0);
-  for (let i = 0; i < n; i++) {
-    prefix[i + 1] = prefix[i] + arr[i];
-  }
-  let q = [];
-  let minLen = Infinity;
+// function smallestSubArraySum(arr, k) {
+//   let n = arr.length;
+//   let prefix = new Array(n + 1).fill(0);
+//   for (let i = 0; i < n; i++) {
+//     prefix[i + 1] = prefix[i] + arr[i];
+//   }
+//   let q = [];
+//   let minlen = Infinity;
+//   for (let i = 0; i <= n; i++) {
+//     while (q.length && prefix[i] - prefix[q[0]] >= k) {
+//       minlen = Math.min(minlen, i - q[0]);
+//       q.shift();
+//     }
+//     while (q.length && prefix[i] <= prefix[q[q.length - 1]]) {
+//       q.pop();
+//     }
+//     q.push(i);
+//   }
+//   return minlen;
+// }
 
-  for (let i = 0; i < n; i++) {
-    while (q.length && prefix[i] - prefix[q[0]] >= k) {}
-    while (q.length && prefix[i] - prefix[q[q.length - 1]] >= k) {
-      q.pop();
+// console.log(smallestSubArraySum([2, -1, 2], 3));
+
+///sdfsdfsdfddsfsdfdsfffdsdfdsfaffdsfdsfdfdsfdfdsdffsdfsdfdsfdfsdfsdadsfsdfdsfdsfdsfdsffdfdffsdsdfdsfdffsadfsdfsdfdsfsffdsfdfdfdfdsfdsfdffsfdfdsdfsfdsfsfsdfdfsdfsdfsdfsdfsdfsdfdfsdfsdfsdfsdfsdfsdfsdfsdfdsfsdfsdfsdffsdfasfsdfsdfsdfdsfsdfsdfsafsdfsdfsdfsdfsdfdsfsdfdsfsfsdfsdfadfsdfsdfsdfsdfdsfsdf
+
+// function longestPalindrome(s) {
+//   if (s.length < 2) return s;
+//   function expand(left, right) {
+//     while (left >= 0 && s.length > right && s[left] === s[right]) {
+//       left--;
+//       right++;
+//     }
+//     return right - left - 1;
+//   }
+//   let start = 0,
+//     end = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     len1 = expand(i, i);
+//     len2 = expand(i, i + 1);
+//     len = Math.max(len1, len2);
+//     if (len > end - start) {
+//       start = i - Math.floor((len - 1) / 2);
+//       end = i + Math.floor(len / 2);
+//     }
+//     console.log(i);
+//   }
+//   console.log(start, end);
+
+//   return s.slice(start, end + 1);
+// }
+// console.log(longestPalindrome("cbbd"));dsdsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdfdfsdfsdfsdfddsfdsfsdfsdfsdfsdfsfsdfsdfsdfdfdffsdfdfdsfdsfsdfsdfdf
+
+//console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+
+// function threeSum(arr) {
+//   arr.sort((a, b) => a - b);
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i > 0 && arr[i] === arr[i - 1]) continue;
+//     let left = i + 1;
+//     let right = arr.length - 1;
+//     while (left < right) {
+//       let sum = arr[i] + arr[left] + arr[right];
+//       if (sum === 0) {
+//         result.push([arr[i], arr[left], arr[right]]);
+//         while (arr[left] === arr[left + 1]) left++;
+//         while (arr[right] === arr[right - 1]) right--;
+//         left++;
+//         right--;
+//       } else if (sum > 0) {
+//         right--;
+//       } else {
+//         left++;
+//       }
+//     }
+//   }
+//   return result;
+// }
+// console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+
+function threeSumClosest(arr, target) {
+  arr.sort((a, b) => a - b);
+
+  let closestSum = arr[0] + arr[1] + arr[2];
+  for (let i = 0; i < arr.length - 2; i++) {
+    let left = i + 1;
+    let right = arr.length - 1;
+
+    while (left < right) {
+      let sum = arr[i] + arr[left] + arr[right];
+      if (Math.abs(sum - target) < Math.abs(closestSum - target)) {
+        closestSum = sum;
+      }
+      if (sum === target) {
+        return sum;
+      } else if (sum > target) {
+        right--;
+      } else {
+        left++;
+      }
     }
-    q.push(i);
   }
+  return closestSum;
 }
-
-console.log(smallestSubArraySum([2, -1, 2], 3));
-
-///sdfsdfsdfdsfdsffdfdfsgfdgfdgfdgdfgdfjhjhjhjhjhjhgjhjhdfdfdfsdfdsf
+console.log(threeSumClosest([-1, 0, 1, 2, -1, -4], 1));
