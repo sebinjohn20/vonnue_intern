@@ -2570,59 +2570,180 @@
 // }
 // console.log(threeSum([-1, 0, 1, 2, -1, -4]));
 
-function threeSumClosest(arr, target) {
-  arr.sort((a, b) => a - b);
+// function threeSumClosest(arr, target) {
+//   arr.sort((a, b) => a - b);
 
-  let closestSum = arr[0] + arr[1] + arr[2];
-  for (let i = 0; i < arr.length - 2; i++) {
-    let left = i + 1;
-    let right = arr.length - 1;
+//   let closestSum = arr[0] + arr[1] + arr[2];
+//   for (let i = 0; i < arr.length - 2; i++) {
+//     let left = i + 1;
+//     let right = arr.length - 1;
 
-    while (left < right) {
-      let sum = arr[i] + arr[left] + arr[right];
-      if (Math.abs(sum - target) < Math.abs(closestSum - target)) {
-        closestSum = sum;
-      }
-      if (sum === target) {
-        return sum;
-      } else if (sum > target) {
-        right--;
-      } else {
-        left++;
-      }
+//     while (left < right) {
+//       let sum = arr[i] + arr[left] + arr[right];
+//       if (Math.abs(sum - target) < Math.abs(closestSum - target)) {
+//         closestSum = sum;
+//       }
+//       if (sum === target) {
+//         return sum;
+//       } else if (sum > target) {
+//         right--;
+//       } else {
+//         left++;
+//       }
+//     }
+//   }
+//   return closestSum;
+// }
+//console.log(threeSumClosest([-1, 0, 1, 2, -1, -4], 1));
+
+// function fourSum(arr, target) {
+//   arr.sort((a, b) => a - b);
+//   let result = [];
+//   for (let i = 0; i < arr.length - 3; i++) {
+//     if (i > 0 && arr[i] === arr[i - 1]) continue;
+//     for (let j = i + 1; j < arr.length - 2; j++) {
+//       if (j > i + 1 && arr[j] === arr[j - 1]) continue;
+//       let left = j + 1;
+//       let right = arr.length - 1;
+//       while (left < right) {
+//         let sum = arr[i] + arr[j] + arr[left] + arr[right];
+
+//         if (sum === target) {
+//           result.push(arr[i], arr[j], arr[left], arr[right]);
+//           while (left < right && arr[left] === arr[left + 1]) left++;
+//           while (left < right && arr[right] === arr[right - 1]) right--;
+//           left++;
+//           right--;
+//         } else if (sum > target) {
+//           right--;
+//         } else {
+//           left++;
+//         }
+//       }
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(fourSum([2, 2, 2, 2, 2], 8));
+
+// function removeDuplicates(nums) {
+//   if (nums.length === 0) return 0;
+//   let left = 0;
+//   for (let right = 1; right < nums.length; right++) {
+//     if (nums[right] !== nums[left]) {
+//       left++;
+//       nums[left] = nums[right];
+//     }
+//   }
+//   return nums.slice(0, left + 1);
+// }
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+// function removeElement(nums, val) {
+//   if (nums.length === 0) return 0;
+//   let left = 0;
+//   for (let right = 0; right < nums.length; right++) {
+//     if (nums[right] !== val) {
+//       nums[left] = nums[right];
+//       left++;
+//     }
+//   }
+//   return nums.slice(0, left);
+// }
+// console.log(removeElement([3, 2, 2, 5, 6, 3], 3));
+
+// function strStr(haystack, needle) {
+//   if (haystack === needle || needle === "") return 0;
+//   for (let i = 0; i <= haystack.length - needle.length; i++) {
+//     if (haystack[i] === needle[0]) {
+//       let substr = haystack.slice(i, i + needle.length);
+//       if (strStr === needle) {
+//         return i;
+//       }
+//     }
+//   }
+// }
+// strStr("sadbutsad", "sad");
+
+///sadasdasdasdasdasdasdsdsdsadsddd
+
+// function nextPermutation(nums) {
+//   let i = nums.length - 2;
+//   while (i >= 0 && nums[i] >= nums[i + 1]) {
+//     i--;
+//   }
+//   if (i >= 0) {
+//     let j = nums.length - 1;
+//     while (nums[j] <= nums[i]) {
+//       j--;
+//     }
+
+//     [nums[i], nums[j]] = [nums[j], nums[i]];
+//   }
+//   let left = i + 1;
+//   let right = nums.length - 1;
+//   while (left < right) {
+//     [nums[left], nums[right]] = [nums[right], nums[left]];
+//     left++;
+//     right--;
+//   }
+//   return nums;
+// }
+// console.log(nextPermutation([1, 2, 3]));
+// console.log(nextPermutation([3, 2, 1]));
+
+//
+
+// function trap(height) {
+//   let left = 0;
+//   let right = height.length - 1;
+//   let leftmax = 0;
+//   let rightmax = 0;
+//   let water = 0;
+//   while (left < right) {
+//     if (height[left] < height[right]) {
+//       height[left] >= leftmax
+//         ? (leftmax = height[left])
+//         : (water += leftmax - height[left]);
+//       left++;
+//     } else {
+//       height[right] >= rightmax
+//         ? (rightmax = height[right])
+//         : (water += rightmax - height[right]);
+//       right--;
+//     }
+//   }
+
+//   return water;
+// }
+// console.log(trap([4, 2, 0, 3, 2, 5]));
+
+///ysdfsdfdsfdsdfsdfdsfdsf
+
+function invisibelSegment(nums) {
+  function isInvisible(l, r) {
+    let maxval = -Infinity;
+    let minVal = Infinity;
+    for (let i = 1; i <= r; i++) {
+      maxval = Math.max(maxval, nums[i]);
+      minVal = Math.min(minVal, nums[i]);
     }
+    return maxval - minVal <= r - l + 1;
   }
-  return closestSum;
-}
-console.log(threeSumClosest([-1, 0, 1, 2, -1, -4], 1));
+  let sum = nums.reduce((a, b) => a + b, 0);
+  let left = 0;
+  let outsideSum = 0;
+  for (let right = 1; right < nums.length; right++) {
+    if (isInvisible(left, right)) {
+      for (let i = 0; i < left; i++) outsideSum += nums[i];
+      for (let i = right + 1; i < nums.length; i++) outsideSum += nums[i];
 
-function fourSum(arr, target) {
-  arr.sort((a, b) => a - b);
-  let result = [];
-  for (let i = 0; i < arr.length - 3; i++) {
-    if (i > 0 && arr[i] === arr[i - 1]) continue;
-    for (let j = i + 1; j < arr.length - 2; j++) {
-      if (j > i + 1 && arr[j] === arr[j - 1]) continue;
-      let left = j + 1;
-      let right = arr.length - 1;
-      while (left < right) {
-        let sum = arr[i] + arr[j] + arr[left] + arr[right];
-
-        if (sum === target) {
-          result.push(arr[i], arr[j], arr[left], arr[right]);
-          while (left < right && arr[left] === arr[left + 1]) left++;
-          while (left < right && arr[right] === arr[right - 1]) right--;
-          left++;
-          right--;
-        } else if (sum > target) {
-          right--;
-        } else {
-          left++;
-        }
-      }
+      console.log(
+        `Remove segment [${left},${right}] = ${nums.slice(left, right + 1)}, sum after removal = ${outsideSum}`,
+      );
     }
+    left++;
   }
-  return result;
 }
-
-console.log(fourSum([2, 2, 2, 2, 2], 8));
+console.log(invisibelSegment([3, 1, 2, 4, 6]));
