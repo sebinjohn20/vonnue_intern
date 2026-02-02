@@ -2721,29 +2721,132 @@
 
 ///ysdfsdfdsfdsdfsdfdsfdsf
 
-function invisibelSegment(nums) {
-  function isInvisible(l, r) {
-    let maxval = -Infinity;
-    let minVal = Infinity;
-    for (let i = 1; i <= r; i++) {
-      maxval = Math.max(maxval, nums[i]);
-      minVal = Math.min(minVal, nums[i]);
-    }
-    return maxval - minVal <= r - l + 1;
-  }
-  let sum = nums.reduce((a, b) => a + b, 0);
-  let left = 0;
-  let outsideSum = 0;
-  for (let right = 1; right < nums.length; right++) {
-    if (isInvisible(left, right)) {
-      for (let i = 0; i < left; i++) outsideSum += nums[i];
-      for (let i = right + 1; i < nums.length; i++) outsideSum += nums[i];
+// function invisibelSegment(nums) {
+//   function isInvisible(l, r) {
+//     let maxval = -Infinity;
+//     let minVal = Infinity;
+//     for (let i = l; i <= r; i++) {
+//       maxval = Math.max(maxval, nums[i]);
+//       minVal = Math.min(minVal, nums[i]);
+//     }
+//     return maxval - minVal <= r - l;
+//   }
+//   let sum = nums.reduce((a, b) => a + b, 0);
+//   let left = 0;
+//   let outsideSum = 0;
+//   let maxsum = 0;
+//   for (let right = 1; right < nums.length; right++) {
+//     if (isInvisible(left, right)) {
+//       for (let i = 0; i < left; i++) outsideSum += nums[i];
+//       for (let i = right + 1; i < nums.length; i++) outsideSum += nums[i];
 
-      console.log(
-        `Remove segment [${left},${right}] = ${nums.slice(left, right + 1)}, sum after removal = ${outsideSum}`,
-      );
-    }
-    left++;
-  }
+//       console.log(
+//         `Remove segment [${left},${right}] = ${nums.slice(left, right + 1)}, sum after removal = ${outsideSum}`,
+//       );
+//       if (maxsum <= outsideSum) {
+//         maxsum = outsideSum;
+//       }
+//     }
+//     left++;
+//   }
+//   return maxsum;
+// }
+// console.log(invisibelSegment([3, 1, 2, 4, 6, 3, -2]));
+
+// function maxNumber(num) {
+//   let counter = 0;
+//   let sum = 0;
+//   for (let i = 0; i < num.length; i++) {
+//     if (num[i] === "1") {
+//       counter++;
+//     } else {
+//       counter--;
+//     }
+//     if (counter < 0) {
+//       counter = counter + 2;
+//     }
+//     sum += counter;
+//   }
+//   return sum;
+// }
+// console.log(maxNumber("01010"));
+// function maxValidPrefixes(s) {
+//   function validCount(s) {
+//     let count = 0;
+//     let counter = 0;
+//     for (let ch of s) {
+//       if (ch === "1") {
+//         counter++;
+//       } else {
+//         counter--;
+//       }
+//       count++;
+//       if (counter < 0) break;
+//     }
+//     return count;
+//   }
+//   let max = validCount(s);
+
+//   for (let i = 0; i < s.length; i++) {
+//     let flip = s.slice(0, i) + (s[i] === "0" ? "1" : "0") + s.slice(i + 1);
+//     max = Math.max(max, validCount(flip));
+//   }
+//   return max;
+// }
+
+// console.log(maxValidPrefixes("01010")); // 5
+
+// console.log(maxValidPrefixes("01010111"));
+
+// function iscountEvent(num) {
+//   let sum = 0;
+
+//   for (let i = 0; i < num.length; i++) {
+//     for (let j = 0; j < num[i].length; j++) {
+//       sum += num[i][j];
+//     }
+//   }
+//   return sum % 2 === 0 ? "YES" : "NO";
+// }
+
+// console.log(
+//   iscountEvent([
+//     [1, 1],
+//     [1, 0],
+//   ]),
+// );
+
+//;jjjjjjjjjjjjjjjjjfsfsdfadfsafsfasfdsfasfasdfafsdfasdfsdfsdfasfsafsdfsdfdfsdfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjljkjlkkljklkjllkjjkljkljkjkljkllkjjlkj;ljoi;jjjlkljkljljlkjlkjjkkjhkjhhkjkjhkjhlkhkjhkljhkjjkjkhkjjhjkhjkhjkhjkhhjkkjhjkjkjhkjkhjhkjhkjkhhjkjhkkhjjhjkhjkhjkjkhjkhhjkjhkjklhkjlhjkhkjhhhhkjhjhkhkjljkjkhhjkjkhjkhjkhjhkkkjhkjhkkkkjkhhhhhhhhhhhjkhkjhjkhjkhjkhjkhjkhhjkhjkjhkhjkjhkkjhkjhkjhlhkljhkljhjklhlhiuhjkhjkkjhkjhjhkkjhkjhiluhhjkhjkkjhkjlhkjhkjhkjhkjhklhklhkkjhkjhhkjkjhkjhhhhhkhkjhjkjhkhjkkhjhjkjhkjhkhjkjhkjkhkjlhlkhkjkhjkhjkjkhjhkkkkkkkkkkkkjhhhhhhhhhhhhhhjkhjkhjkhhjklhkjlhkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkhjkhjkkjhkkkkkkkkkkhkjhjkjhkjklhkjlhkhhkjkjhkjhhjkkjhkljkjkhjkhjkhjk
+// function maxStableBuildings(H) {
+//   n = H.length;
+
+//   if (n <= 2) return n;
+//   let ans = 2;
+//   for (let i = 0; i < n; i++) {
+//     let seq = [H[i]];
+//     for (let j = i + 1; j < n; j++) {
+//       let m = seq.length;
+//       if (m === 1) {
+//         seq.push(H[j]);
+//       } else {
+//         let a = seq[m - 2];
+//         let b = seq[m - 1];
+//         let c = H[j];
+//         if (Math.abs(b - a) <= 1 || Math.abs(b - c) <= 1) {
+//           seq.push(H[j]);
+//         }
+//       }
+//     }
+//     ans = Math.max(ans, seq.length);
+//   }
+//   return ans;
+// }
+
+// // example
+// console.log(maxStableBuildings([5, 3, 6, 2, 5, 4]));
+
+function sortColors(nums) {
+  return nums.sort((a, b) => a - b);
 }
-console.log(invisibelSegment([3, 1, 2, 4, 6]));
+
+console.log(sortColors([0, 2, 1, 0, 2, 1]));

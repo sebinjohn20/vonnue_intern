@@ -827,4 +827,61 @@ for (let i = 0; i < users.length; i++) {
 
 console.log(uniqueNames); // ["John", "Mary", "Alex"]
 
-///fdsfsdfsdfsdfsdfsdfdsf
+///fdsfsdfsdfsdfsdfsdfdsfsdfsdfdsfsdfdsffdsfsdfdfffdffsdgdfgdfgdfgdfgdfgdfsdfsdfsdfgdsgsgdfgdfgsgsgsgsdgdfgfdgsdfgsdgfdgdfgdfgfdgsgdfgdfgdfgfgdfgfdggdfgdgdfsfdfdsdfsdfgdfgdfgdsgdfgsdfgdfgsfdgdfgdfgdfgdfgdfgdfgsdfgfsdgdfgfggdfgdfgdfgsgdsfgsdfgdfgsgsdfgdfgsgsdgdfgfdgfdgfdsfsdfsdfsdfsdfsafddsfdffdasfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfdfsdfdsfsfsdfsdfsfddsfdsfsdfdsfsdffsdfdsfdsfsfdfdfsdfsdfsdfsdfdsfsdfsdfdfdfsdfdsfsdfdsfdsfasfsdffdsdfdsfsdfdfsdfdfsdfsdffsdfsdfsdfsdfdsfsdfsdfdfdsfsdfdsffsdfsdfdsfsdfdsfdf
+
+// function nextPermutation(number) {
+//   let i = number.length - 2;
+//   while (i >= 0 && number[i] >= number[i + 1]) {
+//     i--;
+//   }
+//   if (i > 0) {
+//     let j = number.length - 1;
+//     while (number[j] <= number[i]) {
+//       j--;
+//     }
+//     [number[i], number[j]] = [number[j], number[i]];
+//   }
+//   let left = i + 1;
+//   let right = number.left - 1;
+//   while (left < right) {
+//     [number[left], number[right]] = [number[right], number[left]];
+//     right--;
+//     left++;
+//   }
+//   return number;
+// }
+// console.log(nextPermutation([))
+//sdfsdffsdfdfdfdfdsffdsfsdf
+function maxStableBuildings(H) {
+  const n = H.length;
+  if (n <= 2) return n;
+
+  let ans = 2;
+
+  for (let i = 0; i < n; i++) {
+    let seq = [H[i]];
+
+    for (let j = i + 1; j < n; j++) {
+      const m = seq.length;
+
+      if (m === 1) {
+        seq.push(H[j]);
+      } else {
+        let a = seq[m - 2];
+        let b = seq[m - 1];
+        let c = H[j];
+
+        if (Math.abs(b - a) <= 1 || Math.abs(b - c) <= 1) {
+          seq.push(c);
+        }
+      }
+    }
+
+    ans = Math.max(ans, seq.length);
+  }
+
+  return ans;
+}
+console.log(maxStableBuildings([5, 3, 6, 2, 5, 4]));
+
+//
