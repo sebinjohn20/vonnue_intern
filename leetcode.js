@@ -2816,7 +2816,7 @@
 //   ]),
 // );
 
-//;jjjjjjjjjjjjjjjjjfsfsdfadfsafsfasfdsfasfasdfafsdfasdfsdfsdfasfsafsdfsdfdfsdfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjljkjlkkljklkjllkjjkljkljkjkljkllkjjlkj;ljoi;jjjlkljkljljlkjlkjjkkjhkjhhkjkjhkjhlkhkjhkljhkjjkjkhkjjhjkhjkhjkhjkhhjkkjhjkjkjhkjkhjhkjhkjkhhjkjhkkhjjhjkhjkhjkjkhjkhhjkjhkjklhkjlhjkhkjhhhhkjhjhkhkjljkjkhhjkjkhjkhjkhjhkkkjhkjhkkkkjkhhhhhhhhhhhjkhkjhjkhjkhjkhjkhjkhhjkhjkjhkhjkjhkkjhkjhkjhlhkljhkljhjklhlhiuhjkhjkkjhkjhjhkkjhkjhiluhhjkhjkkjhkjlhkjhkjhkjhkjhklhklhkkjhkjhhkjkjhkjhhhhhkhkjhjkjhkhjkkhjhjkjhkjhkhjkjhkjkhkjlhlkhkjkhjkhjkjkhjhkkkkkkkkkkkkjhhhhhhhhhhhhhhjkhjkhjkhhjklhkjlhkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkhjkhjkkjhkkkkkkkkkkhkjhjkjhkjklhkjlhkhhkjkjhkjhhjkkjhkljkjkhjkhjkhjk
+//;jjjjjjjjjjjjjjjjjfsfsdfadfsafsfasfdsfasfdfdfasdfafsdfasdfsdfsdfasfsafsdfsdfdfsdfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjljkjlkkljklkjllkjjkljkljkjkljkllkjjlkj;ljoi;jjjlkljkljljlkjlkjjkkjhkjhhkjkjhkjhlkhkjhkljhkjjkjkhkjjhjkhjkhjkhjkhhjkkjhjkjkjhkjkhjhkjhkjkhhjkjhkkhjjhjkhjkhjkjkhjkhhjkjhkjklhkjlhjkhkjhhhhkjhjhkhkjljkjkhhjkjkhjkhjkhjhkkkjhkjhkkkkjkhhhhhhhhhhhjkhkjhjkhjkhjkhjkhjkhhjkhjkjhkhjkjhkkjhkjhkjhlhkljhkljhjklhlhiuhjkhjkkjhkjhjhkkjhkjhiluhhjkhjkkjhkjlhkjhkjhkjhkjhklhklhkkjhkjhhkjkjhkjhhhhhkhkjhjkjhkhjkkhjhjkjhkjhkhjkjhkjkhkjlhlkhkjkhjkhjkjkhjhkkkkkkkkkkkkjhhhhhhhhhhhhhhjkhjkhjkhhjklhkjlhkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkhjkhjkkjhkkkkkkkkkkhkjhjkjhkjklhkjlhkhhkjkjhkjhhjkkjhkljkjkhjkhjkhjk
 // function maxStableBuildings(H) {
 //   n = H.length;
 
@@ -2845,8 +2845,250 @@
 // // example
 // console.log(maxStableBuildings([5, 3, 6, 2, 5, 4]));
 
-function sortColors(nums) {
-  return nums.sort((a, b) => a - b);
-}
+// function sortColors(nums) {
+//   return nums.sort((a, b) => a - b);
+// }
 
-console.log(sortColors([0, 2, 1, 0, 2, 1]));
+// console.log(sortColors([0, 2, 1, 0, 2, 1]));
+
+// function findSubstring(s, word) {
+//   let result = "".concat(...word);
+//   console.log(result);
+// }
+// findSubstring("barfoothefoobarman", ["foo", "bar"]);
+
+// function longestvalidParentheses(s) {
+//   let maxlen = 0;
+//   let left = 0;
+//   let right = s.length;
+//   while (left < right) {
+//     if (s[left] === "(" && s[left + 1] === ")") {
+//       maxlen += 2;
+//       left = left + 2;
+//     } else {
+//       left++;
+//     }
+//   }
+//   return maxlen;
+// }
+
+// function longestvalidParentheses(s) {
+//   let stack = [-1]; // base index
+//   let maxlen = 0;
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (s[i] === "(") {
+//       stack.push(i);
+//     } else {
+//       stack.pop();
+//       if (stack.length === 0) {
+//         stack.push(i);
+//       } else {
+//         maxlen = Math.max(maxlen, i - [stack.length - 1]);
+//       }
+//     }
+//   }
+
+//   return maxlen;
+// }
+
+// console.log(longestvalidParentheses("(()"));
+// console.log(longestvalidParentheses(")()())"));
+// console.log(longestvalidParentheses(""));
+
+// //dfdfdfdfdfdfdfdf
+
+// function search(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (nums[left] === target) return left;
+//     if (nums[left] <= nums[mid]) {
+//       if (nums[left] <= target && target < nums[mid]) {
+//         right = mid - 1;
+//       } else {
+//         left = mid + 1;
+//       }
+//     } else {
+//       if (nums[mid] < target && target <= nums[right]) {
+//         left = mid + 1;
+//       } else {
+//         right = mid - 1;
+//       }
+//     }
+//   }
+//   return -1;
+// }
+
+// console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+// function searchRange(nums, target) {
+//   const result = [-1, -1];
+
+//   let left = 0;
+//   right = nums.length - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (nums[mid] < target) {
+//       left = mid + 1;
+//     } else {
+//       if (nums[mid] === target) result[0] = mid;
+//       right = mid - 1;
+//     }
+//   }
+//   left = 0;
+//   right = nums.length - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (nums[mid] > target) {
+//       right = mid - 1;
+//     } else {
+//       if (nums[mid] === target) result[1] = mid;
+//       left = mid + 1;
+//     }
+//   }
+//   return result;
+// }
+// console.log(searchRange([5, 7, 7, 8, 8, 10], 8));
+
+// function lengthOfLongestSubstring(s) {
+//   let map = new Map();
+//   let left = 0;
+//   let maxlen = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     while (map.has(s[right])) {
+//       map.delete(s[left]);
+//       left++;
+//     }
+//     map.set(s[right]);
+//     maxlen = Math.max(maxlen, right - left + 1);
+//   }
+//   return maxlen;
+// }
+// console.log(lengthOfLongestSubstring("abcabcbb"));
+
+///hkhkhkjhjkhjkhjkhjkhjk
+
+// function minWindow(s, t) {
+//   let need = new Map();
+//   for (let ch of t) {
+//     need.set(ch, (need.get(ch) || 0) + 1);
+//   }
+//   let left = 0;
+//   let start = 0;
+//   let maxLen = Infinity;
+//   let count = t.length;
+//   for (let right = 0; right < s.length; right++) {
+//     if (need.has(s[right])) {
+//       if (need.get(s[right]) > 0) count--;
+//       need.set(s[right], need.get(s[right]) - 1);
+//     }
+//     while (count === 0) {
+//       if (right - left + 1 < maxLen) {
+//         maxLen = right - left + 1;
+//         start = left;
+//       }
+//       if (need.has(s[left])) {
+//         need.set(s[left], need.get(s[left]) + 1);
+//         if (need.get(s[left]) > 0) count++;
+//       }
+//       left++;
+//     }
+//   }
+//   return maxLen === Infinity ? "" : s.slice(start, start + maxLen);
+// }
+
+// console.log(minWindow("ADOBECODEBANC", "ABC"));
+
+// function findRepeatedDnaSequences(s) {
+//   let seen = new Map();
+//   let repeated = new Map();
+//   for (let i = 0; i <= s.length - 10; i++) {
+//     let sub = s.slice(i, i + 10);
+//     if (seen.has(sub)) {
+//       repeated.set(sub, true);
+//     } else {
+//       seen.set(sub, true);
+//     }
+//   }
+//   return [...repeated.keys()];
+// }
+
+// function findRepeatedDnaSequences(s) {
+//   let seen = new Set();
+//   let repeated = new Set();
+//   for (let i = 0; i <= s.length - 10; i++) {
+//     let sub = s.slice(i, i + 10);
+//     if (seen.has(sub)) {
+//       repeated.add(sub);
+//     } else {
+//       seen.add(sub);
+//     }
+//   }
+//   return [...repeated];
+// }
+// console.log(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+
+// function minSubArrayLen(target, nums) {
+//   let left = 0;
+//   let minLen = Infinity;
+//   let sum = 0;
+//   for (let right = 0; right < nums.length; right++) {
+//     sum += nums[right];
+
+//     while (sum > target) {
+//       sum -= nums[left];
+//       left++;
+//     }
+//     if (sum === target) {
+//       minLen = Math.min(minLen, right - left + 1);
+//     }
+//   }
+//   return minLen === Infinity ? 0 : minLen;
+// }
+
+// console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]));
+
+// function containsNearbyDuplicate(nums, k) {
+//   const map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     if (map.has(nums[i])) {
+//       if (i - map.get(nums[i]) <= k) {
+//         return true;
+//       }
+//     }
+//     map.set(nums[i], i);
+//   }
+// }
+// function maxSlidingWindow(num, k) {
+//   let result = [];
+//   for (let i = 0; i < num.length - k; i++) {
+//     let max = -Infinity;
+//     for (let j = 0; j < i + k; j++) {
+//       max = Math.max(max, num[j]);
+//     }
+//     result.push(max);
+//   }
+//   return result;
+// }
+
+function maxSlidingWindow(nums, k) {
+  const deque = [];
+  const res = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (deque.length && deque[0] <= i - k) {
+      deque.shift();
+    }
+    while (deque.length && nums[deque[deque.length - 1]] <= nums[i]) {
+      deque.pop();
+    }
+    deque.push(i);
+    if (i >= k - 1) {
+      res.push(nums[deque[0]]);
+    }
+  }
+  return res;
+}
+console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+
+//dfdsffgit

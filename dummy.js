@@ -884,4 +884,4 @@ function maxStableBuildings(H) {
 }
 console.log(maxStableBuildings([5, 3, 6, 2, 5, 4]));
 
-//
+nn;
