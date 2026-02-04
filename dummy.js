@@ -852,36 +852,170 @@ console.log(uniqueNames); // ["John", "Mary", "Alex"]
 // }
 // console.log(nextPermutation([))
 //sdfsdffsdfdfdfdfdsffdsfsdf
-function maxStableBuildings(H) {
-  const n = H.length;
-  if (n <= 2) return n;
+// function maxStableBuildings(H) {
+//   const n = H.length;
+//   if (n <= 2) return n;
 
-  let ans = 2;
+//   let ans = 2;
 
-  for (let i = 0; i < n; i++) {
-    let seq = [H[i]];
+//   for (let i = 0; i < n; i++) {
+//     let seq = [H[i]];
 
-    for (let j = i + 1; j < n; j++) {
-      const m = seq.length;
+//     for (let j = i + 1; j < n; j++) {
+//       const m = seq.length;
 
-      if (m === 1) {
-        seq.push(H[j]);
-      } else {
-        let a = seq[m - 2];
-        let b = seq[m - 1];
-        let c = H[j];
+//       if (m === 1) {
+//         seq.push(H[j]);
+//       } else {
+//         let a = seq[m - 2];
+//         let b = seq[m - 1];
+//         let c = H[j];
 
-        if (Math.abs(b - a) <= 1 || Math.abs(b - c) <= 1) {
-          seq.push(c);
-        }
-      }
+//         if (Math.abs(b - a) <= 1 || Math.abs(b - c) <= 1) {
+//           seq.push(c);
+//         }
+//       }
+//     }
+
+//     ans = Math.max(ans, seq.length);
+//   }
+
+//   return ans;
+// }
+// console.log(maxStableBuildings([5, 3, 6, 2, 5, 4]));
+
+// function maxValidPrefixes(s) {
+//   function validCount(s) {
+//     let counter = 0;
+//     let count = 0;
+//     for (let ch of s) {
+//       if (ch === "1") {
+//         counter++;
+//       } else {
+//         counter--;
+//       }
+//       count++;
+//       if (counter < 0) break;
+//     }
+//     return count;
+//   }
+//   let max = validCount(s);
+//   for (let i = 0; i < s.length; i++) {
+//     let flip = s.slice(0, i) + (s[i] === "0" ? "1" : "0") + s.slice(i + 1);
+//     max = Math.max(max, validCount(flip));
+//   }
+//   return max;
+// }
+
+// console.log(maxValidPrefixes("01010"));
+
+//dfsdfdsfdsfdfdsfsdfsdfsdfsadfsdfsdfdsfsfdsdfdsdfsdfdfsdfdfdsfdsfsdfdfsdfsdfsdfdsfdsfdsfdsfsdfsdfsdffsdfsdfdfdsffffdfdsdsfsdfdsfdfdfsdfdsfdsfdsfdsfffffffffffffffffsfdfdfsdfsdfsdfsdfsdfdsfdfdfdsfdsfdsfsdfdsfdfdsfdsf
+
+// function longestvalidParentheses(s) {
+//   let stack = [];
+//   let maxlen = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     if (s[i] == "(") {
+//       stack.push(i);
+//     } else {
+//       stack.pop();
+//       if (stack.length === 0) {
+//         stack.push(i);
+//       } else {
+//         maxlen = Math.max(maxlen, i - stack[stack.length - 1]);
+//       }
+//     }
+//   }
+//   return maxlen;
+// }
+// console.log(longestvalidParentheses(")(()())"));
+// console.log(longestvalidParentheses(""));
+
+// function search(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left < right) {
+//     let mid = Math.floor((left + right) / 2);
+
+//     if (nums[left] === target) return left;
+//     if (nums[left] <= nums[mid]) {
+//       if (nums[left] <= target && target < nums[mid]) {
+//         right = mid - 1;
+//       } else {
+//         left = mid + 1;
+//       }
+//     } else {
+//       if (nums[mid] < target && target <= nums[right]) {
+//         left = mid + 1;
+//       } else {
+//         right = mid - 1;
+//       }
+//     }
+//   }
+// }
+
+// function minWindow(s, t) {
+//   let need = new Map();
+//   for (let ch of t) {
+//     need.set(ch, (need.get(ch) || 0) + 1);
+//   }
+//   let left = 0;
+//   let start = 0;
+//   let minLen = Infinity;
+//   let count = t.length;
+
+//   for (let right = 0; right < s.length; right++) {
+//     if (need.has(s[right])) {
+//       if (need.get(s[right]) > 0) count--;
+//       need.set(s[right], need.get(s[right]) - 1);
+//     }
+//     while (count === 0) {
+//       if (right - left + 1 < minLen) {
+//         minLen = right - left + 1;
+//         start = left;
+//       }
+//       if (need.has(s[left])) {
+//         need.set(s[left], need.get(s[left]) + 1);
+//         if (need.get(s[left]) > 0) count++;
+//       }
+//       left++;
+//     }
+//   }
+//   return minLen === Infinity ? "" : s.slice(start, start + minLen);
+// }
+// console.log(minWindow("ADOBECODEBANC", "ABC"));
+///fdsfdfdsfdsfdf
+// function findRepeatedDnaSequences(s) {
+//   let seen = new Set();
+//   let repeated = new Set();
+//   for (let i = 0; i <= s.length - 10; i++) {
+//     let sub = s.slice(i, i + 10);
+//     if (seen.has(sub)) {
+//       repeated.add(sub);
+//     } else {
+//       seen.add(sub);
+//     }
+//   }
+//   return [...repeated];
+// }
+// console.log(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+
+function maxSlidingWindow(nums, k) {
+  const dqueue = [];
+  const res = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (dqueue.length && dqueue[0] <= i - k) {
+      dqueue.shift();
     }
-
-    ans = Math.max(ans, seq.length);
+    while (dqueue.length && nums[dqueue[dqueue.length - 1]] <= nums[i]) {
+      dqueue.pop();
+    }
+    dqueue.push(i);
+    if (i >= k - 1) {
+      res.push(nums[dqueue[0]]);
+    }
   }
-
-  return ans;
+  return res;
 }
-console.log(maxStableBuildings([5, 3, 6, 2, 5, 4]));
 
-nn;
+console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));

@@ -2816,7 +2816,6 @@
 //   ]),
 // );
 
-//;jjjjjjjjjjjjjjjjjfsfsdfadfsafsfasfdsfasfdfdfasdfafsdfasdfsdfsdfasfsafsdfsdfdfsdfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjljkjlkkljklkjllkjjkljkljkjkljkllkjjlkj;ljoi;jjjlkljkljljlkjlkjjkkjhkjhhkjkjhkjhlkhkjhkljhkjjkjkhkjjhjkhjkhjkhjkhhjkkjhjkjkjhkjkhjhkjhkjkhhjkjhkkhjjhjkhjkhjkjkhjkhhjkjhkjklhkjlhjkhkjhhhhkjhjhkhkjljkjkhhjkjkhjkhjkhjhkkkjhkjhkkkkjkhhhhhhhhhhhjkhkjhjkhjkhjkhjkhjkhhjkhjkjhkhjkjhkkjhkjhkjhlhkljhkljhjklhlhiuhjkhjkkjhkjhjhkkjhkjhiluhhjkhjkkjhkjlhkjhkjhkjhkjhklhklhkkjhkjhhkjkjhkjhhhhhkhkjhjkjhkhjkkhjhjkjhkjhkhjkjhkjkhkjlhlkhkjkhjkhjkjkhjhkkkkkkkkkkkkjhhhhhhhhhhhhhhjkhjkhjkhhjklhkjlhkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkhjkhjkkjhkkkkkkkkkkhkjhjkjhkjklhkjlhkhhkjkjhkjhhjkkjhkljkjkhjkhjkhjk
 // function maxStableBuildings(H) {
 //   n = H.length;
 
@@ -2896,7 +2895,7 @@
 // console.log(longestvalidParentheses(")()())"));
 // console.log(longestvalidParentheses(""));
 
-// //dfdfdfdfdfdfdfdf
+// //dfdfdfdfdfddfdsffdfdf
 
 // function search(nums, target) {
 //   let left = 0;
@@ -2998,6 +2997,7 @@
 //   return maxLen === Infinity ? "" : s.slice(start, start + maxLen);
 // }
 
+//sfsdfdsfds
 // console.log(minWindow("ADOBECODEBANC", "ABC"));
 
 // function findRepeatedDnaSequences(s) {
@@ -3072,23 +3072,84 @@
 //   return result;
 // }
 
-function maxSlidingWindow(nums, k) {
-  const deque = [];
-  const res = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (deque.length && deque[0] <= i - k) {
-      deque.shift();
-    }
-    while (deque.length && nums[deque[deque.length - 1]] <= nums[i]) {
-      deque.pop();
-    }
-    deque.push(i);
-    if (i >= k - 1) {
-      res.push(nums[deque[0]]);
-    }
-  }
-  return res;
-}
-console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+// function maxSlidingWindow(nums, k) {
+//   const deque = [];
+//   const res = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (deque.length && deque[0] <= i - k) {
+//       deque.shift();
+//     }
+//     while (deque.length && nums[deque[deque.length - 1]] <= nums[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//     if (i >= k - 1) {
+//       res.push(nums[deque[0]]);
+//     }
+//   }
+//   return res;
+// }
+// console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+// function longestSubstring(s, k) {
+//   let freq = {};
 
-//dfdsffgit
+//   if (s.length < k) return 0;
+//   for (let char of s) {
+//     freq[char] = (freq[char] || 0) + 1;
+//   }
+
+//   for (let char in freq) {
+//     if (freq[char] < k) {
+//       let maxlen = 0;
+//       for (let part of s.split(char)) {
+//         maxlen = Math.max(maxlen, longestSubstring(part, k));
+//       }
+//       return maxlen;
+//     }
+//   }
+//   return s.length;
+// }
+// console.log(longestSubstring("aaabb", 3));
+
+// function numberOfArithmeticSlices(nums) {
+//   let left = 0;
+//   let total = 0;
+//   let count = 0;
+//   for (let right = 2; right < nums.length; right++) {
+//     if (nums[right] - nums[right - 1] === nums[right - 1] - nums[right - 2]) {
+//       count++;
+//       total += count;
+//     } else {
+//       count = 0;
+//     }
+//   }
+//   return total;
+// }
+// console.log(numberOfArithmeticSlices([1, 2, 3, 4]));
+// console.log(numberOfArithmeticSlices([1]));
+
+//dsfdsfdsfdff
+
+function characterReplacement(s, k) {
+  let freq = {};
+  let left = 0;
+  let maxfreq = 0;
+  let mainWindow = 0;
+  for (let char of s) {
+    freq[s[right]] = (freq[s[right]] || 0) + 1;
+    maxfreq = Math.max(maxfreq, freq[s[right]]);
+    let windowSize = right - left + 1;
+    if (windowSize - maxfreq > k) {
+      freq[s[left]]--;
+
+      left++;
+    }
+    windowSize = right - left + 1;
+    mainWindow = Math.max(windowSize, mainWindow);
+  }
+  return mainWindow;
+}
+console.log(characterReplacement("AABABBA", 1));
+
+//fdsfdsfdfdsffsdfsdfsdfsdfdjklkljlklkklkljkljlkkljjkljklljklkjkljlkkljkjljklkljjklkljjkljkljkljkljkljkljkljklkjljklkjlkjljkljkljkjkljklkjljklkjlkjlklkjljkgdfgfdgdfgfdgfdgfgdfgfdgfdgjghjhgjhgjhjlkljkkljljkljklkjlkjkljklljkljkljkljklkjljkjkllkjjlkjlkkllklkjlkjlkjlllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllljklkjlkljjklkljkjlkljkjlkjlkjlkjjklkljlkkljkljkllkjlkjkljkljklkljjkljkljkljklkjljkljkljklkjljlkjkljkljkljkllllllllllllllllllllllllllllllllllllllllkjjkljklkljjkljkllkkkkkkkjkljkljkljklllllllldsfsdfdsfsdfdsfsdfllllllllllllllllljkljkljkljklkjkljklkjlkjlkjljkljklgjjhjghjghjhjhgjghjhjljljkjkjkljlkjlkjkljlkjfffsdfdsfdsfdsfdsfsdfdsfdfdfdsdfsjlklkjjklkljklkljkljkldfsdfdsffsdfsdfdsfsdfdsfdfsdfsdfsdfsdfsdfdsfsdfdf
+hhkjkjhhjk;
