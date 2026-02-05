@@ -802,30 +802,30 @@
 // person1.age = 20;
 // console.log(person);
 // console.log(person1);
-let users = [
-  { id: 1, name: "John", city: "Delhi" },
-  { id: 2, name: "Mary", city: "Mumbai" },
-  { id: 3, name: "John", city: "Delhi" },
-  { id: 4, name: "Alex", city: "Chennai" },
-];
+// let users = [
+//   { id: 1, name: "John", city: "Delhi" },
+//   { id: 2, name: "Mary", city: "Mumbai" },
+//   { id: 3, name: "John", city: "Delhi" },
+//   { id: 4, name: "Alex", city: "Chennai" },
+// ];
 
-let uniqueNames = [];
+// let uniqueNames = [];
 
-for (let i = 0; i < users.length; i++) {
-  let value = users[i].name;
-  let exit = false;
-  for (let j = 0; j < uniqueNames.length; j++) {
-    if (uniqueNames[j] === value) {
-      exit = true;
-      break;
-    }
-  }
-  if (!exit) {
-    uniqueNames.push(value);
-  }
-}
+// for (let i = 0; i < users.length; i++) {
+//   let value = users[i].name;
+//   let exit = false;
+//   for (let j = 0; j < uniqueNames.length; j++) {
+//     if (uniqueNames[j] === value) {
+//       exit = true;
+//       break;
+//     }
+//   }
+//   if (!exit) {
+//     uniqueNames.push(value);
+//   }
+// }
 
-console.log(uniqueNames); // ["John", "Mary", "Alex"]
+// console.log(uniqueNames); // ["John", "Mary", "Alex"]
 
 ///fdsfsdfsdfsdfsdfsdfdsfsdfsdfdsfsdfdsffdsfsdfdfffdffsdgdfgdfgdfgdfgdfgdfsdfsdfsdfgdsgsgdfgdfgsgsgsgsdgdfgfdgsdfgsdgfdgdfgdfgfdgsgdfgdfgdfgfgdfgfdggdfgdgdfsfdfdsdfsdfgdfgdfgdsgdfgsdfgdfgsfdgdfgdfgdfgdfgdfgdfgsdfgfsdgdfgfggdfgdfgdfgsgdsfgsdfgdfgsgsdfgdfgsgsdgdfgfdgfdgfdsfsdfsdfsdfsdfsafddsfdffdasfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfdfsdfdsfsfsdfsdfsfddsfdsfsdfdsfsdffsdfdsfdsfsfdfdfsdfsdfsdfsdfdsfsdfsdfdfdfsdfdsfsdfdsfdsfasfsdffdsdfdsfsdfdfsdfdfsdfsdffsdfsdfsdfsdfdsfsdfsdfdfdsfsdfdsffsdfsdfdsfsdfdsfdf
 
@@ -1000,22 +1000,123 @@ console.log(uniqueNames); // ["John", "Mary", "Alex"]
 // }
 // console.log(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
 
-function maxSlidingWindow(nums, k) {
-  const dqueue = [];
-  const res = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (dqueue.length && dqueue[0] <= i - k) {
-      dqueue.shift();
-    }
-    while (dqueue.length && nums[dqueue[dqueue.length - 1]] <= nums[i]) {
-      dqueue.pop();
-    }
-    dqueue.push(i);
-    if (i >= k - 1) {
-      res.push(nums[dqueue[0]]);
-    }
-  }
-  return res;
-}
+// function maxSlidingWindow(nums, k) {
+//   const dqueue = [];
+//   const res = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (dqueue.length && dqueue[0] <= i - k) {
+//       dqueue.shift();
+//     }
+//     while (dqueue.length && nums[dqueue[dqueue.length - 1]] <= nums[i]) {
+//       dqueue.pop();
+//     }
+//     dqueue.push(i);
+//     if (i >= k - 1) {
+//       res.push(nums[dqueue[0]]);
+//     }
+//   }
+//   return res;
+// }
 
-console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+// console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+
+// NamedNodeMap.set(s[left], N);
+
+///dsfsdfdsfsdfsdfdfsdfdsfsdfsdfsdffsdfdsfdsfdfdsfdsfdsfsdfdsfsdsfsdfsdsdfsdfsdfsdfsdfdsfsdfsdfdsfdsffddfsdfffsdfsdfsdfsdfsdfsdffdsfsdfsdfsdfsfdfsdfsdfsdfdfdsfsdfsdfdsfsdfsdfsdfdsfdsfdsfdsfdfsdfdsfdsffdfdsfdsffddsfdsfdsfsdfsdfsdfsdfsdfsdfhhjgjhhjggjhhjjhhjghjghjgjhhjhjjhjhjjhhjhjhjhjhjhjhjhjhjhjhgjghjddsfdsdfsdfsffdfdsfdsfdfdsfsdfsadfdf
+
+// function longestSubstring(s, k) {
+//   let c = 0;
+//   if (s.length < k) return 0;
+
+//   let map = new Map();
+
+//   for (let char of s) {
+//     map.set(char, (map.get(char) || 0) + 1);
+//   }
+//   for (let [char, count] of map) {
+//     if (count >= k) {
+//       c += count;
+//     }
+//   }
+//   return c;
+// }
+//console.log(longestSubstring("ababacb", 3));
+
+// function characterReplacement(s, k) {
+//   let freq = {};
+//   let left = 0;
+//   let maxfreq = 0;
+//   let mainwindow = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     freq[s[right]] = (freq[s[right]] || 0) + 1;
+//     maxfreq = Math.max(maxfreq, freq[s[right]]);
+//     let windowSize = right - left + 1;
+//     if (windowSize - maxfreq > k) {
+//       freq[s[left]]--;
+//       left++;
+//     }
+
+//     windowSize = right - left + 1;
+//     mainwindow = Math.max(windowSize, mainwindow);
+//   }
+//   return mainwindow;
+// }
+// console.log(characterReplacement("AABABBA", 1));
+
+// function totalFruits(fruits) {
+//   let left = 0;
+//   let map = new Map();
+//   let max = 0;
+//   for (let right = 0; right < fruits.length; right++) {
+//     map.set(fruits[right], (map.get(fruits[right]) || 0) + 1);
+//     while (map.size > 2) {
+//       map.set(fruits[left], map.get(fruits[left]) - 1);
+//       if (map.get(fruits[left]) == 0) {
+//         map.delete(fruits[left]);
+//       }
+//       left++;
+//     }
+//     max = Math.max(max, right - left + 1);
+//   }
+//   return max;
+// }
+// console.log(totalFruits([1, 2, 1]));
+///jhgjhgjhgjhgjhjhjhjjhjhjjhjjsdfsdfsdfsdfsdfsdfsdfsdfsdfdfsdfsdfsdfghjghjgjhjghghjghjgjhgjhjghgjhjhgghjhgjghjghjghjghjghjghjghjhgjghjghjghjghsdfsdfdsfsdfsdfsdfsdfsdfdsfsdfsdfdsfsdfsdfsdfsdfsdfdsfdsfsdfsdfsdfsdffdffdffdfdf
+
+// function characterReplacement(s, k) {
+//   let left = 0;
+//   let map = new Map();
+//   let maxFre = 0;
+//   let maxWindowSize = 0;
+
+//   for (let right = 0; right < s.length; right++) {
+//     map.set(s[right], (map.get(s[right]) || 0) + 1);
+//     maxFre = Math.max(maxFre, map.get(s[right]));
+//     let windowSize = right - left + 1;
+//     if (windowSize - maxFre > k) {
+//       map.set(s[left], map.get(s[left]) - 1);
+//       left++;
+//     }
+//     windowSize = right - left + 1;
+//     maxWindowSize = Math.max(maxWindowSize, windowSize);
+//   }
+//   return maxWindowSize;
+// }
+// console.log(characterReplacement("AABABBA", 1));
+
+function longestOnes(s, k) {
+  let zeroCount = 0;
+  let max = 0;
+  let left = 0;
+  for (let right = 0; right < s.length; right++) {
+    if (s[right] === 0) zeroCount++;
+    while (zeroCount > k) {
+      if (s[left] === 0) zeroCount--;
+      left++;
+    }
+    f;
+    max = Math.max(max, right - left + 1);
+  }
+  return max;
+}
+console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));

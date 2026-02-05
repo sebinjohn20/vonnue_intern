@@ -3130,26 +3130,157 @@
 
 //dsfdsfdsfdff
 
-function characterReplacement(s, k) {
-  let freq = {};
-  let left = 0;
-  let maxfreq = 0;
-  let mainWindow = 0;
-  for (let char of s) {
-    freq[s[right]] = (freq[s[right]] || 0) + 1;
-    maxfreq = Math.max(maxfreq, freq[s[right]]);
-    let windowSize = right - left + 1;
-    if (windowSize - maxfreq > k) {
-      freq[s[left]]--;
+// function characterReplacement(s, k) {
+//   let freq = {};
+//   let left = 0;
+//   let maxfreq = 0;
+//   let mainWindow = 0;
+//   for (let char of s) {
+//     freq[s[right]] = (freq[s[right]] || 0) + 1;
+//     maxfreq = Math.max(maxfreq, freq[s[right]]);
+//     let windowSize = right - left + 1;
+//     if (windowSize - maxfreq > k) {
+//       freq[s[left]]--;
 
+//       left++;
+//     }
+//     windowSize = right - left + 1;
+//     mainWindow = Math.max(windowSize, mainWindow);
+//   }
+//   return mainWindow;
+// }
+// console.log(characterReplacement("AABABBA", 1));
+
+// ///
+
+// function totalFruits(fruits) {
+//   let left = 0;
+//   let map = new Map();
+//   let max = 0;
+//   for (let right = 0; right < fruits.length; right++) {
+//     map.set(fruits[right], (map.get(fruits[right]) || 0) + 1);
+//     while (map.size > 2) {
+//       map.set(fruits[left], map.get(fruits[left]) - 1);
+//       if (map.get(fruits[left]) == 0) {
+//         map.delete(fruits[left]);
+//       }
+//       left++;
+//     }
+//     max = Math.max(max, right - left + 1);
+//   }
+//   return max;
+// }
+// console.log(totalFruits([1, 2, 1]));
+///jhgjhgjhgjhgjhjhjhjjhjhjjhjjsdfsdfsdfsdfsdfsdfsdfsdfsdfdfsdfsdfsdfghjghjgjhjghghjghjgjhgjhjghgjhjhgghjhgjghjghjghjghjghjghjghjhgjghjghjghjghsdfsdfdsfsdfsdfsdfsdfsdfdsfsdfsdfdsfsdfsdfsdfsdfsdfdsfdsfsdfsdfsdfsdffdffdffdfdf
+
+// function characterReplacement(s, k) {
+//   let left = 0;
+//   let map = new Map();
+//   let maxFre = 0;
+//   let maxWindowSize = 0;
+
+//   for (let right = 0; right < s.length; right++) {
+//     map.set(s[right], (map.get(s[right]) || 0) + 1);
+//     maxFre = Math.max(maxFre, map.get(s[right]));
+//     let windowSize = right - left + 1;
+//     if (windowSize - maxFre > k) {
+//       map.set(s[left], map.get(s[left]) - 1);
+//       left++;
+//     }
+//     windowSize = right - left + 1;
+//     maxWindowSize = Math.max(maxWindowSize, windowSize);
+//   }
+//   return maxWindowSize;
+// }
+// console.log(characterReplacement("AABABBA", 1));
+
+// function longestOnes(s, k) {
+//   let zeroCount = 0;
+//   let max = 0;
+//   let left = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     if (s[right] === 0) zeroCount++;
+//     while (zeroCount > k) {
+//       if (s[left] === 0) zeroCount--;
+//       left++;
+//     }
+//     max = Math.max(max, right - left + 1);
+//   }
+//   return max;
+// }
+// console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+///
+
+// function longestSubarray(nums) {
+//   let left = 0;
+//   let zeroCount = 0;
+//   let max = 0;
+//   for (let right = 0; right < nums.length; right++) {
+//     if (nums[right] === 0) zeroCount++;
+//     while (zeroCount > 1) {
+//       if (nums[left] === 0) zeroCount--;
+//       left++;
+//     }
+//     max = Math.max(max, right - left + 1);
+//   }
+//   return max - 1;
+// }
+// console.log(longestSubarray([0, 1, 1, 1, 0, 1, 1, 0, 1]));
+// console.log(longestSubarray([1, 1, 0, 1]));
+
+// function shorestSubarray(arr, k) {
+//   let n = arr.length;
+//   let prefix = new Array(n + 1).fill(0);
+
+//   for (let i = 0; i < n; i++) {
+//     prefix[i + 1] = prefix[i] + arr[i];
+//   }
+
+//   let deque = [];
+//   let minlen = Infinity;
+
+//   for (let i = 0; i <= n; i++) {
+//     while (deque.length && prefix[i] - prefix[deque[0]] >= k) {
+//       minlen = Math.min(minlen, i - deque[0]);
+//       deque.shift();
+//     }
+//     while (deque.length && prefix[i] <= prefix[deque[deque.length - 1]]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//   }
+//   return minlen === Infinity ? -1 : minlen;
+// }
+
+// console.log(shorestSubarray([2, -1, 2], 3));
+
+function longestSubarray(nums, limit) {
+  let maxDeque = [];
+  let minDeque = [];
+  let left = 0;
+  let ans = 0;
+
+  for (let right = 0; right < nums.length; right++) {
+    while (maxDeque.length && maxDeque[maxDeque.length - 1] < nums[right]) {
+      /// remove Smaller element from back
+      maxDeque.pop();
+    }
+    maxDeque.push(nums[right]);
+
+    while (minDeque.length && minDeque[minDeque.length - 1] > nums[right]) {
+      ///reomver greater element from front
+      minDeque.pop();
+    }
+    minDeque.push(nums[right]);
+    while (maxDeque[0] - minDeque[0] > limit) {
+      if (nums[left] === maxDeque[0]) maxDeque.shift();
+      if (nums[left] === minDeque[0]) minDeque.shift();
       left++;
     }
-    windowSize = right - left + 1;
-    mainWindow = Math.max(windowSize, mainWindow);
+    ans = Math.max(ans, right - left + 1);
   }
-  return mainWindow;
+  return ans;
 }
-console.log(characterReplacement("AABABBA", 1));
 
-//fdsfdsfdfdsffsdfsdfsdfsdfdjklkljlklkklkljkljlkkljjkljklljklkjkljlkkljkjljklkljjklkljjkljkljkljkljkljkljkljklkjljklkjlkjljkljkljkjkljklkjljklkjlkjlklkjljkgdfgfdgdfgfdgfdgfgdfgfdgfdgjghjhgjhgjhjlkljkkljljkljklkjlkjkljklljkljkljkljklkjljkjkllkjjlkjlkkllklkjlkjlkjlllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllljklkjlkljjklkljkjlkljkjlkjlkjlkjjklkljlkkljkljkllkjlkjkljkljklkljjkljkljkljklkjljkljkljklkjljlkjkljkljkljkllllllllllllllllllllllllllllllllllllllllkjjkljklkljjkljkllkkkkkkkjkljkljkljklllllllldsfsdfdsfsdfdsfsdfllllllllllllllllljkljkljkljklkjkljklkjlkjlkjljkljklgjjhjghjghjhjhgjghjhjljljkjkjkljlkjlkjkljlkjfffsdfdsfdsfdsfdsfsdfdsfdfdfdsdfsjlklkjjklkljklkljkljkldfsdfdsffsdfsdfdsfsdfdsfdfsdfsdfsdfsdfsdfdsfsdfdf
-hhkjkjhhjk;
+console.log(longestSubarray([8, 2, 4, 7], 4));
+//dfsdfdsfdsfdsfdsfsddsfdsfdsfsdfsdfsdfdsffkhjkjhkjjkhhjkhjkhjkhjkhjkhjkjhkjhkhjkjhkhjkhjkjhkjkhjkhjkjkhjkhhhjjhfsdfdfsdfsdfdkhjkhjsfdsfdsfsdfdsfdfdsfdfdf
