@@ -3254,33 +3254,134 @@
 
 // console.log(shorestSubarray([2, -1, 2], 3));
 
-function longestSubarray(nums, limit) {
-  let maxDeque = [];
-  let minDeque = [];
-  let left = 0;
-  let ans = 0;
+// function longestSubarray(nums, limit) {
+//   let maxDeque = [];
+//   let minDeque = [];
+//   let left = 0;
+//   let ans = 0;
 
-  for (let right = 0; right < nums.length; right++) {
-    while (maxDeque.length && maxDeque[maxDeque.length - 1] < nums[right]) {
-      /// remove Smaller element from back
-      maxDeque.pop();
-    }
-    maxDeque.push(nums[right]);
+//   for (let right = 0; right < nums.length; right++) {
+//     while (maxDeque.length && maxDeque[maxDeque.length - 1] < nums[right]) {
+//       /// remove Smaller element from back
+//       maxDeque.pop();
+//     }
+//     maxDeque.push(nums[right]);
 
-    while (minDeque.length && minDeque[minDeque.length - 1] > nums[right]) {
-      ///reomver greater element from front
-      minDeque.pop();
+//     while (minDeque.length && minDeque[minDeque.length - 1] > nums[right]) {
+//       ///reomver greater element from front
+//       minDeque.pop();
+//     }
+//     minDeque.push(nums[right]);
+//     while (maxDeque[0] - minDeque[0] > limit) {
+//       if (nums[left] === maxDeque[0]) maxDeque.shift();
+//       if (nums[left] === minDeque[0]) minDeque.shift();
+//       left++;
+//     }
+//     ans = Math.max(ans, right - left + 1);
+//   }
+//   return ans;
+// }
+
+// console.log(longestSubarray([8, 2, 4, 7], 4));
+
+///dsfdsfdfffdsfdfdfdfdffdsfsdfdsfsdf
+
+// function maxResult(nums, k) {
+//   let n = nums.length;
+//   let dp = new Array(n);
+//   let deque = [0];
+//   dp[0] = nums[0];
+//   for (let i = 1; i < n; i++) {
+//     while (deque.length && deque[0] < i - k) {
+//       deque.shift();
+//     }
+//     dp[i] = nums[i] + dp[deque[0]];
+//     while (deque.length && dp[deque[deque.length - 1]] <= dp[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//   }
+//   return dp[n - 1];
+// }
+// console.log(maxResult([1, -5, -20, 4, -1, 3, -6, -3], 2));
+// console.log(maxResult([1, -1, -2, 4, -7, 3], 2));
+
+// function constrainedSubsetSum(nums, k) {
+//   let n = nums.length;
+//   let dp = new Array(n);
+//   let deque = [0];
+//   dp[0] = nums[0];
+//   let answer = dp[0];
+//   for (let i = 1; i < n; i++) {
+//     while (deque.length && deque[0] < i - k) {
+//       deque.shift();
+//     }
+//     dp[i] = nums[i] + Math.max(0, dp[deque[0]]);
+//     while (deque.length && dp[deque[deque.length - 1]] <= dp[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//     answer = Math.max(answer, dp[i]);
+//   }
+//   return answer;
+// }
+// console.log(constrainedSubsetSum([10, 2, -10, 5, 20], 2));
+// console.log(constrainedSubsetSum([10, -2, -10, -5, 20], 2));
+// console.log(constrainedSubsetSum([-1, -2, 103], 1));
+
+//fdsfsdfsdfdsfdsfsdffdsdf
+
+// function subarraySum(nums, k) {
+//   let sum = 0;
+//   let count = 0;
+//   const map = new Map();
+//   map.set(0, 1);
+//   for (let num of nums) {
+//     sum += num;
+//     if (map.has(sum - k)) {
+//       count += map.get(sum - k);
+//     }
+//     map.set(sum, (map.get(sum) || 0) + 1);
+//   }
+//   return count;
+// }
+
+// console.log(subarraySum([1, 2, 3], 3));
+
+// function subarrayDivByK(nums, k) {
+//   let count = 0;
+//   let sum = 0;
+//   let map = new Map();
+//   map.set(0, 1);
+//   for (let num of nums) {
+//     sum += num;
+//     let rem = sum % k;
+//     if (rem < 0) rem += k;
+//     if (map.has(rem)) {
+//       count += map.get(rem);
+//     }
+//     map.set(rem, (map.get(rem) || 0) + 1);
+//   }
+//   return count;
+// }
+// console.log(subarrayDivByK([4, 5, 0, -2, -3, 1], 5));
+
+///jghjhgjhjghjghjghjhjghjghhjghhgjghjjghjhgjghjjjhjghjhjhjghjfghhjhgjghjhjhghjghjghjjghjhjjhghjjjjjghjhgjhgjgghjghjghjghjjghjghj
+
+function findMaxLength(nums) {
+  let map = new Map();
+  let sum = 0;
+  let maxlen = 0;
+  map.set(0, -1);
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i] === 0 ? -1 : 1;
+    if (map.has(sum)) {
+      maxlen = Math.max(maxlen, i - map.get(sum));
+    } else {
+      map.set(sum, i);
     }
-    minDeque.push(nums[right]);
-    while (maxDeque[0] - minDeque[0] > limit) {
-      if (nums[left] === maxDeque[0]) maxDeque.shift();
-      if (nums[left] === minDeque[0]) minDeque.shift();
-      left++;
-    }
-    ans = Math.max(ans, right - left + 1);
   }
-  return ans;
+  return max;
 }
 
-console.log(longestSubarray([8, 2, 4, 7], 4));
-//dfsdfdsfdsfdsfdsfsddsfdsfdsfsdfsdfsdfdsffkhjkjhkjjkhhjkhjkhjkhjkhjkhjkjhkjhkhjkjhkhjkhjkjhkjkhjkhjkjkhjkhhhjjhfsdfdfsdfsdfdkhjkhjsfdsfdsfsdfdsfdfdsfdfdf
+console.log(findMaxLength([0, 1, 1, 1, 1, 1, 0, 0, 0]));

@@ -827,8 +827,6 @@
 
 // console.log(uniqueNames); // ["John", "Mary", "Alex"]
 
-///fdsfsdfsdfsdfsdfsdfdsfsdfsdfdsfsdfdsffdsfsdfdfffdffsdgdfgdfgdfgdfgdfgdfsdfsdfsdfgdsgsgdfgdfgsgsgsgsdgdfgfdgsdfgsdgfdgdfgdfgfdgsgdfgdfgdfgfgdfgfdggdfgdgdfsfdfdsdfsdfgdfgdfgdsgdfgsdfgdfgsfdgdfgdfgdfgdfgdfgdfgsdfgfsdgdfgfggdfgdfgdfgsgdsfgsdfgdfgsgsdfgdfgsgsdgdfgfdgfdgfdsfsdfsdfsdfsdfsafddsfdffdasfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfdfsdfdsfsfsdfsdfsfddsfdsfsdfdsfsdffsdfdsfdsfsfdfdfsdfsdfsdfsdfdsfsdfsdfdfdfsdfdsfsdfdsfdsfasfsdffdsdfdsfsdfdfsdfdfsdfsdffsdfsdfsdfsdfdsfsdfsdfdfdsfsdfdsffsdfsdfdsfsdfdsfdf
-
 // function nextPermutation(number) {
 //   let i = number.length - 2;
 //   while (i >= 0 && number[i] >= number[i + 1]) {
