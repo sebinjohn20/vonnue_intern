@@ -907,8 +907,6 @@
 
 // console.log(maxValidPrefixes("01010"));
 
-//dfsdfdsfdsfdfdsfsdfsdfsdfsadfsdfsdfdsfsfdsdfdsdfsdfdfsdfdfdsfdsfsdfdfsdfsdfsdfdsfdsfdsfdsfsdfsdfsdffsdfsdfdfdsffffdfdsdsfsdfdsfdfdfsdfdsfdsfdsfdsfffffffffffffffffsfdfdfsdfsdfsdfsdfsdfdsfdfdfdsfdsfdsfsdfdsfdfdsfdsf
-
 // function longestvalidParentheses(s) {
 //   let stack = [];
 //   let maxlen = 0;
@@ -1020,8 +1018,6 @@
 
 // NamedNodeMap.set(s[left], N);
 
-///dsfsdfdsfsdfsdfdfsdfdsfsdfsdfsdffsdfdsfdsfdfdsfdsfdsfsdfdsfsdsfsdfsdsdfsdfsdfsdfsdfdsfsdfsdfdsfdsffddfsdfffsdfsdfsdfsdfsdfsdffdsfsdfsdfsdfsfdfsdfsdfsdfdfdsfsdfsdfdsfsdfsdfsdfdsfdsfdsfdsfdfsdfdsfdsffdfdsfdsffddsfdsfdsfsdfsdfsdfsdfsdfsdfhhjgjhhjggjhhjjhhjghjghjgjhhjhjjhjhjjhhjhjhjhjhjhjhjhjhjhjhgjghjddsfdsdfsdfsffdfdsfdsfdfdsfsdfsadfdf
-
 // function longestSubstring(s, k) {
 //   let c = 0;
 //   if (s.length < k) return 0;
@@ -1079,7 +1075,6 @@
 //   return max;
 // }
 // console.log(totalFruits([1, 2, 1]));
-///jhgjhgjhgjhgjhjhjhjjhjhjjhjjsdfsdfsdfsdfsdfsdfsdfsdfsdfdfsdfsdfsdfghjghjgjhjghghjghjgjhgjhjghgjhjhgghjhgjghjghjghjghjghjghjghjhgjghjghjghjghsdfsdfdsfsdfsdfsdfsdfsdfdsfsdfsdfdsfsdfsdfsdfsdfsdfdsfdsfsdfsdfsdfsdffdffdffdfdf
 
 // function characterReplacement(s, k) {
 //   let left = 0;
@@ -1102,19 +1097,90 @@
 // }
 // console.log(characterReplacement("AABABBA", 1));
 
-function longestOnes(s, k) {
-  let zeroCount = 0;
-  let max = 0;
+// function longestOnes(s, k) {
+//   let zeroCount = 0;
+//   let max = 0;
+//   let left = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     if (s[right] === 0) zeroCount++;
+//     while (zeroCount > k) {
+//       if (s[left] === 0) zeroCount--;
+//       left++;
+//     }
+//     f;
+//     max = Math.max(max, right - left + 1);
+//   }
+//   return max;
+// }
+// console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+
+// function isValidSudoku(board) {
+//   const rows = Array.from({ length: 9 }, () => new Set());
+//   const boxes = Array.from({ length: 9 }, () => new Set());
+//   const cols = Array.from({ length: 9 }, () => new Set());
+
+//   for (let i = 0; i < 9; i++) {
+//     for (let j = 0; j < 9; j++) {
+//       let val = board[i][j];
+//       if (val === ".") continue;
+//       let boxIndex = Math.floor(i / 3) * 3 + Math.floor(j / 3);
+//       if (rows[i].has(val) || cols[j].has(val) || boxes[boxIndex].has(val)) {
+//         return false;
+//       }
+//       rows[i].add(val);
+//       cols[j].add(val);
+//       boxes[boxIndex].add(val);
+//     }
+//   }
+//   return true;
+// }
+// console.log(
+//   isValidSudoku([
+//     ["5", "3", ".", ".", "7", ".", ".", ".", "."],
+//     ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+//     [".", "9", "8", ".", ".", ".", ".", "6", "."],
+//     ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+//     ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+//     ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+//     [".", "6", ".", ".", ".", ".", "2", "8", "."],
+//     [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+//     [".", ".", ".", ".", "8", ".", ".", "7", "9"],
+//   ]),
+// );
+function sprialOrder(matrix) {
+  let res = [];
+  let top = 0;
+  let bottom = matrix.length - 1;
   let left = 0;
-  for (let right = 0; right < s.length; right++) {
-    if (s[right] === 0) zeroCount++;
-    while (zeroCount > k) {
-      if (s[left] === 0) zeroCount--;
+  let right = matrix[0].length - 1;
+  while (top <= bottom && left <= right) {
+    for (let j = left; j <= right; j++) {
+      res.push(matrix[top][j]);
+    }
+    top++;
+    for (let i = top; i <= bottom; i++) {
+      res.push(matrix[i][right]);
+    }
+    right--;
+    if (top <= bottom) {
+      for (let j = right; j >= left; j++) {
+        res.push(matrix[bottom][j]);
+      }
+      bottom--;
+    }
+    if (left <= right) {
+      for (let i = bottom; i >= top; i--) {
+        res.push(matrix[i][left]);
+      }
       left++;
     }
-    f;
-    max = Math.max(max, right - left + 1);
   }
-  return max;
+  return res;
 }
-console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+console.log(
+  sprialOrder([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ]),
+);
