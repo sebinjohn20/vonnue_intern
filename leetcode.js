@@ -3671,31 +3671,310 @@
 //   return matrix;
 // }
 
-const data = { name: "John", age: 30 };
-function fecthData() {
-  return new Promise((reslove, reject) => {
-    setTimeout(() => {
-      reslove(data);
-    }, 2000);
-  });
+// const data = { name: "John", age: 30 };
+// function fecthData() {
+//   return new Promise((reslove, reject) => {
+//     setTimeout(() => {
+
+//       reslove(data);
+//     }, 2000);
+//   });
+// }
+// fecthData()
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => console.error(err));
+
+// function greet(city) {
+//   console.log(this.name + "from" + city);
+// }
+// let person = {
+//   name: "sebin",
+// };
+
+// greet.call(person, "dehi");
+
+// greet.apply(person, ["Mumbai"]);
+// let fn = greet.bind(person, "chennai");
+// fn();
+
+//// 206. Reverse Linked List
+
+// class CreatNode {
+//   constructor(val, next = null) {
+//     this.val = val;
+//     this.next = next;
+//   }
+// }
+// function arrayToLinkedList(arr) {
+//   let dummy = new CreatNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new CreatNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// function linkedListToArray(head) {
+//   let arr = [];
+//   while (head) {
+//     arr.push(head.val);
+//     head = head.next;
+//   }
+//   return arr;
+// }dsadasdasdasdd
+// function reverseList(head) {
+//   let prev = null;
+//   let current = head;
+//   while (current) {
+//     let next = current.next;
+//     current.next = prev;
+//     prev = current;
+//     current = next;
+//   }
+//   return prev;
+// }
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+// console.log("Original", linkedListToArray(head));
+// let reverse = reverseList(head);
+// console.log(
+//   linkedListToArray(reverse)
+//     .map((val) => `--> ${val}`)
+//     .join(" "),
+// );
+// ///dfsjjgfgfgfgfdgfgfdgfgfgfgfgfdgfdg
+
+// class CreateNode {
+//   constructor(val, next = null) {
+//     this.val = val;
+//     this.next = next;
+//   }
+// }
+
+// function arrayToLinkedList(arr) {
+//   let dummy = new CreatNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new CreatNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// function linkedListToArray(head) {
+//   let res = [];
+//   while (head) {
+//     res.push(head.val);
+//     head = head.next;
+//   }
+//   return arr;
+// }
+
+// function hasCycle(head) {
+//   while (fast && fast.next) {
+//     let slow = head;
+//     let fast = head;
+//     slow = slow.next;
+//     fast = fast.next.next;
+//     if (slow === fast) return true;
+//   }
+//   return false;
+// }
+
+////-------------142. Linked List Cycle II----------------
+
+// function detectCycle(head) {
+//   let slow = head;
+//   let fast = head;
+//   while (fast && fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//     if (slow === fast) {
+//       slow = head;
+//       while (slow != fast) {
+//         slow = slow.next;
+//         fast = fast.next;
+//       }
+//       return slow;
+//     }
+//   }
+// }
+
+// class CreateNode {
+//   constructor(val, next = null) {
+//     this.val = val;
+//     this.next = next;
+//   }
+// }
+
+// function arrayToLinkedList(arr) {
+//   let dummy = new CreateNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new CreateNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// function linkedListToArray(head) {
+//   let res = [];
+//   while (head) {
+//     res.push(head.val);
+//     head = head.next;
+//   }
+//   return res;
+// }
+
+// function removeNthFromEnd(head, n) {
+//   let dummy = new CreateNode(0);
+//   dummy.next = head;
+//   let left = dummy;
+//   let right = dummy;
+//   for (let i = 0; i < n; i++) {
+//     right = right.next;
+//   }
+//   while (right.next) {
+//     left = left.next;
+//     right = right.next;
+//   }
+//   left.next = left.next.next;
+//   return dummy.next;
+// }
+
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+
+// console.log(linkedListToArray(removeNthFromEnd(head, 2)));
+
+//sdfsdfsdfdsfsdfsdfsdf
+
+//////--------------------  21. Merge Two Sorted Lists
+
+// class CreateNode {
+//   constructor(val, next = null) {
+//     this.val = val;
+//     this.next = next;
+//   }
+// }
+
+// function arrayToLinkedList(arr) {
+//   let dummy = new CreateNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new CreateNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// function linkedListToArray(head) {
+//   let res = [];
+//   while (head) {
+//     res.push(head.val);
+//     head = head.next;
+//   }
+//   return res;
+// }
+// function mergeTwoLists(list1, list2) {
+//   let dummy = new CreateNode(0);
+//   let tail = dummy;
+//   while (list1 && list2) {
+//     if (list1.val <= list2.val) {
+//       tail.next = list1;
+//       list1 = list1.next;
+//     } else {
+//       tail.next = list2;
+//       list2 = list2.next;
+//     }
+//     tail = tail.next;
+//   }
+//   tail.next = list1 || list2;
+// }
+
+// class CreateNode {
+//   constructor(val, next = null) {
+//     this.val = val;
+//     this.next = next;
+//   }
+// }
+
+// function arrayToLinkedList(arr) {
+//   let dummy = new CreateNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new CreateNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// function linkedListToArray(head) {
+//   let res = [];
+//   while (head) {
+//     res.push(head.val);
+//     head = head.next;
+//   }
+//   return res;
+// }
+// function reorderList(head) {
+//   if (!head || !head.next) return;
+//   let slow = head;
+//   let fast = head;
+//   while (fast && fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//   }
+//   let prev = null;
+//   let curr = slow.next;
+//   slow.next = null;
+//   while (curr) {
+//     let next = curr.next;
+//     curr.next = prev;
+//     prev = curr;
+//     curr = next;
+//   }
+//   let first = head;
+//   let second = prev;
+//   while (second) {
+//     let temp1 = first.next;
+//     let temp2 = second.next;
+//     first.next = second;
+//     second.next = temp1;
+//     first = temp1;
+//     second = temp2;
+//   }
+//   return head;
+// }
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+// console.log(linkedListToArray(reorderList(head)));
+
+class CreateNode {
+  constructor(val, next = null) {
+    this.val = val;
+    this.next = next;
+  }
 }
-fecthData()
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => console.error(err));
 
-function greet(city) {
-  console.log(this.name + "from" + city);
+function arrayToLinkedList(arr) {
+  let dummy = new CreateNode(0);
+  let current = dummy;
+  for (let val of arr) {
+    current.next = new CreateNode(val);
+    current = current.next;
+  }
+  return dummy.next;
 }
-let person = {
-  name: "sebin",
-};
+function linkedListToArray(head) {
+  let res = [];
+  while (head) {
+    res.push(head.val);
+    head = head.next;
+  }
+  return res;
+}
+function reverseBetween(head, left, right) {
+  if (!head || left === right) return head;
 
-greet.call(person, "dehi");
+  let dummy = new CreateNode(0);
+  dummy.next = head;
+  let prev = dummy;
+}
 
-greet.apply(person, ["Mumbai"]);
-let fn = greet.bind(person, "chennai");
-fn();
-
-//sdfdsf
+//dfdsfdsfdsfdsfsdfdsfadfafsdfsdfsdfsdfdsfsdfsdfdsfsdfdsfsdfdfsdfjkfdlkjklsdjfsldkjflksdjfklsdjfklsdjflksjdflkasjdflkdsjlkfjsdlkfjsdlkfjsdlk;flsdk;fsdfjiodfjdflkjdslkfjlkdsfklfjlkdfjlkkfdlljkkljdfkljdslkfjskdlfjkljkjkljklfkljkjdsfjkldfjkljkjklfjklfdjklkjjkldfsjklfjklfdkjldfsjklfdjkldfljkfdjklfkjlfsldfjsdlkfdkljfljksdfjkljkljkjkkjljklkjlkjljkljkljkljkljkljkljklkjljkljklkjljklkljkjljkljkldflkjfdlkjfdjklfdsjklsfdkljdsfkjldfskjjjjjfdjkldsfjdflk;djf;lskdjsd;foisdfjlkdsfjldsfdksjfkldsfkjlsfjkl
