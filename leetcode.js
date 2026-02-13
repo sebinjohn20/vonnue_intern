@@ -3945,6 +3945,8 @@
 // let head = arrayToLinkedList([1, 2, 3, 4, 5]);
 // console.log(linkedListToArray(reorderList(head)));
 
+////--------2. Add Two Numbers-----
+
 class CreateNode {
   constructor(val, next = null) {
     this.val = val;
@@ -3969,12 +3971,317 @@ function linkedListToArray(head) {
   }
   return res;
 }
-function reverseBetween(head, left, right) {
-  if (!head || left === right) return head;
 
-  let dummy = new CreateNode(0);
-  dummy.next = head;
-  let prev = dummy;
+// function addTwoNumbers(l1, l2) {
+//   let dummy = new CreateNode(0);
+//   let cur = dummy;
+//   let carry = 0;
+//   while (l1 || l2 || carry) {
+//     let sum = carry;
+//     if (l1) {
+//       sum += l1.val;
+//       l1 = l1.next;
+//     }
+//     if (l2) {
+//       sum += l2.val;
+//       l2 = l2.next;
+//     }
+//     carry = Math.floor(sum / 10);
+//     cur.next = new CreateNode(sum % 10);
+//     cur = cur.next;
+//   }
+//   return dummy.next;
+// }
+
+// let head1 = arrayToLinkedList([2, 4, 3]);
+// let head2 = arrayToLinkedList([5, 6, 4]);
+// let add = addTwoNumbers(head1, head2);
+// console.log(linkedListToArray(add));
+
+// function reveresBetween(head, left, right) {
+//   if (!head || left === right) return head;
+
+//   let dummy = new CreateNode(0);
+//   dummy.next = head;
+//   let prev = dummy;
+//   for (let i = 1; i < left; i++) {
+//     prev = prev.next;
+//   }
+//   let curr = prev.next;
+//   for (let i = 0; i < right - left; i++) {
+//     let temp = curr.next;
+//     curr.next = temp.next;
+//     temp.next = prev.next;
+//     prev.next = temp;
+//   }
+//   return dummy.next;
+// }
+
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+// let reverse = reveresBetween(head, 2, 4);
+// console.log(linkedListToArray(reverse));
+
+// function reverseKGroup(head, k) {
+//   let dummy = new CreateNode(0);
+//   dummy.next = head;
+//   let groupPrev = dummy;
+//   while (true) {
+//     let kth = groupPrev;
+//     for (let i = 0; i < k && kth; i++) {
+//       kth = kth.next;
+//     }
+//     if (!kth) break;
+//     let groupNext = kth.next;
+
+//     let prev = groupNext;
+//     let curr = groupPrev.next;
+//     while (curr !== groupNext) {
+//       let temp = curr.next;
+//       curr.next = prev;
+//       prev = curr;
+//       curr = temp;
+//     }
+//     let temp = groupPrev.next;
+//     groupPrev.next = kth;
+//     groupPrev = temp;
+//   }
+//   return dummy.next;
+// }
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+// let group = reverseKGroup(head, 2);
+// console.log(linkedListToArray(group));
+
+// function getIntersectionNode(headA, headB) {
+//   if (!headA || !headA) return null;
+//   let pA = headA;
+//   let pB = headB;
+//   while (pA !== pB) {
+//     if (pA === null) {
+//       pA = headB;
+//     } else {
+//       pA = pA.next;
+//     }
+//     if (pB === null) {
+//       pB = headA;
+//     } else {
+//       pB = pB.next;
+//     }
+//   }
+//   return pA;
+// }
+
+// function copyRandomList(head) {
+//   if (!head) return null;
+//   const map = new Map();
+//   let curr = head;
+//   while (curr) {
+//     map.set(curr, new Node(curr.val));
+//     curr = curr.next;
+//   }
+//   curr = head;
+//   while (curr) {
+//     let copy = map.get(curr);
+//     copy.next = map.get(copy.next) || null;
+//     copy.random = map.get(curr.random) || null;
+//     curr = curr.next;
+//   }
+// }
+
+// function mergeKlist(lists) {
+//   if (!lists.length) return null;
+//   let merge = [];
+//   for (let head of lists) {
+//     while (head) {
+//       merge.push(head.val);
+//       head = head.next;
+//     }
+//   }
+//   merge.sort((a, b) => a - b);
+//   let dummy = new CreateNode(0);
+//   let curr = dummy;
+//   for (let val of merge) {
+//     curr.next = new CreateNode(val);
+//     curr = curr.next;
+//   }
+//   return dummy.next;
+// }
+
+// function isPalindrome(head) {
+//   if (!head || !head.next) return true;
+
+//   let slow = head;
+//   let fast = head;
+//   while (fast && fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//   }
+
+//   let prev = null;
+//   while (slow) {
+//     let curr = slow.next;
+//     slow.next = prev;
+//     prev = slow;
+//     slow = curr;
+//   }
+//   let left = head;
+//   let right = prev;
+//   while (right) {
+//     if (left.val !== right.val) return false;
+//     left = left.next;
+//     right = right.next;
+//   }
+//   return true;
+// }
+
+// class myQueue {
+//   constructor() {
+//     this.s1 = [];
+//     this.s2 = [];
+//   }
+
+//   push(x) {
+//     this.s1.push(x);
+//   }
+//   pop() {
+//     if (this.s2.length === 0) {
+//       while (this.s1.length) {
+//         this.s2.push(this.s1.pop());
+//       }
+//     }
+//     return this.s2.pop();
+//   }
+//   peek() {
+//     if (this.s2.length === 0) {
+//       while (this.s1.length) {
+//         this.s2.push(this.s1.pop());
+//       }
+//     }
+//     return this.s2[this.s2.length - 1];
+//   }
+//   empty() {
+//     return this.s1.length === 0 && this.s2.length === 0;
+//   }
+// }
+// const q = new myQueue();
+// q.push(10);
+// q.push(20);
+// q.push(30);
+// console.log(q.pop());
+
+// class MyStack {
+//   constructor() {
+//     this.q1 = [];
+//   }
+
+//   push(x) {
+//     this.q1.push(x);
+//     let size = this.q1.length;
+//     while (size > 1) {
+//       this.q1.push(this.q1.shift());
+//       size--;
+//     }
+//   }
+//   pop() {
+//     return this.q1.shift();
+//   }
+//   top() {
+//     return this.q1[0];
+//   }
+//   empty() {
+//     return this.q1.length === 0;
+//   }
+// }
+
+// let stack = new MyStack();
+// stack.push(10);
+// stack.push(20);
+// stack.push(30);
+// stack.push(50);
+
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+
+// class MinStack {
+//   constructor() {
+//     this.stack = [];
+//     this.MinStack = [];
+//   }
+//   push(val) {
+//     this.stack.push(val);
+//     if (this.MinStack.length === 0) {
+//       this.MinStack.push(val);
+//     } else {
+//       let currentMin = Math.min(val, this.MinStack[this.MinStack.length - 1]);
+//       this.MinStack.push(currentMin);
+//     }
+//   }
+
+//   pop() {
+//     this.stack.pop();
+//     this.MinStack.pop();
+//   }
+//   top() {
+//     return this.stack[this.stack.length - 1];
+//   }
+//   getMin() {
+//     return this.MinStack[this.MinStack.length - 1];
+//   }
+// }
+// let stack = new MinStack();
+// stack.push(10);
+// stack.push(20);
+// stack.push(1);
+// console.log(stack.getMin());
+
+class MyCircularQueue {
+  constructor(k) {
+    this.q = new Array(k);
+    this.capacity = k;
+    this.front = 0;
+    this.rear = -1;
+    this.size = 0;
+  }
+  enQueue(vlaue) {
+    if (this.isFull()) return false;
+    this.rear = (this.rear + 1) % this.capacity;
+    this.q[this.rear] = vlaue;
+    this.size++;
+    return true;
+  }
+  deQueue() {
+    if (this.isEmpty()) return false;
+
+    let removed = this.q[this.front];
+    this.front = (this.front + 1) % this.capacity;
+    this.size--;
+
+    return removed;
+  }
+  Front() {
+    if (this.isEmpty()) return -1;
+    return this.q[this.front];
+  }
+
+  Rear() {
+    if (this.isEmpty()) return -1;
+    return this.q[this.rear];
+  }
+
+  isEmpty() {
+    return this.size === 0;
+  }
+
+  isFull() {
+    return this.size === this.capacity;
+  }
 }
 
-//dfdsfdsfdsfdsfsdfdsfadfafsdfsdfsdfsdfdsfsdfsdfdsfsdfdsfsdfdfsdfjkfdlkjklsdjfsldkjflksdjfklsdjfklsdjflksjdflkasjdflkdsjlkfjsdlkfjsdlkfjsdlk;flsdk;fsdfjiodfjdflkjdslkfjlkdsfklfjlkdfjlkkfdlljkkljdfkljdslkfjskdlfjkljkjkljklfkljkjdsfjkldfjkljkjklfjklfdjklkjjkldfsjklfjklfdkjldfsjklfdjkldfljkfdjklfkjlfsldfjsdlkfdkljfljksdfjkljkljkjkkjljklkjlkjljkljkljkljkljkljkljklkjljkljklkjljklkljkjljkljkldflkjfdlkjfdjklfdsjklsfdkljdsfkjldfskjjjjjfdjkldsfjdflk;djf;lskdjsd;foisdfjlkdsfjldsfdksjfkldsfkjlsfjkl
+let q = new MyCircularQueue(3);
+q.enQueue(10);
+q.enQueue(30);
+q.enQueue(20);
+console.log(q.deQueue());
+console.log(q.Front());
+
+//ghjghjghjghjghjghjghjghjhgjhghggjhghjjghhjgjhghjghjhghgjjhghgjghjhgjghjghghjghghjghjghjghjghjghjghjghjghjghjhgjghjhgjhgjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhggjhhgjhgjhgjhgjhgjhgjghghhgjhgjhjghjhgghghjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkjhkjhjkhhjkkhjkjhhkjkhjkjkjkkjhkjhjkhjhkjhkkjhkjjkkjhjhkhjkhjkhjkjhkkjhjhkjhkhjkhjkhjkhjkjhkhjkhjkhjkjhhjkhjkjkhjkhjhkjkhjkhkjhkjhhjkjhkjkhkjhkjhkjhjkhjkhkjhkhjhjkjhkhjkhjkjhkjkhjkhhjkjhkjhkjhkhjkhjkhjkjhkkjhhjjhkjhkhjkjhkhjkjhkjhkjkjhjkhjkkjhkjhhkhkhkjhkjkhjkjhhjkjhkjhkhjkljklkjlkjjkjklkjljklkjljkljkllkjjkljklklkjljkljkljklkjklkjljlkjlkjlkjkljlkkjljkljjkljkljkljklklll
