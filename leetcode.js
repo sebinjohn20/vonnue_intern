@@ -4168,39 +4168,39 @@ function linkedListToArray(head) {
 // q.push(30);
 // console.log(q.pop());
 
-// class MyStack {
-//   constructor() {
-//     this.q1 = [];
-//   }
+class MyStack {
+  constructor() {
+    this.q1 = [];
+  }
 
-//   push(x) {
-//     this.q1.push(x);
-//     let size = this.q1.length;
-//     while (size > 1) {
-//       this.q1.push(this.q1.shift());
-//       size--;
-//     }
-//   }
-//   pop() {
-//     return this.q1.shift();
-//   }
-//   top() {
-//     return this.q1[0];
-//   }
-//   empty() {
-//     return this.q1.length === 0;
-//   }
-// }
+  push(x) {
+    this.q1.push(x);
+    let size = this.q1.length;
+    while (size > 1) {
+      this.q1.push(this.q1.shift());
+      size--;
+    }
+  }
+  pop() {
+    return this.q1.shift();
+  }
+  top() {
+    return this.q1[0];
+  }
+  empty() {
+    return this.q1.length === 0;
+  }
+}
 
-// let stack = new MyStack();
-// stack.push(10);
-// stack.push(20);
-// stack.push(30);
-// stack.push(50);
+let stack = new MyStack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+stack.push(50);
 
-// console.log(stack.pop());
-// console.log(stack.pop());
-// console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
 
 // class MinStack {
 //   constructor() {
@@ -4234,54 +4234,52 @@ function linkedListToArray(head) {
 // stack.push(1);
 // console.log(stack.getMin());
 
-class MyCircularQueue {
-  constructor(k) {
-    this.q = new Array(k);
-    this.capacity = k;
-    this.front = 0;
-    this.rear = -1;
-    this.size = 0;
-  }
-  enQueue(vlaue) {
-    if (this.isFull()) return false;
-    this.rear = (this.rear + 1) % this.capacity;
-    this.q[this.rear] = vlaue;
-    this.size++;
-    return true;
-  }
-  deQueue() {
-    if (this.isEmpty()) return false;
+// class MyCircularQueue {
+//   constructor(k) {
+//     this.q = new Array(k);
+//     this.capacity = k;
+//     this.front = 0;
+//     this.rear = -1;
+//     this.size = 0;
+//   }
+//   enQueue(vlaue) {
+//     if (this.isFull()) return false;
+//     this.rear = (this.rear + 1) % this.capacity;
+//     this.q[this.rear] = vlaue;
+//     this.size++;
+//     return true;
+//   }
+//   deQueue() {
+//     if (this.isEmpty()) return false;
 
-    let removed = this.q[this.front];
-    this.front = (this.front + 1) % this.capacity;
-    this.size--;
+//     let removed = this.q[this.front];
+//     this.front = (this.front + 1) % this.capacity;
+//     this.size--;
 
-    return removed;
-  }
-  Front() {
-    if (this.isEmpty()) return -1;
-    return this.q[this.front];
-  }
+//     return removed;
+//   }
+//   Front() {
+//     if (this.isEmpty()) return -1;
+//     return this.q[this.front];
+//   }
 
-  Rear() {
-    if (this.isEmpty()) return -1;
-    return this.q[this.rear];
-  }
+//   Rear() {
+//     if (this.isEmpty()) return -1;
+//     return this.q[this.rear];
+//   }
 
-  isEmpty() {
-    return this.size === 0;
-  }
+//   isEmpty() {
+//     return this.size === 0;
+//   }
 
-  isFull() {
-    return this.size === this.capacity;
-  }
-}
+//   isFull() {
+//     return this.size === this.capacity;
+//   }
+// }
 
-let q = new MyCircularQueue(3);
-q.enQueue(10);
-q.enQueue(30);
-q.enQueue(20);
-console.log(q.deQueue());
-console.log(q.Front());
-
-//ghjghjghjghjghjghjghjghjhgjhghggjhghjjghhjgjhghjghjhghgjjhghgjghjhgjghjghghjghghjghjghjghjghjghjghjghjghjghjhgjghjhgjhgjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhggjhhgjhgjhgjhgjhgjhgjghghhgjhgjhjghjhgghghjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkjhkjhjkhhjkkhjkjhhkjkhjkjkjkkjhkjhjkhjhkjhkkjhkjjkkjhjhkhjkhjkhjkjhkkjhjhkjhkhjkhjkhjkhjkjhkhjkhjkhjkjhhjkhjkjkhjkhjhkjkhjkhkjhkjhhjkjhkjkhkjhkjhkjhjkhjkhkjhkhjhjkjhkhjkhjkjhkjkhjkhhjkjhkjhkjhkhjkhjkhjkjhkkjhhjjhkjhkhjkjhkhjkjhkjhkjkjhjkhjkkjhkjhhkhkhkjhkjkhjkjhhjkjhkjhkhjkljklkjlkjjkjklkjljklkjljkljkllkjjkljklklkjljkljkljklkjklkjljlkjlkjlkjkljlkkjljkljjkljkljkljklklll
+// let q = new MyCircularQueue(3);
+// q.enQueue(10);
+// q.enQueue(30);
+// q.enQueue(20);
+// console.log(q.deQueue());
+// console.log(q.Front());

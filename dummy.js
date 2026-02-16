@@ -1364,28 +1364,201 @@
 // }
 // console.log(smallestSubArraySum([2, -1, 2], 3));
 
-function longestPalindrome(s) {
-  if (s.length > 2) return s;
-  function expand(left, right) {
-    while (left > 0 && s.length > right && s[left] === s[right]) {
-      left--;
-      right++;
-    }
-    return right - left - 1;
-  }
+// function longestPalindrome(s) {
+//   if (s.length > 2) return s;
+//   function expand(left, right) {
+//     while (left > 0 && s.length > right && s[left] === s[right]) {
+//       left--;
+//       right++;
+//     }
+//     return right - left - 1;
+//   }
 
-  let start = 0;
-  let end = 0;
-  for (let i = 0; i < s.length; i++) {
-    len1 = expand(i, i);
-    len2 = expand(i, i + 1);
-    len = Math.max(len1, len2);
-    if (len > end - start) {
-      start = i - Math.floor((len - 1) / 2);
-      end = i + Math.floor(len / 2);
-    }
-  }
-  return s.slice(start, end + 1);
-}
+//   let start = 0;
+//   let end = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     len1 = expand(i, i);
+//     len2 = expand(i, i + 1);
+//     len = Math.max(len1, len2);
+//     if (len > end - start) {
+//       start = i - Math.floor((len - 1) / 2);
+//       end = i + Math.floor(len / 2);
+//     }
+//   }
+//   return s.slice(start, end + 1);
+// }
 
 ///
+
+//
+// function trap(height) {
+//   let left = 0;
+//   let right = height.length - 1;
+//   let leftmax = 0;
+//   let rightmax = 0;
+//   let water = 0;
+//   while (left < right) {
+//     if (height[left] < height[right]) {
+//       height[left] >= leftmax
+//         ? (leftmax = height[left])
+//         : (water += leftmax - height[left]);
+//       left++;
+//     } else {
+//       height[right] >= rightmax
+//         ? (rightmax = height[right])
+//         : (water += rightmax - height[right]);
+//       right--;
+//     }
+//   }
+//   return water;
+// }
+// console.log(trap([4, 2, 0, 3, 2, 5]));
+
+// function invisibleSegment(nums) {
+//   function isInvisible(l, r) {
+//     let maxval = -Infinity;
+//     let minVal = Infinity;
+//     for (let i = l; i <= r; i++) {
+//       maxval = Math.max(maxval, nums[i]);
+//       minVal = Math.min(minVal, nums[i]);
+//     }
+//     return maxval - minVal <= r - l;
+//   }
+//   let left = 0;
+//   let outsideSum = 0;
+//   let maxsum = 0;
+//   for (let right = 1; right < nums.length; right++) {
+//     if (isInvisible(left, right)) {
+//       for (let i = 0; i < left; i++) outsideSum += nums[i];
+//       for (let i = right + 1; i < nums.length; i++) outsideSum += nums[i];
+//       if (maxsum <= outsideSum) {
+//         maxsum = outsideSum;
+//       }
+//     }
+//     left++;
+//   }
+//   return maxsum;
+// }
+// console.log(invisibleSegment([3, 1, 2, 4, 6, 3, -2]));
+// console.log(invisibleSegment([3, 1, 2, 4, 6]));
+
+// function maxValidPrefixes(s) {
+//   function validCount(s) {
+//     let count = 0;
+//     let counter = 0;
+//     for (let ch of s) {
+//       if (ch === "1") {
+//         counter++;
+//       } else {
+//         counter--;
+//       }
+//       count++;
+//       if (counter < 0) break;
+//     }
+//     return count;
+//   }
+//   let max = validCount(s);
+//   for (let i = 0; i < s.length; i++) {
+//     let filp = s.slice(0, i) + (s[i] === "0" ? "1" : "0") + s.slice(i + 1);
+//     max = Math.max(max, validCount(filp));
+//   }
+//   return max;
+// }
+// console.log(maxValidPrefixes("01010"));
+
+// function maxStableBulidings(H) {
+//   n = H.length;
+//   if (n <= 2) return n;
+//   let ans = 2;
+//   for (let i = 0; i < n; i++) {
+//     let seq = [H[i]];
+//     for (let j = i + 1; j < n; j++) {
+//       let m = seq.length;
+//       if (m === 1) {
+//         seq.push(H[j]);
+//       } else {
+//         let a = seq[m - 2];
+//         let b = seq[m - 1];
+//         let c = H[j];
+//         if (Math.abs(b - a) <= 1 || Math.abs(b - c) <= 1) {
+//           seq.push(H[j]);
+//         }
+//       }
+//     }
+//     ans = Math.max(ans, seq.length);
+//   }
+//   return ans;
+// }
+// console.log(maxStableBulidings([5, 3, 6, 2, 5, 4]));
+// function dominantElements(A, queries) {
+//   let result = [];
+
+//   for (let removeIndex of queries) {
+//     // Step 1: Compute OR of remaining elements
+//     let OR = 0;
+//     for (let i = 0; i < A.length; i++) {
+//       if (i !== removeIndex) {
+//         OR |= A[i];
+//       }
+//     }
+
+//     // Step 2: Count how many equal OR
+//     let count = 0;
+//     for (let i = 0; i < A.length; i++) {
+//       if (i !== removeIndex && A[i] === OR) {
+//         count++;
+//       }
+//     }
+
+//     result.push(count);
+//   }
+
+//   return result;
+// }
+
+// console.log(dominantElements([7, 3, 1, 5], [2]));
+
+// function longestvalidParentheses(s) {
+//   let stack = [-1];
+//   let maxLen = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     if (s[i] === "(") {
+//       stack.push(i);
+//     } else {
+//       stack.pop();
+//       if (stack.length === 0) {
+//         stack.push(i);
+//       } else {
+//         maxLen = Math.max(maxLen, i - stack[stack.length - 1]);
+//       }
+//     }
+//   }
+//   return maxLen;
+// }
+// console.log(longestvalidParentheses("(()"));
+
+function search(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) return mid;
+    if (nums[left] <= nums[mid]) {
+      if (nums[left] <= target && target < nums[mid]) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
+      }
+    } else {
+      if (nums[mid] < target && target <= nums[right]) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+    }
+  }
+  return -1;
+}
+console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+
+///hgfhgghghffghgfhgfhfghgftyutuytyutuytuytyutyutyutyutyutyutyuytutyutyuuytuytuyttyuyuttyutyutyutyujhgghjghjgjgjhgjhghjghjghjgghjjhgjhghgjhjghgjhghjghjgjhghjghjghjjhgjgjhgjhghjgghjgjhghjghjghjghjghjghghghjghjghjgjhghjghjghjghjghjhgjghjghjghjghjzzjhgghjghjghjgjhgjhghjgjhhgjhjgghjhjghgjjhgjghghjghjghjghjghjhjgjhghgjhjgghjgjhghjghjghjgjhghjghjghjghjghjghjghjghjgjhgjhgjhghjhgjghjghjghjghjgjhgjhghjghjgjhgjhjghjghgjhgjhghjgjhgjhgjhgjhgjhgjhgjhgjhgjhgjhgjhgjhgjhjhgjhggjhjhggjhjghghjghjhjgjhhgjghjghjghjghjghjgjhgjhgjhgjjhjhjhjhgjhgjhgjhgjhgjhggjhgjhghjghjghjghjhjgghjhgjjghghjgjhjghjghgjhjggjhgjhghjghjghjghjghjghjgjhhgjhjghjghjghgjghjgjhgjhghjgjhgjhgjhghjjghghjjhggjhghjgjhgjhghjghjghjghjghjghhhhhhhhhhhhhhhhhhhhhhghjghjghjghjghjghjghjghjghjghjghjghjghjgjhghjghjghjghjgjhghjghjghjghjghjghjgjhjghghjghjghjgjhghjghjghjghjghjghjghjghjghjghghjnbmbnmbmbmbmbmnmnmnbnmbbnmbnmbnmbnbnmnmbmnbmnbbnmbnmbnmbnmbnmbnmbnmnbmbnmbn
