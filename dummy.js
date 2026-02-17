@@ -1537,28 +1537,254 @@
 // }
 // console.log(longestvalidParentheses("(()"));
 
-function search(nums, target) {
-  let left = 0;
-  let right = nums.length - 1;
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-    if (nums[mid] === target) return mid;
-    if (nums[left] <= nums[mid]) {
-      if (nums[left] <= target && target < nums[mid]) {
-        right = mid - 1;
-      } else {
-        left = mid + 1;
-      }
-    } else {
-      if (nums[mid] < target && target <= nums[right]) {
-        left = mid + 1;
-      } else {
-        right = mid - 1;
-      }
-    }
-  }
-  return -1;
-}
-console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+// function search(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (nums[mid] === target) return mid;
+//     if (nums[left] <= nums[mid]) {
+//       if (nums[left] <= target && target < nums[mid]) {
+//         right = mid - 1;
+//       } else {
+//         left = mid + 1;
+//       }
+//     } else {
+//       if (nums[mid] < target && target <= nums[right]) {
+//         left = mid + 1;
+//       } else {
+//         right = mid - 1;
+//       }
+//     }
+//   }
+//   return -1;
+// }
+// console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+// function searchRange(nums, target) {
+//   const result = [-1, -1];
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
 
-///hgfhgghghffghgfhgfhfghgftyutuytyutuytuytyutyutyutyutyutyutyuytutyutyuuytuytuyttyuyuttyutyutyutyujhgghjghjgjgjhgjhghjghjghjgghjjhgjhghgjhjghgjhghjghjgjhghjghjghjjhgjgjhgjhghjgghjgjhghjghjghjghjghjghghghjghjghjgjhghjghjghjghjghjhgjghjghjghjghjzzjhgghjghjghjgjhgjhghjgjhhgjhjgghjhjghgjjhgjghghjghjghjghjghjhjgjhghgjhjgghjgjhghjghjghjgjhghjghjghjghjghjghjghjghjgjhgjhgjhghjhgjghjghjghjghjgjhgjhghjghjgjhgjhjghjghgjhgjhghjgjhgjhgjhgjhgjhgjhgjhgjhgjhgjhgjhgjhgjhjhgjhggjhjhggjhjghghjghjhjgjhhgjghjghjghjghjghjgjhgjhgjhgjjhjhjhjhgjhgjhgjhgjhgjhggjhgjhghjghjghjghjhjgghjhgjjghghjgjhjghjghgjhjggjhgjhghjghjghjghjghjghjgjhhgjhjghjghjghgjghjgjhgjhghjgjhgjhgjhghjjghghjjhggjhghjgjhgjhghjghjghjghjghjghhhhhhhhhhhhhhhhhhhhhhghjghjghjghjghjghjghjghjghjghjghjghjghjgjhghjghjghjghjgjhghjghjghjghjghjghjgjhjghghjghjghjgjhghjghjghjghjghjghjghjghjghjghghjnbmbnmbmbmbmbmnmnmnbnmbbnmbnmbnmbnbnmnmbmnbmnbbnmbnmbnmbnmbnmbnmbnmnbmbnmbn
+//     if (nums[mid] >= target) {
+//       right = mid - 1;
+//     } else {
+//       left = mid + 1;
+//     }
+
+//     if (nums[mid] === target) {
+//       result[0] = mid;
+//     }
+//   }
+//   left = 0;
+//   right = nums.length - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+
+//     if (nums[mid] <= target) {
+//       left = mid + 1;
+//     } else {
+//       right = mid - 1;
+//     }
+
+//     if (nums[mid] === target) {
+//       result[1] = mid;
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(searchRange([5, 7, 7, 8, 8, 10], 8));
+
+// //
+
+// function longestOfLongestSubstring(s) {
+//   let map = new Map();
+//   let left = 0;
+//   let maxLen = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     while (map.has(s[right])) {
+//       map.delete(s[left]);
+//       left++;
+//     }
+//     map.set(s[right]);
+//     maxLen = Math.max(maxLen, right - left + 1);
+//   }
+//   return maxLen;
+// }
+// console.log(longestOfLongestSubstring("abcabcbb"));
+
+// function minWindow(s, t) {
+//   let need = new Map();
+
+//   for (let ch of t) {
+//     need.set(ch, (need.get(ch) || 0) + 1);
+//   }
+
+//   let left = 0;
+//   let count = t.length;
+//   let minLen = Infinity;
+//   let start = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     if (need.has(s[right])) {
+//       if (need.get(s[right]) > 0) count--;
+//       need.set(s[right], need.get(s[right]) - 1);
+//     }
+//     while (count === 0) {
+//       if (right - left + 1 < minLen) {
+//         minLen = right - left + 1;
+//         start = left;
+//       }
+//       if (need.has(s[left])) {
+//         need.set(s[left], need.get(s[left]) + 1);
+//         if (need.get(s[left]) > 0) count++;
+//       }
+//       left++;
+//     }
+//   }
+//   return minLen === Infinity ? "" : s.slice(start, start + minLen);
+// }
+// console.log(minWindow("ADOBECODEBANC", "ABC"));
+
+// function findRepeatedDnaSequences(s) {
+//   let seen = new Set();
+//   let repeated = new Set();
+//   for (let i = 0; i <= s.length - 10; i++) {
+//     let sub = s.slice(i, i + 10);
+//     if (seen.has(sub)) {
+//       repeated.add(sub);
+//     } else {
+//       seen.add(sub);
+//     }
+//   }
+//   return repeated;
+// }
+
+// console.log(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+
+// function minSubArrayLen(nums, target) {
+//   let left = 0;
+//   let minLen = Infinity;
+//   let sum = 0;
+//   for (let right = 0; right < nums.length; right++) {
+//     sum += nums[right];
+
+//     while (sum > target) {
+//       sum -= nums[left];
+//       left++;
+//     }
+//     if (sum === target) {
+//       minLen = Math.min(minLen, right - left + 1);
+//     }
+//   }
+//   return minLen === Infinity ? 0 : minLen;
+// }
+// console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7));
+
+// function containsNearByDuplicate(nums, k) {
+//   const map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     if (map.has(nums[i])) {
+//       if (i - map.get(nums[i])) {
+//         return true;
+//       }
+//     }
+//     map.set(nums[i], i);
+//   }
+//   return false;
+// }
+
+// function maxSlidingWindow(nums, k) {
+//   let deque = [];
+//   let result = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (deque.length && deque[0] <= i - k) {
+//       deque.shift();
+//     }
+//     while (deque.length && nums[deque[deque.length - 1]] <= nums[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//     if (i >= k - 1) {
+//       result.push(nums[deque[0]]);
+//     }
+//   }
+//   return result;
+// }
+// console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+// function longestSubstring(s, k) {
+//   let freq = {};
+
+//   if (s.length < k) return 0;
+//   for (let char of s) {
+//     freq[char] = (freq[char] || 0) + 1;
+//   }
+
+//   for (let char in freq) {
+//     if (freq[char] < k) {
+//       let maxlen = 0;
+//       for (let part of s.split(char)) {
+//         maxlen = Math.max(maxlen, longestSubstring(part, k));
+//       }
+//       return maxlen;
+//     }
+//   }
+//   return s.length;
+// }
+// console.log(longestSubstring("aaabb", 3));
+
+// function numberOfArithmeticSlices(nums) {
+//   let left = 0;
+//   let total = 0;
+//   let count = 0;
+//   for (let right = 2; right < nums.length; right++) {
+//     if (nums[right] - nums[right - 1] === nums[right - 1] - nums[right - 2]) {
+//       count++;
+//       total += count;
+//     } else {
+//       count = 0;
+//     }
+//   }
+//   return total;
+// }
+// console.log(numberOfArithmeticSlices([1, 2, 3, 4]));
+
+// function characterReplacement(s, k) {
+//   let map = new Map();
+//   let left = 0;
+//   let maxfre = 0;
+//   let mainwindow = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     map.set(s[right], (map.get(s[right]) || 0) + 1);
+//     maxfre = Math.max(maxfre, map.get(s[right]));
+//     let windowSize = right - left + 1;
+//     if (windowSize - maxfre > k) {
+//       map.set(s[left], map.get(s[left]) - 1);
+//       left++;
+//     }
+//     windowSize = right - left + 1;
+//     mainwindow = Math.max(windowSize, mainwindow);
+//   }
+//   return mainwindow;
+// }
+// console.log(characterReplacement("AABABBA", 1));
+
+function longestOnes(s, k) {
+  let zeroCount = 0;
+  let max = 0;
+  let left = 0;
+  for (let right = 0; right < s.length; right++) {
+    if (s[right] === 0) zeroCount++;
+    while (zeroCount > k) {
+      if (s[left] === 0) zeroCount--;
+      left++;
+    }
+    max = Math.max(max, right - left + 1);
+  }
+  return max;
+}
+console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+
+//hkjhjkjkhkjhkjkjhhjkhjkhkjkjhkjhhkjjhkkjhkhjkkhkjhhjkjhkjkjhhjkhjhjhjkjhjhkkjhjkhjkhjkhkjhjkhkjhjkhjkkjjkhkjhkjkjhjkhjkhkjhkjhkjhkjhkjhkjhkhkhkhkhkhkjhkjhkjhkjhkhkhhhkhkhkhkhkhkhkhkhkhkhkhkhkjhkjlhkjhkjhkjhkjhiluhyiluihkkhkhkhkhkhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhjkhkhkhkjghjjghjhgjhjhjhhjjhgjhgjhgjhgjhgjhhjgghjgjhgjkjkhjkhjhjkhjkhjhkjhkjkhjkhhjjhkjkhkjhkjhjkhjkhjkhjk

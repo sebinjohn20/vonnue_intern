@@ -143,7 +143,7 @@
 // JavaScript has 2 phases when running code:
 
 // 1️⃣ Memory Creation Phase
-// 2️⃣ Code Execution Phase
+// 2️⃣ Code Executiodfn Phase
 
 //🧠 Phase 1: Memory Creation Phase
 
@@ -738,5 +738,455 @@
 //   }
 // }
 // getData();
+
+// Call Stack      Web APIs          Callback Queue
+// ---------------------------------------------------
+// console.log
+// setTimeout ---> Timer (2s)
+//                 |
+//                 ↓
+//             (after 2s)
+//                     →  callback ready
+//                                |
+// Event Loop checks -------------|
+// If stack empty → move to stack
+
+// what is falsy value
+
+//  false
+//  0
+//  ""
+//  null
+//  undefined
+//  NaN
+
+///Difference Between || and ?? (Important)
+// let value = 0;
+
+// console.log(value || 100); // 100 ❌
+// console.log(value ?? 100); // 0 ✅
+
+// why ?
+// * || treats 0 as FileSystemDirectoryHandleAsyncIterator*
+// * ?? (nullish coalescing) only treats null and undefined as nullish
+
+// Use:
+
+// || for general truthy fallback.
+
+// ?? when 0 or "" should be allowed.
+
+////**************  And Operator */
+
+// A && B
+// → If A is falsy → return A
+// → If A is truthy → return B
+
+//------------------->  Nullish Coalescing Operator
+
+//  The nullish coalescing opearator(??) returns the right side value only if the left side is null
+// or undefined
+
+// A ?? B
+// 👉 If A is null or undefined → return B
+// 👉 Otherwise → return A
+// console.log(null ?? 100);        // 100
+// console.log(undefined ?? 50);    // 50
+// console.log(0 ?? 10);            // 0
+// console.log("" ?? "Hello");      // ""
+
+// 3️⃣ Why Do We Need It?
+
+// Because || treats many values as falsy.
+
+// Example:
+
+// let value = 0;
+
+// console.log(value || 100);  // 100 ❌
+// console.log(value ?? 100);  // 0 ✅
+
+// || replaces 0
+// ?? keeps 0
+
+//-------------------> Template Literal----------------
+
+// A template literal is a special type of string  introduced in ES6
+// use backticks(``) instead  of quotes
+// Supports string interpolation using ${}
+// allow multi-line strings without escape characters
+
+//      `My name is ${name} and I am ${age} years old.`;
+
+//    "My name is " + name + " and I am " + age + " years old."
+
+////---------- Enhanced Object Litearls ----------
+
+// Enhanced Object Literals are improvements introduced in ES6 (ECMAScript 2015) that make object creation:
+
+// Shorter
+
+// Cleaner
+
+// More powerful
+
+// More readable
+
+// 1️⃣ Property Shorthand
+// ❌ Before ES6
+// let name = "John";
+// let age = 25;
+
+// let user = {
+//   name: name,
+//   age: age
+// };
+
+// ✅ ES6 Enhanced Version
+// let user = {
+//   name,
+//   age
+// };
+
+// If variable name and property name are same → no need to repeat.
+
+// 2️⃣ Method Shorthand
+// ❌ Before ES6
+// let user = {
+//   greet: function() {
+//     console.log("Hello");
+//   }
+// };
+
+// ✅ ES6 Version
+// let user = {
+//   greet() {
+//     console.log("Hello");
+//   }
+// };
+
+// Cleaner syntax.
+
+////   ------------> what is Coercion----------------->
+
+// Coercion means automatic type conversion
+/// when javascript converts a value to a string, it is called String Coercion
+
+// Javascript is a dynamically typed language so it automatically converts types when needed
+
+// 1️⃣ When Does String Coercion Happen?
+
+// String coercion happens when:
+
+// Using + with a string
+
+// Using template literals
+
+// Using String() function
+
+// Calling .toString()
+
+// Concatenating values
+
+// 2️⃣ Using + Operator (Most Common)
+
+// If one operand is a string → JS converts the other to string.
+
+// Example:
+// console.log("5" + 2);
+
+// Output:
+
+// "52"
+
+// What happened?
+
+// JS converts 2 → "2"
+// Then joins → "52"
+
+// 3️⃣ Template Literals
+// let age = 25;
+// console.log(`I am ${age}`);
+
+// JS automatically converts 25 → "25"
+
+///f
+
+// 🧠 1️⃣ First: Memory Model in JavaScript
+
+// JavaScript stores data in:
+
+// 🟢 Stack
+
+// Primitives (number, string, boolean, null, undefined, bigint, symbol)
+
+// Stored directly
+
+// 🔵 Heap
+
+// Objects
+
+// Arrays
+
+// Functions
+
+// Variables store:
+
+// Value (for primitives)
+
+// Reference (memory address for objects)
+
+// let obj1 = { name: "John" };
+// let obj2 = obj1;
+// obj2.name = "mike";
+// console.log(obj1.name);// Mike
+
+// Why?
+
+// Memory view:
+
+// Heap:
+// { name: "John" }
+
+// Stack:
+// obj1 → reference to heap
+// obj2 → same reference
+
+// No copy happened. Both point to same object.
+
+///-------------------> Shallow Copy-------------------->
+
+//// Copies only the first level of properties
+/// nested objects still share references
+
+// let obj1 = {
+//   name: "John",
+//   address: {
+//     city: "Delhi",
+//   },
+// };
+
+// let obj2 = { ...obj1 }; /// shallow copy
+
+// obj2.name = "mike";
+// obj2.address.city = "mumbai";
+// console.log(obj1.name); // John ✅
+// console.log(obj1.address.city); // Mumbai ❌ (changed!)
+
+// Why?
+
+// Because:
+
+// name is primitive → copied by value
+
+// address is object → copied by reference
+
+// So both obj1 and obj2 share same address.
+
+/////--------------------------> Deep Copy ------------------------->
+
+// Recursively copies all nested objects and arrays
+//  no shared reference anywhere
+
+// let user1 = {
+//   name: "John",
+//   address: {
+//     city: "Delhi",
+//   },
+// };
+// let user2 = structuredClone(user1);
+// user2.address.city = "Mumbai";
+
+// console.log(user2.address.city);
+// console.log(user1.address.city);
+
+////--------------------->  Pass by Value means  ----------------->
+
+/// When a varibles is passed to a function  , a copy of its value is passed not the original varible itself
+// so change inside the fuction do not affect the original varible
+
+// function change(x) {
+//   x = 20;
+// }
+
+// let a = 10;
+// change(a);
+
+// console.log(a);
+
+// 🧠 Why?
+
+// Memory:
+
+// Stack:
+
+// a → 10
+// x → 10 (copy)
+
+// When inside function:
+
+// x = 20
+
+// Only x changes.
+
+// a remains 10.
+
+/////-----------   Pass by reference---------------------
+
+/// The function receives the actual memory location of the varibles .
+/// Any change inside the function directly changes the original variable
+
+// function change(obj) {
+//   obj.name = "mike";
+// }
+// let user = { name: "John" };
+// change(user);
+// console.log(user.name);
+
+// 📌 Is JavaScript Pass by Reference?
+
+// ❌ No. JavaScript is NOT pass by reference.
+
+// Object Example (Looks Like Pass by Reference)
+// function change(obj) {
+//   obj.name = "Mike";
+// }
+
+// let user = { name: "John" };
+
+// change(user);
+
+// console.log(user.name); // Mike
+
+// Why did it change?
+
+// Because:
+
+// Heap:
+// { name: "John" }
+
+// Stack:
+// user → ref A
+// obj  → ref A (copy of reference)
+
+// Both point to the same object in memory.
+
+// So modifying a property changes the same object.
+
+// 3️⃣ Proof That JS Is NOT Pass by Reference
+
+// If JS were true pass-by-reference, this would work:
+
+// function change(obj) {
+//   obj = { name: "David" };
+// }
+
+// let user = { name: "John" };
+
+// change(user);
+
+// console.log(user.name);
+
+// Output:
+
+// John\\
+
+////---------  first Class Function ------------>
+
+/// Function are treated like normal values
+
+///   1   Be assigned to variables
+//   2  Be passed by arguments
+//   3  Be return from other functions
+/// 4   Be stored in objects or arrays
+
+/////  1️⃣ Assign Function to a Variable
+
+// const greet= function(){
+//     console.log("Hello")
+
+// }
+//  greet()
+
+// 2️⃣ Pass Function as Argument (Callback)
+// function sayHello() {
+//   console.log("Hello");
+// }
+
+// function execute(fn) {
+//   fn();
+// }
+
+// execute(sayHello);
+
+// We passed sayHello as a value.
+
+// This is how callbacks work.
+
+// 3️⃣ Return Function from Another Function
+// function outer() {
+//   return function () {
+//     console.log("Inside returned function");
+//   };
+// }
+
+// const result = outer();
+// result();
+
+// This is used in:
+
+// Closures
+
+// Function factories
+
+// Currying
+
+// Store Function Inside Object
+// const user = {
+//   name: "John",
+//   greet: function () {
+//     console.log("Hi");
+//   },
+// };
+
+// user.greet();
+
+// Here greet is just a function stored as a property.
+
+///-------------  Pure Functions--------------
+
+// A pure function  is a function that  Always return  the same output for the same Input , Has no side effects
+// 1️⃣ Same Input → Same Output
+// function add(a, b) {
+//   return a + b;
+// }
+
+// add(2, 3); // 5
+// add(2, 3); // 5
+
+// No matter how many times you call it with 2, 3, result is always 5.
+
+///-----------------  Higher Order Functions--------------------------
+
+//  A higher order functions is a function that  takes another function as  an argument  ,
+// return a functions
+
+// 1️⃣ Function as Argument
+// function greet(name) {
+//   return "Hello " + name;
+// }
+
+// function processUserInput(callback) {
+//   const name = "John";
+//   return callback(name);
+// }
+
+// processUserInput(greet);
+
+// Here:
+
+// processUserInput is a Higher-Order Function
+
+// Because it accepts greet as a parameter
 
 ///
