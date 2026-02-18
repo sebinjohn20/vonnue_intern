@@ -8,6 +8,8 @@
 //   }
 // }
 
+const { useOptimistic } = require("react");
+
 // const test_cases = [
 //   [[10, 23, 20], 23],
 //   [[5, 1, 3], 5],
@@ -1771,20 +1773,108 @@
 // }
 // console.log(characterReplacement("AABABBA", 1));
 
-function longestOnes(s, k) {
-  let zeroCount = 0;
-  let max = 0;
-  let left = 0;
-  for (let right = 0; right < s.length; right++) {
-    if (s[right] === 0) zeroCount++;
-    while (zeroCount > k) {
-      if (s[left] === 0) zeroCount--;
-      left++;
-    }
-    max = Math.max(max, right - left + 1);
-  }
-  return max;
-}
-console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+// function longestOnes(s, k) {
+//   let zeroCount = 0;
+//   let max = 0;
+//   let left = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     if (s[right] === 0) zeroCount++;
+//     while (zeroCount > k) {
+//       if (s[left] === 0) zeroCount--;
+//       left++;
+//     }
+//     max = Math.max(max, right - left + 1);
+//   }
+//   return max;
+// }
+// console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
 
-//hkjhjkjkhkjhkjkjhhjkhjkhkjkjhkjhhkjjhkkjhkhjkkhkjhhjkjhkjkjhhjkhjhjhjkjhjhkkjhjkhjkhjkhkjhjkhkjhjkhjkkjjkhkjhkjkjhjkhjkhkjhkjhkjhkjhkjhkjhkhkhkhkhkhkjhkjhkjhkjhkhkhhhkhkhkhkhkhkhkhkhkhkhkhkhkjhkjlhkjhkjhkjhkjhiluhyiluihkkhkhkhkhkhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhjkhkhkhkjghjjghjhgjhjhjhhjjhgjhgjhgjhgjhgjhhjgghjgjhgjkjkhjkhjhjkhjkhjhkjhkjkhjkhhjjhkjkhkjhkjhjkhjkhjkhjk
+// ///
+
+// function shorestSubarray(arr, k) {
+//   let n = arr.length;
+//   let prefix = new Array(n + 1).fill(0);
+//   for (let i = 0; i < n; i++) {
+//     prefix[i + 1] = prefix[i] + arr[i];
+//   }
+//   let deque = [];
+//   let minLength = Infinity;
+//   for (let i = 0; i <= n; i++) {
+//     while (deque.length && prefix[i] - prefix[deque[0]] >= k) {
+//       minLength = Math.min(minLength, i - deque[0]);
+//       deque.shift();
+//     }
+//     while (deque.length && prefix[i] <= prefix[deque[deque.length - 1]]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//   }
+//   return minLength === Infinity ? -1 : minLength;
+// }
+// console.log(shorestSubarray([2, -1, 2], 3));
+
+// function longestSubarray(nums, limit) {
+//   let maxDeque = [];
+//   let minDeque = [];
+//   let left = 0;
+//   let ans = 0;
+//   for (let right = 0; right < nums.length; right++) {
+//     while (maxDeque.length && maxDeque[maxDeque.length - 1] < nums[right]) {
+//       maxDeque.pop();
+//     }
+//     maxDeque.push(nums[right]);
+
+//     while (minDeque.length && minDeque[minDeque.length - 1] > nums[right]) {
+//       minDeque.pop();
+//     }
+//     minDeque.push(nums[right]);
+//     while (maxDeque[0] - minDeque[0] > limit) {
+//       if (nums[left] === maxDeque[0]) maxDeque.shift();
+//       if (nums[left] === minDeque[0]) minDeque.shift();
+//       left++;
+//     }
+//     ans = Math.max(ans, right - left + 1);
+//   }
+//   return ans;
+// }
+// console.log(longestSubarray([8, 2, 4, 7], 4));
+
+// function maxResult(nums, k) {
+//   let n = nums.length;
+//   let dp = new Array(n);
+//   let deque = [0];
+//   dp[0] = nums[0];
+//   for (let i = 1; i < n; i++) {
+//     while (deque.length && deque[0] < i - k) {
+//       deque.shift();
+//     }
+//     dp[i] = nums[i] + dp[deque[0]];
+//     while (deque.length && dp[deque[deque.length - 1]] <= dp[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//   }
+//   return dp[n - 1];
+// }
+
+// console.log(maxResult([1, -5, -20, 4, -1, 3, -6, -3], 2));
+// console.log(maxResult([1, -1, -2, 4, -7, 3], 2));
+//fdsfsdfsdfdfsdffdffsdfsdfsdfsdfsdfsdfsdfsdffsddfdsfsdfsdffsdfsdfsdfsdfsdf
+
+// function subarraySum(nums, k) {
+//   let sum = 0;
+//   let count = 0;
+//   const map = new Map();
+//   map.set(0, 1);
+//   for (let num of nums) {
+//     sum += num;
+//     if (map.has(sum - k)) {
+//       count += map.get(sum - k);
+//     }
+//     map.set(sum, (map.get(sum) || 0) + 1);
+//   }
+//   return map;
+// }
+// console.log(subarraySum([1, 2, 3], 3));
+
+//

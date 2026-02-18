@@ -1,6 +1,7 @@
 ///  ------------------Closure--------------------
 
-/// A function remembers varibles from its outer function even after the outer fuction has finished executing
+/// A function remembers varibles from its outer function even after
+//  the outer fuction has finished executing
 
 // function outer() {
 //   let count = 0;
@@ -137,7 +138,8 @@
 
 /////*************************      Hosting  ********************** */
 
-// Hosting is javaScript's behavior where declarations are moved to the top of their scope during the memory creation phase before code execution
+// Hosting is javaScript's behavior where declarations are moved to the top of their scope
+// during the memory creation phase before code execution
 
 // ⚠️ Important:
 // JavaScript has 2 phases when running code:
@@ -359,7 +361,9 @@
 
 // NOT 20 ❌
 
-// Because print() was  written in global scope where x=10 so when it runs, it looks for x  in the place where it was created it does not care when it  is called
+// Because print() was  written in global scope where x=10 so when it runs,
+//  it looks for x  in the place where it was created it does not care
+// when it  is called
 // Think Like This
 
 // Imagine code structure like a tree:
@@ -383,7 +387,7 @@
 
 // const person = {
 //   name: "John",
-//   greet: function () {
+//   greet() {
 //     console.log(this.name);
 //   },
 // };
@@ -565,7 +569,8 @@
 
 ////  ------   Event Loop
 
-/// The Event Loop is a mechanism that allows javascript to handle asynchronous operations without blocking the main thread
+/// The Event Loop is a mechanism that allows javascript to handle asynchronous operations
+//  without blocking the main thread
 
 // It manages:
 
@@ -1000,9 +1005,45 @@
 // console.log(user2.address.city);
 // console.log(user1.address.city);
 
+// 🔥 What is happening?
+// 1️⃣ structuredClone(user1)
+
+// This creates a deep copy of user1.
+
+// That means:
+
+// It copies name
+
+// It also copies the nested address object
+
+// user2.address is a completely new object in memory
+
+// So now:
+
+// user1.address !== user2.address
+
+// They are different objects.
+
+// 2️⃣ Changing user2.address.city
+// user2.address.city = "Mumbai";
+
+// You are modifying only user2's address.
+
+// ✅ Output
+// Mumbai
+// Delhi
+
+// Why?
+
+// user2.address.city → "Mumbai"
+
+// user1.address.city → still "Delhi"
+// (because deep copy created separate memory)
+
 ////--------------------->  Pass by Value means  ----------------->
 
-/// When a varibles is passed to a function  , a copy of its value is passed not the original varible itself
+/// When a varibles is passed to a function  , a copy of its value is passed
+//  not the original varible itself
 // so change inside the fuction do not affect the original varible
 
 // function change(x) {
@@ -1189,4 +1230,478 @@
 
 // Because it accepts greet as a parameter
 
-///
+///------------------>   isNaN()---------------------->
+
+///because isNaN() first converts the value to a number then check
+// Interview Trick Question
+// NaN === NaN
+
+// 👉 Result: false
+
+// Because NaN is not equal to anything, even itself.
+
+// 🔥 Summary
+// Method	Converts Type?	Recommended?
+// isNaN()	✅ Yes	❌ Not ideal
+// Number.isNaN()	❌ No	✅ Yes
+
+// isNaN("10");     // false (because "10" becomes 10)
+// isNaN("");       // false ("" becomes 0)
+// isNaN(true);     // false (true becomes 1)
+// isNaN(undefined);// true
+
+//-------------------------DOM--------------
+
+// The DOM is a tree structure created by the browerser from html
+
+// Example HTML:
+
+// <body>
+//   <div>
+//     <button>Click Me</button>
+//   </div>
+// </body>
+
+// DOM Tree:
+
+// body
+//  └── div
+//       └── button
+
+// JavaScript can:
+
+// Select elements
+
+// Change content
+
+// Add/remove elements
+
+// Handle events
+
+// ----------------------->  prepend()Method-------------------->
+
+//prepend()adds an element at the beginning of a parent element
+
+// let div = document.querySelector("div");
+
+// let p = document.createElement("p");
+// p.textContent = "Hello";
+
+// div.prepend(p);
+
+/// ------------Event Flow in DoM----------------->
+
+////  When you click a button inside a div the event travel in 3 phases
+
+// 1️⃣ Capturing Phase (Top → Down)
+// 2️⃣ Target Phase
+// 3️⃣ Bubbling Phase (Bottom → Up)
+
+// 🔵 1. Capturing Phase
+
+// Event travels from:
+
+// window → document → body → div → button
+
+// This is called event capturing (trickling down).
+
+// 🟢 2. Target Phase
+
+// The event reaches the actual element clicked.
+
+// 🔴 3. Bubbling Phase (Default)
+
+// After reaching target, event goes back up:
+
+// button → div → body → document → window
+
+///First: How Browser Loads HTML
+
+// When browser loads a page:
+
+// Start reading HTML (top → bottom)
+
+// When it finds <script>
+
+// It stops HTML parsing
+
+// Downloads script
+
+// Executes script
+
+// Then continues HTML
+
+// This is called blocking behavior
+
+// ❌ 1. Normal Script (Blocking)
+// <script src="app.js"></script>
+
+// What happens?
+// HTML parsing → STOP
+// Download JS → Execute JS
+// Continue HTML
+
+// 👉 Page becomes slower
+// 👉 DOM may not be fully ready
+
+/////-------------------->   Defer (recommended for most cases)
+
+// <script src="app.js" defer></script>
+// How it works:
+// Browser downloads JS in parallel
+
+// HTML parsing continues
+
+// Script executes after HTML is fully parsed
+
+// Executes in order (if multiple scripts)
+
+// Flow:
+// HTML parsing + JS download (parallel)
+// After HTML done → Execute JS
+
+///---------------  Important Points About defer
+
+///----- Does NOT block HTML parsing
+
+///------Runs after DOM is ready
+//-------Maintains script order
+
+///------Best for DOM manipulation
+
+// ______________________. async_____________________________
+// <script src="app.js" async></script>
+
+// How it works:
+
+// Browser downloads JS in parallel
+
+// As soon as download finishes → executes immediately
+
+// Does NOT wait for HTML parsing
+
+// Order is NOT guaranteed
+
+// Flow:
+// HTML parsing + JS download
+// If download finishes → Execute immediately
+// HTML parsing may pause during execution
+
+// Important Points About async
+
+// ✅ Does not block download
+// ❌ Execution order not guaranteed
+// ❌ May run before DOM is ready
+// ✅ Good for third-party scripts (analytics, ads)
+
+///    What are Getters and Setters
+
+///  They are special methods used to:
+
+///  1  get->read a property
+//  2 set->update a property
+
+// let user = {
+//   firstName: "John",
+//   lastName: "Doe",
+
+//   get fullName() {
+//     return this.firstName + " " + this.lastName;
+//   },
+
+//   set fullName(value) {
+//     let parts = value.split(" ");
+//     this.firstName = parts[0];
+//     this.lastName = parts[1];
+//   }
+// };
+
+///dfdsfdsfdsffdfsdfsdfasfdsdfsafsdfsdfsdfsdfdfsdfsdf
+
+////------  What is a static Method-----
+
+// A static method belongs to the class itself
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   static greet() {
+//     console.log("Hello!");
+//   }
+// }
+
+// How to Call It
+// User.greet();   // ✅ Works
+
+// let u = new User("John");
+// u.greet();      // ❌ Error
+// Why?
+
+// Because static methods are attached to the class, not the instance.
+
+////   -----------   What is AJAX --------
+
+//  AJAX= Asynchronous JavaScript and XML
+
+// It allows the browser to:
+
+// ✅ Send request to server
+// ✅ Get data
+// ✅ Update page
+// ❌ Without reloading the page
+
+// How AJAX Works
+// Browser → Send HTTP Request → Server
+// Server → Send Response → Browser
+// Browser → Update DOM
+
+// All happens asynchronously (non-blocking).
+
+////////////////------------  What is an API-------------
+
+//API=  Application Programming Interface
+
+// it is a bridge that alllow two applications to communicate with each other
+
+// Good 🔥 this is core JavaScript concept.
+
+// Let’s understand clearly:
+
+// 🧠 Variable Environment vs Lexical Environment
+
+// These are created during execution context creation.
+
+// 1️⃣ Lexical Environment
+
+// A Lexical Environment is a structure that holds:
+
+// Local variables
+
+// Function declarations
+
+// Block scope variables
+
+// Reference to outer environment
+
+// Think of it as:
+
+// {
+//   EnvironmentRecord: { variables },
+//   Outer: reference to parent scope
+// }
+
+// 2️⃣ Variable Environment
+
+// Variable Environment is almost same as Lexical Environment.
+
+// But:
+
+// 👉 It is mainly used to store var variables and function declarations during creation phase.
+
+// In modern JS engines:
+
+// Both are often merged internally.
+
+// But conceptually they are different.
+
+// 🔥 Simple Difference
+// Lexical Environment	Variable Environment
+// Stores let, const, var	Stores var only (creation phase)
+// Supports block scope	Function scope only
+// Used for closures	Used for hoisting
+// 🔎 Example
+// function test() {
+//   var a = 10;
+//   let b = 20;
+//   const c = 30;
+// }
+
+// When test() runs:
+
+// Creation Phase
+
+// Variable Environment:
+
+// a: undefined
+
+// Lexical Environment:
+
+// b: uninitialized (TDZ)
+// c: uninitialized (TDZ)
+
+// 🔥 Important: TDZ (Temporal Dead Zone)
+// console.log(x); // undefined
+// var x = 5;
+
+// console.log(y); // ReferenceError
+// let y = 10;
+
+// Why?
+
+// Because:
+
+// var → stored in Variable Environment → initialized as undefined
+
+// let → stored in Lexical Environment → uninitialized until execution reaches line
+
+// 🧠 Visual Memory Diagram
+
+// When function runs:
+
+// Execution Context
+//    |
+//    |-- Variable Environment
+//    |       a: undefined
+//    |
+//    |-- Lexical Environment
+//            b: <TDZ>
+//            c: <TDZ>
+
+// After execution phase:
+
+// a: 10
+// b: 20
+// c: 30
+
+// 🔥 Closures Connection
+
+// Lexical Environment keeps reference to outer environment.
+
+// Example:
+
+// function outer() {
+//   let x = 10;
+
+//   function inner() {
+//     console.log(x);
+//   }
+
+//   return inner;
+// }
+
+// const fn = outer();
+// fn();
+
+// Why does this work?
+
+// Because:
+
+// inner → has reference to outer's Lexical Environment
+
+// That’s closure.
+
+// 🎯 Simple Rule to Remember
+
+// Variable Environment = var
+
+// Lexical Environment = let, const, block scope
+
+// Lexical keeps outer reference (scope chain)
+
+// //////   What is Execution Context
+
+// ///  whatever Javascript  runs code , it creates a special environment called  Execution Context
+
+// /// 2 Types of Execution Context
+
+// ///  1  Global Execution Context
+
+// //   Created  When JS flle start
+// ///  only One global exists
+
+// /// 2  Function Exection Context
+// ///-----> Created every time a function is called Each function call _> new execution context
+
+// ///  3   Eval Execution Context (Rare)
+
+// ////----------------4. Two Phases of Execution Context------------
+
+// // 🟢 Phase 1: Memory Creation Phase (Hoisting Phase)
+
+// // JS scans the code and allocates memory.
+
+// // What happens here?
+
+// // Variables → stored as undefined
+
+// // Function declarations → fully stored
+
+// // this → determined
+
+// // Example:
+// // var a = 10;
+
+// // function test() {
+// //   console.log("Hello");
+// // }
+
+// Memory phase:
+
+// a → undefined
+// test → function definition
+
+// Nothing executed yet.
+///------------------- Promise.all()--------------------
+
+///------> Promise.all() takes multiple promises and Run them in parallel
+///------> waits for all to resolve
+///---->fails immediately if any one fail
+
+////           Promise.all([promise1, promise2, promise3])
+
+// let p1 = Promise.resolve(10);
+// let p2 = Promise.resolve(10);
+// let p3 = Promise.resolve(30);
+
+// Promise.all([p1, p2, p3]).then((results) => {
+//   console.log(results);
+// });
+
+//Even if one fails → whole Promise.all() fails.
+
+/////-----------------  Promise.any()--------------
+
+//-----------   promise.any()----------------
+
+// Promise.any() resolves when the first promise fulfills (success) and ignores rejections.
+
+// It only rejects if all promises fail.
+
+// let p1 = Promise.reject("Error 1");
+// let p2 = Promise.resolve("Success 2");
+// let p3 = Promise.resolve("Success 3");
+
+// Promise.any([p1, p2, p3])
+//   .then(result => console.log(result))
+//   .catch(err => console.log(err));
+
+//    What is Promise.race()
+
+// Promise.race()  returns a promise that settles(resolves or rejects) as soon as the first promise setles
+
+// let p1 = new Promise(res => setTimeout(() => res("First"), 1000));
+// let p2 = new Promise(res => setTimeout(() => res("Second"), 2000));
+
+// Promise.race([p1, p2])
+//   .then(result => console.log(result))
+//   .catch(err => console.log(err));
+
+///   -----------------Promise allSettled()------------
+
+///  promise .allSetteld () wait for all promises to finsih, no matter if they reslove or reject
+// It never rejects.
+
+// It always returns results of all promises.
+
+// 🔹 Syntax
+// Promise.allSettled([p1, p2, p3])
+
+// ✅ Basic Example
+// let p1 = Promise.resolve("Success 1");
+// let p2 = Promise.reject("Error 2");
+// let p3 = Promise.resolve("Success 3");
+
+// Promise.allSettled([p1, p2, p3])
+//   .then(results => console.log(results));
