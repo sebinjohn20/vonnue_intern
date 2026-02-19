@@ -178,7 +178,7 @@
 // ⚡ Execution Phase:
 
 // When console.log(b) runs → ❌ ReferenceError
-///-----  What is TDZ---------------
+///----  What is TDZ---------------
 
 //TDZ is the time between when a variable is hosited and when it is actually intialized
 //during this time,you cannot access the variable if you try ReferenceError
@@ -571,6 +571,22 @@
 
 /// The Event Loop is a mechanism that allows javascript to handle asynchronous operations
 //  without blocking the main thread
+
+// 📊 Complete Flow Diagram
+// Call Stack Executes Sync Code
+//         ↓
+// Async Code Sent To Web APIs
+//         ↓
+// Web APIs Complete
+//         ↓
+// Callbacks Added To Queues
+//         ↓
+// Event Loop Checks:
+//     1. Is Call Stack Empty?
+//     2. Run All Microtasks
+//     3. Run One Macrotask
+//         ↓
+// Repeat
 
 // It manages:
 
@@ -1046,6 +1062,14 @@
 //  not the original varible itself
 // so change inside the fuction do not affect the original varible
 
+// let a = 10;
+// let b = a;
+
+// b = 20;
+
+// console.log(a); // 10
+// console.log(b); // 20
+
 // function change(x) {
 //   x = 20;
 // }
@@ -1077,12 +1101,12 @@
 /// The function receives the actual memory location of the varibles .
 /// Any change inside the function directly changes the original variable
 
-// function change(obj) {
-//   obj.name = "mike";
-// }
-// let user = { name: "John" };
-// change(user);
-// console.log(user.name);
+// let obj1 = { name: "John" };
+// let obj2 = obj1;
+
+// obj2.name = "Peter";
+
+// console.log(obj1.name); // Peter
 
 // 📌 Is JavaScript Pass by Reference?
 

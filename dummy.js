@@ -8,8 +8,6 @@
 //   }
 // }
 
-const { useOptimistic } = require("react");
-
 // const test_cases = [
 //   [[10, 23, 20], 23],
 //   [[5, 1, 3], 5],
@@ -1878,3 +1876,133 @@ const { useOptimistic } = require("react");
 // console.log(subarraySum([1, 2, 3], 3));
 
 //
+
+// function findMaxLength(nums) {
+//   let map = new Map();
+//   let sum = 0;
+//   let maxlen = 0;
+//   map.set(0, -1);
+//   for (let i = 0; i < nums.length; i++) {
+//     sum += nums[i] === 0 ? -1 : 1;
+//     if (map.has(sum)) {
+//       maxlen = Math.max(maxlen, i - map.get(sum));
+//     } else {
+//       map.set(sum, i);
+//     }
+//   }
+//   return map;
+// }
+// console.log(findMaxLength([0, 1, 1, 1, 1, 1, 0, 0, 0]));
+
+// function rotate(num, k) {
+//   const n = num.length;
+//   k = k % n;
+//   const rotated = new Array(n);
+//   for (let i = 0; i < k; i++) {
+//     rotated[i] = num[n - k + i];
+//   }
+//   for (let i = 0; i < n - k; i++) {
+//     rotated[k + i] = num[i];
+//   }
+//   return rotated;
+// }
+// console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
+
+// 1,2,3,4,5,6,7,1,2,3,4,5,6,7
+
+// function rotated(num, k) {
+//   let n = num.length;
+//   k = k % n;
+//   let c = n - k;
+
+//   let copy = [...num, ...num];
+
+//   return copy.slice(c, c + n);
+// }
+// console.log(rotated([1, 2, 3, 4, 5, 6, 7], 3));
+
+// function isAnagram(s, t) {
+//   if (s.length !== t.length) return false;
+//   let map = new Map();
+//   for (let char of s) {
+//     map.set(char, (map.get(char) || 0) + 1);
+//   }
+//   for (let char of t) {
+//     if (map.has(char)) {
+//       map.set(char, map.get(char) - 1);
+//     } else {
+//       return false;
+//     }
+//     if (map.get(char) === 0) {
+//       map.delete(char);
+//     }
+//   }
+//   return map.size === 0;
+// }
+
+// function findAnagrams(s, t) {
+//   let need = new Map();
+//   const result = [];
+//   let left = 0;
+//   for (let char of t) {
+//     need.set(char, (need.get(char) || 0) + 1);
+//   }
+//   let count = t.length;
+//   for (let right = 0; right < s.length; right++) {
+//     if (need.has(s[right])) {
+//       if (need.get(s[right]) > 0) count--;
+//       need.set(s[right], need.get(s[right]) - 1);
+//     }
+//     if (right - left + 1 === t.length) {
+//       if (count === 0) result.push(left);
+
+//       if (need.has(s[left])) {
+//         need.set(s[left], need.get(s[left]) + 1);
+//         if (need.get(s[left]) > 0) count++;
+//       }
+
+//       left++;
+//     }
+//   }
+//   return result;
+// }
+// console.log(findAnagrams("cbaebabacd", "abc"));
+
+// function longestMountain(arr) {
+//   let n = arr.length;
+//   let ans = 0;
+//   let i = 1;
+//   while (i < n - 1)
+//     if (arr[i - 1] < arr[i] && arr[i] > arr[i + 1]) {
+//       let left = i;
+//       let right = i;
+//       while (left > 0 && arr[left - 1] < arr[left]) {
+//         left--;
+//       }
+//       while (right < n - 1 && arr[right] > arr[right + 1]) {
+//         right++;
+//       }
+//       ans = Math.max(ans, right - left + 1);
+//       i = right;
+//     } else {
+//       i++;
+//     }
+//   return ans;
+// }
+// console.log(longestMountain([2, 1, 4, 7, 3, 2, 5]));
+
+//
+
+function maxProfit(prices) {
+  let min = Infinity;
+  let max = 0;
+  for (let price of prices) {
+    min = Math.min(min, price);
+    let profit = price - min;
+    max = Math.max(max, profit);
+  }
+  return max;
+}
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+//sdfsdfdfdfffddsfdsfdffddfdffsfsfdsfsdfsdfsdfhjhjkjkhkjjkhjhkjhhjhjjkhhjkhjkjhkjhhjklk;kl;l;l;kl;kl;kl;k;lkl;l;k';kl;k;lk;llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllkl;klk;;lk;lk;lk;lk;lk;lk;lklk;;lk;lk;lk;lk;lk;lkgit sdfsdfsdfsdfdfdsfff
