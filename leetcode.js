@@ -3496,7 +3496,6 @@
 // //   }
 // //   return max;
 // // }
-// // console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
 // // function sortedSquares(nums) {
 // //   let n = nums.length;
@@ -3723,7 +3722,7 @@
 //     head = head.next;
 //   }
 //   return arr;
-// }dsadasdasdasdd
+// }
 // function reverseList(head) {
 //   let prev = null;
 //   let current = head;

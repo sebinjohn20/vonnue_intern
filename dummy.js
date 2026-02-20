@@ -1993,16 +1993,161 @@
 
 //
 
-function maxProfit(prices) {
-  let min = Infinity;
-  let max = 0;
-  for (let price of prices) {
-    min = Math.min(min, price);
-    let profit = price - min;
-    max = Math.max(max, profit);
-  }
-  return max;
-}
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+// function maxProfit(prices) {
+//   let min = Infinity;
+//   let max = 0;
+//   for (let price of prices) {
+//     min = Math.min(min, price);
+//     let profit = price - min;
+//     max = Math.max(max, profit);
+//   }
+//   return max;
+// }
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
-//sdfsdfdfdfffddsfdsfdffddfdffsfsfdsfsdfsdfsdfhjhjkjkhkjjkhjhkjhhjhjjkhhjkhjkjhkjhhjklk;kl;l;l;kl;kl;kl;k;lkl;l;k';kl;k;lk;llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllkl;klk;;lk;lk;lk;lk;lk;lk;lklk;;lk;lk;lk;lk;lk;lkgit sdfsdfsdfsdfdfdsfff
+///
+
+// class CreateNode {
+//   constructor(val, next = null) {
+//     this.val = val;
+//     this.next = next;
+//   }
+// }
+// function arrayToLinkedList(arr) {
+//   let dummy = new CreateNode(0);
+//   let current = dummy;
+//   for (let val of arr) {
+//     current.next = new CreateNode(val);
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+
+// function linkedListToArray(head) {
+//   let arr = [];
+//   while (head) {
+//     arr.push(head.val);
+//     head = head.next;
+//   }
+//   return arr;
+// }
+// function reverseList(head) {
+//   let prev = null;
+//   let curr = head;
+//   while (curr) {
+//     let next = curr.next;
+//     curr.next = prev;
+//     prev = curr;
+//     curr = next;
+//   }
+//   return prev;
+// }
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+// console.log("Original", linkedListToArray(head));
+// let reverse = reverseList(head);
+// console.log(
+//   linkedListToArray(reverse)
+//     .map((val) => `--->${val}`)
+//     .join(" "),
+// );
+
+// function hasCycle(head) {
+//   let slow = head;
+//   let fast = head;
+//   while (fast && fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//     if (slow === fast) return true;
+//   }
+//   return false;
+// }
+
+// function detectCycle(head) {
+//   let slow = head;
+//   let fast = head;
+//   while (fast && fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//     if (slow === fast) {
+//       slow = head;
+//       while (slow != fast) {
+//         slow = slow.next;
+//         fast = fast.next;
+//       }
+//       return slow;
+//     }
+//   }
+// }
+
+class CreateNode {
+  constructor(val, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+function arrayToLinkedList(arr) {
+  if (arr.length === 0) return null;
+  let dummy = new CreateNode(0);
+  let head = dummy;
+  for (let val of arr) {
+    head.next = new CreateNode(val);
+    head = head.next;
+  }
+  return dummy.next;
+}
+
+function linkedListToArray(head) {
+  let result = [];
+  let current = head;
+
+  while (current) {
+    result.push(current.val);
+    current = current.next;
+  }
+
+  return result;
+}
+
+// function removeNthFromEnd(head, n) {
+//   let dummy = new CreateNode(0);
+//   dummy.next = head;
+//   let left = dummy;
+//   let right = dummy;
+//   for (let i = 0; i < n; i++) {
+//     right = right.next;
+//   }
+//   while (right.next) {
+//     left = left.next;
+//     right = right.next;
+//   }
+//   left.next = left.next.next;
+//   return dummy.next;
+// }
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+// let remove = removeNthFromEnd(head, 2);
+// console.log(linkedListToArray(remove));
+
+function rotateRight(head, k) {
+  if (!head || !head.next || k === 0) return head;
+  let length = 1;
+  let tail = head;
+  while (tail.next) {
+    tail = tail.next;
+    length++;
+  }
+  k = k % length;
+  if (k === 0) return head;
+  let stepToNewTail = length - k;
+  tail.next = head;
+  let newTail = head;
+  for (let i = 1; i < stepToNewTail; i++) {
+    newTail = newTail.next;
+  }
+  let newHead = newTail.next;
+  newTail.next = null;
+  return newHead;
+}
+
+let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+let roate = rotateRight(head, 2);
+console.log(linkedListToArray(roate));

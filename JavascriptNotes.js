@@ -1,4 +1,130 @@
-///  ------------------Closure--------------------
+// 🧠 What is Garbage Collection?
+
+// Garbage Collection (GC) is the process where JavaScript:
+
+// 🗑 Automatically removes unused memory from the Heap.
+
+// JavaScript has automatic memory management.
+// You don’t manually free memory like in C/C++.
+
+// 🧠 How JS Decides What to Delete?
+
+// JavaScript uses:
+
+// 🔥 1️⃣ Mark and Sweep Algorithm (Main Algorithm)
+// Step 1: Mark
+
+// JS starts from root objects:
+
+// Global variables
+
+// Currently executing functions
+
+// Variables inside call stack
+
+// It marks everything that is reachable.
+
+// Step 2: Sweep
+
+// Anything NOT reachable is:
+
+// 👉 Deleted from Heap
+//             START
+//               ↓
+//    1️⃣ Stop JavaScript execution (Pause World)
+//               ↓
+//    2️⃣ Identify ROOT objects
+//       - Global variables
+//       - Call stack variables
+//       - Closures
+//               ↓
+//    3️⃣ MARK phase
+//       - Traverse all references
+//       - Mark reachable objects
+//               ↓
+//    4️⃣ SWEEP phase
+//       - Scan heap memory
+//       - Delete unmarked objects
+//               ↓
+//    5️⃣ Compact memory (Optional)
+//       - Remove fragmentation
+//       - Move objects together
+//               ↓
+//             END
+
+// 🧠 What is Fragmentation?
+
+// Fragmentation happens when free memory is broken into small scattered pieces instead of one continuous block.
+
+// It usually happens after garbage collection removes objects.
+// 📦 Simple Visual
+
+// Imagine heap memory like this:
+
+// Before deletion:
+
+// [A][B][C][D][E][F]
+
+// Now suppose GC deletes B and E:
+
+// [A][  ][C][D][  ][F]
+
+// Now memory has gaps.
+
+// These empty gaps are called:
+
+// 🧱 Fragmented Memory
+
+// 🧠 Types of Fragmentation
+
+// 1️⃣ External Fragmentation
+
+// Free memory is split into small pieces.
+
+// Example:
+
+// [Used][Free][Used][Free][Used]
+
+// Enough total memory exists
+// But not continuous.
+
+// 👉 Happens in Heap memory.
+// 2️⃣ Internal Fragmentation
+
+// Allocated memory block is bigger than needed.
+
+// Example:
+
+// You request 6 bytes
+// System gives 8 bytes
+
+// 2 bytes wasted.
+
+// 🔥 How JS Solves Fragmentation?
+
+// Modern JS engines like V8 use:
+
+// 🧹 Memory Compaction
+
+// After Sweep phase:
+
+// Before:
+// [A][  ][C][D][  ][F]
+
+// After compaction:
+// [A][C][D][F][  ][  ]
+
+// All live objects moved together.
+
+// This:
+
+// Removes gaps
+
+// Improves cache performance
+
+// Makes allocation faster
+
+// ///  ------------------Closure--------------------
 
 /// A function remembers varibles from its outer function even after
 //  the outer fuction has finished executing

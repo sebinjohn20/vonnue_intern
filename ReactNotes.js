@@ -444,7 +444,8 @@
 // In React,a key is a special attribute used to uniquely identify elements in a list.
 //It helps React efficiently update the UI when items change.
 
-// A key is unique identifier given to list elements so React can track which items changed,added or removed
+// A key is unique identifier given to list elements so React can track which items changed,
+// added or removed
 
 // 🔍 Why Key is Important?
 
@@ -539,3 +540,502 @@
 // 4️⃣ Updates only the changed parts
 
 // This makes React fast ⚡
+
+/// what is React Fiber
+
+/// In React Fiber is the new reconcilation engine introduced in React 16
+/// it is a complete rewrite of React's core algorithm
+// it makes rendering faster, Smoother ,and Interruptible
+
+/// Why React Fiber Was Introduced
+
+// before Fiber.
+// React rendering  was synchronous
+//large updates could block the ui
+//   -> No Ability to pause or Prioritize work
+
+// 🔥 What Fiber Solves
+
+// ✔ Breaks rendering work into small units
+// ✔ Can pause and resume work
+// ✔ Assigns priority to updates
+// ✔ Improves animations and performance
+// ✔ Enables Concurrent features
+
+// 🧩 Old React vs React Fiber
+// 🟥 Old React (Stack Reconciler)
+// State Change
+//      ↓
+// Full Tree Reconciliation
+//      ↓
+// UI Blocked Until Done
+
+// No interruption ❌
+
+// 🟢 React Fiber
+// State Change
+//      ↓
+// Work Split Into Small Units (Fibers)
+//      ↓
+// Can Pause
+//      ↓
+// Can Resume
+//      ↓
+// Can Prioritize Important Updates
+//      ↓
+// Commit Changes
+
+// Smooth UI ✅
+
+///   🧠 What is a "Fiber"?
+
+// A fiber is :
+///  A javascript Object
+// ----> Represents one unit of wrok
+//  -----> Represents a components
+
+///Each component = one fiber node.
+
+// 🔄 Fiber Two Phases
+
+// React Fiber works in two main phases:
+
+// 🔄 Fiber Two Phases in React
+
+// React Fiber is the new reconciliation engine introduced in React 16.
+// It breaks rendering work into small units so React can pause, resume, and prioritize updates.
+
+// Fiber works in TWO main phases:
+
+// 🧠 1️⃣ Render Phase (Reconciliation Phase)
+
+// 👉 Also called: Async Phase
+
+// 🎯 Purpose:
+
+// Calculate what changes need to be made
+
+// Build a new Fiber Tree
+
+// Compare old tree vs new tree (diffing)
+
+// ⚙️ Characteristics:
+
+// Can be paused
+
+// Can be interrupted
+
+// Can be restarted
+
+// Runs in background
+
+// Does NOT touch the real DOM
+
+// 🔁 What Happens Step-by-Step?
+
+// State/Props update happens
+
+// React schedules update
+
+// React starts building a new Fiber tree
+
+// It compares old vs new elements
+
+// Marks nodes with effects:
+
+// Placement
+
+// Update
+
+// Deletion
+
+// 📊 Simple Flow
+// State Update
+//      ↓
+// Schedule Work
+//      ↓
+// Build New Fiber Tree
+//      ↓
+// Diff Old vs New
+//      ↓
+// Create Effect List
+
+// ⚡ 2️⃣ Commit Phase
+
+// 👉 Also called: Synchronous Phase
+
+// 🎯 Purpose:
+
+// Apply calculated changes to the Real DOM
+
+// ⚙️ Characteristics:
+
+// Cannot be interrupted
+
+// Runs very fast
+
+// Always completes once started
+
+// Touches real DOM
+
+// 🔍 Commit Phase Has 3 Sub-Steps
+// 1️⃣ Before Mutation
+
+// Prepare for DOM change
+
+// 2️⃣ Mutation
+
+// Add/remove/update DOM nodes
+
+// 3️⃣ Layout
+
+// Run:
+
+// useLayoutEffect
+
+// componentDidMount
+
+// componentDidUpdate
+
+// After browser paint:
+
+// Run useEffect
+
+// _____________________React Fiber Two Phases
+
+// 1️⃣ What are the two phases of React Fiber?
+
+// Answer:
+
+// React Fiber has two main phases:
+
+// Render Phase (Reconciliation Phase)
+
+// Commit Phase
+
+// The Render phase calculates what changes need to happen.
+
+// The Commit phase applies those changes to the real DOM.
+
+// What Happen in  the Render Phase
+
+// The render Phase
+
+///---->  Builds a new Fiber tree
+
+// ---> compares it with the previous tree
+//----> Determines what  needs to change
+
+///--->  Create an " Effect list"
+// Important points:
+
+// It is asynchronous
+
+// It can be paused
+
+// It can be interrupted
+
+// It does NOT update the DOM
+
+// 3️⃣ Why is the Render Phase interruptible?
+
+// Answer:
+
+// Because Fiber breaks rendering work into small units of work.
+
+// This allows React to:
+
+// Pause rendering
+
+// Handle high-priority tasks (like user input)
+
+// Resume work later
+
+// This improves performance and responsiveness.
+
+///  4️⃣ What happens in the Commit Phase?
+
+//  The commmit Phase
+
+//---> The commit phase
+
+//---> Applies changes to the real DOM
+//--->runs lifecycle methods
+// Executes hooks like:
+
+// useLayoutEffect
+
+//useEffect
+
+// 5️⃣ Why can’t the Commit Phase be interrupted?
+
+// Answer:
+
+// --->  Because once React  starts modifying the DOM, it must complete the updates to keep  the UI consistent
+
+// If interrupted midway:
+
+// The DOM could be in an inconsistent state
+
+// The UI might break
+
+// So React ensures Commit Phase runs fully.
+
+// 6️⃣ Which phase touches the DOM?
+
+// Answer:
+
+// Only the Commit Phase touches the real DOM.
+
+// The Render Phase only prepares changes.
+// 9️⃣ When does useLayoutEffect run?
+
+// Answer:
+
+// useLayoutEffect runs:
+
+// During the Commit Phase
+
+// After DOM mutation
+
+// Before browser paint
+
+// It blocks painting until it finishes.
+
+// 1️⃣1️⃣ Can Render Phase run multiple times?
+
+// Answer:
+
+// Yes.
+
+// React may:
+
+// Start rendering
+
+// Pause
+
+// Restart
+
+// Throw away incomplete work
+
+// But Commit Phase always runs once per successful render.
+
+////  What is the Effect List
+
+///----- The Effect List is a linked list of Fiber nodes that have side effects (changes ) that need to be applied
+//   ----> during the commit phas
+// Simple meaning:
+
+// During the Render Phase, React figures out:
+
+// Which elements need to be added
+
+// Which need to be updated
+
+// Which need to be deleted
+
+// Instead of updating the DOM immediately, React stores these changes in a special list called the Effect List.
+// Then in the commit phase , React goes through this list  and applies changes to the real DOM
+// 🔄 Why Do We Need an Effect List?
+
+// Imagine:
+
+// You update state in a big application.
+
+// Not every component changes.
+
+// So instead of checking the entire tree again during commit:
+
+// 👉 React keeps a list of only changed nodes
+// 👉 Commit phase processes only those nodes
+
+// This makes it very efficient.
+
+// 📊 Visual Flow
+// State Update
+//      ↓
+// Render Phase
+//      ↓
+// Mark Changed Fibers
+//      ↓
+// Create Effect List
+//      ↓
+// Commit Phase
+//      ↓
+// Apply Changes to DOM
+
+////-------------  What is context API --------------------
+
+// ----> The Context API is feature in React that allows you to share data globally across components without passing props manually  at every level
+//------>  It sloves the problem of prop drilling
+
+/// Prop drilling happens when you pass data from a parent component do deeply nested child
+//  components through many intermediate components that don't need the data
+
+// ⚙️ How Context API Works
+
+// It has three main parts:
+
+// createContext()
+
+// Provider
+
+// useContext() (or Consumer)
+
+// 🏗 Step-by-Step Example
+// 1️⃣ Create Context
+// import { createContext } from "react";
+
+// export const ThemeContext = createContext();
+// 2️⃣ Provide Value
+// <ThemeContext.Provider value="dark">
+//   <Child />
+// </ThemeContext.Provider>
+// 3️⃣ Consume Value
+// import { useContext } from "react";
+
+// const theme = useContext(ThemeContext);
+
+// Now any component inside the Provider can access "dark" without props.
+
+//
+
+// 1️⃣ Does Context replace Redux?
+
+// No
+///---> Context is for passing data
+// Redux(or other libraries) is for complex  state management
+// 2️⃣ Does Context cause re-renders?
+
+// Yes.
+
+// When the Provider’s value changes:
+
+// All consuming components re-render.
+
+// 3️⃣ Is Context global?
+
+// Not exactly.
+
+// It is scoped to where the Provider is placed.
+
+///////////////-----------------------------🔄 Render Concept in useContext (React)------------------
+
+///  When the Provider value changes,all components using useContext for that context will re-render
+
+// const ThemeContext = createContext();
+
+// function App() {
+//   const [theme, setTheme] = useState("light");
+
+//   return (
+//     <ThemeContext.Provider value={theme}>
+//       <Child />
+//     </ThemeContext.Provider>
+//   );
+// }
+
+// function Child() {
+//   const theme = useContext(ThemeContext);
+//   console.log("Child rendered");
+//   return <div>{theme}</div>;
+// }
+
+// 🔄 What Happens During Render?
+
+// Step 1️⃣ Initial Render
+
+// Provider gives "light"
+
+// Child reads context
+
+// Child renders
+
+// Step 2️⃣ setTheme("dark")
+
+// Provider value changes
+
+// React marks all consumers
+
+// Child re-renders
+
+// React does reference comparison on the value prop.
+
+// If the reference changes → re-render happens.
+
+// 🚨 Common Mistake (Object Case)
+// <ThemeContext.Provider value={{ theme: "dark" }}>
+
+// Every render creates a new object:
+
+//   📊  Render Flow with useContext
+
+// Provider value changes
+//         ↓
+// React detects context update
+//         ↓
+// Marks all consuming components
+//         ↓
+// Render Phase re-runs those components
+//         ↓
+// Commit Phase updates DOM
+
+// 🎯 Interview Question & Answer
+// ❓ When does a component using useContext re-render?
+
+// Answer:
+
+// A component using useContext re-renders whenever the Provider's value changes by reference.
+// React re-renders all consuming components when the context value updates.
+
+// 1️⃣ Does parent re-render cause consumer re-render?
+
+// Not necessarily.
+
+// If context value reference stays same → consumer won’t re-render due to context.
+
+// But if parent re-renders normally → child may still re-render.
+
+// 2️⃣ Can we prevent unnecessary re-renders?
+
+// Yes:
+
+// Split contexts
+
+// Use useMemo
+
+// Use React.memo
+
+// Use selector-based libraries (like use-context-selector)
+
+///----------------  What is Redux-----------------
+
+// Redux is a global state management libray
+
+/// it helps manage complex state in large applications
+
+////----------> Redux has 3 main pronciples---------------->
+
+//  1️⃣ Single Source of Truth
+
+// The Entire application state is stored in one central objects called
+
+// {
+//   user: {...},
+//   cart: [...],
+//   theme: "dark"
+// }
+
+// 2️⃣ State is Read-Only
+
+// You cannot modify state directly.
+
+// 3️⃣ Changes are Made with Pure Functions
+
+// State updates happen using:
+
+// 👉 Reducers
+
+// Reducers are pure functions:
+
+///
