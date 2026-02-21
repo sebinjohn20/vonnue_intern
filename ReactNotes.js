@@ -1,6 +1,7 @@
 /// What is React
 
-// React is a javascript library for building user interfaces,especially  single page applications
+// React is a javascript library for building user interfaces,especially
+//  single page applications
 // it is created by FaceBook
 
 /// Why react
@@ -587,6 +588,11 @@
 
 // Smooth UI ✅
 
+// “In React Fiber, rendering work is split into small units.
+// React can pause rendering when high-priority tasks like user input come in,
+// and later resume from where it stopped instead of restarting.
+//  This makes the UI smooth and responsive.”
+
 ///   🧠 What is a "Fiber"?
 
 // A fiber is :
@@ -823,7 +829,7 @@
 ////  What is the Effect List
 
 ///----- The Effect List is a linked list of Fiber nodes that have side effects (changes ) that need to be applied
-//   ----> during the commit phas
+//   ----> during the commit phase
 // Simple meaning:
 
 // During the Render Phase, React figures out:
@@ -1038,4 +1044,350 @@
 
 // Reducers are pure functions:
 
+///  _______________    What is useMemo in React ---------------------------
+
+////  useMemo is a React Hook that memorizes(caches) the result of a calculation
+//  so that it does  not recompute on every render
+
+/// It is mainly used for
+//  *  Heavy calculations
+//  *  Expensive filtering /sorting
+
+// 🔹 1️⃣ Basic Syntax
+// const memoizedValue = useMemo(() => {
+//    // expensive calculation
+//    return computedValue;
+// }, [dependencies]);
+// It takes:
+
+// A function (calculation)
+
+// Dependency array
+
+// 👉 It recalculates ONLY when dependencies change.
+
+///  Why do we need useMemo?
+
+// In React Every state change causes re-render
+//  During re-render
+////  ---> Component function runs again
+///----------> All variables re-evaluate
+///--------> All calculations run again
+
+// If calculation is heavy -> Performace issue
+
+// 🔹 With useMemo
+
+// When text changes:
+
+// text state change
+//       ↓
+// Component re-renders
+//       ↓
+// useMemo checks dependency
+//       ↓
+// count unchanged → return cached value ✅
+//       ↓
+// No recalculation
+//       ↓
+// Virtual DOM created
+
+// With useMemo
+// State change
+//    ↓
+// Component executes
+//    ↓
+// Dependency changed?
+//    ↓        ↓
+//   YES      NO
+//    ↓        ↓
+// Recalculate  Return cached value
+// 🔵 1️⃣2️⃣ Interview Answer (Short Version)
+
+// useMemo is a React Hook that memoizes the result of an expensive computation and recomputes it only
+//  when its dependencies change. It helps optimize performance by preventing unnecessary recalculations
+//   during re-renders,
+//  but it does not prevent the component from re-rendering.
+
+// 🔵 Render Flow With useMemo
+
+// When component re-renders:
+
+// 1️⃣ Component function runs
+// 2️⃣ React checks dependency array
+// 3️⃣ Compare old vs new
+// 4️⃣ If same → return cached value
+// 5️⃣ If changed → run calculation
+
+// Important:
+
+// 👉 Component still re-renders
+// 👉 Only calculation is skipped
+
+//// -------------------------  UseCallback in React-----------------
+
+// usecallback is a React hook that memorizes (caches ) a  function so that the
+// function reference does not change on every render
+// 🔹 1️⃣ Why Do We Need useCallback?
+
+// In React:
+
+// 👉 Every state update → Component re-renders
+// 👉 On every render → All functions are recreated
+// Example:
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   const handleClick = () => {
+//     console.log("Clicked");
+//   };
+
+//   return <button onClick={handleClick}>Click</button>;
+// }
+// ⚠️ On every render:
+
+// handleClick is a NEW function in memory.
+
+// Even if logic same, reference change
+
+// Parent re-renders
+//    ↓
+// Dependencies unchanged
+//    ↓
+// Same function reference returned
+//    ↓
+// React.memo sees SAME prop
+//    ↓
+// Child does NOT re-render ✅
+
+///   Dependency array controls hook execution, not component re-render
+
+///  If dependency is same, the hook does not re-execute, but the component may still re-render due to other state or prop changes.
+
+// React checks dependency changes using Object.is comparison. For primitives it compares values,
+// and for objects, arrays, and functions it compares references. If any dependency reference changes,
+// the effect or memo recalculates.
+
+// 🔵 Why Do We Use useCallback?
+
+// In React:
+
+// Every time a component re-renders:
+
+// The component function runs again
+
+// All functions inside it are recreated
+
+// New function = new memory reference
+
+// Most of the time this is fine.
+
+// But sometimes it causes performance problems.
+
+// 🎯 Main Reason We Use useCallback
+
+// To keep the SAME function reference between renders.
+
+// 🔵 1️⃣ Problem Without useCallback
+// function Parent() {
+//   const [count, setCount] = useState(0);
+
+//   const handleClick = () => {
+//     console.log("clicked");
+//   };
+
+//   return <Child onClick={handleClick} />;
+// }
+
+// If count changes:
+
+// Parent re-renders
+
+// handleClick is recreated
+
+// New function reference passed to Child
+
+// If Child is wrapped with React.memo:
+
+// const Child = React.memo(({ onClick }) => {
+//   console.log("Child Rendered");
+//   return <button onClick={onClick}>Click</button>;
+// });
+
+// Then:
+
+// React compares old prop vs new prop.
+
+// oldFunction !== newFunction
+
+// So Child re-renders ❌
+// Even though logic same.
+
+// 🔵 2️⃣ Solution With useCallback
+// const handleClick = useCallback(() => {
+//   console.log("clicked");
+// }, []);
+
+// Now:
+
+// Parent re-renders
+
+// Same function reference returned
+
+// Child sees same prop
+
+// Child does NOT re-render ✅
+
+//🔥 Interview Answer (Perfect Version)
+
+///  We use  useCallback to memorize function reference so that they are not recreated on every render .
+// This helps prevent unnecessary child re-renders when using React.memo and avoids unwanted re-execution
+//  of effects when the function is part of a dependency array
+
 ///
+
+/////////////------------------------>        React Router------------------------
+
+// React Router is a library used in React applications to handle routing (navigation b/w pages) without
+// reloading the page
+
+// React Router helps us:
+
+// ✔ Change URL
+// ✔ Render different components
+// ✔ Keep application fast
+// ✔ Maintain browser history
+
+// 1️⃣ BrowserRouter
+
+// Wraps the entire app
+// Enables routing using browser history API
+
+// 2️⃣ Routes
+
+// Container for all routes
+
+// 3️⃣ Route
+
+// Defines path and component
+
+// 4️⃣ Link
+// import { Link } from "react-router-dom";
+
+// <Link to="/about">Go to About</Link>
+
+// Replaces <a> tag.
+// Prevents full reloa
+
+// React Router is a routing library for React that enables navigation b/w components
+//  in a single-page application without reloading the page, it uses the browser history API
+// to manage URL changes and render differnt components it based on the route
+
+// 🔥 1️⃣6️⃣ What is HOC (Higher Order Component)?
+
+// A function that takes a component and returns a new component.
+
+////  -------------🔥 1️⃣7️⃣ What is Lazy Loading in React?
+
+///  components or resources are loaded only when they are needed,
+//  instead of loading everything at once In React, lazy loading is mainly used to reduce initial bundle size and
+// improve performance.
+
+// 🔵 Why Do We Need Lazy Loading?
+
+// Imagine your app has:
+
+// Home page
+
+// Dashboard
+
+// Profile
+
+// Admin panel
+
+// Settings
+
+// If we load everything at once:
+
+// Huge JavaScript bundle
+// ↓
+// Slow initial loading
+// ↓
+// Bad performance
+
+// But users may never visit Admin page.
+
+// So why load it initially? 🤔
+
+// Lazy loading solves this.
+
+// 🔵 Normal Loading (Without Lazy Loading)
+// import Home from "./Home";
+// import Dashboard from "./Dashboard";
+// import Admin from "./Admin";
+
+// All components are bundled together.
+
+// Even if Admin page is never visited → it is still loaded.
+
+// 🔥 With Lazy Loading
+
+// React provides:
+
+// React.lazy()
+// Suspense
+// 🔵 Basic Example
+// import React, { Suspense } from "react";
+
+// const Admin = React.lazy(() => import("./Admin"));
+
+// function App() {
+//   return (
+//     <Suspense fallback={<h2>Loading...</h2>}>
+//       <Admin />
+//     </Suspense>
+//   );
+// }
+
+// 🔵 What is Suspense?
+
+// Suspense:
+
+// Shows fallback UI while loading
+
+// Required for lazy loading
+
+// Example:
+
+// <Suspense fallback={<Spinner />}></Suspense>
+
+// 🔵 Visual Comparison
+// ❌ Without Lazy Loading
+// User opens app
+// ↓
+// Loads entire application
+// ↓
+// Slower startup
+// ✅ With Lazy Loading
+// User opens app
+// ↓
+// Loads only required components
+// ↓
+// Faster startup
+// ↓
+// Other parts load on demand
+// 🔵 Important Points
+
+// 1️⃣ Lazy loading works only with default exports
+// 2️⃣ Must wrap inside <Suspense>
+// 3️⃣ Mostly used with routes
+// 4️⃣ Improves performance but adds small delay when loading component
+
+///  🔥 Interview Answer (Perfect Version)
+
+/// Lazy loading is a performance optimization  technique in React where components are loaded only when
+// they are neede . it uses React.lazy and suspense to split the code into smaller units,
+// reducing the initial bundle size and improving application load time.
+
+///fdfdfdfffdfdfdfdfdf

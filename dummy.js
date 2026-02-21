@@ -2127,27 +2127,146 @@ function linkedListToArray(head) {
 // let remove = removeNthFromEnd(head, 2);
 // console.log(linkedListToArray(remove));
 
-function rotateRight(head, k) {
-  if (!head || !head.next || k === 0) return head;
-  let length = 1;
-  let tail = head;
-  while (tail.next) {
-    tail = tail.next;
-    length++;
+// function rotateRight(head, k) {
+//   if (!head || !head.next || k === 0) return head;
+//   let length = 1;
+//   let tail = head;
+//   while (tail.next) {
+//     tail = tail.next;
+//     length++;
+//   }
+//   k = k % length;
+//   if (k === 0) return head;
+//   let stepToNewTail = length - k;
+//   tail.next = head;
+//   let newTail = head;
+//   for (let i = 1; i < stepToNewTail; i++) {
+//     newTail = newTail.next;
+//   }
+//   let newHead = newTail.next;
+//   newTail.next = null;
+//   return newHead;
+// }
+
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+// let roate = rotateRight(head, 2);
+// console.log(linkedListToArray(roate));
+
+// function deleteDuplicates(head) {
+//   let dummy = new CreateNode(0);
+//   dummy.next = head;
+//   let prev = dummy;
+//   let current = dummy;
+//   while (current) {
+//     if (current.next && current.val === current.next.val) {
+//       let duplicate = current.val;
+//       while (current && current.val === duplicate) {
+//         current = current.next;
+//       }
+//       prev.next = current;
+//     } else {
+//       prev = current;
+//       current = current.next;
+//     }
+//   }
+//   return dummy.next;
+// }
+
+// let head = arrayToLinkedList([1, 2, 3, 3, 4, 4, 5]);
+// let deleted = deleteDuplicates(head);
+// console.log(linkedListToArray(deleted));
+
+// function partition(head, x) {
+//   let before_head = new CreateNode(0);
+//   let before = before_head;
+//   let after_head = new CreateNode(0);
+
+//   let after = after_head;
+//   let current = head;
+//   while (current) {
+//     if (current.val < x) {
+//       before.next = current;
+//       before = before.next;
+//     } else {
+//       after.next = current;
+//       after = after.next;
+//     }
+//     current = current.next;
+//   }
+//   after.next = null;
+//   before.next = after_head.next;
+//   return before_head.next;
+// }
+// let head = arrayToLinkedList([1, 4, 3, 2, 5, 2]);
+// let part = partition(head, 3);
+// console.log(linkedListToArray(part));
+
+// function reverseBetween(head, left, right) {
+//   if (!head || left === right) return head;
+//   let dummy = new CreateNode(0);
+//   dummy.next = head;
+//   let prev = dummy;
+//   for (let i = 1; i < left; i++) {
+//     prev = prev.next;
+//   }
+//   let curr = prev.next;
+//   for (let i = 0; i < right - left; i++) {
+//     let temp = curr.next;
+//     curr.next = temp.next;
+//     temp.next = prev.next;
+//     prev.next = temp;
+//   }
+//   return dummy.next;
+// }
+
+// let head = arrayToLinkedList([1, 2, 3, 4, 5]);
+// let reverse = reverseBetween(head, 2, 4);
+// console.log(linkedListToArray(reverse));
+
+// function ispalindrome(head) {
+//   if (!head || !head.next) return true;
+
+//   let slow = head;
+//   let fast = head;
+//   while (fast && fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//   }
+//   let prev = null;
+//   while (slow) {
+//     let temp = slow.next;
+//     slow.next = prev;
+//     prev = slow;
+//     slow = temp;
+//   }
+//   let left = head;
+//   let right = prev;
+//   while (right) {
+//     if (left.val !== right.val) return false;
+//     left = left.next;
+//     right = right.next;
+//   }
+// // }
+
+function insertionSort(head) {
+  if (!head) return null;
+  let dummy = new CreateNode(0);
+  let current = head;
+  while (current) {
+    let pre = dummy;
+    let next = current.next;
+    while (pre.next && pre.next.val < current.val) {
+      pre = pre.next;
+    }
+    current.next = pre.next;
+    pre.next = current;
+    current = next;
   }
-  k = k % length;
-  if (k === 0) return head;
-  let stepToNewTail = length - k;
-  tail.next = head;
-  let newTail = head;
-  for (let i = 1; i < stepToNewTail; i++) {
-    newTail = newTail.next;
-  }
-  let newHead = newTail.next;
-  newTail.next = null;
-  return newHead;
+  return dummy.next;
 }
 
-let head = arrayToLinkedList([1, 2, 3, 4, 5]);
-let roate = rotateRight(head, 2);
-console.log(linkedListToArray(roate));
+let head = arrayToLinkedList([4, 2, 1, 3]);
+let insertsort = insertionSort(head);
+console.log(linkedListToArray(insertsort));
+d;
+///fsdfdfdfdffsdfdf
