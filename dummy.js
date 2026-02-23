@@ -2248,25 +2248,53 @@ function linkedListToArray(head) {
 //   }
 // // }
 
-function insertionSort(head) {
-  if (!head) return null;
-  let dummy = new CreateNode(0);
-  let current = head;
-  while (current) {
-    let pre = dummy;
-    let next = current.next;
-    while (pre.next && pre.next.val < current.val) {
-      pre = pre.next;
-    }
-    current.next = pre.next;
-    pre.next = current;
-    current = next;
-  }
-  return dummy.next;
-}
+// function insertionSort(head) {
+//   if (!head) return null;
+//   let dummy = new CreateNode(0);
+//   let current = head;
+//   while (current) {
+//     let pre = dummy;
+//     let next = current.next;
+//     while (pre.next && pre.next.val < current.val) {
+//       pre = pre.next;
+//     }
+//     current.next = pre.next;
+//     pre.next = current;
+//     current = next;
+//   }
+//   return dummy.next;
+// }
 
-let head = arrayToLinkedList([4, 2, 1, 3]);
-let insertsort = insertionSort(head);
-console.log(linkedListToArray(insertsort));
-d;
-///fsdfdfdfdffsdfdf
+// let head = arrayToLinkedList([4, 2, 1, 3]);
+// let insertsort = insertionSort(head);
+// console.log(linkedListToArray(insertsort));
+
+// //dsfsdfsfsdfsdfffdfsdffddsfsdfsdfsdfdsfsdfdffsdfdsfsdfsdfdsfsfdsdfsdfsdfsdfsdfsdffdsffdfdfsddsfdfdsfdsfffsdsdfsfsffdffffdsffsffffdfdsffdfdfsdfsfsdfsdfsdfsdfsdfdfffffffdfdsfsdffdfdsdfdasdsdsddffsffdsfdfsfdfdsdfdsfdfdffsdfsdfsdfsdfsfsdffsdffsdfdfsddfsdfdffsdfsdfffdfssdfdsfdsfsdfffdfssdfsdfsdfsdfsdfsdfffdfdsfsdfdffsdfsdfsdfsddsfsdfsdfsdfsdfdsfdfdfdfdsfsdfsdfsdfsdfsdfsdfdsfsdfsdfdfdfdsfdsfsfsdfsdfsdfsdfsdfsdfffdfsdfssdfsfddfdfdfdsfdsfdsfdsfdsfdfdfffdfdffdsddfsfdfdsfffdfdsfdfdffdfsdfsdffsdffsdfsdfsdfsdfsdfsdfsdfsdffsdfsdfsdfsdfdsfsdfsdfsdfsffffdffdsfdfdfdffdfdsfsdfsdfsdfdfdfdsffsdfdsffsdfdsfsdfsdfdfsdfsdfsdfsdfsdfssdfsdfdfsdfsfffffsdfsfsfsfsfsdfsdfsafdfsdfsdffsdfdsfsdfsdfsfdfdsfsdfdffsfsdfsfsfsdfsdfdfsdfsdfdfsdfsdfsdfsdfsdffsfsdfsdffsfsdffdsfsdfsdfsdsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdffdfdsfdsddfsdfsdffsdfsdfdsfsdffsffdsdsfdsfdddfsdfsdffdsfffdsfsdffsdfdfsdfsdfsfdsfdfdfsdfsdfsdffsdfsdfdfdsfdfsdffsdfdsffffdsdffdsfdfdfdfdfdfffsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsadfasdfsdfsdfsdfsdffdfsdfdfsdfsdfsdfsdfsfsdfdfdsfdsfdsfsdfffffffdfdfsdfsdfafsdfsdfsfsfsdfsdfasdfdsfdsffsdfasfsdfsdfdfsdfffffsfasdfdfdsfdfdsffsdfdfdsfdsfsdfdfsdfsdfsdfdfdsfdsfsdfsdfsdfsdfsdfdfdfsdfddfsdfdsfdsfdfsdfs dfsdfdffdsfs dfsdffdffdsfdsfdf dfsdfff dfs dfdsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfsf s fs dfssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd fssd f ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff ss d ff_fsdfss	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d	f	f	s	s	d
+// fdf;
+
+// function topKFrequent(nums, k) {
+//   let freq = new Map();
+//   let result = [];
+
+//   for (let num of nums) {
+//     freq.set(num, (freq.get(num) || 0) + 1);
+//   }
+//   for (let [num, count] of freq.entries()) {
+//     result.push([num, count]);
+//   }
+//   return result
+//     .sort((a, b) => b[1] - a[1])
+//     .slice(0, k)
+//     .map((item) => item[0]);
+// }
+// console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
+
+// function findMedianSortedArrays(num1, nums2) {
+//   let result = [...num1, ...nums2].sort((a, b) => a - b);
+
+//   return result.length % 2 === 0
+//     ? (result[result.length / 2 - 1] + result[result.length / 2]) / 2
+//     : result[Math.floor(result.length / 2)];
+// }
+// console.log(findMedianSortedArrays([1, 3], [2]));
+// console.log(findMedianSortedArrays([1, 2], [3, 4]));

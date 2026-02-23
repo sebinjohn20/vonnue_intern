@@ -3535,7 +3535,7 @@
 // //     }
 // //   }
 // //   return false;
-// // }                                 
+// // }
 // // function findUnsortedSubarray(nums) {
 // //   let n = nums.length;
 
@@ -4167,39 +4167,39 @@ function linkedListToArray(head) {
 // q.push(30);
 // console.log(q.pop());
 
-class MyStack {
-  constructor() {
-    this.q1 = [];
-  }
+// class MyStack {
+//   constructor() {
+//     this.q1 = [];
+//   }
 
-  push(x) {
-    this.q1.push(x);
-    let size = this.q1.length;
-    while (size > 1) {
-      this.q1.push(this.q1.shift());
-      size--;
-    }
-  }
-  pop() {
-    return this.q1.shift();
-  }
-  top() {
-    return this.q1[0];
-  }
-  empty() {
-    return this.q1.length === 0;
-  }
-}
+//   push(x) {
+//     this.q1.push(x);
+//     let size = this.q1.length;
+//     while (size > 1) {
+//       this.q1.push(this.q1.shift());
+//       size--;
+//     }
+//   }
+//   pop() {
+//     return this.q1.shift();
+//   }
+//   top() {
+//     return this.q1[0];
+//   }
+//   empty() {
+//     return this.q1.length === 0;
+//   }
+// }
 
-let stack = new MyStack();
-stack.push(10);
-stack.push(20);
-stack.push(30);
-stack.push(50);
+// let stack = new MyStack();
+// stack.push(10);
+// stack.push(20);
+// stack.push(30);
+// stack.push(50);
 
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
 
 // class MinStack {
 //   constructor() {
@@ -4282,3 +4282,152 @@ console.log(stack.pop());
 // q.enQueue(20);
 // console.log(q.deQueue());
 // console.log(q.Front());
+
+// function topKFrequent(nums, k) {
+//   let freq = new Map();
+//   let result = [];
+
+//   for (let num of nums) {
+//     freq.set(num, (freq.get(num) || 0) + 1);
+//   }
+//   for (let [num, count] of freq.entries()) {
+//     result.push([num, count]);
+//   }
+//   return result
+//     .sort((a, b) => b[1] - a[1])
+//     .slice(0, k)
+//     .map((item) => item[0]);
+// }
+// console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
+
+// function findMedianSortedArrays(num1, nums2) {
+//   let result = [...num1, ...nums2].sort((a, b) => a - b);
+
+//   return result.length % 2 === 0
+//     ? (result[result.length / 2 - 1] + result[result.length / 2]) / 2
+//     : result[Math.floor(result.length / 2)];
+// }
+// console.log(findMedianSortedArrays([1, 3], [2]));
+// console.log(findMedianSortedArrays([1, 2], [3, 4]));
+
+// function longestCommonPrefix(strs) {
+//   if (strs.length === 0) return "";
+//   if (strs.length === 1) return strs[0];
+//   for (let i = 0; i < strs[0].length; i++) {
+//     let char = strs[0][i];
+//     for (let j = 1; j < strs.length; j++) {
+//       if (char !== strs[j][i]) return strs[0].slice(0, i);
+//     }
+//   }
+//   return strs[0];
+// }
+// console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+// console.log(longestCommonPrefix(["dog", "racecar", "car"]));
+// console.log(longestCommonPrefix(["flower", "flower", "flower", "flower"]));
+
+// function lettersCombinations(digits) {
+//   let map = {
+//     2: "abc",
+//     3: "def",
+//     4: "ghi",
+//     5: "jkl",
+//     6: "mno",
+//     7: "pqrs",
+//     8: "tuv",
+//     9: "wxyz",
+//   };
+//   let result = [""];
+
+//   for (let digit of digits) {
+//     let temp = [];
+//     let letters = map[digit];
+//     for (let combination of result) {
+//       for (let letter of letters) {
+//         temp.push(combination + letter);
+//       }
+//     }
+//     result = temp;
+//   }
+//   return result;
+// }
+// console.log(lettersCombinations("23"));
+
+// function isValid(s) {
+//   let map = {
+//     ")": "(",
+//     "}": "{",
+//     "]": "[",
+//   };
+//   let stack = [];
+//   for (let char of s) {
+//     if (char === "(" || char === "{" || char === "[") {
+//       stack.push(char);
+//     } else {
+//       if (stack.pop() !== map[char]) return false;
+//     }
+//   }
+//   return stack.length === 0;
+// }
+// console.log(isValid("()[]{}"));
+
+// function divide(dividend, divisor) {
+//   if (dividend === -2147483648 && divisor === -1) return 2147483647;
+//   return Math.trunc(dividend / divisor);
+// }
+// console.log(divide(10, 3));
+// console.log(divide(7, -3));
+// console.log(divide(-2147483648, -1));
+
+// function maxSubArray(nums) {
+//   let maxsum = nums[0];
+//   let currentSum = 0;
+//   for (let num of nums) {
+//     currentSum = Math.max(num, currentSum + num);
+//     maxsum = Math.max(maxsum, currentSum);
+//   }
+//   return maxsum;
+// }
+
+// function maxSubArray(nums) {
+//   let maxsum = nums[0];
+//   let currentSum = 0;
+//   for (let num of nums) {
+//     currentSum += num;
+//     if (currentSum > maxsum) {
+//       maxsum = currentSum;
+//     }
+//     if (currentSum < 0) {
+//       currentSum = 0;
+//     }
+//   }
+//   return maxsum;
+// }
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+// function canJumb(nums) {
+//   let len = nums.length;
+
+//   return nums[1] === len - 2;
+// }
+
+// console.log(canJumb([2, 3, 1, 1, 4]));
+// console.log(canJumb([3, 2, 1, 0, 4]));
+
+function maxResult(nums, k) {
+  let n = nums.length;
+  let dp = new Array(n);
+  dp[0] = nums[0];
+  let deque = [0];
+  for (let i = 1; i < n; i++) {
+    while (deque.length && deque[0] < i - k) {
+      deque.shift();
+    }
+    dp[i] = nums[i] + dp[deque[0]];
+    while (deque.length && dp[deque[deque.length - 1]] < dp[i]) {
+      deque.pop();
+    }
+    deque.push(i);
+  }
+  return dp[n - 1];
+}
+console.log(maxResult([1, -5, -20, 4, -1, 3, -6, -3], 2));
