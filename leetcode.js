@@ -4413,21 +4413,87 @@ function linkedListToArray(head) {
 // console.log(canJumb([2, 3, 1, 1, 4]));
 // console.log(canJumb([3, 2, 1, 0, 4]));
 
-function maxResult(nums, k) {
-  let n = nums.length;
-  let dp = new Array(n);
-  dp[0] = nums[0];
-  let deque = [0];
-  for (let i = 1; i < n; i++) {
-    while (deque.length && deque[0] < i - k) {
-      deque.shift();
-    }
-    dp[i] = nums[i] + dp[deque[0]];
-    while (deque.length && dp[deque[deque.length - 1]] < dp[i]) {
-      deque.pop();
-    }
-    deque.push(i);
-  }
-  return dp[n - 1];
-}
-console.log(maxResult([1, -5, -20, 4, -1, 3, -6, -3], 2));
+// function maxResult(nums, k) {
+//   let n = nums.length;
+//   let dp = new Array(n);
+//   dp[0] = nums[0];
+//   let deque = [0];
+//   for (let i = 1; i < n; i++) {
+//     while (deque.length && deque[0] < i - k) {
+//       deque.shift();
+//     }
+//     dp[i] = nums[i] + dp[deque[0]];
+//     while (deque.length && dp[deque[deque.length - 1]] < dp[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//   }
+//   return dp[n - 1];
+// }
+// console.log(maxResult([1, -5, -20, 4, -1, 3, -6, -3], 2));
+
+// function reverse(x) {
+//   let rev = 0;
+//   let digit = 0;
+//   let temp = Math.abs(x);
+//   const INT_MIN = -(2 ** 31);
+//   const INT_MAX = 2 ** 31 - 1;
+
+//   while (temp > 0) {
+//     digit = temp % 10;
+//     rev = rev * 10 + digit;
+//     temp = Math.floor(temp / 10);
+//   }
+//   if (rev < INT_MIN || rev > INT_MAX) {
+//     return 0;
+//   }
+
+//   return (rev = x < 0 ? -rev : rev);
+// }
+// console.log(reverse(-123));
+
+// function isPalindrome(x) {
+//   let rev = 0;
+//   let digit = 0;
+//   let temp = x;
+//   while (temp > 0) {
+//     digit = temp % 10;
+//     rev = rev * 10 + digit;
+//     temp = Math.floor(temp / 10);
+//   }
+//   if (rev === x) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// function intToRoman(num) {
+//   const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+//   const symbols = [
+//     "M",
+//     "CM",
+//     "D",
+//     "CD",
+//     "C",
+//     "XC",
+//     "L",
+//     "XL",
+//     "X",
+//     "IX",
+//     "V",
+//     "IV",
+//     "I",
+//   ];
+//   let result = [];
+//   for (let i = 0; i < values.length; i++) {
+//     while (num >= values[i]) {
+//       result += symbols[i];
+//       num -= values[i];
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(intToRoman(3749));
+
+///nnmnmnm,nmlkjklkljlkkljjklkjljkkjkjlkjlkljkljklkljjlkjlkjkjkljlkjlljkjlklkjljkjkllkjjjklljkjkkkkkkkjljklkjkjljkljkljkllkjkljlkjjklljkjlkljkljkljkljklkjljkljkjjkjljkllkjlkjllkjkljlkjkljlkkjkljjkljkljkljkljkljklljklkjkljkjljklkjljkljkljljlkjlkjjkljlkjkljkjljkljkljkljlkllllkkkkkjklkljjklkljkljkljkjljklljklkjljkjklkjjklllllllllllllllllllllllllllllllllljkljkljkjkljkljklkjlkjlkljjklljklkjjlklkjkjhhkjjkhjkhjkhkhjkhhjkjkkjh

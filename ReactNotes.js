@@ -605,6 +605,30 @@
 // ▶ React resumes remaining work
 // ↓
 // Commit changes to DOM
+// Why React Fiber matters
+
+// Before Fiber, React would do all this work in one go.
+// If your component tree was big, the browser could freeze for a moment.
+
+// With React Fiber, React splits this rendering work into small pieces (units of work).
+
+// So if:
+
+// User types in an input
+
+// User scrolls
+
+// User clicks a button
+
+// React can:
+
+// Pause rendering
+
+// Handle the high-priority task
+
+// Resume rendering from where it stopped
+
+// That’s what makes the UI feel smooth and responsive
 
 // “In React Fiber, rendering work is split into small units.
 // React can pause rendering when high-priority tasks like user input come in,
@@ -795,7 +819,8 @@
 
 // Answer:
 
-// --->  Because once React  starts modifying the DOM, it must complete the updates to keep  the UI consistent
+// --->  Because once React  starts modifying the DOM, it must complete the updates to keep
+// the UI consistent
 
 // If interrupted midway:
 
@@ -1060,17 +1085,13 @@
 
 // State updates happen using:
 
-// 👉 Reducers
-
-// Reducers are pure functions:
-
 ///  _______________    What is useMemo in React ---------------------------
 
 ////  useMemo is a React Hook that memorizes(caches) the result of a calculation
 //  so that it does  not recompute on every render
 
 /// It is mainly used for
-//  *  Heavy calculations
+//  *  Heavy calculationsd
 //  *  Expensive filtering /sorting
 
 // 🔹 1️⃣ Basic Syntax
@@ -1185,7 +1206,8 @@
 
 ///   Dependency array controls hook execution, not component re-render
 
-///  If dependency is same, the hook does not re-execute, but the component may still re-render due to other state or prop changes.
+///  If dependency is same, the hook does not re-execute, but the component may still re-render
+// due to other state or prop changes.
 
 // React checks dependency changes using Object.is comparison. For primitives it compares values,
 // and for objects, arrays, and functions it compares references. If any dependency reference changes,
@@ -1453,7 +1475,7 @@
 ///  🔥 Interview Answer (Perfect Version)
 
 /// Lazy loading is a performance optimization  technique in React where components are loaded only when
-// they are neede . it uses React.lazy and suspense to split the code into smaller units,
+// they are needed . it uses React.lazy and suspense to split the code into smaller units,
 // reducing the initial bundle size and improving application load time.
 
 ////--------------------------- What is UseRef in React-----------------
@@ -1755,3 +1777,194 @@
 // Code splitting (React.lazy)
 
 // Data fetching (with concurrent features)
+
+//🔵 React.memo – Component-Level Optimization
+
+//-----> it prevents a components from re-rendering if its props haven't changed
+// When parent re-renders:
+
+// React checks previous props
+
+// Compares them with new props (shallow comparison)
+
+// If equal → skips rendering
+
+// If different → re-renders
+
+// 🔹 When React.memo Fails
+
+// This will re-render:
+
+// <Child data={{ name: "John" }} />
+
+// Why?
+
+// Because { name: "John" } creates a new object every render.
+// Reference changes → React thinks props changed.
+
+// 🟢 useMemo – Value-Level Optimization
+// 🔹 What it does
+
+// It memoizes (stores) a computed value.
+
+// const result = useMemo(() => {
+//   return expensiveFunction(data);
+// }, [data]);
+
+// If data doesn’t change:
+
+// It returns the previous stored value
+
+// Does NOT run function again
+
+//🔵 Step-by-Step Internal Working of useMemo
+
+// Let’s use this example:
+
+// const value = useMemo(() => {
+//   return count * 2;
+// }, [count]);
+
+// 🟢 First Render
+// Step 1: React calls  the component function
+// Step 2: it reach useMemo
+// step 3 : Since it's first render
+//No previous memo exists
+
+//React runs the function
+
+//count * 2
+
+// Step 4:
+
+// React stores inside hook memory:
+
+// {
+//   memoizedValue: result,
+//   dependencies: [count]
+// }
+// Step 5:
+
+// Returns the computed value.
+
+// 🔵 Second Render (State Changed Somewhere Else)
+
+// Now suppose another state updates:
+
+// setText("hello")
+
+// Component re-renders.
+
+// Step 1:
+
+// React calls component again.
+
+// Step 2:
+
+// It reaches the same useMemo call position.
+
+// React retrieves previous hook memory:
+
+// previousDeps = [count]
+// previousValue = result
+// Step 3:
+
+// React compares dependency arrays.
+
+// Comparison is:
+
+// Object.is(oldDep[i], newDep[i])
+
+// For each dependency.
+
+// Case A: Dependency did NOT change
+
+// If:
+
+// oldCount === newCount
+
+// React:
+
+// Skips executing function
+
+// Returns previousValue
+
+// 🚀 No recalculation.
+
+// Case B: Dependency changed
+
+// If:
+
+// oldCount !== newCount
+
+// React:
+
+// Executes function again
+
+// Stores new value
+
+// Updates dependency array
+
+// 🔥 Important: Dependency Comparison is Shallow
+
+// If you pass:
+
+// useMemo(() => {}, [obj])
+
+// React checks:
+
+// oldObj === newObj
+
+// Not deep comparison.
+
+// If new object reference → recalculates.
+
+// 🔵 What is useReducer?
+
+// It’s a hook for managing complex state logic.
+
+// 🧩 Example Comparison
+// 🔹 With useState
+// const [count, setCount] = useState(0);
+
+// const increment = () => setCount(count + 1);
+// const decrement = () => setCount(count - 1);
+// const reset = () => setCount(0);
+
+// Still manageable.
+
+// const initialState = { count: 0 };
+
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case "increment":
+//       return { count: state.count + 1 };
+//     case "decrement":
+//       return { count: state.count - 1 };
+//     case "reset":
+//       return { count: 0 };
+//     default:
+//       return state;
+//   }
+// }
+
+// function App() {
+//   const [state, dispatch] = useReducer(reducer, initialState);
+
+//   return (
+//     <>
+//       <h2>{state.count}</h2>
+//       <button onClick={() => dispatch({ type: "increment" })}>
+//         +
+//       </button>
+//       <button onClick={() => dispatch({ type: "decrement" })}>
+//         -
+//       </button>
+//       <button onClick={() => dispatch({ type: "reset" })}>
+//         Reset
+//       </button>
+//     </>
+//   );
+// }
+
+///fdsdfsdfsdfsdfsdfdsfdsfdfdsfdsfdsfdsfdfdfdfdfsdfsdf
