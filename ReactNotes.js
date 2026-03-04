@@ -1967,4 +1967,396 @@
 //   );
 // }
 
-///fdsdfsdfsdfsdfsdfdsfdsfdfdsfdsfdsfdsfdfdfdfdfsdfsdf
+//// React fiber Architecture
+
+// react Fiber is the new reconciliation engine introduced in React 16
+// It completely rewrote React's core algorithm to make rendering faster, interrupitble and more responisve
+
+//🚨 Why Fiber Was Introduced?
+
+//Before Fiber (React 15 and earlier):
+
+//  ---> Rendering was Synchronous
+//---->  Once Rendering started ,it could not be paused
+//---> Large UI udates could block the main thread
+//----> UL felt laggy during heavy updates
+
+///setState() → render() → reconcile() → update DOM
+
+// If the component tree is large, React blocks everything until it finishes.
+
+// 👉 This caused poor performance for complex apps.
+
+// 🧠 What is React Fiber?
+
+// React Fiber is:
+
+/// A reimplementation of  React's reconciliation algorithm that allow React to Split rendering
+// work into small units.
+
+// instead of doing everything in one go ,React can
+
+// ⏸ Pause work
+
+// ▶ Resume later
+
+// ❌ Abort unnecessary work
+
+// 🔄 Reuse completed work
+
+// 🎯 Prioritize important updates (like user input)
+
+// Old React:
+
+// Render whole tree at once (blocking)
+
+// Break tree into small tasks (units of work)
+// Process one by one
+// Yield control back to browser when needed
+
+// 🧩 What is a Fiber?
+
+/// A fiber is a javaScript object that represents.
+///---- A component
+//----  A DOM Element
+
+///-----  Work to be done
+
+///Each Fiber node contains:
+
+// {
+//   type,        // Component type
+//   stateNode,   // DOM node
+//   child,
+//   sibling,
+//   return,
+//   pendingProps,
+//   memoizedProps,
+//   memoizedState
+// }
+
+// Think of Fiber as:
+
+// A linked list version of the Virtual DOM
+
+// 🌳 Fiber Tree Structure
+
+// Instead of a recursive tree, Fiber uses a linked list structure:
+
+// Each Fiber has:
+
+// child
+
+// sibling
+
+// return (parent)
+
+// Example:
+
+// App
+//  ├── Header
+//  ├── Main
+//  │    ├── Sidebar
+//  │    └── Content
+//  └── Footer
+
+// Fiber traversal:
+
+// App → Header → Main → Sidebar → Content → Footer
+
+// React processes one Fiber at a time.
+
+////⚙️ Two Phases in Fiber
+///1️⃣ Render Phase (Reconciliation Phase)
+
+////---> can be Paused
+//----> Build Fiber tree
+//---> Calculates changes
+//--->does Not updates DOM
+
+// This phase:
+
+// Compares old Fiber tree vs new tree
+
+// Creates effect list
+
+// 2️⃣ Commit Phase
+
+// Cannot be interrupted
+
+// Applies changes to DOM
+
+// Runs lifecycle methods
+
+// Runs useEffect
+
+// Fast and synchronous.
+
+///⏳ How Fiber Improves Performance
+
+// 1️⃣ Time Slicing
+
+///React splits rendering into small chunks
+
+// Example:
+
+// User typing → high priority
+
+// Data rendering → low priority
+
+// React can pause rendering and handle typing first.
+
+// 2️⃣ Priority Scheduling
+
+// Fiber assigns priority levels:
+
+// High → User input
+
+// Medium → Animation
+
+// Low → Data fetching UI
+
+// 3️⃣ Concurrent Rendering
+// Introduced in React 18.
+
+// Features:
+
+// startTransition()
+
+// useDeferredValue()
+
+// Automatic batching
+
+// 🔄 How Rendering Works Internally (Step by Step)
+
+// setState is called
+
+// React schedules update
+
+// Work loop starts
+
+// React picks highest priority task
+
+// Processes one Fiber node
+
+// If time runs out → pause
+
+// Resume later
+
+// After finishing render phase → Commit phase
+
+// DOM updates
+
+///🎯 Why This Matters for You (Interview Point)
+
+///"React Fiber is a reimplementation of React;s reconciliation algorithm that allows React to split
+// Rendering  work into small units, Prioritize updates,pasue and resume rendering, and improves UI Responsiveness
+// "
+
+///Synchronous Rendering
+
+//  once rendering starts--> React must finsih it completely before doing anything else it
+// cannot pause, cannot interrupt
+
+// ⚙️ How It Works
+// Start rendering
+// ↓
+// Render entire component tree
+// ↓
+// Commit to DOM
+// ↓
+// Browser gets control
+
+// If rendering takes 200ms → UI freezes for 200ms.
+
+///   2️⃣ Concurrent Rendering (React 18+)
+
+//Definition
+
+// Concurrent rendering allows
+
+//Break rendering into small chunks
+
+//Pause work
+
+//Resume later
+
+//Abandon outdated work
+
+// Start rendering
+// ↓
+// Render small chunk
+// ↓
+// Pause if needed
+// ↓
+// Let browser handle input
+// ↓
+// Resume rendering
+// ↓
+// Commit when ready
+
+///  🧪 Interview Short Answer
+
+/// "Synchronous rendering blocks the main thread utill rendering completes
+// Concurrent rendering break rendering into small units  allows interruption
+// priorities updates and keeps the UI responsive"
+
+///🧠 What Is Event Bubbling?
+
+// When you click on a child element, the event first runs on that element
+// then it "bubbles up" to its parnet then to the grandparnent all the way up
+
+// <div id="parent">
+//   <button id="child">Click Me</button>
+// </div>
+
+// If you click the button:
+
+// Button event runs
+
+// Then parent div event runs
+
+// Then document event runs
+
+// The event goes inside → outside (bottom → top).
+
+// That is event bubbling.
+
+// 💻 JavaScript Example
+// document.getElementById("parent").addEventListener("click", () => {
+//   console.log("Parent clicked");
+// });
+
+// document.getElementById("child").addEventListener("click", () => {
+//   console.log("Button clicked");
+// });
+
+// When you click the button, console shows:
+
+// Button clicked
+// Parent clicked
+
+// 🛑 How to Stop Bubbling
+
+// Use:
+
+// event.stopPropagation();
+
+// Example:
+
+// document.getElementById("child").addEventListener("click", (event) => {
+//   event.stopPropagation();
+//   console.log("Button clicked");
+// });
+
+// Now only:
+
+// Button clicked
+
+// Parent will NOT run.
+
+// 🔥 In React
+
+// In React, bubbling works the same way.
+
+// Example:
+
+// <div onClick={() => console.log("Parent")}>
+//   <button onClick={() => console.log("Child")}>
+//     Click
+//   </button>
+// </div>
+
+// Clicking button prints:
+
+// Child
+// Parent
+
+// To stop:
+
+// <button onClick={(e) => {
+//   e.stopPropagation();
+// }}></button>
+// Event bubbling is when an event starts from the target element
+//  and propagates upward through its parent elements.
+
+///🔁 Event Capturing
+
+// The events starts from the top and goes down to the target element
+
+// 🧠 Easy Example
+
+// HTML:
+
+// <div id="parent">
+//   <button id="child">Click Me</button>
+// </div>
+
+// If you click the button, in capturing phase:
+
+// Document runs first
+
+// Then parent div
+
+// Then button
+
+// This is the opposite of bubbling.
+
+// 📊 Event Flow Has 3 Phases
+
+// Whenever you click something, the browser follows 3 steps:
+
+// 1️⃣ Capturing phase (top → down)
+// 2️⃣ Target phase (actual element)
+// 3️⃣ Bubbling phase (bottom → up)
+
+// Default behavior:
+
+// Browsers normally use bubbling
+
+// Capturing must be enabled manually
+
+// 💻 JavaScript Example (Capturing)
+
+// To enable capturing, pass true as third argument:
+
+// document.getElementById("parent").addEventListener(
+//   "click",
+//   () => {
+//     console.log("Parent clicked");
+//   },
+//   true   // 👈 enables capturing
+// );
+
+// document.getElementById("child").addEventListener(
+//   "click",
+//   () => {
+//     console.log("Button clicked");
+//   },
+//   true
+// );
+
+// Now when clicking button, output:
+
+// Parent clicked
+// Button clicked
+
+// Because it goes top → down.
+
+// ⚛️ In React
+
+// In React, bubbling is default.
+
+// If you want capturing in React, add Capture:
+
+// <div onClickCapture={() => console.log("Parent Capture")}>
+//   <button onClickCapture={() => console.log("Child Capture")}>
+//     Click
+//   </button>
+// </div>
+
+// Event propagation is the process by which an event travels through the
+// DOM in three phases:
+//  capturing, target, and bubbling.
+
+//.
