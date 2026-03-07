@@ -904,4 +904,350 @@
 //  in memory. This may cause memory leaks, higher memory consumption,
 // and sometimes make code harder to debug.
 
-//;;;lk;lk;lkkl;l;klk;jjhkhjkjkhkjhkjhkjjhjkhlhhkhkjhkjhhjhjkhkjlk;kl;kl;l;kl;kl;kl;k;lkk;ll;k
+//////anonymous function
+
+// An anonymous function in JavaScript is a function without a name.
+
+// It is usually used inside another function, assigned to a variable, or passed as a callback.
+
+// 1️⃣ Simple Definition
+
+// 👉 An anonymous function is a function that has no function name.
+
+// Example:
+
+// function () {
+//   console.log("Hello");
+// }
+
+// This function has no name, so it is called an anonymous function.
+
+// But normally we store it in a variable or use it directly.
+
+// 2️⃣ Anonymous Function Stored in a Variable
+// let greet = function () {
+//   console.log("Hello");
+// };
+
+// greet();
+// Output
+// Hello
+
+// Here:
+
+// function() → anonymous function
+
+// greet → variable holding the function
+
+// 3️⃣ Anonymous Function as Callback
+
+// Example with setTimeout:
+
+// setTimeout(function () {
+//   console.log("Hello after 2 seconds");
+// }, 2000);
+
+// Explanation:
+
+// function(){} → anonymous function
+
+// passed directly to setTimeout
+
+// 4️⃣ Anonymous Function in Event
+// button.addEventListener("click", function () {
+//   console.log("Button clicked");
+// });
+
+// Here the function runs when the button is clicked.
+
+// Closures + event listeners can cause memory leaks in JavaScript because the closure keeps variables in memory, and the event listener keeps a reference to that closure. As long as that reference exists, Garbage Collection cannot remove those objects.
+
+// 1️⃣ Step-by-Step Idea
+
+// An event listener is attached to a DOM element.
+
+// The listener function forms a closure and captures variables from its outer scope.
+
+// The browser stores a reference to that function.
+
+// Even if the DOM element is removed, the reference may still exist.
+
+// Because of the reference, Garbage Collector cannot free the memory.
+
+// This leads to a memory leak.
+
+//
+
+// The JavaScript Engine executes JavaScript code in several internal steps. A simple way to understand it is:
+
+// 1️⃣ Parsing (Reading the Code)
+
+// The engine first reads your JavaScript code.
+
+// It checks for syntax errors.
+
+// Example:
+
+// let a = 10;
+// let b = 20;
+// console.log(a + b);
+
+// The engine converts this code into tokens and then builds a structure called an AST (Abstract Syntax Tree).
+
+// Example AST idea:
+
+//       +
+//      / \
+//     a   b
+// 2️⃣ Compilation
+
+// After parsing, the engine converts the code into bytecode.
+
+// Modern engines like Google V8 JavaScript engine (used in Google Chrome and Node.js) use Just-In-Time (JIT) compilation.
+
+// Meaning:
+
+// Code is compiled during execution, not before.
+
+// Flow:
+
+// JS Code → AST → Bytecode
+// 3️⃣ Execution
+
+// Now the JavaScript engine executes the bytecode.
+
+// During execution:
+
+// Execution Context is created
+
+// Memory allocation happens
+
+// Variables and functions are stored
+
+// Example:
+
+// var x = 5;
+// function add(a, b){
+//   return a + b;
+// }
+// add(2,3);
+
+// The engine creates:
+
+// Global Execution Context
+
+// Function Execution Context
+
+// 4️⃣ Call Stack
+
+// JavaScript uses a Call Stack to track function execution.
+
+// Example:
+
+// function one(){
+//   two();
+// }
+
+// function two(){
+//   console.log("Hello");
+// }
+
+// one();
+
+// Call stack flow:
+
+// Global()
+// one()
+// two()
+// console.log()
+
+// After execution:
+
+// two() removed
+// one() removed
+// Global remains
+// 5️⃣ Garbage Collection
+
+// Unused memory is removed automatically.
+
+// Example:
+
+// let obj = {name: "John"};
+// obj = null;
+
+// The object becomes unreachable → Garbage Collector removes it.
+
+// 🔁 Complete JavaScript Engine Flow
+// 1. JS Code
+//       ↓
+// 2. Parsing
+//       ↓
+// 3. AST (Abstract Syntax Tree)
+//       ↓
+// 4. Bytecode Generation
+//       ↓
+// 5. Execution
+//       ↓
+// 6. Call Stack Handling
+//       ↓
+// 7. Garbage Collection
+
+// ✅ Simple one-line answer for interviews:
+
+// The JavaScript engine first parses the code into an AST,
+//  compiles it into bytecode using JIT compilation, executes
+//  it using the call stack,
+//  and finally removes unused memory through garbage collection.
+
+// When JavaScript runs code, it first creates an Execution Context.
+// An Execution Context is the environment where JavaScript code is evaluated and executed.
+
+// 1️⃣ When is Execution Context Created?
+
+// Execution context is created when:
+
+// Global code runs
+
+// A function is called
+
+// eval() is executed (rarely used)
+
+// 2️⃣ Types of Execution Context
+// 1. Global Execution Context (GEC)
+
+// Created when the JS program starts.
+
+// Only one global execution context exists.
+
+// It creates:
+
+// Global Object (window in browser)
+
+// this keyword
+
+// Example:
+
+// var a = 10;
+
+// function test(){
+//   console.log("Hello");
+// }
+
+// Here:
+
+// Global execution context is created first.
+
+// 2. Function Execution Context (FEC)
+
+// Created whenever a function is called.
+
+// Example:
+
+// function add(a, b){
+//   return a + b;
+// }
+
+// add(2,3);
+
+// When add() runs:
+
+// A new execution context is created.
+
+// 3️⃣ Two Phases of Execution Context
+
+// Every execution context has two phases.
+
+// Phase 1️⃣ Memory Creation Phase (Creation Phase)
+
+// Memory is allocated for:
+
+// Item	What happens
+// Variables	stored as undefined
+// Functions	stored completely
+// this	assigned
+
+// Example:
+
+// var x = 10;
+
+// function greet(){
+//   console.log("Hi");
+// }
+
+// Memory phase result:
+
+// x → undefined
+// greet → function definition
+// Phase 2️⃣ Execution Phase
+
+// Now JavaScript runs the code line by line.
+
+// Example:
+
+// var x = 10;
+// console.log(x);
+
+// Steps:
+
+// x = undefined  (memory phase)
+
+// Execution phase:
+// x = 10
+// console.log(10)
+
+// Output:
+
+// 10
+// 4️⃣ Execution Context in Call Stack
+
+// Example:
+
+// function one(){
+//   two();
+// }
+
+// function two(){
+//   console.log("Hello");
+// }
+
+// one();
+
+// Call stack flow:
+
+// Global()
+// ↓
+// one()
+// ↓
+// two()
+// ↓
+// console.log()
+
+// Then removed:
+
+// console.log() removed
+// two() removed
+// one() removed
+// 5️⃣ Structure of Execution Context
+
+// Each execution context contains:
+
+// Variable Environment
+
+// Lexical Environment
+
+// This Binding
+
+// Execution Context
+//    │
+//    ├── Variable Environment
+//    ├── Lexical Environment
+//    └── this binding
+
+// ✅ Simple interview answer
+
+// Execution context is the environment where JavaScript code runs.
+//  It is created in two phases: memory creation phase (variables stored as undefined and functions stored fully) and execution phase
+// (code executed line by line).
+//;;
+
+///
