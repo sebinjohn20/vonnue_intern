@@ -2358,5 +2358,3 @@
 // Event propagation is the process by which an event travels through the
 // DOM in three phases:
 //  capturing, target, and bubbling.
-
-//.

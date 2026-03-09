@@ -1856,3 +1856,22 @@
 // Promise.allSettled([p1, p2, p3])
 //   .then(results => console.log(results));
 
+//
+
+// Function Currying (JavaScript)
+
+// Currying means transforming a function with multiple arguments into a sequence of functions,
+//  where each function takes one argument.
+
+// function add(a) {
+//   return function (b) {
+//     return function (c) {
+//       return a + b + c;
+//     };
+//   };
+// }
+
+// console.log(add(2)(3)(4)); // 9
+
+//
+f;

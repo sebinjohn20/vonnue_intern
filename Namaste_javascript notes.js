@@ -268,7 +268,6 @@
 
 // var is stored in global object (window), but let is stored in script scope and not attached to window.
 
-//fdfffffdfdsfdffsdffffffdfdfkjjghhjhjkhjkhkjjkhjkhjhjjkhhjkjhkhkjjjjjjjjjjjjhjkjhkjkhgjhghjghjghjghjhgjlkljkljkljkljklkjkljjkljlkklkjlkljjklkkjljlkjlkjkl
 // 2️⃣ Script Scope vs Global Scope
 // Scope	Where it exists
 // Script Scope	Variables declared at top of a script file
@@ -571,8 +570,6 @@
 //     console.log(i);
 //   }, 1000);
 // }
-
-// // //fdfdfdfdffjfdljlkdj
 
 // 1️⃣ Output
 // 6
@@ -978,7 +975,8 @@
 
 //
 
-// The JavaScript Engine executes JavaScript code in several internal steps. A simple way to understand it is:
+// The JavaScript Engine executes JavaScript code in several internal steps.
+//  A simple way to understand it is:
 
 // 1️⃣ Parsing (Reading the Code)
 
@@ -1003,7 +1001,8 @@
 
 // After parsing, the engine converts the code into bytecode.
 
-// Modern engines like Google V8 JavaScript engine (used in Google Chrome and Node.js) use Just-In-Time (JIT) compilation.
+// Modern engines like Google V8 JavaScript engine (used in Google Chrome and Node.js)
+//  use Just-In-Time (JIT) compilation.
 
 // Meaning:
 
@@ -1250,4 +1249,28 @@
 // (code executed line by line).
 //;;
 
-///
+// In JavaScript, a Promise has two important internal properties:
+
+// Promise State
+
+// Promise Result
+
+// 1️⃣ Promise State
+
+// The state tells what stage the promise is in.
+
+// A promise has 3 states:
+
+// State	Meaning
+// Pending	Initial state (operation not finished yet)
+// Fulfilled	Operation completed successfully
+// Rejected	Operation failed
+// let promise = new Promise((resolve, reject) => {
+//   resolve("Data received");
+// });
+
+// promise.then((result) => {
+//   console.log(result);
+// });
+
+//
