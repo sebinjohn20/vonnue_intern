@@ -1330,24 +1330,283 @@
 //     console.error(err);
 //   });
 
-const p1 = new Promise((resolve, reject) => {
-  setTimeout(() => reject("P1 fail"), 2000);
-});
-const p2 = new Promise((resolve, reject) => {
-  //   setTimeout(() => resolve("P2 success"), 1000);
-  setTimeout(() => reject("P2 fail"), 1000);
-});
-const p3 = new Promise((resolve, reject) => {
-  //setTimeout(() => resolve("P3 success"), 2000);
-  setTimeout(() => reject("P3 fail"), 5000);
-});
-Promise.any([p1, p2, p3])
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.error(err);
-    console.log(err.errors);
-  });
+// const p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => reject("P1 fail"), 2000);
+// });
+// const p2 = new Promise((resolve, reject) => {
+//   //   setTimeout(() => resolve("P2 success"), 1000);
+//   setTimeout(() => reject("P2 fail"), 1000);
+// });
+// const p3 = new Promise((resolve, reject) => {
+//   //setTimeout(() => resolve("P3 success"), 2000);
+//   setTimeout(() => reject("P3 fail"), 5000);
+// });
+// Promise.any([p1, p2, p3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     console.log(err.errors);
+//   });
 
-///fdsffsdfffddfdfdfdfdfffdffffsdfsdfdfdfdfffsfdsfdfffffffdfffffffffffdffffsdfdsffsdffsdfsdfsdffsdfdfdfdffffsdfsdfsdffdfdsfdfffddfffffdffffdsfdfdsfdfdfdfdfdfdfdffffsdgfgfdgfsfdfdfdfffdsfdsfdfdffffffffsdf
+// //
+// const API_URL = " https://api.github.com/users/sebinjohn20";
+// async function handlePromise() {
+//   try {
+//     const response = await fetch(API_URL);
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//   }
+// }
+
+// handlePromise();
+
+//
+
+//
+
+// this in JavaScript (Global Object)
+
+// In JavaScript, this refers to the object that is currently executing the function.
+
+//fdfdfdfdffff
+
+// 2️⃣ Function in Strict Mode
+
+// In strict mode, this becomes undefined.
+// "use strict";
+
+// function show() {
+//   console.log(this);
+// }
+
+// undefined
+
+// const obj = {
+//   a: 10,
+//   x: function () {
+//     console.log(this);
+//   },
+// };
+// obj.x();
+/// value this is the object that is calling the function.
+// In this case, obj is calling x(), so this refers to obj.
+// Therefore, when obj.x() is executed,
+// it will log the obj itself,
+//  which contains the property a with value 10 and the method x.
+
+// const student = {
+//   name: "Sebin",
+//   printName: function () {
+//     console.log(this.name);
+//   },
+// };
+// const student2 = {
+//   name: "John",
+// };
+
+// student.printName.call(student2);
+
+// const student = {
+//   name: "Sebin",
+//   printName: () => {
+//     console.log(this);
+//   },
+// };
+// student.printName();
+
+// const obj = {
+//   a: 20,
+//   x: function () {
+//     const y = () => {
+//       console.log(this);
+//     };
+//     y();
+//   },
+// };
+
+// obj.x();
+
+// 'this' is a keyword in javascript which behaves differently in different scenarios,
+// 'this' in global scope: it points towards window object for browser run time environment, and different in another runtime environments
+// 'this with strict mode vs this with non-strict mode': in strict mode this inside functional scopes refers undefined, and non strict mode 'this' refers window object
+// 'this inside object methods': it refers the current object if the function is normal function and it refers enclosing lexical context if we used inside arrow functions
+// 'this inside dom': it refers current node where this was used
+
+// Difference between slice(), splice(), and split() in JavaScript
+
+// These three methods are used for different purposes.
+// Two work mainly with arrays, and one works with strings.
+
+// 1️⃣ slice()
+
+// Purpose: Extract a portion of an array or string.
+
+// Does not change the original array
+
+// Returns a new array
+
+// Syntax
+// array.slice(start, end)
+// Example
+// let arr = [10, 20, 30, 40, 50];
+
+// let result = arr.slice(1, 3);
+
+// console.log(result);
+
+// Output
+
+// [20, 30]
+
+// Original array:
+
+// [10, 20, 30, 40, 50]
+
+// ✔ slice does not modify the original array
+
+// 2️⃣ splice()
+
+// Purpose: Add, remove, or replace elements in an array.
+
+// Modifies the original array
+// Syntax;
+// array.splice(start, deleteCount, newItem);
+
+// let arr = [10, 20, 30, 40];
+// arr.splice(1, 2);
+// console.log(arr);
+// Example (Add element)
+
+// let arr = [10, 20, 40];
+// arr.splice(2, 0, 30);
+// console.log(arr);
+
+// 3️⃣ split()
+
+// Purpose: Convert a string into an array.
+
+// string.split(separator)
+// Example
+// let text = "apple,banana,orange";
+
+// let result = text.split(",");
+
+// console.log(result);
+
+// Output
+
+// ["apple", "banana", "orange"]
+
+// slice() → extracts part of an array without modifying it
+
+// splice() → adds or removes elements from an array and modifies it
+
+// split() → splits a string into an array based on a separator
+
+//
+
+// console.log(0.1 + 0.2 === 0.3);
+
+// Why it returns false
+
+// In JavaScript, numbers are stored using floating-point representation (binary format).
+// Some decimal numbers cannot be represented exactly in binary.
+
+// So internally:
+
+// 0.1 ≈ 0.10000000000000000555
+// 0.2 ≈ 0.20000000000000001110
+
+// When added:
+
+// 0.1 + 0.2
+// = 0.30000000000000004
+
+// So the comparison becomes:
+
+// 0.30000000000000004 === 0.3
+
+// Which is:
+
+// false
+// Example
+// console.log(0.1 + 0.2);
+
+// Output
+
+// 0.30000000000000004
+
+// How to Fix It
+// Method 1 — toFixed()
+// console.log((0.1 + 0.2).toFixed(1) == 0.3);
+
+// Simple Interview Answer
+
+// 0.1 + 0.2 === 0.3 returns false because JavaScript uses floating-point precision (IEEE 754),
+//  which cannot represent some decimal numbers exactly,
+//  resulting in a small rounding error.
+
+// const obj = {
+//   a: 1,
+//   b: 2,
+// };
+// const str = JSON.stringify(obj);
+// console.log(str);
+// console.log(JSON.parse(str));
+// console.log(obj.toString());
+// console.log(typeof str);
+
+// Shallow Copy in JavaScript
+
+// A shallow copy means copying an object or array, but only the first level is copied.
+// If the object contains nested objects, they are still shared (same reference).
+
+// Deep Copy in JavaScript
+
+// A deep copy means copying an object completely, including all nested objects and arrays.
+// The new object does not share references with the original object.
+
+// So changing the copy will NOT affect the original object.
+
+// const obj1 = {
+//   name: "Sharon",
+//   address: {
+//     city: "kochi",
+//   },
+// };
+// const obj2 = structuredClone(obj1);
+// obj2.address.city = "Delhi";
+// console.log(obj1);
+// console.log(obj2);
+// obj1 = { name: "Sharon", address: { city: "Kochi" } }
+
+// obj2 = { name: "Sharon", address: { city: "Delhi" } }
+
+// 3️⃣ Memory Concept
+// obj1
+//  ├── name → "Sharon"
+//  └── address → { city: "Kochi" }
+
+// obj2
+//  ├── name → "Sharon"
+//  └── address → { city: "Kochi" }
+
+// Both objects have separate memory references.
+//
+// reduce() Method in JavaScript
+
+// The reduce() method is used to reduce an array to a single value
+
+// const arr = [1, 2, 3, 4];
+// // const sum = arr.reduce((acc, curr) => {
+// //   return acc + curr;
+// // }, 0);
+// // console.log(sum);
+// const double = arr.map((val) => val * 2);
+// console.log(double);
+
+///dfsdfdsfdffdfdsfsdfsdfsdfsddsfsdfdfdsfdffdfsdfdffdfdffdffffdfdffsdfffffdffdsdfsdfsdfdfdfdffdffsdfdfdsfdsfffdfdsfdfdfdfdfdfdffffffsdf

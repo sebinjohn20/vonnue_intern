@@ -1,0 +1,36 @@
+body {
+  font-family: Arial;
+}
+
+/* Flex container */
+
+.container {
+  display: flex;
+  border: 3px solid black;
+  height: 200px;
+}
+
+/* Common box style */
+
+.box {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Individual boxes */
+
+.box1 {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 200px;
+}
+.box2 {
+  background: green;
+  flex: 2;
+}
+
+.box3 {
+  background: blue;
+  flex: 1;
+}
