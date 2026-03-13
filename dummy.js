@@ -2299,3 +2299,184 @@ function linkedListToArray(head) {
 // console.log(findMedianSortedArrays([1, 3], [2]));
 // console.log(findMedianSortedArrays([1, 2], [3, 4]));
 
+// function twoSum(nums, target) {
+//   let map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     let diff = target - nums[i];
+//     if (map.has(diff)) {
+//       return [map.get(diff), i];
+//     }
+//     map.set(nums[i], i);
+//   }
+// }
+
+// function longetstPalindrome(s) {
+//   if (s.length === 0) return 0;
+
+//   let start = 0;
+//   let end = 0;
+//   function expand(left, right) {
+//     while (left >= 0 && right < s.length && s[left] === s[right]) {
+//       left--;
+//       right++;
+//     }
+//     return right - left - 1;
+//   }
+//   for (let i = 0; i < s.length; i++) {
+//     let len1 = expand(i, i);
+//     let len2 = expand(i, i + 1);
+//     let len = Math.max(len1, len2);
+//     if (len > end - start) {
+//       start = i - Math.floor((len - 1) / 2);
+//       end = i + Math.floor(len / 2);
+//     }
+//   }
+//   return s.slice(start, end + 1);
+// }
+// console.log(longetstPalindrome("babad"));
+
+// function maxArea(height) {
+//   let left = 0;
+//   let right = height.length - 1;
+
+//   let max = 0;
+//   while (left < right) {
+//     let width = right - left;
+//     let area = Math.min(height[right], height[left]) * width;
+//     max = Math.max(max, area);
+//     if (height[left] < height[right]) {
+//       left++;
+//     } else {
+//       right--;
+//     }
+//   }
+//   return max;
+// }
+
+// function threeSum(num) {
+//   num.sort((a, b) => a - b);
+//   const result = [];
+//   for (let i = 0; i < num.length - 2; i++) {
+//     if (i > 0 && num[i] === num[i - 1]) continue;
+//     let left = i + 1;
+//     let right = num.length - 1;
+//     while (left < right) {
+//       const sum = num[i] + num[left] + num[right];
+//       if (sum === 0) {
+//         result.push([num[i], num[left], num[right]]);
+//         while (num[left] === num[left + 1]) left++;
+//         while (num[right] === num[right - 1]) right--;
+//         right--;
+//         left++;
+//       } else if (sum > 0) {
+//         right--;
+//       } else {
+//         left++;
+//       }
+//     }
+//   }
+//   return result;
+// }
+// console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+
+// function ListNode(val,next=null){
+//   this.val=val
+//   this.next=next
+// }
+// function removeNthFromEnd(head,n){
+
+// }
+
+// function removeDuplicates(nums) {
+//   if (nums.length === 0) return;
+//   let i = 0;
+//   for (let j = 1; j < nums.length; j++) {
+//     if (nums[j] !== nums[i]) {
+//       i++;
+//       nums[i] = nums[j];
+//     }
+//   }
+//   return nums.slice(0, i + 1);
+// }
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+// function removeElement(nums, val) {
+//   let k = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) {
+//       nums[k] = nums[i];
+//       k++;
+//     }
+//   }
+//   return nums.slice(0, k);
+// }
+// console.log(removeElement([0, 0, 1, 1, 1, 2, 2, 3, 3, 4], 1));
+
+// function nextPermutation(nums) {
+//   let i = nums.length - 2;
+//   while (i >= 0 && nums[i] >= nums[i + 1]) {
+//     i--;
+//   }
+//   if (i >= 0) {
+//     let j = nums.length - 1;
+//     while (nums[j] <= nums[i]) {
+//       j--;
+//     }
+//     [nums[i], nums[j]] = [nums[j], nums[i]];
+//   }
+//   let left = i + 1;
+//   let right = nums.length - 1;
+//   while (left < right) {
+//     [nums[left], nums[right]] = [nums[right], nums[left]];
+//     left++;
+//     right--;
+//   }
+
+//   return nums;
+// }
+// console.log(nextPermutation([1, 2, 3]));
+// console.log(nextPermutation([3, 2, 1]));
+// console.log(nextPermutation([3, 1, 2]));
+
+// function trap(height) {
+//   let left = 0;
+//   let leftmax = 0;
+//   let right = height.length - 1;
+//   let rightmax = 0;
+//   let water = 0;
+
+//   while (left < right) {
+//     if (height[left] < height[right]) {
+//       height[left] >= leftmax
+//         ? (leftmax = height[left])
+//         : (water += leftmax - height[left]);
+//       left++;
+//     } else {
+//       height[right] >= rightmax
+//         ? (rightmax = height[right])
+//         : (water += rightmax - height[right]);
+//       right--;
+//     }
+//   }
+//   return water;
+// }
+// console.log(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
+// console.log(trap([4, 2, 0, 3, 2, 5]));
+
+function isValid(s) {
+  let map = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
+  let stack = [];
+  for (let char of s) {
+    if (char === "(" || char === "{" || char === "[") {
+      stack.push(char);
+    } else {
+      if (stack.pop() !== map[char]) return false;
+    }
+  }
+  return stack.length === 0;
+}
+console.log(isValid("()[]{}"));
