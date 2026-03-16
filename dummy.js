@@ -2079,34 +2079,34 @@
 //   }
 // }
 
-class CreateNode {
-  constructor(val, next = null) {
-    this.val = val;
-    this.next = next;
-  }
-}
-function arrayToLinkedList(arr) {
-  if (arr.length === 0) return null;
-  let dummy = new CreateNode(0);
-  let head = dummy;
-  for (let val of arr) {
-    head.next = new CreateNode(val);
-    head = head.next;
-  }
-  return dummy.next;
-}
+// class CreateNode {
+//   constructor(val, next = null) {
+//     this.val = val;
+//     this.next = next;
+//   }
+// }
+// function arrayToLinkedList(arr) {
+//   if (arr.length === 0) return null;
+//   let dummy = new CreateNode(0);
+//   let head = dummy;
+//   for (let val of arr) {
+//     head.next = new CreateNode(val);
+//     head = head.next;
+//   }
+//   return dummy.next;
+// }
 
-function linkedListToArray(head) {
-  let result = [];
-  let current = head;
+// function linkedListToArray(head) {
+//   let result = [];
+//   let current = head;
 
-  while (current) {
-    result.push(current.val);
-    current = current.next;
-  }
+//   while (current) {
+//     result.push(current.val);
+//     current = current.next;
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
 // function removeNthFromEnd(head, n) {
 //   let dummy = new CreateNode(0);
@@ -2463,20 +2463,225 @@ function linkedListToArray(head) {
 // console.log(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
 // console.log(trap([4, 2, 0, 3, 2, 5]));
 
-function isValid(s) {
-  let map = {
-    ")": "(",
-    "}": "{",
-    "]": "[",
-  };
-  let stack = [];
-  for (let char of s) {
-    if (char === "(" || char === "{" || char === "[") {
-      stack.push(char);
+// function isValid(s) {
+//   let map = {
+//     ")": "(",
+//     "}": "{",
+//     "]": "[",
+//   };
+//   let stack = [];
+//   for (let char of s) {
+//     if (char === "(" || char === "{" || char === "[") {
+//       stack.push(char);
+//     } else {
+//       if (stack.pop() !== map[char]) return false;
+//     }
+//   }
+//   return stack.length === 0;
+// }
+// console.log(isValid("()[]{}"));
+
+// function sortColors(nums) {
+//   let low = 0;
+//   let mid = 0;
+//   let high = nums.length - 1;
+//   while (mid <= high) {
+//     if (nums[mid] === 0) {
+//       [nums[low], nums[mid]] = [nums[mid], nums[low]];
+//       low++;
+//       mid++;
+//     } else if (nums[mid] === 1) {
+//       mid++;
+//     } else {
+//       [nums[mid], nums[high]] = [nums[high], nums[mid]];
+//       high--;
+//     }
+//   }
+//   return nums;
+// }
+// console.log(sortColors([1, 0, 2, 0, 1, 0, 1]));
+
+// function merge(num1, num2) {
+//   let j = 0;
+//   let i = 0;
+//   let result = [];
+//   while (i < num1.length && j < num2.length) {
+//     if (num1[i] < num2[j]) {
+//       result.push(num1[i]);
+//       i++;
+//     } else {
+//       result.push(num2[j]);
+//       j++;
+//     }
+//   }
+//   while (i < num1.length) {
+//     result.push(num1[i]);
+//     i++;
+//   }
+//   while (j < num2.length) {
+//     result.push(num2[j]);
+//     j++;
+//   }
+//   return result;
+// }
+// console.log(merge([1, 3, 5], [2, 4, 6]));
+
+// function ispalindrome(s) {
+//   let left = 0;
+//   let right = s.length - 1;
+//   while (left < right) {
+//     while (left < right && !isAlphaNum(s[left])) {
+//       left++;
+//     }
+//     while (left < right && !isAlphaNum(s[right])) {
+//       right--;
+//     }
+//     if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+//       return false;
+//     }
+//     left++;
+//     right--;
+//   }
+//   function isAlphaNum(ch) {
+//     return (
+//       (ch >= "a" && ch <= "z") ||
+//       (ch >= "A" && ch <= "Z") ||
+//       (ch >= "0" && ch <= "9")
+//     );
+//   }
+//   return true;
+// }
+// console.log(ispalindrome("A man, a plan, a canal: Panama"));
+
+// function reverseWords(s) {
+//   let words = [];
+//   let word = "";
+//   let index = 0;
+//   for (let i = 0; i <= s.length; i++) {
+//     if (i === s.length && s[i] === " ") {
+//       if (word.length > 0) {
+//         words[index] = word;
+//         index++;
+//       }
+//     } else {
+//       word += s[i];
+//     }
+//   }
+//   let result = "";
+//   for (let i = words.length - 1; i >= 0; i--) {
+//     result += words[i];
+//     if (i !== 0) result += " ";
+//   }
+//   return result;
+// }
+// console.log(reverseWords("the sky is blue"));
+
+// function lengthOfLongestSubstring(s) {
+//   let map = new Map();
+//   let left = 0;
+//   let maxlen = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     while (map.has(s[right])) {
+//       map.delete(s[left]);
+//       left++;
+//     }
+//     map.set(s[right]);
+//     maxlen = Math.max(maxlen, right - left + 1);
+//   }
+//   return maxlen;
+// }
+// function findMedianSortedArrays(num1, num2) {
+//   let result = [...num1, ...num2].sort((a, b) => a - b);
+//   return result.length % 2 === 0
+//     ? (result[result.length / 2 - 1] + result[result.length / 2]) / 2
+//     : result[Math.floor(result.length / 2)];
+// }
+// console.log(findMedianSortedArrays([1, 3], [2]));
+
+// function intToRoman(num) {
+//   const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+//   const symbols = [
+//     "M",
+//     "CM",
+//     "D",
+//     "CD",
+//     "C",
+//     "XC",
+//     "L",
+//     "XL",
+//     "X",
+//     "IX",
+//     "V",
+//     "IV",
+//     "I",
+//   ];
+//   let result = [];
+//   for (let i = 0; i < values.length; i++) {
+//     while (num >= values[i]) {
+//       result += symbols[i];
+//       num -= values[i];
+//     }
+//   }
+//   return result;
+// }
+// console.log(intToRoman("MMMDCCXLIX"));
+// function rotate(nums, k) {
+//   const n = nums.length;
+//   k = k % n; // handle k > n
+//   const rotated = new Array(n);
+
+//   // Copy last k elements to the front
+//   for (let i = 0; i < k; i++) {
+//     rotated[i] = nums[n - k + i];
+//   }
+
+//   // Copy first n-k elements to the back
+//   for (let i = 0; i < n - k; i++) {
+//     rotated[k + i] = nums[i];
+//   }
+
+//   return rotated;
+// }
+
+// function rotate(nums, k) {
+//   let n = nums.length;
+//   k = k % n;
+//   const rotate = new Array(n);
+//   for (let i = 0; i < k; i++) {
+//     rotate[i] = nums[n - k - i];
+//   }
+//   for (let i = 0; i < n - k; i++) {
+//     rotate[i + k] = nums[i];
+//   }
+//   return rotate;
+// }
+// console.log(rotate([1, 2, 3, 4, 5, 6], 2));
+
+//
+function searchRange(nums, target) {
+  const result = [-1, -1];
+  let left = 0;
+  let right = nums.length - 1;
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) result[0] = mid;
+    if (nums[mid] < target) {
+      left = mid + 1;
     } else {
-      if (stack.pop() !== map[char]) return false;
+      right = mid - 1;
     }
   }
-  return stack.length === 0;
+  left = 0;
+  right = nums.length - 1;
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) result[1] = mid;
+    if (nums[mid] > target) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return result;
 }
-console.log(isValid("()[]{}"));
+console.log(searchRange([5, 7, 7, 8, 8, 10], 8));

@@ -822,7 +822,7 @@
 
 // ///------------ Move Zeros------------------------
 
-// // function moveZeros(num) {
+// // function moves(num) {
 // //   let left = 0;
 // //   for (let right = 0; right < num.length; right++) {
 // //     if (num[right] !== 0) {
@@ -4494,3 +4494,5 @@ function linkedListToArray(head) {
 // }
 
 // console.log(intToRoman(3749));
+
+///  22. Generate Parentheses

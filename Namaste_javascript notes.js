@@ -1608,26 +1608,58 @@
 // // console.log(sum);
 // const double = arr.map((val) => val * 2);
 // console.log(double);
-//
-function longestValidParentheses(s) {
-  let stack = [0]; // base
-  let maxLen = 0;
 
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] === "(") {
-      stack.push(i);
-    } else {
-      stack.pop();
+// function maxSubArray(nums) {
+//   let maxsum = 0;
+//   let currentSum = 0;
+//   for (let num of nums) {
+//     currentSum += num;
+//     maxsum = Math.max(maxsum, currentSum);
+//     if (currentSum < 0) {
+//       currentSum = 0;
+//     }
+//   }
+//   return maxsum;
+// }
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
-      if (stack.length === 0) {
-        stack.push(i); // new base
-      } else {
-        maxLen = Math.max(maxLen, i - stack[stack.length - 1]);
+// function canJumb(num) {
+//   let farthest = 0;
+//   for (let i = 0; i < num.length; i++) {
+//     if (i > farthest) return false;
+//     farthest = Math.max(farthest, i + num[i]);
+//     if (farthest >= num.length - 1) return true;
+//   }
+//   return false;
+// }
+// console.log(canJumb([2, 3, 1, 1, 4]));
+function minWindow(s, t) {
+  let need = new Map();
+
+  for (let ch of t) {
+    need.set(ch, (need.get(ch) || 0) + 1);
+  }
+  let left = 0;
+  let count = t.length;
+  let minLen = Infinity;
+  let start = 0;
+  for (let right = 0; right < s.length; right++) {
+    if (need.has(s[right])) {
+      if (need.get(s[right]) > 0) count--;
+      need.set(s[right], need.get(s[right]) - 1);
+    }
+    while (count === 0) {
+      if (right - left + 1 < minLen) {
+        minLen = right - left + 1;
+        start = left;
       }
+      if (need.has(s[left])) {
+        need.set(s[left], need.get(s[left]) + 1);
+        if (need.get(s[left]) > 0) count++;
+      }
+      left++;
     }
   }
-
-  return maxLen;
+  return minLen === Infinity ? "" : s.slice(start, start + minLen);
 }
-
-console.log(longestValidParentheses(")()()())"));
+console.log(minWindow("ADOBECODEBANC", "ABC"));
