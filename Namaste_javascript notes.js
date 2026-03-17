@@ -1633,33 +1633,124 @@
 //   return false;
 // }
 // console.log(canJumb([2, 3, 1, 1, 4]));
-function minWindow(s, t) {
-  let need = new Map();
+// function minWindow(s, t) {
+//   let need = new Map();
 
-  for (let ch of t) {
-    need.set(ch, (need.get(ch) || 0) + 1);
-  }
-  let left = 0;
-  let count = t.length;
-  let minLen = Infinity;
-  let start = 0;
-  for (let right = 0; right < s.length; right++) {
-    if (need.has(s[right])) {
-      if (need.get(s[right]) > 0) count--;
-      need.set(s[right], need.get(s[right]) - 1);
+//   for (let ch of t) {
+//     need.set(ch, (need.get(ch) || 0) + 1);
+//   }
+//   let left = 0;
+//   let count = t.length;
+//   let minLen = Infinity;
+//   let start = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     if (need.has(s[right])) {
+//       if (need.get(s[right]) > 0) count--;
+//       need.set(s[right], need.get(s[right]) - 1);
+//     }
+//     while (count === 0) {
+//       if (right - left + 1 < minLen) {
+//         minLen = right - left + 1;
+//         start = left;
+//       }
+//       if (need.has(s[left])) {
+//         need.set(s[left], need.get(s[left]) + 1);
+//         if (need.get(s[left]) > 0) count++;
+//       }
+//       left++;
+//     }
+//   }
+//   return minLen === Infinity ? "" : s.slice(start, start + minLen);
+// }
+// console.log(minWindow("ADOBECODEBANC", "ABC"));
+// function twoSum(nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left < right) {
+//     let sum = nums[right] + nums[left];
+//     if (sum === target) return [left + 1, right + 1];
+//     else if (sum > target) right--;
+//     else left++;
+//   }
+// }
+// console.log(twoSum([-1, 0], -1));
+
+// function rotate(num, k) {
+//   const n = num.length;
+//   k = k % n;
+//   const rotated = new Array(n);
+//   for (let i = 0; i < k; i++) {
+//     rotated[i] = num[n - k + i];
+//   }
+//   for (let i = 0; i < n - k; i++) {
+//     rotated[k + i] = num[i];
+//   }
+//   return rotated;
+// }
+// console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
+// console.log(rotate([-1, -100, 3, 99], 2));
+// function minSubArrayLen(target, nums) {
+//   let left = 0;
+//   let minLen = Infinity;
+//   let sum = 0;
+//   for (let right = 0; right < nums.length; right++) {
+//     sum += nums[right];
+//     while (sum >= target) {
+//       minLen = Math.min(minLen, right - left + 1);
+//       sum -= nums[left];
+//       left++;
+//     }
+//   }
+//   return minLen === Infinity ? 0 : minLen;
+// }
+// console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3])); \]
+
+// function reverse(s) {
+//   const vowels = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]);
+//   let arr = s.split("");
+//   let left = 0;
+//   let right = arr.length - 1;
+//   while (left < right) {
+//     while (left < right && !vowels.has(arr[left])) {
+//       left++;
+//     }
+//     while (left < right && !vowels.has(arr[right])) {
+//       right--;
+//     }
+//     [arr[left], arr[right]] = [arr[right], arr[left]];
+//     left++;
+//     right--;
+//   }
+//   return arr.join("");
+// }
+// console.log(reverse("IceCreAm"));
+
+// function topKFrequent(nums, k) {
+//   let freq = new Map();
+//   let result = [];
+//   for (let num of nums) {
+//     freq.set(num, (freq.get(num) || 0) + 1);
+//   }
+//   for (let [num, count] of freq.entries()) {
+//     result.push([num, count]);
+//   }
+//   return result
+//     .sort((a, b) => b[1] - a[1])
+//     .slice(0, k)
+//     .map((item) => item[0]);
+// }
+// console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
+
+function isSubsequence(s, t) {
+  let i = 0,
+    j = 0;
+  while (i < s.length && j < t.length) {
+    if (s[i] === t[j]) {
+      i++;
     }
-    while (count === 0) {
-      if (right - left + 1 < minLen) {
-        minLen = right - left + 1;
-        start = left;
-      }
-      if (need.has(s[left])) {
-        need.set(s[left], need.get(s[left]) + 1);
-        if (need.get(s[left]) > 0) count++;
-      }
-      left++;
-    }
+    j++;
   }
-  return minLen === Infinity ? "" : s.slice(start, start + minLen);
+  return i === s.length;
 }
-console.log(minWindow("ADOBECODEBANC", "ABC"));
+
+//kljjklklklklkjlkjlkjlkjlkjlkjlljkjkhkjhjkkjhjkhkhjjkhjhkkjhkjhkjkjhjkkjjkhkjhkjhjkhjkjkkjhjhkhjkhjkhjkjkhklhkhkjjkkjhkhjkjhkjh

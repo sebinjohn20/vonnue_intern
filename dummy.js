@@ -2658,30 +2658,100 @@
 // console.log(rotate([1, 2, 3, 4, 5, 6], 2));
 
 //
-function searchRange(nums, target) {
-  const result = [-1, -1];
+// function minSubArrayLen(target, nums) {
+//   let left = 0;
+//   let minLen = Infinity;
+//   let sum = 0;
+//   for (let right = 0; right < nums.length; right++) {
+//     sum += nums[right];
+//     while (sum >= target) {
+//       minLen = Math.min(minLen, right - left + 1);
+//       sum -= nums[left];
+//       left++;
+//     }
+//   }
+//   return minLen === Infinity ? 0 : minLen;
+// }
+// console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7));
+
+// function containsNearByDuplicate(nums, k) {
+//   const map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     if (map.has(nums[i])) {
+//       if (i - map.get(nums[i]) <= k) return true;
+//     }
+//     map.set(nums[i], i);
+//   }
+//   return false;
+// }
+// //hgjhjggjhjghghjhgjghjghjgjhghjghjghjghjghjghjhjghjjhgjghjghhgj
+
+// function productExceptSelf(nums) {
+//   const n = nums.length;
+//   const res = new Array(n).fill(1);
+//   let left = 1;
+//   for (let i = 0; i < n; i++) {
+//     res[i] = left;
+//     left *= nums[i];
+//   }
+//   let right = 1;
+//   for (let i = n - 1; i >= 0; i--) {
+//     res[i] *= right;
+//     right *= nums[i];
+//   }
+//   return res;
+// }
+
+// function maxSlidingWindow(nums, k) {
+//   const deque = [];
+//   const result = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     while (deque.length && deque[0] <= i - k) {
+//       deque.shift;
+//     }
+//     while (deque.length && nums[deque[deque.length - 1]] <= nums[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//     if (i >= k - 1) result.push(nums[deque[0]]);
+//   }
+//   return result;
+// }
+// console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+// function isAnagram(s, t) {
+//   let map = new Map();
+//   for (let char of s) {
+//     map.set(char, (map.get(char) || 0) + 1);
+//   }
+//   for (let char of t) {
+//     if (map.has(char)) {
+//       map.set(char, map.get(char) - 1);
+//     } else {
+//       return false;
+//     }
+//     if (map.get(char) === 0) {
+//       map.delete(char);
+//     }
+//   }
+//   return map.size === 0;
+// }
+
+function reverse(s) {
+  const vowels = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]);
+  let arr = s.split("");
   let left = 0;
-  let right = nums.length - 1;
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-    if (nums[mid] === target) result[0] = mid;
-    if (nums[mid] < target) {
-      left = mid + 1;
-    } else {
-      right = mid - 1;
+  let right = arr.length - 1;
+  while (left < right) {
+    while (left < right && !vowels.has(arr[left])) {
+      left++;
     }
-  }
-  left = 0;
-  right = nums.length - 1;
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-    if (nums[mid] === target) result[1] = mid;
-    if (nums[mid] > target) {
-      right = mid - 1;
-    } else {
-      left = mid + 1;
+    while (left < right && !vowels.has(arr[right])) {
+      right--;
     }
+    [arr[left], arr[right]] = [arr[right], arr[left]];
+    left++;
+    right--;
   }
-  return result;
+  return arr.join("");
 }
-console.log(searchRange([5, 7, 7, 8, 8, 10], 8));
+console.log(reverse("IceCreAm"));
