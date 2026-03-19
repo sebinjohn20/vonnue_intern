@@ -1741,16 +1741,190 @@
 // }
 // console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
 
-function isSubsequence(s, t) {
-  let i = 0,
-    j = 0;
-  while (i < s.length && j < t.length) {
-    if (s[i] === t[j]) {
-      i++;
-    }
-    j++;
-  }
-  return i === s.length;
-}
+// function isSubsequence(s, t) {
+//   let i = 0,
+//     j = 0;
+//   while (i < s.length && j < t.length) {
+//     if (s[i] === t[j]) {
+//       i++;
+//     }
+//     j++;
+//   }
+//   return i === s.length;
+// }
 
-//kljjklklklklkjlkjlkjlkjlkjlkjlljkjkhkjhjkkjhjkhkhjjkhjhkkjhkjhkjkjhjkkjjkhkjhkjhjkhjkjkkjhjhkhjkhjkhjkjkhklhkhkjjkkjhkhjkjhkjh
+// function characterReplacement(s, k) {
+//   let left = 0;
+//   let map = new Map();
+//   let maxFre = 0;
+//   let maxWindowSize = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     map.set(s[right], (map.get(s[right]) || 0) + 1);
+//     maxFre = Math.max(maxFre, map.get(s[right]));
+//     let windowSize = right - left + 1;
+//     if (windowSize - maxFre > k) {
+//       map.set(s[left], map.get(s[left]) - 1);
+//       left++;
+//     }
+//     windowSize = right - left + 1;
+//     maxWindowSize = Math.max(maxWindowSize, windowSize);
+//   }
+//   return maxWindowSize;
+// }
+
+// console.log(characterReplacement("AABABBA", 1));
+
+// function findAnagrams(s, t) {
+//   let need = new Map();
+//   const result = [];
+//   let left = 0;
+//   for (let ch of t) {
+//     need.set(ch, (need.get(ch) || 0) + 1);
+//   }
+//   let count = t.length;
+//   for (let right = 0; right < s.length; right++) {
+//     if (need.has(s[right])) {
+//       if (need.get(s[right]) > 0) count--;
+//       need.set(s[right], need.get(s[right]) - 1);
+//     }
+//     if (right - left + 1 === t.length) {
+//       if (count === 0) result.push(left);
+//       if (need.has(s[left])) {
+//         need.set(s[left], need.get(s[left]) + 1);
+//         if (need.get(s[left]) > 0) count++;
+//       }
+//       left++;
+//     }
+//   }
+//   return result;
+// }
+// function compress(chars) {
+//   let freq = new Map();
+//   let result = [];
+//   let string = "";
+//   for (let char of chars) {
+//     freq.set(char, (freq.get(char) || 0) + 1);
+//   }
+//   for (let [char, count] of freq.entries()) {
+//     result.push(char, count);
+//   }
+//   for (let [char, count] of result) {
+//     if (count === 1) {
+//       string += char;
+//     } else {
+//       string += char + count;
+//     }
+//   }
+//   return result;
+// }
+// console.log(compress(["a", "a", "b", "b", "c", "c", "c"]));
+// console.log(
+//   compress(["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"]),
+// );
+
+// function findMaxLength(nums) {
+//   let map = new Map();
+//   let sum = 0;
+//   let maxlen = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     sum += nums[i] === 0 ? -1 : 1;
+//     if (map.has(sum)) {
+//       maxlen = Math.max(maxlen, i - map.get(sum));
+//     } else {
+//       map.set(sum, i);
+//     }
+//   }
+//   return maxlen;
+// }
+// console.log(findMaxLength([0, 1, 1, 1, 1, 1, 0, 0, 0]));
+
+// function subarraySum(nums, k) {
+//   let sum = 0;
+//   let count = 0;
+//   const map = new Map();
+//   map.set(0, 1);
+//   for (let num of nums) {
+//     sum += num;
+//     if (map.has(sum - k)) {
+//       count += map.get(sum - k);
+//     }
+//     map.set(sum, (map.get(sum) || 0) + 1);
+//   }
+//   return count;
+// }
+
+// function findUnsortedSubarray(nums) {
+//   let n = nums.length;
+//   let left = -1;
+//   let right = -1;
+//   let maxfar = -Infinity;
+//   let minfar = Infinity;
+//   for (let i = 0; i < n; i++) {
+//     if (nums[i] < maxfar) {
+//       right = i;
+//     } else {
+//       maxfar = nums[i];
+//     }
+//   }
+//   for (let i = n - 1; i >= 0; i--) {
+//     if (nums[i] > minfar) {
+//       left = i;
+//     } else {
+//       minfar = nums[i];
+//     }
+//     if (right === -1) return 0;
+//   }
+//   return right - left + 1;
+// }
+
+// //
+// console.log(findUnsortedSubarray([2, 6, 4, 8, 10, 9, 15]));
+
+///
+
+// function longestMountain(arr) {
+//   let n = arr.length;
+//   let ans = 0;
+//   let i = 1;
+//   while (i < n - 1) {
+//     if (arr[i - 1] < arr[i] && arr[i] > arr[i + 1]) {
+//       let left = i;
+//       let right = i;
+
+//       while (left > 0 && arr[left - 1] < arr[left]) {
+//         left--;
+//       }
+//       while (right < n - 1 && arr[right] > arr[right + 1]) {
+//         right++;
+//       }
+//       ans = Math.max(ans, right - left + 1);
+//     } else {
+//       i++;
+//     }
+//   }
+//   return ans;
+// }
+// console.log(longestMountain([2, 1, 4, 7, 3, 2, 5]));
+
+// function shorestSubarray(nums, k) {
+//   let n = nums.length;
+//   let prefix = new Array(n + 1).fill(0);
+//   for (let i = 0; i < n; i++) {
+//     prefix[i + 1] = prefix[i] + nums[i];
+//   }
+//   let deque = [];
+//   let minLen = Infinity;
+//   for (let i = 0; i <= n; i++) {
+//     while (deque.length && prefix[i] - prefix[deque[0]] >= k) {
+//       minLen = Math.min(minLen, i - deque[0]);
+//       deque.shift();
+//     }
+//     while (deque.length && prefix[i] <= prefix[deque[deque.length - 1]]) {
+//       deque.pop();
+//     }
+
+//     deque.push(i);
+//   }
+//   return minLen === Infinity ? -1 : minLen;
+// }
+// console.log(shorestSubarray([2, -1, 2], 3));
