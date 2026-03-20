@@ -1928,3 +1928,263 @@
 //   return minLen === Infinity ? -1 : minLen;
 // }
 // console.log(shorestSubarray([2, -1, 2], 3));
+
+// function subarraySum(nums, k) {
+//   let sum = 0;
+//   let count = 0;
+//   const map = new Map();
+//   map.set(0, 1);
+//   for (let num of nums) {
+//     sum += num;
+//     if (map.has(sum - k)) {
+//       count += map.get(sum - k);
+//     }
+//     map.set(sum, (map.get(sum) || 0) + 1);
+//   }
+//   return count;
+// }
+// console.log(subarraySum([1, 2, 3], 3));
+
+// function findLength(num1, num2) {
+//   let maxLen = 0;
+//   for (let i = 0; i < num1.length; i++) {
+//     for (let j = 0; j < num2.length; j++) {
+//       let len = 0;
+//       while (
+//         j + len < num2.length &&
+//         i + len < num1.length &&
+//         num1[i + len] === num2[j + len]
+//       ) {
+//         len++;
+//       }
+//       maxLen = Math.max(maxLen, len);
+//     }
+//   }
+//   return maxLen;
+// }
+// console.log(findLength([1, 2, 3, 2, 1], [3, 2, 1, 4, 7]));
+
+///fdsfdsfdsfdsfsdfsdfsdfsdfsdfsdfsdfdfdsfsdfsdfdsffsffdsfdfdf
+
+// function subarraydi(nums, k) {
+//   let count = 0;
+//   let sum = 0;
+//   let map = new Map();
+//   map.set(0, 1);
+//   for (let num of nums) {
+//     sum += num;
+//     let rem = sum % 5;
+//     if (rem < 0) rem += k;
+//     if (map.has(rem)) {
+//       count += map.get(rem);
+//     }
+//     map.set(rem, (map.get(rem) || 0) + 1);
+//   }
+//   return count;
+// }
+// console.log(subarraydi([4, 5, 0, -2, -3, 1], 5));
+
+// function longestOnes(s, k) {
+//   let zeroCount = 0;
+//   let max = 0;
+//   let left = 0;
+//   for (let right = 0; right < s.length; right++) {
+//     if (s[right] === 0) zeroCount++;
+//     while (zeroCount > k) {
+//       if (s[left] === 0) zeroCount--;
+//       left++;
+//     }
+//     max = Math.max(max, right - left + 1);
+//   }
+//   return max;
+// }
+// console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+
+// function longestSubarray(nums, limit) {
+//   let maxDeque = [];
+//   let minDeque = [];
+//   let left = 0;
+//   let ans = 0;
+//   for (let right = 0; right < nums.length; right++) {
+//     while (maxDeque.length && maxDeque[maxDeque.length - 1] < nums[right]) {
+//       maxDeque.pop();
+//     }
+//     maxDeque.push(nums[right]);
+
+//     while (minDeque.length && minDeque[minDeque.length - 1] > nums[right]) {
+//       minDeque.pop();
+//     }
+//     minDeque.push(nums[right]);
+
+//     while (maxDeque[0] - minDeque[0] > limit) {
+//       if (nums[left] === minDeque[0]) minDeque.shift();
+//       if (nums[left] === maxDeque[0]) maxDeque.shift();
+//       left++;
+//     }
+//     ans = Math.max(ans, right - left + 1);
+//   }
+//   return ans;
+// }
+// console.log(longestSubarray([8, 2, 4, 7], 4));
+
+// function maxResult(nums, k) {
+//   let n = nums.length;
+//   let dp = new Array(n);
+//   let deque = [0];
+//   dp[0] = nums[0];
+//   for (let i = 1; i < n; i++) {
+//     while (deque.length && deque[0] < i - k) {
+//       deque.shift();
+//     }
+//     dp[i] = nums[i] + dp[deque[0]];
+//     while (deque.length && dp[deque[deque.length - 1]] <= dp[i]) {
+//       deque.pop();
+//     }
+//     deque.push(i);
+//   }
+//   return dp[n - 1];
+// }
+// console.log(maxResult([1, -1, -2, 4, -7, 3], 2));
+
+// function minSwaps(nums) {
+//   let ones = nums.reduce((a, b) => a + b, 0);
+//   let curr = 0;
+//   for (let i = 0; i < ones; i++) {
+//     curr += nums[i];
+//   }
+//   let maxOnes = curr;
+//   for (let i = ones; i < nums.length; i++) {
+//     curr += nums[i] - nums[i - ones];
+//     maxOnes = Math.max(maxOnes, curr);
+//   }
+//   return ones - maxOnes;
+// }
+// console.log(minSwaps([1, 0, 1, 0, 1, 0, 1, 0, 1, 0]));
+
+///fsdfdsfdsfdsfdsfdffdfdfdfdfdfdf
+
+// function nextgreaterElement(nums) {
+//   let result = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     let found = -1;
+//     for (let j = 1; j < nums.length; j++) {
+//       let nextIndex = (i + j) % nums.length;
+//       if (nums[nextIndex] > nums[i]) {
+//         found = nums[nextIndex];
+//         break;
+//       }
+//     }
+//     result.push(found);
+//   }
+//   return result;
+// }
+// console.log(nextgreaterElement([2, 5, 3, 1, 4]));
+
+// function nextgreaterElement(nums) {
+//   let n = nums.length;
+//   let result = new Array(n).fill(-1);
+//   let stack = [];
+//   for (let i = 0; i < 2 * n; i++) {
+//     let index = i % n;
+//     while (stack.length) {
+//       let lastindex = stack[stack.length - 1];
+//       if (nums[lastindex] < nums[index]) {
+//         stack.pop();
+//         result[lastindex] = nums[index];
+//       } else {
+//         break;
+//       }
+//     }
+//     if (i < n) {
+//       stack.push(index);
+//     }
+//   }
+//   return result;
+// }
+// console.log(nextgreaterElement([2, 5, 3, 1, 4]));
+// function longestvalidParentheses(s) {
+//   let stack = [-1];
+//   let max = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     if (s[i] === "(") {
+//       stack.push(i);
+//     } else {
+//       stack.pop();
+//       if (stack.length == 0) {
+//         stack.push(i);
+//       } else {
+//         max = Math.max(max, i - stack[stack.length - 1]);
+//       }
+//     }
+//   }
+//   return max;
+// }
+
+// console.log(longestvalidParentheses(")()())"));
+
+// function largestRectangleArea(heights) {
+//   let n = heights.length;
+//   let maxArea = 0;
+//   for (let i = 0; i < n; i++) {
+//     let height = heights[i];
+//     let left = i;
+//     let right = i;
+//     while (left >= 0 && heights[left] >= height) {
+//       left--;
+//     }
+//     while (right < n && heights[right] >= height) {
+//       right++;
+//     }
+//     let width = right - left - 1;
+//     let area = height * width;
+//     maxArea = Math.max(maxArea, area);
+//   }
+//   return maxArea;
+// }
+// console.log(largestRectangleArea([2, 1, 5, 6, 2, 3]));
+
+// function ReversePolishNotation(tokens) {
+//   let stack = [];
+//   for (let token of tokens) {
+//     if (token === "+" || token === "-" || token === "*" || token === "/") {
+//       let b = stack.pop();
+//       let a = stack.pop();
+//       let result;
+//       if (token === "+") result = a + b;
+//       else if (token === "-") result = a - b;
+//       else if (token === "*") result = a * b;
+//       else result = Math.trunc(a / b);
+//       stack.push(result);
+//     } else {
+//       stack.push(Number(token));
+//     }
+//   }
+//   return stack.pop();
+// }
+// console.log(ReversePolishNotation(["2", "1", "+", "3", "*", "4", "-"]));
+
+///sdsadsadsadsadddsfdsfdkkjhhkjkjhkhhkjhkkhjhhkhkhjkhjkhkkhjhjkjhkhjkhjkhjkhjjhkkjhkhjhjkkjhjhkjhkhjlkjljkfsdsdddssdsadsadsadsdsddsdsdsdd
+function longestSubarray(nums, k) {
+  let map = new Map();
+  let sum = 0;
+  let maxLen = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+
+    if (sum === k) {
+      maxLen = i + 1;
+    }
+
+    if (map.has(sum - k)) {
+      maxLen = Math.max(maxLen, i - map.get(sum - k));
+    }
+
+    if (!map.has(sum)) {
+      map.set(sum, i);
+    }
+  }
+
+  return maxLen;
+}
+console.log(longestSubarray([1, -1, 5, -2, 3], 3));
