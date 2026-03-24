@@ -129,6 +129,9 @@
 /// A function remembers varibles from its outer function even after
 //  the outer fuction has finished executing
 
+// A closure is when a function remembers variables from its outer (lexical) scope even after the outer
+// function has finished executing.
+
 // function outer() {
 //   let count = 0;
 
@@ -234,7 +237,7 @@
 
 // 🔥 Interview One-Line Answer
 
-/// Because var is function scoped all callback shared the same varible.When setTimeout runs, the loop has already finished and i become 4
+/// Because var is function scoped all callback shared the same varible.When setTimeout runs,s the loop has already finished and i become 4
 
 // 1. What Happens Without Closure?
 

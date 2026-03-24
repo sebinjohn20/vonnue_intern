@@ -299,7 +299,8 @@
 
 // ✅ Yes — but not in the same way as var.
 
-// When let and const are declared outside any function, they are stored in the global scope, but they are NOT attached to the window object.
+// When let and const are declared outside any function, they are stored in the global scope,
+// but they are NOT attached to the window object.
 
 // 1️⃣ Example
 // let a = 10;
@@ -453,7 +454,8 @@
 
 // 1️⃣ Lexical Environment (What it means)
 
-// A Lexical Environment is the internal structure JavaScript uses to store variables and manage scope.
+// A Lexical Environment is the internal structure JavaScript uses to store variables
+//  and manage scope.
 
 // Every execution context has one.
 
@@ -990,7 +992,8 @@
 // let b = 20;
 // console.log(a + b);
 
-// The engine converts this code into tokens and then builds a structure called an AST (Abstract Syntax Tree).
+// The engine converts this code into tokens and then builds a structure called an
+// AST (Abstract Syntax Tree).
 
 // Example AST idea:
 
@@ -2163,7 +2166,6 @@
 // }
 // console.log(ReversePolishNotation(["2", "1", "+", "3", "*", "4", "-"]));
 
-///sdsadsadsadsadddsfdsfdkkjhhkjkjhkhhkjhkkhjhhkhkhjkhjkhkkhjhjkjhkhjkhjkhjkhjjhkkjhkhjhjkkjhjhkjhkhjlkjljkfsdsdddssdsadsadsadsdsddsdsdsdd
 function longestSubarray(nums, k) {
   let map = new Map();
   let sum = 0;

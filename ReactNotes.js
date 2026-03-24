@@ -447,7 +447,8 @@
 
 ////------------------ what is key in React -------
 
-// In React,a key is a special attribute used to uniquely identify elements in a list.
+// In React,a key is a special attribute used to uniquely identify
+//  elements in a list.
 //It helps React efficiently update the UI when items change.
 
 // A key is unique identifier given to list elements so React can track which items changed,
@@ -819,7 +820,8 @@
 
 // Answer:
 
-// --->  Because once React  starts modifying the DOM, it must complete the updates to keep
+// --->  Because once React  starts modifying the DOM,
+//  it must complete the updates to keep
 // the UI consistent
 
 // If interrupted midway:
@@ -871,7 +873,8 @@
 
 ////  What is the Effect List
 
-///----- The Effect List is a linked list of Fiber nodes that have side effects (changes )
+///----- The Effect List is a linked list of Fiber nodes that have
+// side effects (changes )
 // that need to be applied
 //   ----> during the commit phase
 // Simple meaning:
@@ -884,7 +887,7 @@
 
 // Which need to be deleted
 
-// Instead of updating the DOM immediately, React stores these changes in a special list called the Effect List.
+// Instead of updating the DOM immediately, React stores these dfchanges in a special list called the Effect List.
 // Then in the commit phase , React goes through this list  and applies changes to the real DOM
 // 🔄 Why Do We Need an Effect List?
 
@@ -1266,7 +1269,7 @@
 // oldFunction !== newFunction
 
 // So Child re-renders ❌
-// Even though logic same.
+// Even though logic same.4dH7U
 
 // 🔵 2️⃣ Solution With useCallback
 // const handleClick = useCallback(() => {
@@ -1286,7 +1289,7 @@
 //🔥 Interview Answer (Perfect Version)
 
 ///  We use  useCallback to memorize function reference so that they are not recreated on every render .
-// This helps prevent unnecessary child re-renders when using React.memo and avoids unwanted re-execution
+//  This helps prevent unnecessary child re-renders when using React.memo and avoids unwanted re-execution
 //  of effects when the function is part of a dependency array
 
 ///
@@ -1525,6 +1528,7 @@
 // }
 
 // What Happens?
+///
 
 // Clicking "Increase Ref" updates value
 
@@ -1970,7 +1974,8 @@
 //// React fiber Architecture
 
 // react Fiber is the new reconciliation engine introduced in React 16
-// It completely rewrote React's core algorithm to make rendering faster, interrupitble and more responisve
+// It completely rewrote React's core algorithm to make rendering faster,
+//  interrupitble and more responisve
 
 //🚨 Why Fiber Was Introduced?
 
@@ -2150,7 +2155,8 @@
 ///🎯 Why This Matters for You (Interview Point)
 
 ///"React Fiber is a reimplementation of React;s reconciliation algorithm that allows React to split
-// Rendering  work into small units, Prioritize updates,pasue and resume rendering, and improves UI Responsiveness
+// Rendering  work into small units, Prioritize updates,pasue and resume rendering,
+// 'and improves UI Responsiveness
 // "
 
 ///Synchronous Rendering

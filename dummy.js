@@ -2755,3 +2755,48 @@
 //   return arr.join("");
 // }
 // console.log(reverse("IceCreAm"));
+
+// const person = {
+//   name: "sebin",
+// };
+// function greet() {
+//   console.log(`Hi, I am ${this.name} and my age ${age}`);
+// }
+// greet.call(person, 24);
+
+// //
+// function greet(name, callback) {
+//   console.log(`Hi ${name}`);
+//   callback();
+// }
+// function sayBye() {
+//   console.log("bye");
+// }
+// greet("JOhn", sayBye);
+///
+// let obj1 = {
+//   name: "JOhn",
+//   address: {
+//     city: "delhi",
+//   },
+// };
+
+// let obj2={...obj1}
+
+// function change(x) {
+//   x = 20;
+// }
+// let a = 10;
+// change(a);
+
+// function multiplier(x) {
+//   return function (y) {
+//     return x * y;
+//   };
+// }
+// let double = multiplier(2);
+// console.log(double(5));
+
+//fdfsdfsdfsdf
+///dfdfdff
+///wewewewefdfdfdffdsdfdsfdffsdfdfwe`
