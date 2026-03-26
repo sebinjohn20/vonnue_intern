@@ -19,6 +19,8 @@
 //   );
 // }
 
+import { useState } from "react";
+
 // import React, { useEffect, useRef, useState } from "react";
 
 // export default function App() {
@@ -82,6 +84,25 @@
 //   );
 // }
 
+// const Child = React.memo(({ count }) => {
+//   console.log("child Rendered");
+//   return <h1>{count}</h1>;
+// });
+// function App() {
+//   const [count, setCount] = useState(0);
+//   const [text, setText] = useState("");
+//   return (
+//     <div>
+//       <Child count={count} />
+//       <button onClick={() => setCount(count + 1)}>Increase</button>
+
+//       <input value={text} onChange={(e) => setText(e.target.value)} />
+//     </div>
+//   );
+// }
+
+///dfdfdsfdsf
+
 // const initialState = { count: 0 };
 
 // function reducer(state, action) {
@@ -115,3 +136,5 @@
 //     </>
 //   );
 // }
+
+//

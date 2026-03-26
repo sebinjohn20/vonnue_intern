@@ -2797,6 +2797,29 @@
 // let double = multiplier(2);
 // console.log(double(5));
 
-//fdfsdfsdfsdf
-///dfdfdff
-///wewewewefdfdfdffdsdfdsfdffsdfdfwe`
+///
+
+function findLength(num1, num2) {
+  let max = 0;
+
+  for (let i = 0; i < num1.length; i++) {
+    for (let j = 0; j < num2.length; j++) {
+      let count = 0;
+      let x = i;
+      let y = j;
+
+      // check continuous match
+      while (x < num1.length && y < num2.length && num1[x] === num2[y]) {
+        count++;
+        x++;
+        y++;
+      }
+
+      max = Math.max(max, count);
+    }
+  }
+
+  return max;
+}
+
+console.log(findLength([1, 2, 3, 2, 1], [3, 2, 1, 4, 7]));

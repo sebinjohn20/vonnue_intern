@@ -2166,27 +2166,43 @@
 // }
 // console.log(ReversePolishNotation(["2", "1", "+", "3", "*", "4", "-"]));
 
-function longestSubarray(nums, k) {
-  let map = new Map();
-  let sum = 0;
-  let maxLen = 0;
+// function longestSubarray(nums, k) {
+//   let map = new Map();
+//   let sum = 0;
+//   let maxLen = 0;
 
-  for (let i = 0; i < nums.length; i++) {
-    sum += nums[i];
+//   for (let i = 0; i < nums.length; i++) {
+//     sum += nums[i];
 
-    if (sum === k) {
-      maxLen = i + 1;
-    }
+//     if (sum === k) {
+//       maxLen = i + 1;
+//     }
 
-    if (map.has(sum - k)) {
-      maxLen = Math.max(maxLen, i - map.get(sum - k));
-    }
+//     if (map.has(sum - k)) {
+//       maxLen = Math.max(maxLen, i - map.get(sum - k));
+//     }
 
-    if (!map.has(sum)) {
-      map.set(sum, i);
+//     if (!map.has(sum)) {
+//       map.set(sum, i);
+//     }
+//   }
+
+//   return maxLen;
+// }
+// console.log(longestSubarray([1, -1, 5, -2, 3], 3));
+
+///
+
+function longestCommonPrefix(strs) {
+  if (strs.length === 0) return "";
+  if (strs.length === 1) return strs[0];
+  for (let i = 0; i < strs[0].length; i++) {
+    let char = strs[0][i];
+    for (let j = 1; j < strs.length; j++) {
+      let s = strs[j][i];
+      if (char !== strs[j][i]) return strs[0].slice(0, i);
     }
   }
-
-  return maxLen;
+  return strs[0];
 }
-console.log(longestSubarray([1, -1, 5, -2, 3], 3));
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));

@@ -1173,6 +1173,22 @@
 // usecallback is a React hook that memorizes (caches ) a  function so that the
 // function reference does not change on every render\
 
+// 🎯 useCallback (Simple Answer)
+
+// 👉
+// "useCallback is a React hook used to memoize a function so that it is not recreated on every render. It helps improve performance, especially when passing functions to child components."
+
+// 🧠 Slightly Better (if interviewer asks more)
+
+// 👉
+// "useCallback returns the same function reference between renders unless its dependencies change. This helps prevent unnecessary re-renders when used with React.memo."
+
+// ⚡ One-line memory trick
+
+// 👉
+// "useCallback = remember function
+//
+
 // useCallback is used to memoize a function so that React does not recreate the function on every render.
 // 🔹 1️⃣ Why Do We Need useCallback?
 
@@ -2364,3 +2380,4 @@
 // Event propagation is the process by which an event travels through the
 // DOM in three phases:
 //  capturing, target, and bubbling.
+///
